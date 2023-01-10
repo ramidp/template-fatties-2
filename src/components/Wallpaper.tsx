@@ -19,6 +19,6 @@ export default Fondo;
 const Img = styled.img`
     position: absolute;
     z-index: -1;
-    width: 100%;
+    width: 92%;
     height: 100vh;
 `

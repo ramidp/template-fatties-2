@@ -56,6 +56,7 @@ export default BrandMain;
 const BrandMainContainer = styled.div`
     background: inherit;
     height: 100vh;
+    width: 100%;
         
     .absolute {
         height: 100vh;

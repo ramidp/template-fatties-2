@@ -22,6 +22,7 @@ const Main = () => {
 export default Main;
 
 const AppContainer = styled.div`
+  width: 100%;
      * {
       font-family: ${props => props.theme.mainFont}; // Aplica a TODA la App la fuente.
      }

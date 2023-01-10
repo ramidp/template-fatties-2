@@ -17,8 +17,10 @@ export default  MenuMobile;
 
 const MenuMobileContainer = styled.div`
         width: 100%;
-        flex-direction: row;
-        justify-content: space-between;
+        min-width: 130px;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
         display: flex;
         background-color: ${props => props.theme.tertiary};

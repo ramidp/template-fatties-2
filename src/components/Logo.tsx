@@ -35,7 +35,7 @@ const LogoContainer = styled.div`
         h1 {
             color: ${props => props.theme.fontFour};
             margin: 0;
-            font-size: 1.8em;
+            font-size: 1.5em;
         }
     }
 `

@@ -25,13 +25,16 @@ export default MenuNav;
 const MenuNavContainer = styled.div`
     color: white;
     display: flex;
-    padding-right: 100px;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
 
     a {
       text-decoration: none;
       h3 {
         margin: 0;
-        font-size: 15px;
+        font-size: 20px;
         color: ${props => props.theme.fontFour};
         padding: 0 10px;
         cursor: pointer;

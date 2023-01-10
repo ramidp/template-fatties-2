@@ -22,7 +22,9 @@ const Menu = () => {
 export default Menu;
 
 const MenuContainer = styled.div`
-    width: 100%;
+    width: 8%;
+    min-width: 120px;
+    height: 100vh;
     position: fixed;
     padding: 0;
     margin: 0;

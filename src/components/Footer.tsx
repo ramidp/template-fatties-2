@@ -49,7 +49,7 @@ const Footer = () => {
                         {/* <a href=""><img src={twitterLogo} alt="" />  </a>                     */}
                     </div>
                     <div className="contenedor col-12 m-0">
-                        <div className="row">
+                        <div className="row m-0">
                             <div className="p-3 hide card col-3 m-0">
                                 <h1>Unite al Staff</h1>
                                 <p>Texto para unirte al laburo bla bla bla</p>
@@ -121,6 +121,7 @@ const Footer = () => {
 export default Footer;
 
 const FooterContainer = styled.div`
+    width: 100%;
     height: 100vh;
     background: ${props => props.theme.primary};
     padding: 200px 0;

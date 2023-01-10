@@ -13,7 +13,7 @@ const Promociones = () => {
     return ( 
         <>
          <span id="promociones"></span>        
-            <PromocionesContainer >
+            <Container >
                 <div className="us">
                     <div className="cards-box row">
                         <div className="cards col-2 p-0">
@@ -42,14 +42,14 @@ const Promociones = () => {
                         <p>A través de Fatties, nos encargamos de promover servicios financieros, destinados al crecimiento y desarrollo de las PyMEs. Acompañamos al negocio en todas las etapas del proceso, desde la necesidad de desarrollar nuevas herramientas, hasta el alta y presentación de los documentos necesarios. Contamos con un amplio departamento de BackOffice que instruye y guía a los interesados con la documentación respaldatoria y el posterior análisis de la misma, para luego ser procesada por las entidades financieras.</p>
                     </div>
                 </div>
-            </PromocionesContainer>
+            </Container>
         </>
      );
 }
  
 export default Promociones;
 
-const PromocionesContainer = styled.div`
+const Container = styled.div`
     width: 100%;
     height: 100vh;
     background: ${props => props.theme.tertiary};

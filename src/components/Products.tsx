@@ -23,8 +23,8 @@ const Products = () => {
 export default Products;
 
 const ProductsContainer = styled.div`
-    width: 100%;
     background: ${props => props.theme.secondary};
+    width: 100%;
     height: 100vh;
     span {
         position: relative;
