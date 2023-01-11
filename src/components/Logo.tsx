@@ -11,7 +11,7 @@ const Logo = () => {
 
     return ( 
         <LogoContainer className="col-3">
-            <a onClick={menuOff} href="/#">
+            <a onClick={menuOff} href="/">
                 <h1><b>Fatties</b> Mercado Pago</h1>
                 {/* <img src={logo} alt="Logo" /> */}
             </a>
