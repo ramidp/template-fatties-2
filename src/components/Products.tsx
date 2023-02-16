@@ -3,6 +3,7 @@ import Product1 from "./products/Product1";
 import Product2 from "./products/Product2";
 import Product3 from "./products/Product3";
 import React from 'react'
+import Marcas from "./Marcas";
 
 
 
@@ -12,7 +13,8 @@ const Products = () => {
         <span id="menu"></span>
         
             <ProductsContainer>
-                    <Product1/>
+                    <Marcas/>
+                    {/* <Product1/> */}
                     {/* <Product2/>
                     <Product3/> */}
             </ProductsContainer>
@@ -23,9 +25,8 @@ const Products = () => {
 export default Products;
 
 const ProductsContainer = styled.div`
-    background: ${props => props.theme.secondary};
     width: 100%;
-    height: 100vh;
+    height: auto;
     span {
         position: relative;
         top: 100%;

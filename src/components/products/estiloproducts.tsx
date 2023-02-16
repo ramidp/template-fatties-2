@@ -3,7 +3,6 @@ import styled from "styled-components";
 const ProductContainer = styled.div`
     padding: 0;
     margin: 0;
-    background-color: ${props => props.theme.tertiary};
     color: ${props => props.theme.fontFour};
     width: 100%;
     display: flex;
@@ -28,7 +27,6 @@ const ProductContainer = styled.div`
             align-items: center;
             border-radius: 50px;
             padding: 20px;
-            background-color: ${props => props.theme.tertiary};
             box-shadow: -2px 16px 54px -27px rgba(0,0,0,0.44);
             svg {
                 font-size: 80px;

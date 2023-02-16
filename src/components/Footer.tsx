@@ -1,16 +1,14 @@
 import styled from "styled-components";
 import React, { useState } from 'react'
-import SignModal from "./ModalAlert";
+import {ReactComponent as FacebookLogo} from '../images/icons/facebook.svg'
+import {ReactComponent as InstagramLogo} from '../images/icons/instagram.svg'
+
 
 
 const Footer = () => {
 
-    const facebookLogo = require('../images/icons/facebook.svg')
-    const instagramLogo = require('../images/icons/instagram.svg')
-    const twitterLogo = require('../images/icons/twitter.svg')
-
     const [name, setName] = useState<string>('')
-    const [email, setEmail] = useState<string>('')
+    // const [email, setEmail] = useState<string>('')
     const [telephone, setTelephone] = useState<string | number>('')
     const [message, setMessage] = useState<string>('')
     const [showAlert, setShowAlert] = useState<boolean>(false)
@@ -22,7 +20,7 @@ const Footer = () => {
     const handleSubmit = (e : React.FormEvent) => {
         e.preventDefault()
 
-        if (name !== "" && email !== "" && telephone !== "" && message !== "") {
+        if (name !== "" && telephone !== "" && message !== "") {
 
             console.log('Aca va donde lo manda (Si es una base hay que configurarlo ACA!!')
             setShowAlert(false)
@@ -32,7 +30,7 @@ const Footer = () => {
             setShowAlert(true)
         }
         setName('')
-        setEmail('')
+        // setEmail('')
         setTelephone('')
         setMessage('')
         setTimeout(setShowAlert,3000)
@@ -43,14 +41,13 @@ const Footer = () => {
         <span id="contacto"></span>
         <span id="getintouch"></span>
             <FooterContainer>
-                    <div className="social-media justify-content-center col-12 d-flex flex-row p-0 m-0">  
-                        <a href="https://www.facebook.com/ikkenaisushi" target="_blank" ><img src={facebookLogo} alt="" /> </a>
-                        <a href="https://www.instagram.com/ikkenai_sushi" target="_blank"><img src={instagramLogo} alt="" /> </a>
-                        {/* <a href=""><img src={twitterLogo} alt="" />  </a>                     */}
+                    <div className="social-media justify-content-center col-12 d-flex flex-row">  
+                        <a href="https://www.facebook.com/mp.vendedores/" target="_blank" ><FacebookLogo/> </a>
+                        <a href="https://www.instagram.com/fatties.ac" target="_blank"><InstagramLogo/> </a>
                     </div>
                     <div className="contenedor col-12 m-0">
                         <div className="row m-0">
-                            <div className="p-3 hide card col-3 m-0">
+                            {/* <div className="p-3 hide card col-3 m-0">
                                 <h1>Unite al Staff</h1>
                                 <p>Texto para unirte al laburo bla bla bla</p>
                                 <p>info@tuvieja.com</p>
@@ -64,9 +61,9 @@ const Footer = () => {
                                 <a href="">Datos mas</a>
                                 <p>Escribinos para sentirte parte de esta basura</p>
 
-                            </div>
-                            <div className="p-0 card card-input col-6 m-0">
-                                <h1>Get in touch</h1>
+                            </div> */}
+                            <div className="p-0 card card-input col-12 m-0">
+                                <h1>Cualquier duda nos puedes contactar vía redes sociales, formulario o Whatsapp</h1>
                                 <form onSubmit={handleSubmit}>
                                     <input 
                                     className="inputname" 
@@ -76,13 +73,13 @@ const Footer = () => {
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}/>  
 
-                                    <input 
+                                    {/* <input 
                                     className="inputcorreo" 
                                     type="text" 
                                     name="correo"   
                                     placeholder="E-mail"
                                     value={email}
-                                    onChange={(e) => setEmail(e.target.value)}/>  
+                                    onChange={(e) => setEmail(e.target.value)}/>   */}
 
                                     <input 
                                     className="inputtel" 
@@ -92,9 +89,8 @@ const Footer = () => {
                                     value={telephone}
                                     onChange={(e) => setTelephone(e.target.value)}/>
 
-                                    <input 
-                                    className="inputmsg"  
-                                    type="text" 
+                                    <textarea
+                                    className="textmsg"  
                                     name="mensaje" 
                                     placeholder="Escribir mensaje"
                                     value={message}
@@ -113,6 +109,37 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
+                    <div className="second-part">
+                        <div>
+                            <p><b>Icono Fachero</b></p>
+                            <p>Igualdad 1449, 3° A, Haedo, Buenos Aires</p>
+                        </div>
+                        <div>
+                            <p><b>Icono Fachero</b></p>
+                            <p>mercadopago@fatties.com.ar</p>
+                        </div>
+                        <div>
+                            <p><b>Icono Fachero</b></p>
+                            <p>	Oficinas: +54 (011) 5-263-8549 </p>
+                            <p>	Celular: +54 (011) 2395-6360 </p>
+                        </div>
+                        <div className="copyright">
+                            <p><b>Icono Fachero</b></p>
+                            <p>©  2023 Fatties Mercado Pago.</p> 
+                            <p>
+                            Creado por ramidp@gmail.com 
+                            <br />
+                            (Template Retail)
+                            </p>
+                        </div>
+                    </div>
+                    <div className="third-part">
+                        <p>Atención comercial: Lunes a viernes de 9 a 21. Sábados de 10 a 16 // Soporte contable: Lunes a viernes de 9 a 18.
+                            <br />
+                            Fatties no está afiliado a la AFIP ni a ninguna otra agencia gubernamental. Somos una empresa de servicios y consultoria y su información es totalmente confidencial. 
+                            <br />
+                            Todos derechos reservados. El uso del sitio web calim.com.ar está sujeto a los Términos de uso de Calim y la Política de privacidad.</p>
+                    </div>
             </FooterContainer>
         </>
      );
@@ -123,8 +150,7 @@ export default Footer;
 const FooterContainer = styled.div`
     width: 100%;
     height: 100vh;
-    background: ${props => props.theme.primary};
-    padding: 200px 0;
+    background: white;
 
     .hide{ 
         @media (max-width: 991px) {
@@ -132,72 +158,99 @@ const FooterContainer = styled.div`
         }
     } 
 
-    .row {
-        width: 100%;
-    }
+    .contenedor {
+        height: 45%;
 
-    .card {
-        gap: 20px;
-        border-radius: 0%;
-        border: none;        
-        text-align: center;
-        height: 50vh;
-        background: inherit;
-        color: ${props => props.theme.fontPrim};
-   
-        a {
-            text-decoration: none;
-            color: blue;
-        }
-        h1 {
-            display: inline;
-            margin: 0;
-            font-size: 30px;
-        }
-    }
-    .card-input {
-        justify-content: flex-start;
 
-    @media (max-width: 991px) {
-        width: 100%!important;
-    }
+        .row {
+            width: 100%;
+        }
     
-        input {
-            width: 70%;
-            padding: 10px 0;
-            padding-left: 10px;
-            margin: 15px 0;
+        .card {
+            gap: 20px;
+            width: 100%;
+            border-radius: 0%;
+            border: none;        
+            text-align: center;
+            background: inherit;
+            color: ${props => props.theme.fontPrim};
+       
+            a {
+                text-decoration: none;
+                color: blue;
+            }
+            h1 {
+                display: inline;
+                margin: 0;
+                font-size: 22px;
+            }
         }
-        form {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center ;
-            z-index: 20;
-            
-            button {
-                margin-top: 15px;
-                width: 20%;
-                background-color: ${props => props.theme.tertiary};
-                border: 1px solid ${props => props.theme.primary};
-                color: ${props => props.theme.fontSecond};
-                &:hover {
-                    background-color: ${props => props.theme.fontTert};
-                    color: ${props => props.theme.fontSecond};
+        .card-input {
+            justify-content: flex-start;
+    
+        @media (max-width: 991px) {
+            width: 100%!important;
+        }
+        
+            input, textarea {
+                font-size: 15px;
+                width: 50%;
+                padding: 5px 0;
+                padding-left: 10px;
+                margin: 10px 0;
+                resize: none;
+                &::placeholder {
+                    color: ${props => props.theme.secondary}
+                }
+            }
+            form {
+                margin: 10px auto;
+                height: 70%;
+                width: 80%;
+                padding: 10px 0;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center ;
+
+                .textmsg {
+                    height: 100px;
+                    &::placeholder {
+                        display: flex;
+                        
+                    }
+                }
+                
+                button {
+                    margin-top: 15px;
+                    width: 20%;
+                    padding: 10px;
+                    background-color: ${props => props.theme.secondary};
+                    border: 1px solid white;
+                    color: white;
+                    &:hover {
+                        filter: contrast(70%)
+                    }
                 }
             }
         }
     }
     .social-media {
-        height: 5vh;
+        height: 10%;
         gap: 15px;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         a {
-        img {
+        svg {
+            width: 30px;
             height: 30px;
-            filter: invert(100%);
+            fill: black; // Color de las redes, buscamos sus colores o usamos un color para todas?
             &:hover {
-                filter: invert(0%);
-            }
+                filter: invert(50%);
+                }
             }
         }    
     }
@@ -205,6 +258,50 @@ const FooterContainer = styled.div`
     .alert {
         margin-top: 10px;
         color: ${props => props.theme.fontPrim};
+    }
+
+    .second-part {
+        background-color: gray;
+        height: 25%;
+        display: grid;
+        grid-template-columns: repeat(4 , 25%);
+        justify-items: center; // En GRID se usa justify-items, no content.
+        align-items: center;
+
+        .copyright {
+                background-color: ${props => props.theme.primary}
+            }
+
+        div {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding-top: 70px;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: #686767;
+            width: 100%;
+            height: 100%;
+            border: 1px solid white;
+            &:hover {
+                filter: contrast(80%);
+            }
+            
+            p {
+                width: 80%;
+                text-align: center;
+            }
+        }
+    }
+    .third-part {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20%;
+        background-color: gray;
+        p {
+            color: white;
+        }
     }
 
 `

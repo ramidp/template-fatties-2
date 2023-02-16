@@ -10,11 +10,9 @@ const Menu = () => {
 
     return ( 
         <MenuContainer>
-                    <div className="col-12 p-0">
                         <Datos/>
                         <MenuMobile/>
                         {/* <MenuHide/> */}
-                    </div>
         </MenuContainer>
      );
 }
@@ -22,14 +20,21 @@ const Menu = () => {
 export default Menu;
 
 const MenuContainer = styled.div`
-    width: 8%;
-    min-width: 120px;
+    min-width: 150px;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
     position: fixed;
     padding: 0;
     margin: 0;
     z-index: 100;
     transition: 2s ease all;
-    box-shadow: -2px 16px 54px -27px rgba(0,0,0,0.44);
+    box-shadow: -2px 16px 54px -27px rgba(0, 0, 0, 0.753);
+
+        @media (max-width: 991px) {
+            flex-direction: row;
+            width: 100%;
+            height: 100px;
+        }
     `
     

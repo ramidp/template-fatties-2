@@ -5,7 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: white;
   padding: 0;
   margin: 0;
   display: block;
@@ -15,9 +14,14 @@ body .offcanvas-backdrop.show {
   opacity: 0.8;
 }
 
-body .offcanvas {
+body .offcanvas-top {
+  height: 100vh!important;
+}
+
+body .offcanvas, .header {
   background: gray;
 }
+
 body .offcanvas .offcanvas-body a { 
   text-decoration: none;
 }

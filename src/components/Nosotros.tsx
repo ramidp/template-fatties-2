@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React from 'react'
+import {ReactComponent as LinkedInLogo} from '../images/icons/linkedin.svg'
 
 
 const Promociones = () => {
@@ -12,34 +12,54 @@ const Promociones = () => {
 
     return ( 
         <>
-         <span id="promociones"></span>        
+         <span id="nosotros"></span>        
             <Container >
                 <div className="us">
+                    <div className="text-us col-6">
+                        <h1>Nuestro Equipo</h1>
+                        <p>A través de Fatties, nos encargamos de promover servicios financieros, destinados al crecimiento y desarrollo de las PyMEs. 
+                            <br />
+                            Acompañamos al negocio en todas las etapas del proceso, desde la necesidad de desarrollar nuevas herramientas, hasta el alta y presentación de los documentos necesarios. 
+                            <br />
+                            Contamos con un amplio departamento de BackOffice que instruye y guía a los interesados con la documentación respaldatoria y el posterior análisis de la misma, para luego ser procesada por las entidades financieras.</p>
+                    </div>
                     <div className="cards-box row">
                         <div className="cards col-2 p-0">
                             <img src={photo1} alt="" />
-                            <h3>Emmanuel Tresguerra</h3>
-                            <p>Redes Sociales</p>
+                            <h3>Emmanuel 
+                                <br />
+                                Tresguerra</h3>
+                            <a href="https://www.linkedin.com/in/jesus-emmanuel-tresguerras-47b756103/" target="_blank">
+                                <LinkedInLogo/>
+                            </a>
                         </div>
                         <div className="cards col-2 p-0">
                             <img src={photo2} alt="" />
-                            <h3>Luciano De Palo</h3>
-                            <p>Redes Sociales</p>
+                            <h3>Luciano 
+                                <br />
+                                De Palo</h3>
+                            <a href="https://www.linkedin.com/in/luciano-de-palo-836415194/" target="_blank">
+                                <LinkedInLogo/>
+                            </a>
                         </div>
                         <div className="cards col-2 p-0">
                             <img src={photo3} alt="" />
-                            <h3>Nicolas Stiehr</h3>
-                            <p>Redes Sociales</p>
+                            <h3>Nicolas
+                                <br />
+                                 Stiehr</h3>
+                            <a href="">
+                                <LinkedInLogo/>
+                            </a>
                         </div>
                         <div className="cards col-2 p-0">
                             <img src={photo4} alt="" />
-                            <h3>German Castro</h3>
-                            <p>Redes Sociales</p>
+                            <h3>German
+                                <br />
+                                 Castro</h3>
+                            <a href="https://www.linkedin.com/in/nicolas-ivan-stiehr-086aa0225/" target="_blank">
+                                <LinkedInLogo/>
+                            </a>
                         </div>
-                    </div>
-                    <div className="text-us col-6">
-                        <h1>Nuestro Equipo</h1>
-                        <p>A través de Fatties, nos encargamos de promover servicios financieros, destinados al crecimiento y desarrollo de las PyMEs. Acompañamos al negocio en todas las etapas del proceso, desde la necesidad de desarrollar nuevas herramientas, hasta el alta y presentación de los documentos necesarios. Contamos con un amplio departamento de BackOffice que instruye y guía a los interesados con la documentación respaldatoria y el posterior análisis de la misma, para luego ser procesada por las entidades financieras.</p>
                     </div>
                 </div>
             </Container>
@@ -51,12 +71,11 @@ export default Promociones;
 
 const Container = styled.div`
     width: 100%;
-    height: 100vh;
-    background: ${props => props.theme.tertiary};
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 50px;
+    background-color: ${props => props.theme.secondary};
 
     .us {
         display: flex;
@@ -65,25 +84,28 @@ const Container = styled.div`
         align-items: center;
 
         .text-us {
+            width: 100%;
             display: flex;
             flex-direction: column;
             text-align: center;
             justify-content: center;
             align-items: center;
             h1 {
-                color: ${props => props.theme.fontFour};
+                font-size: 28px;
+                color: white;
             }
             p {
-                font-size: 20px;
-                color: ${props => props.theme.fontTert};
+                width: 80%;
+                font-size: 15px;
+                color: white;
             }
         }
     }
 
 
     .cards-box {
-        padding-top: 20px;
         width: 100%;
+        height: 50%;
         display: flex;
         justify-content: center;
         
@@ -92,6 +114,10 @@ const Container = styled.div`
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            gap: 10px;
+            p {
+                color: white;
+            }
            
         @media (max-width: 991px) {
             width: 80vh;
@@ -104,13 +130,22 @@ const Container = styled.div`
         }
             h3 {
                 font-size: 1.5em;
-                color: ${props => props.theme.fontFour};
+                color: white;
+                text-align: center;
+            }
+
+            svg {
+                height: 30px;
+                fill: white;
+                &:hover {
+                    filter: contrast(70%)
+                }
             }
 
             img {
-                height: 40%;
+                width: 50%;
                 border-radius: 100%;
-                border: 3px solid ${props => props.theme.primary};
+                border: 3px solid white;
                 box-shadow: -2px 16px 54px -27px rgba(0,0,0,0.44);
             }
         }

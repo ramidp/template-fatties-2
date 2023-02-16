@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import {HideContext} from './context/HideContext';
 import WebFont from 'webfontloader'
+import Wallpaper from './components/Wallpaper';
 
 WebFont.load ({
   google: {

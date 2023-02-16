@@ -5,15 +5,14 @@ import { ContextHide} from "../context/HideContext";
 
 const Logo = () => {
 
-    // const logo = require('../images/ikkenaireduc.png') // EJEMPLO
+    const logo = require('../images/logo-fatties.png')
 
     const {menuOff} = useContext<any>(ContextHide)
 
     return ( 
         <LogoContainer className="col-3">
             <a onClick={menuOff} href="/">
-                <h1><b>Fatties</b> Mercado Pago</h1>
-                {/* <img src={logo} alt="Logo" /> */}
+                <img src={logo} alt="" />
             </a>
         </LogoContainer>
      );
@@ -23,19 +22,26 @@ export default Logo;
 
 const LogoContainer = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* img {
-        max-width: 150px;
-        padding: 6px 0;
+    width: 100%;
+
+    @media (max-width: 991px) {
+        width: 50%;
+        align-items: flex-start;
     }
-     */
+
     a {
     text-decoration: none;
-        h1 {
-            color: ${props => props.theme.fontFour};
-            margin: 0;
-            font-size: 1.5em;
+        img {
+            max-width: 150px;
+            &:hover {
+                filter: contrast(90%)
+            }
+            @media (max-width: 991px) {
+                max-width: 100px;
+            } 
         }
     }
 `

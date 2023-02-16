@@ -1,24 +1,22 @@
-import React from 'react';
-import styled from 'styled-components'
+import styled from "styled-components";
 
-
-const wallpaper = require('../images/fondo1.jpg')
-
-
-const Fondo = () => {
+const Wallpaper = () => {
     return ( 
-        <>
-        <Img src={wallpaper} alt="" />
-        </>
+        <WallpaperScreen>
+        </WallpaperScreen>
      );
 }
  
-export default Fondo;
+export default Wallpaper;
 
-
-const Img = styled.img`
-    position: absolute;
+const WallpaperScreen = styled.div `
+    
+    background-color: white;
+    position: fixed;
+    height: 100%;
+    width: 100%;
     z-index: -1;
-    width: 92%;
-    height: 100vh;
+    bottom: 0;
+    right: 0;
+    
 `

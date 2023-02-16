@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
 import './App.css';
@@ -9,41 +8,44 @@ import Main from './components/Main';
 import Products from './components/Products';
 import Nosotros from './components/Nosotros';
 import Footer2 from './components/Footer2';
-
+import WhatsAppBtn from './components/WhatsApp';
+import Marcas from './components/Marcas';
+import Wallpaper from './components/Wallpaper';
+import LoadingPage from './components/LoadingPage';
 
 const App = () => {
 
-  const [theme, setTheme] = useState({
+  const theme = ({
 
-      primary: 'rgb(54,99,254)',
-      secondary: 'black',
-      tertiary: 'rgb(245,250,253)',
-      fourth: 'gray',
-      fontPrim: 'rgb(245,250,253)',
-      fontSecond: 'black',
-      fontTert: 'gray',
-      fontFour: 'rgb(54,99,254)',
+      primary: 'rgb(84,193,186)',
+      secondary: 'rgb(239,73,49)', // Main Color de la página
+      tertiary: 'rgb(245,186,63)',
+      lightGray: '#e2e2e2',
       mainFont: "Red Hat Display", // Fuente 1
   })
 
   return (
       <AppContainer>
+      <BrowserRouter>
+      <LoadingPage/>
+      <Wallpaper/>
+      <WhatsAppBtn/>
       <ThemeProvider theme={theme}>
         <div className="menu">
           <Menu/>
         </div>
-          <div className="center">
-            <BrowserRouter>
-                    <Routes>
-                      <Route path="/" element={<Main/>}/>
-                      <Route path="/Products" element={<Products/>}/>
-                      <Route path="/Nosotros" element={<Nosotros/>}/>
-                      <Route path="/Contacto" element={<Footer2/>}/>
-                    </Routes>
-                    <Footer/>
-            </BrowserRouter>
-          </div>
+        <div className="center">
+                  <Routes>
+                    <Route path="/" element={<Main/>}/>
+                    <Route path="/Products" element={<Products/>}/>
+                    <Route path="/Marcas" element={<Marcas/>}/>
+                    <Route path="/Nosotros" element={<Nosotros/>}/>
+                    <Route path="/Contacto" element={<Footer2/>}/>
+                  </Routes>
+                  <Footer/>
+        </div>
       </ThemeProvider>
+      </BrowserRouter>
     </AppContainer>
   );
 }
@@ -56,13 +58,20 @@ const AppContainer = styled.div`
     height: 100vh;
     width: 100%;
 
+
     .menu {
-      width: 8%;
-      min-width: 130px;
+      min-width: 150px;
+      @media (max-width: 991px) {
+        min-width: 0;
+      }
     }
 
     .center {
-      width: 92%;
+      width: 100%;
+      background-color: inherit;
+      @media (max-width: 991px) {
+        margin-top: 100px;
+      }
     }
 
      * {
