@@ -28,12 +28,11 @@ const MenuContainer = styled.div`
     padding: 0;
     margin: 0;
     z-index: 100;
-    transition: 2s ease all;
     box-shadow: -2px 16px 54px -27px rgba(0, 0, 0, 0.753);
 
         @media (max-width: 991px) {
             flex-direction: row;
-            width: 100%;
+            width: 90%;
             height: 100px;
         }
     `

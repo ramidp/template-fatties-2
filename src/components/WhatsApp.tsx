@@ -25,8 +25,8 @@ const Container = styled.div`
     width: 100px;
     height: 100px;
     position: fixed;
-    bottom: -1%;
-    right: 0%;
+    bottom: -2.5%;
+    right: 3.5%;
     z-index: 100;
 
     img {

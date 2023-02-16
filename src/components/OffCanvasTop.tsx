@@ -45,7 +45,7 @@ export {OffCanvasExample, OffCanvasTop}
 const OffCanvasContainer = styled.div`
 
   .btn {
-    background-color: ${props => props.theme.primary};
+    background-color: ${props => props.theme.secondary};
     border: none;
     a {
       color: ${props => props.theme.fontPrim}

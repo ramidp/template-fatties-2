@@ -2,6 +2,9 @@ import styled from "styled-components";
 import React, { useState } from 'react'
 import {ReactComponent as FacebookLogo} from '../images/icons/facebook.svg'
 import {ReactComponent as InstagramLogo} from '../images/icons/instagram.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLocationDot, faEnvelope, faPhone,faRegistered} from '@fortawesome/free-solid-svg-icons';
+
 
 
 
@@ -24,7 +27,7 @@ const Footer = () => {
 
             console.log('Aca va donde lo manda (Si es una base hay que configurarlo ACA!!')
             setShowAlert(false)
-            alert('Se mando el Form / Agregarle vinculo de base o lo que sea')
+            alert('Su mensaje ha sido enviado satisfactoriamente. De todas formas le recomendamos comunicarse al WhatsApp para mayor inmediatez')
             
         } else {
             setShowAlert(true)
@@ -100,7 +103,7 @@ const Footer = () => {
                                     <button type="submit">Enviar</button>
 
                                     {showAlert ?
-                                    <div className="alert">Debes completar todos los campos para enviar el formulario</div>
+                                    <div style={{color: 'red'}}className="alert"><b>Debes completar todos los campos para enviar el formulario correctamente</b></div>
                                     :
                                     <></>
                                     }
@@ -111,20 +114,20 @@ const Footer = () => {
                     </div>
                     <div className="second-part">
                         <div>
-                            <p><b>Icono Fachero</b></p>
+                            <FontAwesomeIcon icon={faLocationDot} />
                             <p>Igualdad 1449, 3° A, Haedo, Buenos Aires</p>
                         </div>
                         <div>
-                            <p><b>Icono Fachero</b></p>
+                        <FontAwesomeIcon icon={faEnvelope} />
                             <p>mercadopago@fatties.com.ar</p>
                         </div>
                         <div>
-                            <p><b>Icono Fachero</b></p>
+                        <FontAwesomeIcon icon={faPhone} />
                             <p>	Oficinas: +54 (011) 5-263-8549 </p>
                             <p>	Celular: +54 (011) 2395-6360 </p>
                         </div>
                         <div className="copyright">
-                            <p><b>Icono Fachero</b></p>
+                        <FontAwesomeIcon icon={faRegistered} />
                             <p>©  2023 Fatties Mercado Pago.</p> 
                             <p>
                             Creado por ramidp@gmail.com 
@@ -134,11 +137,11 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="third-part">
-                        <p>Atención comercial: Lunes a viernes de 9 a 21. Sábados de 10 a 16 // Soporte contable: Lunes a viernes de 9 a 18.
+                        <p>Atención comercial: Lunes a viernes de 9 a 18.
                             <br />
-                            Fatties no está afiliado a la AFIP ni a ninguna otra agencia gubernamental. Somos una empresa de servicios y consultoria y su información es totalmente confidencial. 
+                            Somos una empresa de servicios y consultoria y su información es totalmente confidencial. 
                             <br />
-                            Todos derechos reservados. El uso del sitio web calim.com.ar está sujeto a los Términos de uso de Calim y la Política de privacidad.</p>
+                            Todos los derechos reservados. El uso del sitio web fatties.com.ar está sujeto a los Términos de uso de Fatties y la Política de privacidad.</p>
                     </div>
             </FooterContainer>
         </>
@@ -205,7 +208,7 @@ const FooterContainer = styled.div`
             }
             form {
                 margin: 10px auto;
-                height: 70%;
+                height: 100%;
                 width: 80%;
                 padding: 10px 0;
                 border-radius: 20px;
@@ -215,7 +218,7 @@ const FooterContainer = styled.div`
                 align-items: center ;
 
                 .textmsg {
-                    height: 100px;
+                    height: 70px;
                     &::placeholder {
                         display: flex;
                         
@@ -224,6 +227,7 @@ const FooterContainer = styled.div`
                 
                 button {
                     margin-top: 15px;
+                    border-radius: 10px;
                     width: 20%;
                     padding: 10px;
                     background-color: ${props => props.theme.secondary};
@@ -245,8 +249,8 @@ const FooterContainer = styled.div`
         align-items: center;
         a {
         svg {
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
             fill: black; // Color de las redes, buscamos sus colores o usamos un color para todas?
             &:hover {
                 filter: invert(50%);
@@ -271,12 +275,17 @@ const FooterContainer = styled.div`
         .copyright {
                 background-color: ${props => props.theme.primary}
             }
+        
+        svg {
+            height: 40px;
+        }
 
         div {
+            gap: 20px;
             color: white;
             display: flex;
             flex-direction: column;
-            padding-top: 70px;
+            padding-top: 30px;
             justify-content: flex-start;
             align-items: center;
             background-color: #686767;
@@ -300,6 +309,7 @@ const FooterContainer = styled.div`
         height: 20%;
         background-color: gray;
         p {
+            text-align: center;
             color: white;
         }
     }

@@ -23,6 +23,7 @@ const DatosContainer = styled.div`
             width: 10%;
         }
         p {
+            text-align: center;
             font-size: 15px;
             color: white;
             padding: 15px 10px;

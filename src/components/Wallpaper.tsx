@@ -11,7 +11,7 @@ export default Wallpaper;
 
 const WallpaperScreen = styled.div `
     
-    background-color: white;
+    background-color: #c9c8c8;
     position: fixed;
     height: 100%;
     width: 100%;

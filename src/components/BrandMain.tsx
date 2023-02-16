@@ -17,11 +17,11 @@ const BrandMain = () => {
                     <div className="brand-logo">
                         <div className="d-flex flex-column justify-content-center">
                             <h1>Soluciones Digitales</h1>
-                            <p className="m-0">"Cumplimos las exigencias en seguridad, claridad y confianza en la gestión de cuentas. 
+                            <p className="m-0">"Cumplimos las exigencias en seguridad, claridad y confianza en la gestión de cuentas."
                             <br/>
                             Somos Consultores Certificados por Mercado Pago.
                             <br/>
-                            Contribuimos en garantizar un servicio de postventa completo."
+                            Contribuimos en garantizar un servicio de postventa completo.
                             </p>
                         </div>
                         <img className="logo" src={logo} alt="" />
@@ -70,7 +70,6 @@ export default BrandMain;
 const BrandMainContainer = styled.div`
     height: 100vh;
     width: 100%;
-    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,9 +80,8 @@ const BrandMainContainer = styled.div`
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        color: white;
+        padding-top: 50px;
         z-index: 10;
             p {
                 font-size: 1.5em;
@@ -97,8 +95,16 @@ const BrandMainContainer = styled.div`
             padding: 0 100px;
             display: flex;
 
+            h1 {
+                font-size: 35px;
+            }
+            p {
+                font-size: 22px;
+            }
+
             h1, p {
-                text-shadow: black 1px 1px 10px;          
+                color: white;
+                text-shadow: black 1px 1px 7px;          
              }
         }
         .more {
@@ -140,7 +146,7 @@ const BrandMainContainer = styled.div`
             justify-content: flex-start;
             align-items: center;
             color: black;
-            box-shadow: -2px 16px 54px -27px rgba(0, 0, 0, 0.753);
+            box-shadow: 0px 15px 70px -35px rgba(0, 0, 0, 0.753);
             &:hover {
                 cursor: pointer;
                 background-color: rgba(239,73,49, 0.2);
@@ -167,7 +173,7 @@ const BrandMainContainer = styled.div`
             }
             p {
                 text-align: center;
-                font-size: 1em;
+                font-size: 14px;
                 margin: 0;
             }
             h1 {

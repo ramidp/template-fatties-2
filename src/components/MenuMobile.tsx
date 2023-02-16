@@ -27,7 +27,8 @@ const MenuMobileContainer = styled.div`
 
         @media (max-width: 991px) {
             flex-direction: row;
-            width: 90%;
+            justify-content: space-around;
+            width: 100%;
         }
 
 `

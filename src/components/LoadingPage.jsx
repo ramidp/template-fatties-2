@@ -10,7 +10,7 @@ const LoadingPage = () => {
     useEffect(() => {
         setTimeout(() => {
             setHideLoading('hidding')
-        }, 2500);
+        }, 3000);
 
     })
 
@@ -32,16 +32,16 @@ const LoadingPageContainer = styled.div`
     align-items: center;
     position: fixed;
     flex-direction: column;
-    justify-content: center;
+    padding-top: 200px;
     height: 100%;
     width: 100%;
     z-index: 1000;
     bottom: 0;
     right: 0;
     animation-name: disolve;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
-    animation-delay: 1s;
+    animation-delay: 2s;
 
     h1 {
       color: white;
@@ -55,14 +55,14 @@ const LoadingPageContainer = styled.div`
         .logo1 {
           height: 300px;
           animation-name: lightup;
-          animation-duration: 2s;
+          animation-duration: 1.5s;
           animation-iteration-count: infinite;
 
 
             @keyframes lightup {
-            0% {filter: opacity(100%)}
-            50% {filter: opacity(30%)}
-            100% {filter: opacity(100%)}
+            0% {filter: opacity(30%)}
+            50% {filter: opacity(100%)}
+            100% {filter: opacity(30%)}
         }
 
 

@@ -1,18 +1,19 @@
 import styled from 'styled-components';
 import { OffCanvasTop } from './OffCanvasTop';
 
-
 const MenuNav = () => {
 
   return (
     <MenuNavContainer>
             <OffCanvasTop/>
-            <a href="#top"><h3>Servicios</h3></a>
-            <a href="#menu"><h3>Marcas</h3></a>
-            <a href="#nosotros"><h3>Nosotros</h3></a>
-            <a href="blog" target="_blank"><h3>Blog</h3></a>
-            <a href="faq" target="_blank"><h3>FAQ</h3></a>
-            <a href="#contacto"><h3>Contacto</h3></a>
+            <div className="hide">
+              <a href="/#top"><h3>Servicios</h3></a>
+              <a href="/#menu"><h3>Marcas</h3></a>
+              <a href="/#nosotros"><h3>Nosotros</h3></a>
+              <a href="blog"><h3 className="arrow" >Blog</h3></a>
+              <a href="faq"><h3 className="arrow" >FAQ</h3></a>
+              <a href="#contacto"><h3>Contacto</h3></a>
+            </div>
     </MenuNavContainer>
   );
 }
@@ -25,7 +26,6 @@ const MenuNavContainer = styled.div`
     height: 100%;
     flex-direction: column;
     margin-top: 70px;
-    gap: 25px;
 
     @media (max-width: 991px) {
       margin: auto 0;
@@ -33,16 +33,33 @@ const MenuNavContainer = styled.div`
       align-items: center;
     }
 
+    .arrow {
+      display: flex;
+      justify-content: space-between;
+
+      &:hover {
+       &::after{
+
+          color: red;
+          content: ' >>'
+        }
+
+      }
+    }
+
     a {
       text-decoration: none;
+
+
       h3 {
+        padding: 10px 20px;
         margin: 0;
-        font-size: 20px;
+        font-size: 16px;
         color: ${props => props.theme.secondary};
-        padding: 0 10px;
         cursor: pointer;
         &:hover {
-          filter: contrast(20%)
+          border-radius: 10px;
+          background-color: rgba(239,73,49, 0.2);
         }
       }
     }

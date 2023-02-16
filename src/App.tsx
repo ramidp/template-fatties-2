@@ -37,7 +37,7 @@ const App = () => {
         <div className="center">
                   <Routes>
                     <Route path="/" element={<Main/>}/>
-                    <Route path="/Products" element={<Products/>}/>
+                    {/* <Route path="/Products" element={<Products/>}/> */}
                     <Route path="/Marcas" element={<Marcas/>}/>
                     <Route path="/Nosotros" element={<Nosotros/>}/>
                     <Route path="/Contacto" element={<Footer2/>}/>
@@ -53,10 +53,10 @@ const App = () => {
 export default App;
 
 const AppContainer = styled.div`
+    margin: 0 auto;
     display: flex;
-    flex-direction: row;
-    height: 100vh;
-    width: 100%;
+    height: auto;
+    width: 90%;
 
 
     .menu {
@@ -67,6 +67,7 @@ const AppContainer = styled.div`
     }
 
     .center {
+      box-shadow: 29px 10px 56px -9px rgba(0,0,0,0.27);
       width: 100%;
       background-color: inherit;
       @media (max-width: 991px) {

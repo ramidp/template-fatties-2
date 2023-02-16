@@ -26,7 +26,7 @@ const Marcas = () => {
             </div>
             <div className="carousel-section">
             <Carousel fade>
-              <Carousel.Item interval={1000000000}>
+              <Carousel.Item interval={1000}>
                 <div className="marcas-div m-0">
                   <a className="logo-a" target="_blank" href="https://www.instagram.com/copain_boulangerie">
                     <img src={coPainLogo} alt="" />
@@ -96,7 +96,7 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
+
 
     .main {
         background: white;
@@ -131,7 +131,7 @@ const Container = styled.div`
       }
   
       .marcas-div {
-        width: 40%;
+        width: 60%;
         margin: 10px;
         height: 100%;
         display: flex;
@@ -144,7 +144,7 @@ const Container = styled.div`
             display: block;
             height: 80px;
             border-radius: 15px;
-            filter: opacity(70%);
+            filter: opacity(85%);
             &:hover {
                   cursor: pointer;
                   filter: contrast(70%)
