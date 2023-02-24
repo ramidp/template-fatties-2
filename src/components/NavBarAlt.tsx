@@ -1,24 +1,43 @@
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { OffCanvasTop } from './OffCanvasTop';
 
-const MenuNav = () => {
+const NavBarAlt = () => {
+
+  const location1 = useLocation()
+  const isBlog = location1.pathname === "/blog"
+
+  const location2 = useLocation()
+  const isFaq = location1.pathname === "/faq"
+
 
   return (
     <MenuNavContainer>
             <OffCanvasTop/>
             <div className="hide">
-              <a href="/#top"><h3>Servicios</h3></a>
-              <a href="/#menu"><h3>Marcas</h3></a>
-              <a href="/#nosotros"><h3>Nosotros</h3></a>
-              <a href="blog"><h3 className="arrow" >Blog</h3></a>
-              <a href="faq"><h3 className="arrow" >FAQ</h3></a>
+              
+              {
+                !isBlog ?
+                <a href="/blog"><h3 className="arrow" >Blog</h3></a>
+                :
+                <a href="#blog"><h3 >Blog</h3></a>
+              }
+              {
+
+                !isFaq ?
+                <a href="/faq"><h3 className="arrow" >FAQ</h3></a>
+                :
+                <a href="#faq"><h3 >FAQ</h3></a>
+              }
+
               <a href="#contacto"><h3>Contacto</h3></a>
+
             </div>
     </MenuNavContainer>
   );
 }
 
-export default MenuNav;
+export default NavBarAlt;
 
 const MenuNavContainer = styled.div`
     color: white;
@@ -50,11 +69,10 @@ const MenuNavContainer = styled.div`
     a {
       text-decoration: none;
 
-
       h3 {
         padding: 10px 20px;
         margin: 0;
-        font-size: 16px;
+        font-size: 18px;
         color: ${props => props.theme.secondary};
         cursor: pointer;
         &:hover {
@@ -65,6 +83,9 @@ const MenuNavContainer = styled.div`
     }
     
     .hide {
+      display: flex;
+      flex-direction: column;
+
         @media (max-width: 991px) {
       display: none;
     }

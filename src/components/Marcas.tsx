@@ -11,7 +11,9 @@ const Marcas = () => {
   const coPainLogo = require('../images/Brands-Logos/copainlogo.png')
 
     return ( 
-        <Container>
+      <>
+          <span id="marcas"></span>
+      <Container>
           <div className="main">
             <div className="another-section">
               <h3>
@@ -20,13 +22,12 @@ const Marcas = () => {
                 Contamos con un gran portfolio de reconocidas firmas.
                 <br />
                 Nos especializamos en brindar un servicio profesional 
-                <br />
                 y dedicado con seguimiento día a día.
                 </h3>
             </div>
             <div className="carousel-section">
             <Carousel fade>
-              <Carousel.Item interval={1000}>
+              <Carousel.Item interval={2000}>
                 <div className="marcas-div m-0">
                   <a className="logo-a" target="_blank" href="https://www.instagram.com/copain_boulangerie">
                     <img src={coPainLogo} alt="" />
@@ -44,7 +45,7 @@ const Marcas = () => {
                   <p>12</p>
                 </div>
               </Carousel.Item>
-              <Carousel.Item interval={1000}>
+              <Carousel.Item interval={2000}>
                 <div className="marcas-div m-0">
                     <p>14</p>
                     <p>15</p>
@@ -62,7 +63,7 @@ const Marcas = () => {
                     <p>24</p>
                   </div>
               </Carousel.Item>
-              <Carousel.Item interval={1000}>
+              <Carousel.Item interval={2000}>
                 <div className="marcas-div m-0 ">
                     <p>26</p>
                     <p>27</p>
@@ -84,6 +85,7 @@ const Marcas = () => {
             </div>
           </div>
         </Container>
+      </>
      );
 }
  
@@ -113,7 +115,6 @@ const Container = styled.div`
     }
 
     .carousel-item {
-      height: 50%;
       width: 100%;
       display: flex;
       justify-content: center;
@@ -122,6 +123,7 @@ const Container = styled.div`
     
     .carousel-section {
       width: 100%;
+      height: 75%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -131,9 +133,8 @@ const Container = styled.div`
       }
   
       .marcas-div {
-        width: 60%;
+        width: 50%;
         margin: 10px;
-        height: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -142,7 +143,7 @@ const Container = styled.div`
 
           .logo-a, img {
             display: block;
-            height: 80px;
+            height: 100px;
             border-radius: 15px;
             filter: opacity(85%);
             &:hover {
@@ -158,8 +159,8 @@ const Container = styled.div`
               justify-content: center;
               align-items: center;
               font-size: 30px;
-              width: 80px;
-              height: 80px;
+              width: 100px;
+              height: 100px;
               text-align: center;
               background-color: white;
               color: ${ props => props.theme.secondary};
@@ -172,9 +173,10 @@ const Container = styled.div`
           }
     }
     .another-section {
-      height: 50%;
+      height: 25%;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      justify-content: flex-end;
       align-items: center;
     }
 

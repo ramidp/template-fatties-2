@@ -5,7 +5,7 @@ import React from 'react'
 const Datos = () => {
     return ( 
         <DatosContainer>
-            <p>(011) 4654-7119</p>
+            <p>+54 (011) 5-263-8549</p>
         </DatosContainer>
      );
 }

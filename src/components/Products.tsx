@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import Product1 from "./products/Product1";
-import Product2 from "./products/Product2";
-import Product3 from "./products/Product3";
 import React from 'react'
 import Marcas from "./Marcas";
+import Nosotros from "./Nosotros";
 
 
 
@@ -14,9 +12,7 @@ const Products = () => {
         
             <ProductsContainer>
                     <Marcas/>
-                    {/* <Product1/> */}
-                    {/* <Product2/>
-                    <Product3/> */}
+                    <Nosotros/>
             </ProductsContainer>
         </>
      );

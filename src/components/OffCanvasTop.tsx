@@ -12,7 +12,7 @@ const OffCanvasExample = ({ name, ...props } : any) => {
 
   return (
     <OffCanvasContainer>
-      <Button onClick={handleShow}  className="me-2">
+      <Button onClick={handleShow}>
         |||
       </Button>
       <Offcanvas show={show} onHide={handleClose} {...props}>

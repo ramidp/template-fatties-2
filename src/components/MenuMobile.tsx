@@ -2,13 +2,25 @@ import styled from 'styled-components'
 import Logo from './Logo';
 import React from 'react'
 import NavBar from './NavBar';
+import { useLocation } from 'react-router-dom';
+import NavBarAlt from './NavBarAlt';
 
 
 const MenuMobile = () => {
+
+    const location = useLocation()
+    const isMain = location.pathname === "/"
+
+
     return ( 
         <MenuMobileContainer>
             <Logo/>
-            <NavBar/>
+            {
+                isMain ?
+                <NavBar/>
+                :
+                <NavBarAlt/>
+            }
         </MenuMobileContainer>
      );
 }

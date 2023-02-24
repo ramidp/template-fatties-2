@@ -1,17 +1,18 @@
-import { useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
 import './App.css';
 import Footer from './components/Footer';
 import Menu from './components/Menu';
-import Main from './components/Main';
-import Products from './components/Products';
-import Nosotros from './components/Nosotros';
-import Footer2 from './components/Footer2';
 import WhatsAppBtn from './components/WhatsApp';
-import Marcas from './components/Marcas';
 import Wallpaper from './components/Wallpaper';
 import LoadingPage from './components/LoadingPage';
+import Blog from './components/products/Blog';
+import Faq from './components/products/Faq';
+import Blog1 from './components/products/Blog1';
+import Blog2 from './components/products/Blog2';
+import Main from './components/Main';
+import Faq1 from './components/products/Faq1';
+import Faq2 from './components/products/Faq2';
 
 const App = () => {
 
@@ -19,8 +20,9 @@ const App = () => {
 
       primary: 'rgb(84,193,186)',
       secondary: 'rgb(239,73,49)', // Main Color de la página
+      secondaryOpact: 'rgb(248, 168, 156)',
       tertiary: 'rgb(245,186,63)',
-      lightGray: '#e2e2e2',
+      gray: '#e2e2e2',
       mainFont: "Red Hat Display", // Fuente 1
   })
 
@@ -31,16 +33,21 @@ const App = () => {
       <Wallpaper/>
       <WhatsAppBtn/>
       <ThemeProvider theme={theme}>
+
         <div className="menu">
           <Menu/>
         </div>
+
         <div className="center">
                   <Routes>
                     <Route path="/" element={<Main/>}/>
+                    <Route path="/blog" element={<Blog/>}/>
+                    <Route path="/servicio_personalizado" element={<Blog1/>}/>
+                    <Route path="/inflacion_100" element={<Blog2/>}/>
+                    <Route path="/faq" element={<Faq/>}/>
+                    <Route path="/cuenta_mercado_pago" element={<Faq1/>}/>
+                    <Route path="/pagos" element={<Faq2/>}/>
                     {/* <Route path="/Products" element={<Products/>}/> */}
-                    <Route path="/Marcas" element={<Marcas/>}/>
-                    <Route path="/Nosotros" element={<Nosotros/>}/>
-                    <Route path="/Contacto" element={<Footer2/>}/>
                   </Routes>
                   <Footer/>
         </div>
@@ -60,7 +67,7 @@ const AppContainer = styled.div`
 
 
     .menu {
-      min-width: 150px;
+      min-width: 170px;
       @media (max-width: 991px) {
         min-width: 0;
       }
@@ -79,5 +86,9 @@ const AppContainer = styled.div`
       font-family: ${props => props.theme.mainFont}; // Aplica a TODA la App la fuente.
      }
      
-
+.hide {
+  @media (max-width: 991px) {
+    display: none;
+  }
+}
 `

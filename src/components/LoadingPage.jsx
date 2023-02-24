@@ -10,7 +10,7 @@ const LoadingPage = () => {
     useEffect(() => {
         setTimeout(() => {
             setHideLoading('hidding')
-        }, 3000);
+        }, 2250);
 
     })
 
@@ -40,8 +40,7 @@ const LoadingPageContainer = styled.div`
     right: 0;
     animation-name: disolve;
     animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-delay: 2s;
+    animation-delay: 1.5s;
 
     h1 {
       color: white;
@@ -49,20 +48,20 @@ const LoadingPageContainer = styled.div`
     }
 
     &.hidding {
-      display: none;;
+      display: none;
     }
 
         .logo1 {
+          filter: opacity(0%);
           height: 300px;
           animation-name: lightup;
-          animation-duration: 1.5s;
-          animation-iteration-count: infinite;
+          animation-duration: 2s;
 
 
             @keyframes lightup {
-            0% {filter: opacity(30%)}
+            0% {filter: opacity(0%)}
             50% {filter: opacity(100%)}
-            100% {filter: opacity(30%)}
+            100% {filter: opacity(0%)}
         }
 
 

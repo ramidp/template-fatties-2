@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react'
-import ProductContainer from './estiloproducts'
+import ProductContainer from './estiloblog'
 
 
 const Product3 = () => {

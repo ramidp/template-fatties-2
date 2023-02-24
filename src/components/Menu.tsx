@@ -1,26 +1,24 @@
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Datos from "./Datos";
-import MenuHide from "./MenuHide";
 import MenuMobile from "./MenuMobile";
-import React from 'react'
 
 
 const Menu = () => {
 
 
     return ( 
-        <MenuContainer>
-                        <Datos/>
-                        <MenuMobile/>
-                        {/* <MenuHide/> */}
-        </MenuContainer>
+            <MenuContainer>
+                <Datos/>
+                <MenuMobile/>
+            </MenuContainer>
      );
 }
  
 export default Menu;
 
 const MenuContainer = styled.div`
-    min-width: 150px;
+    min-width: 170px;
     height: 100vh;
     display: flex;
     flex-direction: column;

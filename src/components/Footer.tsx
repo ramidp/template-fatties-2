@@ -42,31 +42,13 @@ const Footer = () => {
     return ( 
         <>
         <span id="contacto"></span>
-        <span id="getintouch"></span>
             <FooterContainer>
                     <div className="social-media justify-content-center col-12 d-flex flex-row">  
                         <a href="https://www.facebook.com/mp.vendedores/" target="_blank" ><FacebookLogo/> </a>
                         <a href="https://www.instagram.com/fatties.ac" target="_blank"><InstagramLogo/> </a>
                     </div>
                     <div className="contenedor col-12 m-0">
-                        <div className="row m-0">
-                            {/* <div className="p-3 hide card col-3 m-0">
-                                <h1>Unite al Staff</h1>
-                                <p>Texto para unirte al laburo bla bla bla</p>
-                                <p>info@tuvieja.com</p>
-                                <a href="">E-mail</a>
-                                <p>Escribinos para sentirte parte de esta basura</p>
-                            </div>
-                            <div className="p-3 hide card col-3 m-0">
-                                <h1>Card 2</h1>
-                                <p>Texto para otra funcion o idea</p>
-                                <p>Aguante tu emprendimiento</p>
-                                <a href="">Datos mas</a>
-                                <p>Escribinos para sentirte parte de esta basura</p>
-
-                            </div> */}
-                            <div className="p-0 card card-input col-12 m-0">
-                                <h1>Cualquier duda nos puedes contactar vía redes sociales, formulario o Whatsapp</h1>
+                                <h1>Ante cualquier consulta o duda contáctanos</h1>
                                 <form onSubmit={handleSubmit}>
                                     <input 
                                     className="inputname" 
@@ -109,26 +91,27 @@ const Footer = () => {
                                     }
 
                                 </form> 
-                            </div>
-                        </div>
                     </div>
                     <div className="second-part">
-                        <div>
+                        <div className="tel-email-location d-flex flex-column">
+                            <div>
                             <FontAwesomeIcon icon={faLocationDot} />
                             <p>Igualdad 1449, 3° A, Haedo, Buenos Aires</p>
-                        </div>
-                        <div>
-                        <FontAwesomeIcon icon={faEnvelope} />
-                            <p>mercadopago@fatties.com.ar</p>
-                        </div>
-                        <div>
-                        <FontAwesomeIcon icon={faPhone} />
-                            <p>	Oficinas: +54 (011) 5-263-8549 </p>
-                            <p>	Celular: +54 (011) 2395-6360 </p>
+                            </div>
+                            <div>
+                            <FontAwesomeIcon icon={faEnvelope} />
+                                <p>mercadopago@fatties.com.ar</p>
+                            </div>
+                            <div>
+                            <FontAwesomeIcon icon={faPhone} />
+                                <p>	Oficinas: +54 (011) 5-263-8549 </p>
+                                <p>	Celular: +54 (011) 2395-6360 </p>
+                            </div>
                         </div>
                         <div className="copyright">
-                        <FontAwesomeIcon icon={faRegistered} />
+                            {/* <FontAwesomeIcon icon={faRegistered} /> */}
                             <p>©  2023 Fatties Mercado Pago.</p> 
+
                             <p>
                             Creado por ramidp@gmail.com 
                             <br />
@@ -139,7 +122,7 @@ const Footer = () => {
                     <div className="third-part">
                         <p>Atención comercial: Lunes a viernes de 9 a 18.
                             <br />
-                            Somos una empresa de servicios y consultoria y su información es totalmente confidencial. 
+                            Somos una empresa de servicios y consultoria, su información es totalmente confidencial. 
                             <br />
                             Todos los derechos reservados. El uso del sitio web fatties.com.ar está sujeto a los Términos de uso de Fatties y la Política de privacidad.</p>
                     </div>
@@ -152,8 +135,9 @@ export default Footer;
 
 const FooterContainer = styled.div`
     width: 100%;
-    height: 100vh;
-    background: white;
+    height: auto;
+    background: ${props => props.theme.gray};
+    padding-top: 20px;
 
     .hide{ 
         @media (max-width: 991px) {
@@ -162,70 +146,32 @@ const FooterContainer = styled.div`
     } 
 
     .contenedor {
-        height: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-
-        .row {
-            width: 100%;
-        }
-    
-        .card {
-            gap: 20px;
-            width: 100%;
-            border-radius: 0%;
-            border: none;        
-            text-align: center;
-            background: inherit;
-            color: ${props => props.theme.fontPrim};
-       
-            a {
-                text-decoration: none;
-                color: blue;
-            }
-            h1 {
-                display: inline;
-                margin: 0;
-                font-size: 22px;
-            }
-        }
-        .card-input {
-            justify-content: flex-start;
-    
-        @media (max-width: 991px) {
-            width: 100%!important;
-        }
-        
-            input, textarea {
-                font-size: 15px;
-                width: 50%;
-                padding: 5px 0;
-                padding-left: 10px;
-                margin: 10px 0;
-                resize: none;
-                &::placeholder {
-                    color: ${props => props.theme.secondary}
-                }
-            }
             form {
-                margin: 10px auto;
-                height: 100%;
-                width: 80%;
-                padding: 10px 0;
-                border-radius: 20px;
                 display: flex;
-                flex-direction: column;
                 justify-content: center;
-                align-items: center ;
-
-                .textmsg {
-                    height: 70px;
-                    &::placeholder {
-                        display: flex;
-                        
-                    }
-                }
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                padding:  0 0 30px 0;
                 
-                button {
+                    input, textarea {
+                        font-size: 15px;
+                        width: 50%;
+                        padding: 5px 0;
+                        padding-left: 10px;
+                        margin: 10px 0;
+                        resize: none;
+                        &::placeholder {
+                            color: ${props => props.theme.secondary}
+                        }
+                    }
+
+                    button {
                     margin-top: 15px;
                     border-radius: 10px;
                     width: 20%;
@@ -236,8 +182,29 @@ const FooterContainer = styled.div`
                     &:hover {
                         filter: contrast(70%)
                     }
-                }
             }
+
+            }
+
+            a {
+                text-decoration: none;
+            }
+            h1 {
+                display: inline;
+                color: black;
+                font-size: 22px;
+    
+        @media (max-width: 991px) {
+            width: 100%!important;
+        }
+                .textmsg {
+                    height: 70px;
+                    &::placeholder {
+                        display: flex;
+                        
+                    }
+                }
+                
         }
     }
     .social-media {
@@ -249,8 +216,7 @@ const FooterContainer = styled.div`
         align-items: center;
         a {
         svg {
-            width: 40px;
-            height: 40px;
+            width: 30px;
             fill: black; // Color de las redes, buscamos sus colores o usamos un color para todas?
             &:hover {
                 filter: invert(50%);
@@ -265,40 +231,57 @@ const FooterContainer = styled.div`
     }
 
     .second-part {
-        background-color: gray;
-        height: 25%;
+        background-color: ${props => props.theme.gray};
+        height: 20vh;
         display: grid;
-        grid-template-columns: repeat(4 , 25%);
+        grid-template-columns: repeat(2, 50%);
         justify-items: center; // En GRID se usa justify-items, no content.
         align-items: center;
 
         .copyright {
-                background-color: ${props => props.theme.primary}
+                background-color: ${props => props.theme.primary};
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                
+                &:hover {
+                    filter: brightness(110%);
+                }
+                div {
+                    height: auto;
+                    background-color: inherit;
+                }
+                p {
+                    padding: 10px;
+                }
             }
         
+        .tel-email-location {
+            &:hover {
+                filter: brightness(110%);
+            }
+        } 
+
         svg {
-            height: 40px;
+            height: 20px;
         }
 
         div {
-            gap: 20px;
+            gap: 0 20px;
+            padding: 10px;
             color: white;
             display: flex;
-            flex-direction: column;
-            padding-top: 30px;
+            flex-direction: row;
             justify-content: flex-start;
             align-items: center;
             background-color: #686767;
             width: 100%;
             height: 100%;
-            border: 1px solid white;
-            &:hover {
-                filter: contrast(80%);
-            }
             
             p {
+                margin: 0;
                 width: 80%;
-                text-align: center;
+                text-align: left;
             }
         }
     }
@@ -306,11 +289,17 @@ const FooterContainer = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 20%;
-        background-color: gray;
+        padding: 30px 0;
+        height: auto;
+        background-color: ${props => props.theme.gray};
         p {
+            margin: 0;
             text-align: center;
-            color: white;
+            color: black;
+            width: 70%;
+            @media (max-width: 1100px) {
+                font-size: 12px;
+            }
         }
     }
 

@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import styled from 'styled-components';
 import BrandMain from './BrandMain';
 import Products from './Products';
-import Promociones from './Nosotros';
+import Nosotros from './Nosotros';
+import Marcas from './Marcas';
 
 
 
@@ -10,10 +11,10 @@ const Main = () => {
 
   return (
     <AppContainer>
-        <BrandMain/>
         <div className="hide">
-          <Products/>
-          <Promociones/>
+          <BrandMain/>
+          <Marcas/>
+          <Nosotros/>
         </div>
     </AppContainer>
 );
