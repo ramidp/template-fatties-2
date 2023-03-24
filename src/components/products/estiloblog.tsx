@@ -7,62 +7,89 @@ const ProductContainer = styled.div`
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 30px 0;
     justify-content: flex-start;
     align-items: center;
-    min-height: 100vh;
+    min-height: 90vh;
     height: auto;
     background-color: white;
+    padding-top: 20px; 
+    
+    @media (max-width: 1100px) {
+        padding: 20px 0;
+    }
 
         .title {
+            font-size: 50px;
             text-align: left;
-            width: 70vw;
+            width: 60vw;
             color: darkgray;
+            @media (max-width: 1100px) {
+                    font-size: 30px;
+                    }
+
         }
 
     p {
-        width: 70vw;
+        width: 90%;
         text-align: left;
     }
 
     .tag-searcher {
         text-align: left;
-        width: 70vw;
+        width: 60vw;
     }
 
 
     .products {
-        width: 70vw;
+        width: 100%;
         gap: 10px;
         display: flex;
+        flex-direction: row;
         justify-content: center;
-        align-items: center;
         flex-wrap: wrap;
-        padding-top: 20px;
+        padding: 20px 5px;
+        
+        @media (max-width: 1100px) {
+                width: 95%;
+                padding-top: 5px;
+            }
+
         
         .product-types {
             background-color: white;
-            height: 10vh;
-            min-width: 25vw;
+            height: 15vh;
             width: auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-radius: 15px;
-            padding: 10px 20px;
+            padding: 10px;
             box-shadow: 0px 0px 50px -20px rgba(0,0,0,0.44);
             cursor: pointer;
+            gap: 10px;
+
+            @media (max-width: 1100px) {
+                justify-content: center;
+                flex-direction: column;
+            }
+            @media (max-width: 520px)    {
+                justify-content: center;               
+                }
+
+
+
             &:hover {
                 background-color: ${props => props.theme.secondaryOpact};
             }
 
+
             svg {
                 width: 10%;
                 font-size: 150%;
+                @media (max-width: 1100px) {
+                    display: none;
+                }
             }
             .btn {
-                background-color: ${props => props.theme.primary};
-                color: ${props => props.theme.fontPrim};
                 box-shadow: -2px 16px 54px -27px rgba(0,0,0,0.44);
             }
 
@@ -71,26 +98,28 @@ const ProductContainer = styled.div`
             }
             h1 {
                 margin: 0;
-                width: 100%;
+                width: auto;
                 font-size: 18px;
                 font-weight: bold;
-            @media (max-width: 512px)    {
+
+            @media (max-width: 520px)    {
                 font-size: 16px;
                 }
             }
-            .blog-text {
-                font-size: 16px;
-                font-weight: bold!important;
-            }
             p {
-                width: 100%;
+                width: 15vw;
                 margin: 0;
                 text-align: center;
                 font-size: 14px;
                 font-weight: 300;
         
-                @media (max-width: 512px)    {
-                font-size: 10px;
+                @media (max-width: 1100px)    {
+                font-size: 12px;
+                width: auto;
+                }
+
+                @media (max-width: 520px)    {
+                display: none;               
                 }
             }
         }
@@ -99,7 +128,7 @@ const ProductContainer = styled.div`
     .title-btn {
         display: flex;
         justify-content: space-between;
-        width: 70vw;
+        width: 60vw;
         color: darkgray;
     }  
     
@@ -113,25 +142,39 @@ const ProductContainer = styled.div`
     
     .product-types1 {
         margin-top: 20px;
-        width: 70vw;
+        padding: 30px;
+        width: 90%;
         height: auto;
-        min-height: 70vh;
+        min-height: 65vh;
         background-color: #ececec;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        padding: 30px 50px;
-        border-radius: 15px;
         gap: 15px;
         box-shadow: -2px 16px 54px -17px rgba(0,0,0,0.44);
 
+        @media (max-width: 1100px) {
+            padding: 20px;
+            width: 90vw;
+            height: auto;
+        }
+
+        .tags {
+            flex-direction: row;
+            width: 100%;
+        }
 
         h1 {
-                font-size: 35px;
+                font-size: auto;
                 font-weight: bold;
                 width: 100%;
+                @media (max-width: 1100px) {
+                    font-size: 20px;
+                    
+                }
             }
+            
         h3 {
             margin: 0;
             width: 100%;
@@ -143,7 +186,45 @@ const ProductContainer = styled.div`
                 width: 100%;
                 text-align: left;
                 font-size: 16px;
+                @media (max-width: 1100px) {
+                    font-size: 14px;
+                    
+                }
+
+
             }
+    }
+
+    .container-modal {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        
+        
+        .article {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+    
+            h1 {
+                padding: 0!important;
+                font-size: 18px!important;
+                padding-bottom: 10px;
+            }
+            h2 {
+                font-size: 14px!important;
+                margin: 0;
+                width: fit-content;
+                cursor: pointer;
+                &:hover {
+                    color: ${props => props.theme.secondary};
+                }
+            }
+        }
     }
 
 `

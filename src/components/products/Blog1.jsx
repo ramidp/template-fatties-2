@@ -15,7 +15,7 @@ const Blog1 = () => {
         <span id="blog1"></span>
         <ProductContainer>
             <div className="title-btn">
-                <h1 className="mb-3" style={{fontSize: '50px'}}>Blog</h1>
+                <h1 className="title">Blog</h1>
                 <FontAwesomeIcon onClick={() => navegacion('/blog')} icon={faArrowLeft} />
             </div>
             <p>Blog / Servicio_personalizado</p>

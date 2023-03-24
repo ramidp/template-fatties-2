@@ -18,7 +18,7 @@ const LoadingPage = () => {
     return ( 
         <LoadingPageContainer className={hideLoading}>
               {/* <div className="lds-facebook"><div></div><div></div><div></div></div> */}
-              <img className="logo1" src={logo} alt="" />
+                <img className="logo1" src={logo} alt="" />
         </LoadingPageContainer>
      );
 }
@@ -32,15 +32,15 @@ const LoadingPageContainer = styled.div`
     align-items: center;
     position: fixed;
     flex-direction: column;
+    margin: 0;
+    width: 100%;
     padding-top: 200px;
     height: 100%;
-    width: 100%;
     z-index: 1000;
-    bottom: 0;
-    right: 0;
     animation-name: disolve;
     animation-duration: 1s;
     animation-delay: 1.5s;
+    left: 0;
 
     h1 {
       color: white;
@@ -56,7 +56,6 @@ const LoadingPageContainer = styled.div`
           height: 300px;
           animation-name: lightup;
           animation-duration: 2s;
-
 
             @keyframes lightup {
             0% {filter: opacity(0%)}

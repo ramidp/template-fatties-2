@@ -13,17 +13,17 @@ const OffCanvasExample = ({ name, ...props } : any) => {
   return (
     <OffCanvasContainer>
       <Button onClick={handleShow}>
-        |||
+        Menu
       </Button>
       <Offcanvas show={show} onHide={handleClose} {...props}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-              <Link onClick={handleClose} to='./Products'>  <h3>Menu</h3></Link>
-              <Link onClick={handleClose} to='./Promociones'><h3>Promociones</h3></Link>
-              <a onClick={handleClose} className="hide" href="https://pedidos.masdelivery.com/ikkenai" target="_blank"><h3>Pedido Online</h3></a>
-              <Link onClick={handleClose} to='./Contacto'><h3>Contacto</h3></Link>
+              <Link onClick={handleClose} to='/'>  <h3>Home</h3></Link>
+              <Link onClick={handleClose} to='/blog'><h3>Blog</h3></Link>
+              <Link onClick={handleClose} to='/faq'><h3>FAQ</h3></Link>
+              <Link onClick={handleClose} to='/contacto'><h3>Contacto</h3></Link>
         </Offcanvas.Body>
       </Offcanvas>
     </OffCanvasContainer>
@@ -44,16 +44,15 @@ export {OffCanvasExample, OffCanvasTop}
 
 const OffCanvasContainer = styled.div`
 
+  
   .btn {
     background-color: ${props => props.theme.secondary};
     border: none;
-    a {
-      color: ${props => props.theme.fontPrim}
     }
-  }
+
 
   display: none;
-  @media (max-width: 991px) {
+  @media (max-width: 1100px) {
   display: inline-block; 
   }
 

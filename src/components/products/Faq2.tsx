@@ -15,7 +15,7 @@ const Faq2 = () => {
         <span id="blog1"></span>
         <ProductContainer>
             <div className="title-btn">
-                <h1 className="mb-3" style={{fontSize: '50px'}}>FAQ</h1>
+                <h1 className="mb-3 title">FAQ</h1>
                 <FontAwesomeIcon onClick={() => navegacion('/faq')} icon={faArrowLeft} />
             </div>
             <p>FAQ / Pagos</p>

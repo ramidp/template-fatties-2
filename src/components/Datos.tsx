@@ -5,7 +5,9 @@ import React from 'react'
 const Datos = () => {
     return ( 
         <DatosContainer>
-            <p>+54 (011) 5-263-8549</p>
+            <p>+54 (011) 
+                <br />
+                11-5-263-8549</p>
         </DatosContainer>
      );
 }
@@ -13,14 +15,13 @@ const Datos = () => {
 export default Datos;
 
 const DatosContainer = styled.div`
-        width: 100%;
+        width: 20%;
         background-color: ${props => props.theme.secondary};
         display: flex;
         justify-content: center;
 
-        @media (max-width: 991px) {
-            justify-content: center;
-            width: 10%;
+        @media (max-width: 1100px) {
+            display: none;
         }
         p {
             text-align: center;

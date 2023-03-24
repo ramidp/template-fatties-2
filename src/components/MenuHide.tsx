@@ -44,7 +44,7 @@ const MenuHideContainer = styled.div`
                 }
         }
     }
-@media (max-width: 991px) {
+@media (max-width: 1100px) {
     display: none;
 }
 }

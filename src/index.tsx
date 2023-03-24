@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './index.scss';
 import App from './App';
 import {HideContext} from './context/HideContext';
 import WebFont from 'webfontloader'
-import Wallpaper from './components/Wallpaper';
 
 WebFont.load ({
   google: {

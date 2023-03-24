@@ -9,31 +9,32 @@ const Blog2 = () => {
 
     const navegacion = useNavigate()
 
+
     return (
         <>
-        <span id="blog1"></span>
+        <span id="blog2"></span>
         <ProductContainer>
             <div className="title-btn">
-                <h1 className="mb-3" style={{fontSize: '50px'}}>Blog</h1>
-                <FontAwesomeIcon onClick={() => navegacion(`/blog`)} icon={faArrowLeft} />
+                <h1 className="title">Blog</h1>
+                <FontAwesomeIcon onClick={() => navegacion('/blog')} icon={faArrowLeft} />
             </div>
-            <p>Blog / Inflación 100% anual</p>
+            <p>Blog / inflacion_100</p>
+
 
                     <div className="product-types1 col-2">
                     {/* <FontAwesomeIcon icon={faAddressBook} /> */}
 
-                            <h1>Inflación 100% anual</h1>
+                            <h1>Inflacion al 100%</h1>
                                 
                                 <h3>Tags:</h3>
                                 <h3>
-                                    Inflación, Ejemplo#2</h3>
+                                    Servicio, Personalización, Post-venta</h3>
 
-                        <p>Testeando un 2do Articulo de Blog. Nos vamos a la D
-                            <br />
-
+                        <p>
+                        Texto Ejemplo. No tengo idea que escrbir, pero tengo que mandarle por lo menos 20 palabras o más
                         </p>
 
-                </div>
+                    </div>
         </ProductContainer>
         </>
     );

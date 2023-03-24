@@ -3,6 +3,7 @@ import ProductContainer from './estiloblog'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAddressBook} from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import Blog2 from './Blog2';
 
 
 const Blog = () => {
@@ -13,8 +14,8 @@ const Blog = () => {
         <>
         <span id="blog"></span>
         <ProductContainer>
-            <h1 className="mb-3 col-12 title" style={{fontSize: '50px'}}>Blog</h1>
-            <p className="mb-4 col-12 blog-text">Todas las novedades, guias y manuales que sean de utilidad serán vistas aqui.</p>
+            <h1 className="mb-2 title">Blog</h1>
+            <p className="mb-4 blog-text">Todas las novedades, guias y manuales que sean de utilidad serán vistas aqui.</p>
 
                 <div className="products">
 
@@ -29,21 +30,13 @@ const Blog = () => {
 
                     </div>
 
-                    <div onClick={() => navegacion('/inflacion_100')} className="product-types col-2">
-                    <FontAwesomeIcon icon={faAddressBook} />
-                    <h1>100% inflación 
-                        <br />
-                        anual</h1>
-                        <p>Nos vamos
-                            <br />
-                            A la D
-                        </p>
-
+                    <div style={{background: 'lightBlue'}} className="product-types col-2">
+                        <Blog2/>
                     </div>
 
                     <div style={{background: 'lightGreen'}} className="product-types col-2">
                     <FontAwesomeIcon icon={faAddressBook} />
-                        <div style={{width: '90%'}}>
+                        <div style={{width: '100%'}}>
                             <h1>Blog 3 Titulo</h1>
                                 <p>Texto Ejemplo.
                                     <br />

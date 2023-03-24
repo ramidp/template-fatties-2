@@ -1,0 +1,56 @@
+[ 
+    {
+    "id" : "1",
+    "icon" : "fa-wallet",
+    "link" : "cuenta_mercado_pago",
+    "title" : "Cuenta Mercado Pago",
+    "subTitle" : "Subtitulo 1",
+    "innerText" : "Ingresos, transferencias, extracciones, inversiones y tarjetas (Texto Mas largo)",
+    "outterText" : "Ingresos, transferencias, extracciones, inversiones y tarjetas"
+    },
+    {
+    "id" : "2",
+    "icon" : "fa-money-bill",
+    "link" : "pagos",
+    "title" : "Pagos",
+    "subTitle" : "Subtitulo 2",
+    "innerText" : "Compras, pagos y suscripciones que realizaste (Texto Mas largo)",
+    "outterText" : "Compras, pagos y suscripciones que realizaste"
+    },
+    {
+    "id" : "3",
+    "icon" : "fa-tag",
+    "link" : "ventas",
+    "title" : "Ventas",
+    "subTitle" : "Subtitulo 3",
+    "innerText" : "Tus cobros, tasas y herramientas para vender con QR, Point, link de pago, etc (Texto Mas largo)",
+    "outterText" : "Tus cobros, tasas y herramientas para vender con QR, Point, link de pago, etc"
+    },
+    {
+    "id" : "4",
+    "icon" : "fa-handshake",
+    "link" : "creditos",
+    "title" : "Créditos",
+    "subTitle" : "Subtitulo 4",
+    "innerText" : "Cómo solicitar, usar y pagar cuotas de Mercado Crédito (Texto Mas largo)",
+    "outterText" : "Cómo solicitar, usar y pagar cuotas de Mercado Crédito"
+    },
+    {
+    "id" : "5",
+    "icon" : "fa-lock",
+    "link" : "seguridad",
+    "title" : "Seguridad",
+    "subTitle" : "Subtitulo 5",
+    "innerText" : "Robo o pérdida de dispositivo y robo de cuentas (Texto Mas largo)",
+    "outterText" : "Robo o pérdida de dispositivo y robo de cuentas"
+    },
+    {
+    "id" : "6",
+    "icon" : "fa-address-book",
+    "link" : "otros_productos",
+    "title" : "Otros Productos",
+    "subTitle" : "Subtitulo 6",
+    "innerText" : "Seguros, garantias extendidas y Mercado Puntos (Texto Mas largo)",
+    "outterText" : "Seguros, garantias extendidas y Mercado Puntos"
+    }
+]

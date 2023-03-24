@@ -25,22 +25,22 @@ const LogoContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 30%;
 
-    @media (max-width: 991px) {
-        width: 50%;
+    @media (max-width: 1100px) {
+        width: auto;
         align-items: flex-start;
     }
 
     a {
     text-decoration: none;
         img {
-            max-width: 150px;
+            max-height: 10vh;
             &:hover {
-                filter: contrast(90%)
+                filter: contrast(130%);
             }
-            @media (max-width: 991px) {
-                max-width: 100px;
+            @media (max-width: 1100px) {
+                max-width: 70px;
             } 
         }
     }

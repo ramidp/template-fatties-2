@@ -14,15 +14,11 @@ const Marcas = () => {
       <>
           <span id="marcas"></span>
       <Container>
-          <div className="main">
             <div className="another-section">
               <h3>
-                Estás son algunas de las marcas con las cuales trabajamos actualmente.
+                Ellos confian en nosotros, nosotros confiamos en ellos. 
                 <br />
-                Contamos con un gran portfolio de reconocidas firmas.
-                <br />
-                Nos especializamos en brindar un servicio profesional 
-                y dedicado con seguimiento día a día.
+                Más de 30 empresas trabajando con nosotros.
                 </h3>
             </div>
             <div className="carousel-section">
@@ -43,47 +39,36 @@ const Marcas = () => {
                   <p>10</p>
                   <p>11</p>
                   <p>12</p>
+                  <p>13</p>
+                  <p>14</p>
+                  <p>15</p>
                 </div>
               </Carousel.Item>
               <Carousel.Item interval={2000}>
-                <div className="marcas-div m-0">
-                    <p>14</p>
-                    <p>15</p>
-                    <p>16</p>
-                    <p>17</p>
-                    <p>18</p>
-                    <p>19</p>
-                    <p>20</p>
-                    <a className="logo-a" target="_blank" href="https://www.instagram.com/copain_boulangerie">
-                      <img src={coPainLogo} alt="" />
-                     </a>
-                    <p>21</p>
-                    <p>22</p>
-                    <p>23</p>
-                    <p>24</p>
-                  </div>
-              </Carousel.Item>
-              <Carousel.Item interval={2000}>
                 <div className="marcas-div m-0 ">
-                    <p>26</p>
-                    <p>27</p>
-                    <p>28</p>
-                    <p>29</p>
-                    <p>30</p>
-                    <p>31</p>
-                    <p>32</p>
-                    <p>33</p>
-                    <a className="logo-a" target="_blank" href="https://www.instagram.com/copain_boulangerie">
-                      <img src={coPainLogo} alt="" />
-                     </a>
-                    <p>34</p>
-                    <p>35</p>
-                    <p>36</p>
+                  <p>16</p>
+                  <p>17</p>
+                  <p>18</p>
+                  <p>19</p>
+                  <p>20</p>
+                  <p>21</p>
+                  <p>22</p>
+                  <p>23</p>
+                  <p>24</p>
+                  <p>25</p>
+                  <p>26</p>
+                  <p>27</p>
+                  <a className="logo-a" target="_blank" href="https://www.instagram.com/copain_boulangerie">
+                    <img src={coPainLogo} alt="" />
+                    </a>
+                  <p>29</p>
+                  <p>30</p>
                 </div>
               </Carousel.Item>
             </Carousel>
             </div>
-          </div>
+            <div className="wallpaper">
+            </div>
         </Container>
       </>
      );
@@ -93,25 +78,20 @@ export default Marcas;
 
 const Container = styled.div`
     width: 100%;
-    height: 50vh;
+    min-height: 50vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    gap: 50px;
+    background-color: ${props => props.theme.gray};
 
-
-    .main {
-        background: white;
-        height: 100vh;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
+    @media (max-width: 1100px) {
+      min-height: 40vh;
+      height: auto;
     }
-
-    h3 {
-      font-size: 22px;
-      text-align: center;
-      color: black;
+    @media (max-height: 720px) {
+      padding-top: 20px;
     }
 
     .carousel-item {
@@ -123,7 +103,7 @@ const Container = styled.div`
     
     .carousel-section {
       width: 100%;
-      height: 75%;
+      height: auto;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -133,19 +113,31 @@ const Container = styled.div`
       }
   
       .marcas-div {
-        width: 50%;
+        width: 70%;
         margin: 10px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        gap: 30px;
 
+        @media (max-width: 1100px) {
+          width: 90%;
+        }
+ 
           .logo-a, img {
             display: block;
-            height: 100px;
-            border-radius: 15px;
+            height: 80px;
             filter: opacity(85%);
+
+            @media (max-width: 1100px) {
+              height: 70px;
+            }
+
+            @media (max-width: 764px) {
+              height: 40px;
+            }
+
             &:hover {
                   cursor: pointer;
                   filter: contrast(70%)
@@ -159,25 +151,62 @@ const Container = styled.div`
               justify-content: center;
               align-items: center;
               font-size: 30px;
-              width: 100px;
-              height: 100px;
+              width: 80px;
+              height: 80px;
               text-align: center;
               background-color: white;
               color: ${ props => props.theme.secondary};
-              border-radius: 15px;
               margin: 0;
+
+              @media (max-width: 1100px) {
+              width: 70px;
+              height: 70px;
+              font-size: 20px;
+            }
+              @media (max-width: 764px) {
+              width: 40px;
+              height: 40px;
+              font-size: 16px;
+            }
+            
               cursor: pointer;
               &:hover {
                 filter: contrast(70%)
               }
           }
     }
+
     .another-section {
-      height: 25%;
+      height: auto;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: center;
       align-items: center;
+      /* background-color: ${props => props.theme.secondary}; */
+      z-index: 1;
+
+        h3 {
+        margin: 0;
+        width: 90%;
+        font-size: 30px;
+        text-align: center;
+        padding: 0 100px ;
+        color: ${props => props.theme.secondary};
+
+        @media (max-width: 1475px) {
+            padding: 10px;
+          }
+
+        @media (max-width: 1100px) {
+            padding: 0;
+            font-size: 24px;
+          }
+
+          @media (max-width: 764px) {
+            padding: 0;
+            font-size: 18px;
+            }
+      }
     }
 
 
