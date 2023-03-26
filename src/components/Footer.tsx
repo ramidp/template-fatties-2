@@ -146,16 +146,12 @@ export default Footer;
 
 const FooterContainer = styled.div`
     width: 100%;
-    height: 50vh;
+    height: 43vh;
     background: ${props => props.theme.gray};
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     z-index: 30;
-
-    @media (max-width: 1100px) {
-        height: 40vh;
-    }
 
     .contenedor {
         z-index: 2;

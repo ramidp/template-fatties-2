@@ -14,7 +14,8 @@ const Nosotros = () => {
     return (
 
         <>
-            <Container id="nosotros" >
+        <span id="nosotros"></span>
+            <Container>
                     <div className="text-us">
                         <h1>Nuestro Equipo</h1>
                         <p>A través de Fatties, nos encargamos de promover servicios financieros, destinados al crecimiento y desarrollo de las PyMEs.
@@ -90,7 +91,7 @@ export default Nosotros;
 
 const Container = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 93vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -110,11 +111,10 @@ const Container = styled.div`
             height: 40vh;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
             z-index: 2;
             background-color: ${props => props.theme.secondary};
-            padding: 0 300px 60px 300px;
 
 
             @media (max-width: 1100px) {

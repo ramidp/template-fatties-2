@@ -9,17 +9,17 @@ const ProductContainer = styled.div`
     text-align: center;
     justify-content: flex-start;
     align-items: center;
-    min-height: 90vh;
+    min-height: 93vh;
     height: auto;
     background-color: white;
-    padding-top: 20px; 
+    padding: 20px 200px; 
     
     @media (max-width: 1100px) {
         padding: 20px 0;
     }
 
         .title {
-            font-size: 50px;
+            font-size: 30px;
             text-align: left;
             width: 90%;
             color: darkgray;
@@ -169,7 +169,7 @@ const ProductContainer = styled.div`
 
 
         h1 {
-            font-size: auto;
+            font-size: 28px;
             font-weight: bold;
             width: 100%;
             @media (max-width: 1100px) {

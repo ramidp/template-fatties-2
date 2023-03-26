@@ -8,8 +8,6 @@ import LoadingPage from './components/LoadingPage';
 import Blog from './components/products/Blog-map';
 import Faq from './components/products/Faq';
 import Main from './components/Main';
-import Faq1 from './components/products/Faq1';
-import Faq2 from './components/products/Faq2';
 import Footer2 from './components/Footer2';
 import WebFont from 'webfontloader'
 import { useState } from 'react';
@@ -33,7 +31,7 @@ const App = () => {
       secondary: 'rgb(239,73,49)', // Main Color de la página
       secondaryOpact: 'rgb(248, 168, 156)',
       tertiary: 'rgb(245,186,63)',
-      gray: '#f1f1f1',
+      gray: '#f0f0f0',
       mainFont: "Arial", // Fuente 1
   })
 
@@ -139,7 +137,7 @@ const AppContainer = styled.div`
     .menu {
       font-family: ${props => props.theme.mainFont};
       width: 100%;
-      height: 10vh;
+      height: 7vh;
     }
 
     .center {

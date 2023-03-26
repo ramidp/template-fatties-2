@@ -1,7 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWallet, faMoneyBill, faTag, faHandshake, faLock, faAddressBook} from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import faq from '../../data/faq.json'
 import {useState} from 'react'
@@ -72,7 +70,11 @@ const Faq = () => {
                     <div key={faq.id} onClick={() => {navegacion('/faq/' + `${faq.link}`)}} className="card">
                     <i className={"fa-solid " + faq.icon}></i>
                         <div>
-                            <h3>{faq.title}</h3>
+                            <h3>
+                                <b>
+                                {faq.title}
+                                </b>
+                                </h3>
                             <p>{faq.outterText}</p>
                         </div>
             </div>
@@ -105,7 +107,7 @@ const Container = styled.div`
         padding-top: 20px;
 
         input {
-            width: 70%;
+            width: 50%;
             height: 40px;
             padding-left: 10px;
             @media (max-width: 1100px) {
@@ -135,7 +137,7 @@ const Container = styled.div`
     }
 
     h1 {
-        font-size: 30px;
+        font-size: 24px;
         margin-bottom: 8px;
         text-align: center;
         @media (max-width: 1100px) {
@@ -149,12 +151,8 @@ const Container = styled.div`
         width: 60vw;
         text-align: left;
         color: darkgray;
-        font-size: 50px;
+        font-size: 30px;
         margin-bottom: 8px;
-
-        @media (max-width: 1100px) {
-            font-size: 30px;
-            }
 
     }
     
@@ -171,7 +169,7 @@ const Container = styled.div`
             border-radius: 0px;
             padding: 15px 30px;
             gap: 40px;
-            width: 70%;
+            width: 60%;
             display: flex;
             flex-direction: row;
             justify-content: flex-start;

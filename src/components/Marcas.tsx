@@ -17,7 +17,6 @@ const Marcas = () => {
             <div className="another-section">
               <h3>
                 Ellos confian en nosotros, nosotros confiamos en ellos. 
-                <br />
                 Más de 30 empresas trabajando con nosotros.
                 </h3>
             </div>
@@ -42,15 +41,15 @@ const Marcas = () => {
                   <p>13</p>
                   <p>14</p>
                   <p>15</p>
-                </div>
-              </Carousel.Item>
-              <Carousel.Item interval={2000}>
-                <div className="marcas-div m-0 ">
                   <p>16</p>
                   <p>17</p>
                   <p>18</p>
                   <p>19</p>
                   <p>20</p>
+                </div>
+              </Carousel.Item>
+              <Carousel.Item interval={2000}>
+                <div className="marcas-div m-0 ">
                   <p>21</p>
                   <p>22</p>
                   <p>23</p>
@@ -63,6 +62,16 @@ const Marcas = () => {
                     </a>
                   <p>29</p>
                   <p>30</p>
+                  <p>31</p>
+                  <p>32</p>
+                  <p>33</p>
+                  <p>34</p>
+                  <p>35</p>
+                  <p>36</p>
+                  <p>37</p>
+                  <p>38</p>
+                  <p>39</p>
+                  <p>40</p>
                 </div>
               </Carousel.Item>
             </Carousel>
@@ -78,7 +87,7 @@ export default Marcas;
 
 const Container = styled.div`
     width: 100%;
-    min-height: 50vh;
+    min-height: 36vh;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -130,10 +139,6 @@ const Container = styled.div`
             height: 80px;
             filter: opacity(85%);
 
-            @media (max-width: 1100px) {
-              height: 70px;
-            }
-
             @media (max-width: 764px) {
               height: 40px;
             }
@@ -150,7 +155,7 @@ const Container = styled.div`
               display: flex;
               justify-content: center;
               align-items: center;
-              font-size: 30px;
+              font-size: 20px;
               width: 80px;
               height: 80px;
               text-align: center;
@@ -158,14 +163,9 @@ const Container = styled.div`
               color: ${ props => props.theme.secondary};
               margin: 0;
 
-              @media (max-width: 1100px) {
-              width: 70px;
-              height: 70px;
-              font-size: 20px;
-            }
               @media (max-width: 764px) {
-              width: 40px;
-              height: 40px;
+              width: 60px;
+              height: 60px;
               font-size: 16px;
             }
             
@@ -187,8 +187,8 @@ const Container = styled.div`
 
         h3 {
         margin: 0;
-        width: 90%;
-        font-size: 30px;
+        width: 100%;
+        font-size: 20px;
         text-align: center;
         padding: 0 100px ;
         color: ${props => props.theme.secondary};

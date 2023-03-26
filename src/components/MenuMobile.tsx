@@ -15,13 +15,7 @@ const MenuMobile = (props : {handleChangeTheme: ()=> void}) => {
 
     return ( 
         <MenuMobileContainer>
-            <Logo/>
-            {
-                isMain ?
                 <NavBar/>
-                :
-                <NavBarAlt/>
-            }
             {/* <p onClick={props.handleChangeTheme}>Change Theme</p> */}
 
         <WhatsAppBtn/>
@@ -40,7 +34,6 @@ const MenuMobileContainer = styled.div`
         display: flex;
         background-color: white;
         padding: 10px 0;
-
 
         @media (max-width: 1100px) {
             flex-direction: row;

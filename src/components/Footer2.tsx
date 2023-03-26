@@ -116,8 +116,7 @@ export default Footer;
 
 const FooterContainer = styled.div`
     width: 100%;
-    min-height: 50vh;
-    height: auto;
+    height: 50vh;
     background: ${props => props.theme.gray};
     display: flex;
     flex-direction: column;

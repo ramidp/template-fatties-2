@@ -32,23 +32,16 @@ useEffect(() => {
     <MenuNavContainer>
             {/* <OffCanvasTop/> */}
             <div className="hide">
-              {
-                display?
-                <></>
-                :
-              <>
-              {isHome ?
-              <a href="#top"><h3>Home</h3></a>
-                :
-              <a href="/"><h3>Home</h3></a>
-              }
-              </>
-
-              }
-
-              <a href="/blog"><h3 className="underline">Blog</h3></a>
-              <a href="/faq"><h3 className="underline">FAQ</h3></a>
-              <a href="/contacto"><h3 className="underline">Contacto</h3></a>
+                <>
+                {isHome ?
+                <a href="#top"><h3>Home</h3></a>
+                  :
+                <a href="/"><h3>Home</h3></a>
+                }
+                </>
+                <a href="/blog"><h3 className="underline">Blog</h3></a>
+                <a href="/faq"><h3 className="underline">FAQ</h3></a>
+                <a href="/contacto"><h3 className="underline">Contacto</h3></a>
             </div>
     </MenuNavContainer>
   );
@@ -59,15 +52,15 @@ export default MenuNav;
 const MenuNavContainer = styled.div`
     color: white;
     display: flex;
+    width: 70%;
     height: 100%;
-    width: 60%;
     flex-direction: row;
     margin-top: 70px;
     margin: auto 0;
     justify-content: center;
     align-items: center;
 
-    .underline {
+    /* .underline {
       display: flex;
       justify-content: space-between;
 
@@ -75,7 +68,7 @@ const MenuNavContainer = styled.div`
         text-decoration: underline;
         text-underline-offset: 7px;
       }
-    }
+    } */
 
     a {
       width: auto;
@@ -83,9 +76,10 @@ const MenuNavContainer = styled.div`
 
 
       h3 {
+        text-align: center;
         padding: 10px;
         margin: 0;
-        font-size: 22px;
+        font-size: 18px;
         color: ${props => props.theme.secondary};
         cursor: pointer;
 
@@ -94,15 +88,22 @@ const MenuNavContainer = styled.div`
         }
         @media (max-width: 1100px) {
           padding: 10px;
+          font-size: 18px;
       }
 
       }
     }
     
     .hide {
-      width: 100%;
+      width: 90%;
       display: flex;
       flex-direction: row;
+      justify-content: flex-start;
+      padding-left: 20%;
+
+      @media (max-width: 1100px) {
+        padding: 0;
+      }
 
       a {
         img {

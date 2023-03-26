@@ -19,6 +19,7 @@ const DatosContainer = styled.div`
         background-color: ${props => props.theme.secondary};
         display: flex;
         justify-content: center;
+        align-items: center;
 
         @media (max-width: 1100px) {
             display: none;
@@ -27,7 +28,7 @@ const DatosContainer = styled.div`
             text-align: center;
             font-size: 15px;
             color: white;
-            padding: 15px 10px;
+            padding: 0;
             margin: 0;
         }
 

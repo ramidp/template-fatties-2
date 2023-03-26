@@ -59,8 +59,8 @@ export default NavBarAlt;
 const MenuNavContainer = styled.div`
     color: white;
     display: flex;
+    width: 70%;
     height: 100%;
-    width: 60%;
     flex-direction: row;
     margin-top: 70px;
     margin: auto 0;
@@ -83,9 +83,10 @@ const MenuNavContainer = styled.div`
 
 
       h3 {
+        text-align: center;
         padding: 10px;
         margin: 0;
-        font-size: 22px;
+        font-size: 18px;
         color: ${props => props.theme.secondary};
         cursor: pointer;
 
@@ -94,15 +95,22 @@ const MenuNavContainer = styled.div`
         }
         @media (max-width: 1100px) {
           padding: 10px;
+          font-size: 18px;
       }
 
       }
     }
     
     .hide {
-      width: 100%;
+      width: 90%;
       display: flex;
       flex-direction: row;
+      justify-content: flex-start;
+      padding-left: 20%;
+
+      @media (max-width: 1100px) {
+        padding: 0;
+      }
 
       a {
         img {

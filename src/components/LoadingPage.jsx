@@ -53,7 +53,7 @@ const LoadingPageContainer = styled.div`
 
         .logo1 {
           filter: opacity(0%);
-          height: 300px;
+          height: 200px;
           animation-name: lightup;
           animation-duration: 2s;
 

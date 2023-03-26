@@ -9,17 +9,17 @@ const ProductContainer = styled.div`
     text-align: center;
     justify-content: flex-start;
     align-items: center;
-    min-height: 90vh;
+    min-height: 93vh;
     height: auto;
     background-color: white;
-    padding-top: 20px; 
+    padding: 20px 200px; 
     
     @media (max-width: 1100px) {
         padding: 20px 0;
     }
 
         .title {
-            font-size: 50px;
+            font-size: 30px;
             text-align: left;
             width: 60vw;
             color: darkgray;
@@ -60,6 +60,7 @@ const ProductContainer = styled.div`
             height: 15vh;
             width: auto;
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
             align-items: center;
             padding: 10px;
@@ -83,8 +84,7 @@ const ProductContainer = styled.div`
 
 
             svg {
-                width: 10%;
-                font-size: 150%;
+                font-size: 25px;
                 @media (max-width: 1100px) {
                     display: none;
                 }
@@ -99,7 +99,7 @@ const ProductContainer = styled.div`
             h1 {
                 margin: 0;
                 width: auto;
-                font-size: 18px;
+                font-size: 14px;
                 font-weight: bold;
 
             @media (max-width: 520px)    {
@@ -107,10 +107,12 @@ const ProductContainer = styled.div`
                 }
             }
             p {
-                width: 15vw;
+                width: auto;
+                min-width: 10vw;
+                max-width: 25vw;
                 margin: 0;
                 text-align: center;
-                font-size: 14px;
+                font-size: 12px;
                 font-weight: 300;
         
                 @media (max-width: 1100px)    {
@@ -166,7 +168,7 @@ const ProductContainer = styled.div`
         }
 
         h1 {
-                font-size: auto;
+                font-size: 28px;
                 font-weight: bold;
                 width: 100%;
                 @media (max-width: 1100px) {
@@ -178,7 +180,7 @@ const ProductContainer = styled.div`
         h3 {
             margin: 0;
             width: 100%;
-            font-size: 15px;
+            font-size: 16px;
             color: darkgray;
             text-align: left;
         }

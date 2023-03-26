@@ -15,16 +15,6 @@ import { useEffect } from "react";
 
 const BlogIndividual = ({blog}) => {
 
-    // const animation = 'zoom-in'
-
-    // useEffect (() => {
-    //     Aos.init({
-    //         duration: 1500,
-    //         once: true,
-    //     });
-    // },[])
-
-    
     const [show, setShow] = useState(false);
 
     const handleShow = () => {
@@ -34,9 +24,9 @@ const BlogIndividual = ({blog}) => {
         <>
         <div 
         className="article">
-            <h1>Ejemplo Blog Modal</h1>
-            <p>{blog.title}</p>
-            <h2 onClick={() => setShow(true)}>Leer más</h2>
+            <h1>{blog.title}</h1>
+            <p>{blog.outterText}</p>
+            <h2 style={{color: 'red'}} onClick={() => setShow(true)}>Leer más</h2>
         </div>
       <Modal 
         show={show}
@@ -47,13 +37,25 @@ const BlogIndividual = ({blog}) => {
         <Modal.Header>
           <Modal.Title>
             <div className="title">
-                <h1>{blog.title}</h1>
+                <h1
+                style={{fontSize: '28px'
+            }}>
+                <b>
+                {blog.title}
+                </b>
+                </h1>
                 <button onClick={() => setShow(false)}>X</button>
             </div>
             <p>Blog / {blog.link}</p>
          </Modal.Title>
         </Modal.Header>
-        <Modal.Body>{blog.innerText}</Modal.Body>
+        <Modal.Body>
+            <p
+            style={{color: 'black'}}
+            >
+            {blog.innerText}
+            </p>
+            </Modal.Body>
         <Modal.Footer>
             <p>Tags:</p>
                 <p className="tags">
@@ -153,6 +155,8 @@ const BlogContainer = styled.div`
         align-content: center;
         flex-direction: row;
         padding: 20px;
+        flex-wrap: wrap;
+        gap: 10px;
 
         @media (max-width: 1100px) {
             flex-direction: column;
@@ -163,9 +167,10 @@ const BlogContainer = styled.div`
             flex-direction: column;
             justify-content: space-evenly;
             align-items: center;
-            padding: 20px;
-            width: 15vw;
-            height: 20vh;
+            padding: 10px;
+            min-width: 20vw;
+            width: auto;
+            height: 15vh;
             box-shadow: 0px 0px 50px -20px rgba(0,0,0,0.44);
     
             @media (max-width: 1100px) {
@@ -177,13 +182,16 @@ const BlogContainer = styled.div`
             }
             
             p {
+                width: 50%;
                 text-align: center;
                 margin: 0;
+                font-size: 12px;
             }
     
             h1 {
+                width: auto;
                 padding: 0!important;
-                font-size: 18px!important;
+                font-size: 14px!important;
                 padding-bottom: 10px;
                 font-weight: bold;
             }

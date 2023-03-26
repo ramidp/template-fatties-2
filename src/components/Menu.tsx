@@ -18,9 +18,10 @@ export default Menu;
 
 const MenuContainer = styled.div`
     width: 100%;
-    height: 10vh;
+    height: 7vh;
     display: flex;
     position: fixed;
+    left: 0;
     padding: 0;
     margin: 0;
     z-index: 100;
