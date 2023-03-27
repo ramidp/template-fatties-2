@@ -100,11 +100,9 @@ const Container = styled.div`
     background-color: white;
     gap: 20px;
 
-
     @media (max-width: 1100px) {
             height: auto;
         }
-
 
         .text-us {
             width: 100%;
@@ -114,6 +112,7 @@ const Container = styled.div`
             justify-content: center;
             align-items: center;
             z-index: 2;
+            padding: 0 280px;
             background-color: ${props => props.theme.secondary};
 
 

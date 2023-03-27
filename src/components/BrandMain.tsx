@@ -6,7 +6,7 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
 import Logo from "./Logo";
-
+import { Link } from 'react-scroll'
 
 const BrandMain = () => {
 
@@ -25,32 +25,56 @@ const BrandMain = () => {
     },[])
     
     return (
-        <BrandMainContainer className="p-0">
-            <div data-aos={animation2} data-aos-delay="1700" className="absolute">
-            {/* <img className="fattieslogo" src={logo} alt="" /> */}
+        <BrandMainContainer id="top" className="p-0">
+            <Logo/>  
+            <div className="absolute">
                 <div className="brand-logo">
                         <div className="brand-title">
-                        <Logo/>  
-                            <h1>Soluciones Digitales. 
+                                 <h1 
+                                data-aos={animation2} 
+                                data-aos-delay="2000" >
+                                Soluciones Digitales. 
                                 <br />
                                 Servicios complementarios.
                                 <br/>
-                                Atención personalizada.</h1>
+                                Atención personalizada.
+                                </h1>
                     </div>
-                            <p className="m-0 pt-0">"Cumplimos las exigencias en seguridad, claridad y confianza en la gestión de cuentas.
+                            <p data-aos={animation2} data-aos-delay="2500" className="m-0 pt-0">"Cumplimos las exigencias en seguridad, claridad y confianza en la gestión de cuentas.
                                 Somos Consultores Certificados por Mercado Pago.
                                 Contribuimos en garantizar un servicio de postventa completo."
                             </p>
-                        <div className="btns-box">
-                            <a className="contactbtn" href="#servicios">Servicios</a>
-                            <a className="contactbtn" href="#nosotros">Nosotros</a>
-                            <a className="contactbtn" href="#">3rd Btn</a>
-                            <a className="contactbtn" href="#">4th Btn</a>
+                        <div data-aos={animation2} data-aos-delay="2500" className="btns-box">
+                            <Link 
+                            className="contactbtn" 
+                            to="servicios"
+                            spy={true}
+                            smooth={true}
+                            offset={-65}
+                            duration={100}>Servicios</Link>
+
+                            <Link 
+                            className="contactbtn"
+                            to="marcas"
+                            spy={true}
+                            smooth={true}
+                            offset={-65}
+                            duration={100}>Clientes</Link>
+
+                            
+                            <Link 
+                            className="contactbtn" 
+                            to="nosotros"
+                            spy={true}
+                            smooth={true}
+                            offset={-65}
+                            duration={100}>Nosotros</Link>
+
+                            
                         </div>
                 </div>
-                <Marcas/>
-                <span id="servicios"></span>
                 <div  className="features-box">
+                <span id="servicios"></span>
 
                     <div style={{background: '#f0f0f0'}} className="features">
                         <div data-aos={animation} className="logos-div">
@@ -115,10 +139,9 @@ export default BrandMain;
 
 
 const BrandMainContainer = styled.div`
-    height: auto;
+    height: 186vh;
     width: 100%;
     display: flex;
-    background-color: #f0f0f0;
 
     .fattieslogo {
         position: absolute;
@@ -130,13 +153,13 @@ const BrandMainContainer = styled.div`
 
         
     .absolute {
-        height: auto;
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         z-index: 2;
+        height: 186vh;
 
             p {
                 font-size: 1.5em;
@@ -147,8 +170,7 @@ const BrandMainContainer = styled.div`
             flex-direction: column;
             justify-content: space-evenly;
             align-items: center;
-            min-height: 50vh;
-            height: auto;
+            height: 93vh;
             width: 100%;
             display: flex;
             padding: 25px;
@@ -160,7 +182,8 @@ const BrandMainContainer = styled.div`
             h1 {
                 text-align: center;
                 width: 50%;
-                font-size: 36px;
+                font-size: 50px;
+                font-family: 'Anton';
 
                 @media (max-width: 1100px) {
                 font-size: 24px;
@@ -192,7 +215,8 @@ const BrandMainContainer = styled.div`
             }
 
             h1, p {
-                color: ${props => props.theme.secondary};
+                color: white;
+                text-shadow: 0px 0px 20px black;
              }
 
 
@@ -217,14 +241,15 @@ const BrandMainContainer = styled.div`
 
             .contactbtn {
                 color: white;
+                cursor: pointer;
                 text-decoration: none;
                 background-color: ${props => props.theme.secondary};
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-size: 16px;
-                height: 7vh;
-                width: 9vw;
+                font-size: 24px;
+                height: 10vh;
+                width: 8vw;
                 box-shadow: 0px 0px 40px -30px rgba(0,0,0,1);
                
                 
@@ -235,6 +260,11 @@ const BrandMainContainer = styled.div`
                 @media (max-width: 764px) {
                     padding: 5px 15px;
                     font-size: 14px;
+                }
+                @media (max-width: 1100px) {
+                    font-size: 14px;
+                    height: 50px;
+                    width: 80px;
                 }
             }
         }
@@ -248,7 +278,6 @@ const BrandMainContainer = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        padding-top: 7vh;
         background-color: ${props => props.theme.gray};
          
         .features {

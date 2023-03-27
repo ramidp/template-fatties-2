@@ -4,8 +4,7 @@ import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faBlog, faQuestion, faAddressBook} from '@fortawesome/free-solid-svg-icons';
 import { useLocation } from 'react-router-dom';
-
-
+import { Link } from 'react-scroll'
 
 
 const MenuNav = () => {
@@ -34,7 +33,15 @@ useEffect(() => {
             <div className="hide">
                 <>
                 {isHome ?
-                <a href="#top"><h3>Home</h3></a>
+                <Link 
+                to="top"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={100}
+                ><h3>Home</h3>
+
+                </Link>
                   :
                 <a href="/"><h3>Home</h3></a>
                 }

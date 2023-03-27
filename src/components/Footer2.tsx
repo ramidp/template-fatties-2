@@ -57,58 +57,51 @@ const Footer = () => {
     }
 
     return ( 
-        <>
-        <span id="contacto"></span>
             <FooterContainer>
-                    <div className="contenedor col-12 m-0">
-                            <h1>Contactanos a través de este formulario o vía WhatsApp</h1>
-                                <form onSubmit={handleSubmit}>
-                                    <input 
-                                    className="inputname" 
-                                    type="text" 
-                                    name="nombre" 
-                                    placeholder="Nombre"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}/>  
+                <span id="contacto"></span>
+                <h1>Contactanos a través de este formulario o vía WhatsApp</h1>
+                    <form onSubmit={handleSubmit}>
+                        <input 
+                        className="inputname" 
+                        type="text" 
+                        name="nombre" 
+                        placeholder="Nombre"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}/>  
 
-                                    {/* <input 
-                                    className="inputcorreo" 
-                                    type="text" 
-                                    name="correo"   
-                                    placeholder="E-mail"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}/>   */}
+                        {/* <input 
+                        className="inputcorreo" 
+                        type="text" 
+                        name="correo"   
+                        placeholder="E-mail"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}/>   */}
 
-                                    <input 
-                                    className="inputtel" 
-                                    type="number" 
-                                    name="telefono" 
-                                    placeholder="Telefono"
-                                    value={telephone}
-                                    onChange={(e) => setTelephone(e.target.value)}/>
+                        <input 
+                        className="inputtel" 
+                        type="number" 
+                        name="telefono" 
+                        placeholder="Telefono"
+                        value={telephone}
+                        onChange={(e) => setTelephone(e.target.value)}/>
 
-                                    <textarea
-                                    className="textmsg"  
-                                    name="mensaje" 
-                                    placeholder="Escribir mensaje"
-                                    value={message}
-                                    onChange={(e) => setMessage(e.target.value)} />
+                        <textarea
+                        className="textmsg"  
+                        name="mensaje" 
+                        placeholder="Escribir mensaje"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)} />
 
-                                    
-                                    <button type="submit">Enviar</button>
+                        
+                        <button type="submit">Enviar</button>
 
-                                </form> 
-                    </div>
-                    <div>
-                    </div>
+                    </form> 
                     <Alerta
                     tipo={alerta.tipo}
                     mensaje={alerta.mensaje}
                     estadoAlerta={estadoAlerta}
                     cambiarEstadoAlerta={cambiarEstadoAlerta}/>
-
             </FooterContainer>
-        </>
      );
 }
  
@@ -120,25 +113,12 @@ const FooterContainer = styled.div`
     background: ${props => props.theme.gray};
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    z-index: 30;
-
-    .contenedor {
-        z-index: 2;
-        height: auto;
-        padding-top: 5vh;
-        gap: 20px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: linear-gradient(360deg, ${props => props.theme.gray}  50%, ${props => props.theme.secondary} 50%);
-
-            @media (max-width: 1100px) {
-                background: ${props => props.theme.gray};
-                padding-top: 0px;
-            }
+    z-index: 2;
+    background: linear-gradient(360deg, ${props => props.theme.gray}  50%, ${props => props.theme.secondary} 50%);
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
             form {
                 height: auto;
@@ -199,8 +179,6 @@ const FooterContainer = styled.div`
                         }
                 }
         }
-
-            }
 
             a {
                 text-decoration: none;

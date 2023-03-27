@@ -23,8 +23,6 @@ const Logo = () => {
 
     return ( 
         <LogoContainer 
-        data-aos={animation}
-        data-aos-delay="2000"
         className="col-3">
             <a onClick={menuOff} href="/">
                 <img src={logo} alt="" />
@@ -42,9 +40,9 @@ const LogoContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
     width: 100%;
-    height: 100%;
-    position: fixed;
+    position: absolute;
     z-index: -1;
 
     @media (max-width: 1100px) {
@@ -56,10 +54,13 @@ const LogoContainer = styled.div`
     text-decoration: none;
         img {
             width: 100%;
-            filter: opacity(20%);
+            filter: opacity(30%);
             object-fit: none;
-            object-position: 50% 48%;
+            object-position: 50% 42%;
             mix-blend-mode: multiply;
+            @media (max-width: 1100px) {
+                object-position: 50% 50%;
+            }
         }
     }
 `

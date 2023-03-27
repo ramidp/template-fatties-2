@@ -21,7 +21,7 @@ const App = () => {
 
   WebFont.load ({
     google: {
-      families: ['Ubuntu:400', 'Mate:400', 'Kosugi:400', 'Amiko:400']
+      families: ['Ubuntu:400', 'Mate:400', 'Kosugi:400', 'Amiko:400', 'Anton:400', 'Antonio:400', 'Abril Fatface:400']
     }
   });
 
@@ -79,7 +79,6 @@ const App = () => {
       <AppContainer>
       <BrowserRouter>
       <LoadingPage/>
-      <Wallpaper/>
       {/* <WhatsAppBtn/> */}
       {/* <UpBtn/> */}
       <ThemeProvider theme={theme}>
@@ -131,7 +130,6 @@ const AppContainer = styled.div`
     display: flex;
     height: auto;
     width: 100%;
-    scroll-behavior: smooth;
     flex-direction: column;
 
     .menu {
@@ -144,7 +142,6 @@ const AppContainer = styled.div`
       width: 100%;
       box-shadow: 29px 10px 56px -9px rgba(0,0,0,0.27);
       background-color: inherit;
-      
     }
      
 `

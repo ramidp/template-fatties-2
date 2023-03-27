@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAddressBook} from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import Blog2 from './Blog2';
+import Logo from '../Logo';
 
 
 const Blog = () => {
@@ -11,14 +12,12 @@ const Blog = () => {
     const navegacion = useNavigate()
     
     return (
-        <>
-        <span id="blog"></span>
         <ProductContainer>
+        <span id="blog"></span>
             <h1 className="mb-2 title">Blog</h1>
             <p className="mb-4 blog-text">Todas las novedades, guias y manuales que sean de utilidad serán vistas aqui.</p>
-
                 <div className="products">
-
+                <Logo/>
                     <div onClick={() => {navegacion('/servicio_personalizado')}} className="product-types col-2">
                     <FontAwesomeIcon icon={faAddressBook} />
                         <h1>Servicio Personalizado</h1>
@@ -100,7 +99,6 @@ const Blog = () => {
                     </div>
                 </div>
         </ProductContainer>
-        </>
     );
 }
  

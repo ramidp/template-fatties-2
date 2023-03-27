@@ -12,7 +12,7 @@ const LoadingPage = () => {
             setHideLoading('hidding')
         }, 2250);
 
-    })
+    },[])
 
 
     return ( 
