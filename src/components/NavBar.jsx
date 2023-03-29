@@ -48,7 +48,7 @@ useEffect(() => {
                 </>
                 <a href="/blog"><h3 className="underline">Blog</h3></a>
                 <a href="/faq"><h3 className="underline">FAQ</h3></a>
-                <a href="/contacto"><h3 className="underline">Contacto</h3></a>
+                <a href="/nosotros"><h3 className="underline">Nosotros</h3></a>
             </div>
     </MenuNavContainer>
   );
@@ -91,6 +91,7 @@ const MenuNavContainer = styled.div`
         cursor: pointer;
 
         &:hover {
+          border-radius: 7px;
           background-color: rgba(239,73,49, 0.2);
         }
         @media (max-width: 1100px) {

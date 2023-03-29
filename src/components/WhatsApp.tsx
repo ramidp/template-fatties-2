@@ -22,8 +22,10 @@ const Container = styled.div`
     width: auto;
     height: auto;
     display: flex;
+    position: fixed;
     justify-content: flex-end;
     align-items: flex-end;
+    padding: 0 15px 15px 0;
     bottom: 0;
     right: 0;
     img {

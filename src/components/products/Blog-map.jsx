@@ -168,8 +168,8 @@ const BlogContainer = styled.div`
             justify-content: space-evenly;
             align-items: center;
             padding: 10px;
-            min-width: 20vw;
-            width: auto;
+            min-width: 15vw;
+            max-width: 30vw;
             height: 15vh;
             box-shadow: 0px 0px 50px -20px rgba(0,0,0,0.44);
     
@@ -185,13 +185,13 @@ const BlogContainer = styled.div`
                 width: 50%;
                 text-align: center;
                 margin: 0;
-                font-size: 12px;
+                font-size: 14px;
             }
     
             h1 {
                 width: auto;
                 padding: 0!important;
-                font-size: 14px!important;
+                font-size: 16px!important;
                 padding-bottom: 10px;
                 font-weight: bold;
             }

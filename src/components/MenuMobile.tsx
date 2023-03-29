@@ -18,7 +18,6 @@ const MenuMobile = (props : {handleChangeTheme: ()=> void}) => {
                 <NavBar/>
             {/* <p onClick={props.handleChangeTheme}>Change Theme</p> */}
 
-        <WhatsAppBtn/>
         </MenuMobileContainer>
      );
 }

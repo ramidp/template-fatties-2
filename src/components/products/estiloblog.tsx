@@ -99,7 +99,7 @@ const ProductContainer = styled.div`
             h1 {
                 margin: 0;
                 width: auto;
-                font-size: 14px;
+                font-size: 16px;
                 font-weight: bold;
 
             @media (max-width: 520px)    {
@@ -112,7 +112,7 @@ const ProductContainer = styled.div`
                 max-width: 25vw;
                 margin: 0;
                 text-align: center;
-                font-size: 12px;
+                font-size: 14px;
                 font-weight: 300;
         
                 @media (max-width: 1100px)    {

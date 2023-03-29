@@ -58,18 +58,13 @@ const BrandMain = () => {
                             to="marcas"
                             spy={true}
                             smooth={true}
-                            offset={-65}
+                            offset={-68}
                             duration={100}>Clientes</Link>
 
                             
-                            <Link 
-                            className="contactbtn" 
-                            to="nosotros"
-                            spy={true}
-                            smooth={true}
-                            offset={-65}
-                            duration={100}>Nosotros</Link>
-
+                            <a 
+                            className="contactbtn"
+                            href="/nosotros">¿Quiénes somos?</a>
                             
                         </div>
                 </div>
@@ -168,20 +163,22 @@ const BrandMainContainer = styled.div`
         .brand-logo {
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
+            justify-content: flex-start;
             align-items: center;
             height: 93vh;
             width: 100%;
             display: flex;
             padding: 25px;
+            gap: 100px;
+            padding-top: 100px;
 
             @media (max-width: 1100px) {
                 padding-bottom: 30px;
             }
 
             h1 {
-                text-align: center;
-                width: 50%;
+                text-align: left;
+                width: 70%;
                 font-size: 50px;
                 font-family: 'Anton';
 
@@ -195,7 +192,7 @@ const BrandMainContainer = styled.div`
 
             }
             p {
-                text-align: center;
+                text-align: left;
                 width: 70%;
                 font-size: 26px;
 
@@ -240,6 +237,7 @@ const BrandMainContainer = styled.div`
             }
 
             .contactbtn {
+                border-radius: 10px;
                 color: white;
                 cursor: pointer;
                 text-decoration: none;
@@ -249,7 +247,7 @@ const BrandMainContainer = styled.div`
                 align-items: center;
                 font-size: 24px;
                 height: 10vh;
-                width: 8vw;
+                width: 10vw;
                 box-shadow: 0px 0px 40px -30px rgba(0,0,0,1);
                
                 

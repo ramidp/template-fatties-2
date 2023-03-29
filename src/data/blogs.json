@@ -81,6 +81,19 @@
         "tag2" : "Personalización",
         "tag3" : "Post-Venta"
     }
+},
+{   
+    "id" : "7",
+    "icon" : "",
+    "link" : "ejemplo_7",
+    "title" : "Ejemplo 7",
+    "subTitle" : "Blog7 Example",
+    "innerText" : "Texto Interno y mas largo",
+    "outterText" : "Texto Corto",
+    "tags" : {
+        "tag1" : "Servicio",
+        "tag2" : "Personalización",
+        "tag3" : "Post-Venta"
+    }
 }
-
 ]

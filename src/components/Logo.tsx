@@ -19,48 +19,41 @@ const Logo = () => {
 
     const logo = require('../images/logo-fatties.png')
 
-    const {menuOff} = useContext<any>(ContextHide)
-
     return ( 
         <LogoContainer 
         className="col-3">
-            <a onClick={menuOff} href="/">
                 <img src={logo} alt="" />
-            </a>
         </LogoContainer>
      );
 }
-
-
  
 export default Logo;
 
 const LogoContainer = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    height: 70vh;
     width: 100%;
     position: absolute;
-    z-index: -1;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 15%, rgba(255, 255, 255, 0) 100%);
 
     @media (max-width: 1100px) {
         width: auto;
         align-items: flex-start;
     }
-
-    a {
-    text-decoration: none;
         img {
             width: 100%;
-            filter: opacity(30%);
+            height: 100%;
             object-fit: none;
-            object-position: 50% 42%;
+            object-position: 50% 51%;
             mix-blend-mode: multiply;
+            z-index: -1;
+
+
             @media (max-width: 1100px) {
                 object-position: 50% 50%;
             }
         }
-    }
 `

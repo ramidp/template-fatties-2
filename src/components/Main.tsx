@@ -11,7 +11,6 @@ const Main = () => {
     <AppContainer>
           <BrandMain/>
           <Marcas/>
-          <Nosotros/>
     </AppContainer>
 );
 }

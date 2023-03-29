@@ -29,6 +29,9 @@ const Faq = () => {
         <span id="faq"></span>
         <Container>
             <h1 className="faq-title">FAQ</h1>
+            <p 
+            style={{width: "90%"}}
+            >FAQ / </p>
             <h1>¿Con que podemos ayudarte?</h1>
 
             <div className="tag-searcher col-12 mb-3">
@@ -98,6 +101,8 @@ const Container = styled.div`
     flex-direction: column;
     background-color: #f5f5f5;
     padding-top: 20px; 
+    padding: 20px 200px; 
+
 
     .tag-searcher {
         display: flex;
@@ -107,7 +112,7 @@ const Container = styled.div`
         padding-top: 20px;
 
         input {
-            width: 50%;
+            width: 60%;
             height: 40px;
             padding-left: 10px;
             @media (max-width: 1100px) {
@@ -116,7 +121,7 @@ const Container = styled.div`
         }
 
         .searched-data {
-            width: 50%;
+            width: 100%;
             min-height: 20%;
             height: auto;
             position: fixed;
@@ -169,7 +174,7 @@ const Container = styled.div`
             border-radius: 0px;
             padding: 15px 30px;
             gap: 40px;
-            width: 60%;
+            width: 70%;
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
@@ -181,8 +186,6 @@ const Container = styled.div`
             @media (max-width: 1100px) {
             width: 80%;
         }
-
-            
     
                 &:hover {
                 cursor: pointer;

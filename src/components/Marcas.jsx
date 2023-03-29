@@ -226,6 +226,8 @@ const Marcas = () => {
 
   const animation = 'zoom-in'
 
+  const imagen = require('../images/Brands-Logos/tropea.png')
+
   useEffect (() => {
       Aos.init({
           duration: 2500,
@@ -246,10 +248,9 @@ const Marcas = () => {
                 Más de 30 empresas trabajando con nosotros.
                 </h3>
             </div>
-            <div className="carousel-section">
-                <div
-                className="marcas-div m-0">
-                {
+            <div className="carousel-sect">
+              <div className="marcas-div">
+                {/* {
                   logos.sort((a, b) => a.brand.name.localeCompare(b.brand.name)).map((logo) => {
                     return (
                     <a
@@ -263,10 +264,10 @@ const Marcas = () => {
                     </a>
                     )
                   })
-                }
-                </div>
-            </div>
-            <div className="wallpaper">
+                } */}
+
+                <div className="wallimg"></div>
+              </div>
             </div>
         </Container>
      );
@@ -276,12 +277,13 @@ export default Marcas;
 
 const Container = styled.div`
     width: 100%;
-    height: 93vh;
+    height: auto;
+    min-height: 48vh;    
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 50px;
-    background-color: ${props => props.theme.secondary};
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgba(255,255,255,0);
 
     @media (max-width: 1100px) {
       min-height: 40vh;
@@ -290,62 +292,93 @@ const Container = styled.div`
     @media (max-height: 720px) {
       padding-top: 20px;
     }
-
-    .carousel-item {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
     
-    .carousel-section {
-      width: 100%;
-      height: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .carousel-sect {
+     height: auto;
+     position: relative;
+     margin: auto;
+     width: 100%;
+     display: flex;
+     overflow: hidden;
 
-      button, span, a {
-        display: none;
+      &::after{
+        top: 0;
+        left: -2%;
+        content: '';
+        position: absolute;
+        width: 10%;
+        height: 100%;
+        background: linear-gradient(to left, rgba(255,255,255,0.5) 0%, rgba(255,255,255,1) 100%);
+        z-index: 2;
       }
-  
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 10%;
+        height: 100%;
+        right: -2%;
+        top: 0;
+        background: linear-gradient(to right, rgba(255,255,255,0.5) 0%, rgba(255,255,255,1) 100%);
+        z-index: 2;
+      }
+
       .marcas-div {
-        width: auto;
-        max-width: 70vw;
-        margin: 10px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        gap: 10px;
+        justify-content: center;
         align-items: center;
-        gap: 30px;
-
-        @media (max-width: 1100px) {
-          width: 90%;
+        width: calc(250px * 16);
+        animation: scroll 10s linear infinite;
+        &:hover {
+          animation-play-state: paused;
         }
- 
-          .logo-a, img {
-            display: block;
 
-              img {
-                height: 80%;
-                transition: all 0.3s ease-in;
-                &:hover {
-                  height: 90%;
-                }
-              }
+        .wallimg {
+          background-image: url('https://roninchain.com/_next/static/media/partners.985c4ad4.png');
+          background-size: 1948px 288px;
+          background-position: 0 0;
+          width: 100%;
+          height: 288px;
+          background-repeat: repeat-x;
+          animation-duration: 2000s;
+          animation-timing-function: linear;
+          animation-delay: 0s;
+          animation-iteration-count: infinite;
+          animation-direction: normal;
+          animation-fill-mode: none;
+          animation-play-state: running;
+          animation-name: carousel;
 
-            @media (max-width: 764px) {
-              height: 40px;
-            }
-
-            &:hover {
-                  cursor: pointer;
-                  filter: contrast(70%)
-                }
-              }
+            @keyframes carousel {
+              0% {background-position: 0 0}
+              100% {background-position: -100000px 0}
         }
+
+        /* @keyframes scroll {
+          0% {transform: translateX(0)};
+          100% { transform: translateX(calc(-250px * 7))}
+        } */
+      }
+
+      a {
+        perspective: 100px;
+        cursor: default;
+
+        img {
+
+          height: 70px;
+          display: flex;
+          align-items: center;
+          transition: transform 1s;
+          &:hover {
+            transform: translateZ(10px);
+          }
+        }
+      }
     }
-
+  }
     .another-section {
       height: auto;
       display: flex;
@@ -361,7 +394,7 @@ const Container = styled.div`
         font-size: 26px;
         text-align: center;
         padding: 0 100px ;
-        color: white;
+        color: ${props => props.theme.secondary};
 
         @media (max-width: 1475px) {
             padding: 10px;

@@ -3,18 +3,18 @@ import styled, { ThemeProvider } from 'styled-components';
 import './App.css';
 import Footer from './components/Footer';
 import Menu from './components/Menu';
-import Wallpaper from './components/Wallpaper';
 import LoadingPage from './components/LoadingPage';
 import Blog from './components/products/Blog-map';
 import Faq from './components/products/Faq';
 import Main from './components/Main';
-import Footer2 from './components/Footer2';
 import WebFont from 'webfontloader'
 import { useState } from 'react';
 import blogs from './data/blogs.json'
 import faq from './data/faq.json'
 import BlogArticleMap from './components/products/BlogArticle-map';
 import FaqMap from './components/products/Faq-map';
+import WhatsAppBtn from './components/WhatsApp';
+import Nosotros from './components/Nosotros';
 
 const App = () => {
 
@@ -79,8 +79,7 @@ const App = () => {
       <AppContainer>
       <BrowserRouter>
       <LoadingPage/>
-      {/* <WhatsAppBtn/> */}
-      {/* <UpBtn/> */}
+      <WhatsAppBtn/>
       <ThemeProvider theme={theme}>
 
         <div className="menu">
@@ -112,7 +111,7 @@ const App = () => {
                   }
 
                   <Route path="/faq" element={<Faq/>}/>
-                  <Route path="/contacto" element={<Footer2/>}/>
+                  <Route path="/nosotros" element={<Nosotros/>}/>
                   {/* <Route path="/Products" element={<Products/>}/> */}
                 </Routes>
                 <Footer/>
