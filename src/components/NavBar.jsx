@@ -1,8 +1,5 @@
 import styled from 'styled-components';
-import { OffCanvasTop } from './OffCanvasTop';
 import { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faBlog, faQuestion, faAddressBook} from '@fortawesome/free-solid-svg-icons';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-scroll'
 

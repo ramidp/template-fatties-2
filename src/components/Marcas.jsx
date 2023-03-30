@@ -322,8 +322,8 @@ const Container = styled.div`
         }
 
         .wallimg {
-          background-image: url('https://roninchain.com/_next/static/media/partners.985c4ad4.png');
-          background-size: 1948px 288px;
+          background-image: url('http://localhost:3000/static/media/banner-ejemplo-choto.6659d8ed5b7c4c713afc.png');
+          background-size: 1948px 329px;
           background-position: 0 0;
           width: 100%;
           height: 288px;

@@ -15,6 +15,7 @@ import BlogArticleMap from './components/products/BlogArticle-map';
 import FaqMap from './components/products/Faq-map';
 import WhatsAppBtn from './components/WhatsApp';
 import Nosotros from './components/Nosotros';
+import WallExample from './components/WallExample';
 
 const App = () => {
 
@@ -112,6 +113,7 @@ const App = () => {
 
                   <Route path="/faq" element={<Faq/>}/>
                   <Route path="/nosotros" element={<Nosotros/>}/>
+                  <Route path="/images/banner-ejemplo-choto.png" element={<WallExample/>}/>
                   {/* <Route path="/Products" element={<Products/>}/> */}
                 </Routes>
                 <Footer/>

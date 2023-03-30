@@ -81,7 +81,7 @@ const BlogIndividual = ({blog}) => {
             'id' : 2,
             'name' : 'Calim',
             'logo' : 'calim-logo.png',
-            'object' : '50% 50%'
+            'object' : '50% 30%'
 
         },
         {
@@ -152,7 +152,7 @@ const BlogContainer = styled.div`
         box-shadow: 0px 0px 50px -20px rgba(0,0,0,0.44);
         border-radius: 15px;
         width: 25vw;
-        height: 120px;
+        height: 80px;
         object-fit: cover;
         filter: opacity(50%);
         margin: 20px 0;

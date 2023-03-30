@@ -230,6 +230,7 @@ const BrandMainContainer = styled.div`
             }
 
             .contactbtn {
+                text-align: center;
                 border-radius: 10px;
                 color: white;
                 cursor: pointer;
@@ -242,21 +243,24 @@ const BrandMainContainer = styled.div`
                 height: 8vh;
                 width: 11vw;
                 box-shadow: 0px 0px 40px -30px rgba(0,0,0,1);
-               
                 
                 &:hover {
                     filter: contrast(60%)
+                }
+
+                @media (max-width: 1100px) {
+                    font-size: 18px;
+                    height: 8vh;
+                    width: 11vw;
                 }
     
                 @media (max-width: 764px) {
                     padding: 5px 15px;
                     font-size: 14px;
+                    height: 70px;
+                    width: 100px;
                 }
-                @media (max-width: 1100px) {
-                    font-size: 14px;
-                    height: 50px;
-                    width: 80px;
-                }
+
             }
         }
     }
