@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle, faKey, faGears } from '@fortawesome/free-solid-svg-icons';
-import Marcas from "./Marcas";
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
@@ -39,18 +38,18 @@ const BrandMain = () => {
                                 <br/>
                                 Atención personalizada.
                                 </h1>
-                    </div>
-                            <p data-aos={animation2} data-aos-delay="2500" className="m-0 pt-0">"Cumplimos las exigencias en seguridad, claridad y confianza en la gestión de cuentas.
+                            <p data-aos={animation2} data-aos-delay="2300" className="m-0 pt-0">"Cumplimos las exigencias en seguridad, claridad y confianza en la gestión de cuentas.
                                 Somos Consultores Certificados por Mercado Pago.
                                 Contribuimos en garantizar un servicio de postventa completo."
                             </p>
-                        <div data-aos={animation2} data-aos-delay="2500" className="btns-box">
+                    </div>
+                        <div data-aos={animation2} data-aos-delay="2600" className="btns-box">
                             <Link 
                             className="contactbtn" 
                             to="servicios"
                             spy={true}
                             smooth={true}
-                            offset={-65}
+                            offset={-63}
                             duration={100}>Servicios</Link>
 
                             <Link 
@@ -58,13 +57,13 @@ const BrandMain = () => {
                             to="marcas"
                             spy={true}
                             smooth={true}
-                            offset={-68}
+                            offset={-63}
                             duration={100}>Clientes</Link>
 
                             
                             <a 
                             className="contactbtn"
-                            href="/nosotros">¿Quiénes somos?</a>
+                            href="/nosotros">Sobre nosotros</a>
                             
                         </div>
                 </div>
@@ -79,7 +78,7 @@ const BrandMain = () => {
                             <h1>Representante Oficial</h1>
                             <p>Contamos con una cartera de +4000 comercios activos, que reciben mensualmente actualizaciones, soporte en vivo, visita presencial e información de nuestros servicio</p>
                             <div className="more-btn">
-                                <a className="more" href="/service1">Leer más</a>
+                                <a className="more" href="/blog">Leer más</a>
                             </div>
                         </div>
                     </div>
@@ -137,6 +136,8 @@ const BrandMainContainer = styled.div`
     height: 186vh;
     width: 100%;
     display: flex;
+    z-index: 2;
+
 
     .fattieslogo {
         position: absolute;
@@ -154,11 +155,6 @@ const BrandMainContainer = styled.div`
         justify-content: center;
         align-items: center;
         z-index: 2;
-        height: 186vh;
-
-            p {
-                font-size: 1.5em;
-            }
       
         .brand-logo {
             display: flex;
@@ -169,14 +165,25 @@ const BrandMainContainer = styled.div`
             width: 100%;
             display: flex;
             padding: 25px;
-            gap: 100px;
-            padding-top: 100px;
+            gap: 150px;
+            padding-top: 150px;
+            background: linear-gradient(0deg, rgba(255,255,255,1) 30%, rgba(255, 255, 255, 0) 100%);
+
 
             @media (max-width: 1100px) {
                 padding-bottom: 30px;
             }
 
-            h1 {
+            .brand-title {
+                width: 70%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 50px;
+
+                h1 {
                 text-align: left;
                 width: 70%;
                 font-size: 50px;
@@ -196,11 +203,6 @@ const BrandMainContainer = styled.div`
                 width: 70%;
                 font-size: 26px;
 
-                @media (max-width: 1400px) {
-                width: 100%;
-                font-size: 16px;
-                }
-
                 @media (max-width: 1100px) {
                 font-size: 14px;
                 }
@@ -215,22 +217,13 @@ const BrandMainContainer = styled.div`
                 color: white;
                 text-shadow: 0px 0px 20px black;
              }
-
-
-            .brand-title {
-                width: 100%;
-                height: auto;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
             }
 
         }
         
         .btns-box {
             display: flex;
-            gap: 5px;
+            gap: 10px;
 
             @media (max-width: 764px) {
                 gap: 5px;
@@ -246,8 +239,8 @@ const BrandMainContainer = styled.div`
                 justify-content: center;
                 align-items: center;
                 font-size: 24px;
-                height: 10vh;
-                width: 10vw;
+                height: 8vh;
+                width: 11vw;
                 box-shadow: 0px 0px 40px -30px rgba(0,0,0,1);
                
                 

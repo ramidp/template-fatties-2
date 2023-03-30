@@ -1,99 +1,53 @@
-[ {
-    "id" : "1",
-    "icon" : "",
-    "link" : "servicio_personalizado",
-    "title" : "Servicio Personalizado",
-    "subTitle" : "Subtitulo 1",
-    "innerText" : "En Fatties tenemos un servicio completamente personaliza. No solo la venta, sino que también el post-venta, teniendo un número exlusivo de WhatsApp con atención inmediata y por nuestro personal.",
-    "outterText" : "¿No sabes cómo funciona el servicio? ¿Tenes alguna duda? Un asesor puede visitar tu comercio sin costo alguno ni compromiso.",
-    "tags" : {
-        "tag1" : "Servicio",
-        "tag2" : "Personalización",
-        "tag3" : "Post-Venta"
+[ 
+    {
+        "id" : "1",
+        "for" : "Mercado Pago",
+        "icon" : "",
+        "link" : "configuracion_cuotas",
+        "title" : "Ahora podes configurar tus cuotas sín interés con un monto mínimo",
+        "subTitle" : "Subtitulo 1",
+        "outterText" : "Configurar tus cuotas sin interés con un monto mínimo es así de fácil y rápido",
+        "innerText" : "Al poder elegir el monto mínimo a partir del cual se ofrecen cuotas sin interés, el comercio se asegura de que está absorbiendo el costo de financiamiento en ventas de montos relevantes y que no lo ofrece cuando la venta es de un monto chico.",
+        "innerText2" : "En caso de que el comercio quiera seguir ofreciendo cuotas sin interés sin importar el monto mínimo, puede dejar en cada cuota el espacio en blanco “Sin monto mínimo” y la experiencia de venta será igual a la que viene teniendo hasta ahora, tanto el comercio como el cliente.",
+        "faq" : "/faq/configuracion_cuotas",
+        "tags" : {
+            "tag1" : "Cuotas",
+            "tag2" : "Sin interés",
+            "tag3" : "Monto Mínimo"
+        }
+    },
+    {
+        "id" : "2",
+        "for" : "Calim",
+        "icon" : "",
+        "link" : "info_calim",
+        "title" : "Titulo para Calim",
+        "subTitle" : "Subtitulo 2",
+        "outterText" : "Cosas para un articulo de Calim",
+        "innerText" : "Texto Interno para un Servicio de Calim",
+        "innerText2" : "Segundo Texto Interno para un Servicio de Calim",
+        "faq" : "/faq/configuracion_cuotas",
+        "tags" : {
+            "tag1" : "Cuotas",
+            "tag2" : "Sin interés",
+            "tag3" : "Monto Mínimo"
+        }
+    },
+    {
+        "id" : "3",
+        "for" : "Mercado Pago",
+        "icon" : "",
+        "link" : "info_calim",
+        "title" : "Titulo para Calim",
+        "subTitle" : "Subtitulo 2",
+        "outterText" : "Cosas para un articulo de Calim",
+        "innerText" : "Texto Interno para un Servicio de Calim",
+        "innerText2" : "Segundo Texto Interno para un Servicio de Calim",
+        "faq" : "/faq/configuracion_cuotas",
+        "tags" : {
+            "tag1" : "Cuotas",
+            "tag2" : "Sin interés",
+            "tag3" : "Monto Mínimo"
+        }
     }
-},
-{   
-    "id" :"2",
-    "icon" : "",
-    "link" : "inflacion_100",
-    "title" : "Inflacion al 100%",
-    "subTitle" : "Blog2 Example",
-    "innerText" : "Texto Ejemplo. No tengo idea que escrbir, pero tengo que mandarle por lo menos 20 palabras o más",
-    "outterText" : "Texto Ejemplo 2, Sigo sin idea de que escribir, pero tengo que mandarle fruta como para poder escribir aunque sea 30 palabras",
-    "tags" : {
-        "tag1" : "Servicio",
-        "tag2" : "Personalización",
-        "tag3" : "Post-Venta"
-    }
-},
-{   
-    "id" : "3",
-    "icon" : "",
-    "link" : "ejemplo_3",
-    "title" : "Ejemplo 3",
-    "subTitle" : "Blog3 Example",
-    "innerText" : "Texto Interno y mas largo",
-    "outterText" : "Texto Corto",
-    "tags" : {
-        "tag1" : "Servicio",
-        "tag2" : "Personalización",
-        "tag3" : "Post-Venta"
-    }
-},
-{   
-    "id" : "4",
-    "icon" : "",
-    "link" : "ejemplo_4",
-    "title" : "Ejemplo 4",
-    "subTitle" : "Blog4 Example",
-    "innerText" : "Texto Interno y mas largo",
-    "outterText" : "Texto Corto",
-    "tags" : {
-        "tag1" : "Servicio",
-        "tag2" : "Personalización",
-        "tag3" : "Post-Venta"
-    }
-},
-{   
-    "id" : "5",
-    "icon" : "",
-    "link" : "ejemplo_5",
-    "title" : "Ejemplo 5",
-    "subTitle" : "Blog5 Example",
-    "innerText" : "Texto Interno y mas largo",
-    "outterText" : "Texto Corto",
-    "tags" : {
-        "tag1" : "Servicio",
-        "tag2" : "Personalización",
-        "tag3" : "Post-Venta"
-    }
-},
-{   
-    "id" : "6",
-    "icon" : "",
-    "link" : "ejemplo_6",
-    "title" : "Ejemplo 6",
-    "subTitle" : "Blog6 Example",
-    "innerText" : "Texto Interno y mas largo",
-    "outterText" : "Texto Corto",
-    "tags" : {
-        "tag1" : "Servicio",
-        "tag2" : "Personalización",
-        "tag3" : "Post-Venta"
-    }
-},
-{   
-    "id" : "7",
-    "icon" : "",
-    "link" : "ejemplo_7",
-    "title" : "Ejemplo 7",
-    "subTitle" : "Blog7 Example",
-    "innerText" : "Texto Interno y mas largo",
-    "outterText" : "Texto Corto",
-    "tags" : {
-        "tag1" : "Servicio",
-        "tag2" : "Personalización",
-        "tag3" : "Post-Venta"
-    }
-}
 ]

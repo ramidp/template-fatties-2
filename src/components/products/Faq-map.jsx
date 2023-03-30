@@ -12,22 +12,25 @@ const FaqMap = () => {
 
     return (
         <>
-        <span id="blog1"></span>
         {
             faq.filter(item => '/faq/' + item.link === location.pathname).map((faq, index) => {
                 return (
-                    <ProductContainer key={faq.id}>
-                    <div className="title-btn">
-                        <h1 className="mb-2 title">FAQ</h1>
-                        <i className="fa fa-arrow-left" onClick={() => navegacion('/faq')}></i>
-                    </div>
-                    <p>FAQ / {faq.title}</p>
+                <ProductContainer key={faq.id}>
+                    <h1 className="title">FAQ</h1>
+                    <p>
+                        <span onClick={() => navegacion('/faq')}>FAQ </span> / {faq.title}</p>
+                    <h1
+                    style={{margin: '0', padding: '20px 0px'}}
+                    >{faq.title}</h1>
                             <div className="product-types1 col-2">
-                                    <h1>{faq.title}</h1>
-                                        
-                                <p>{faq.innerText}
-                                </p>
-        
+                                    <p>{faq.texts.text1}</p>
+                                    <p>{faq.texts.text2}</p>
+                                    <p>{faq.texts.text3}</p>
+                                    <p>{faq.texts.text4}</p>
+                                    <p>{faq.texts.text5}</p>
+                                    <p>{faq.texts.text6}</p>
+                                    <p>{faq.texts.text7}</p>
+                                    <p>{faq.texts.text8}</p>
                         </div>
                 </ProductContainer>
         

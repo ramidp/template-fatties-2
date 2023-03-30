@@ -21,7 +21,7 @@ const BlogArticleMap = () => {
                 <div className="title-btn">
                 <h1 className="title">Blog</h1>
                 <FontAwesomeIcon onClick={() => navegacion('/blog')} icon={faArrowLeft} />
-            </div>
+                </div>
             <p>(Aca puede ir la ruta o un subtitulo) Blog / {blog.subTitle}</p>
 
 

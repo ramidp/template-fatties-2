@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from "react";
-import Aos from 'aos'
 import 'aos/dist/aos.css'
 
 
@@ -14,7 +13,6 @@ const Marcas = () => {
   const [logos, setLogos] = useState([])
   
   useEffect(() => {
-
     setLogos(
         [
           {brand : 
@@ -224,21 +222,8 @@ const Marcas = () => {
         ]) 
     },[])
 
-  const animation = 'zoom-in'
-
-  const imagen = require('../images/Brands-Logos/tropea.png')
-
-  useEffect (() => {
-      Aos.init({
-          duration: 2500,
-          once: true,
-      });
-  },[])
-
     return ( 
       <Container
-        datos-aos={animation}
-        datos-aos-delay="2500"
       >
           <span id="marcas"></span>
             <div className="another-section">
@@ -277,26 +262,26 @@ export default Marcas;
 
 const Container = styled.div`
     width: 100%;
-    height: auto;
-    min-height: 48vh;    
+    height: 50vh;    
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: rgba(255,255,255,0);
+    background-color: white;
+    gap: 30px;
 
     @media (max-width: 1100px) {
-      min-height: 40vh;
+      min-height: 63vh;
       height: auto;
     }
     @media (max-height: 720px) {
       padding-top: 20px;
     }
-    
+
+   
     .carousel-sect {
      height: auto;
      position: relative;
-     margin: auto;
      width: 100%;
      display: flex;
      overflow: hidden;
@@ -323,6 +308,7 @@ const Container = styled.div`
         z-index: 2;
       }
 
+      
       .marcas-div {
         display: flex;
         flex-wrap: wrap;

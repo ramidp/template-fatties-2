@@ -9,10 +9,15 @@ const ProductContainer = styled.div`
     text-align: center;
     justify-content: flex-start;
     align-items: center;
-    min-height: 93vh;
+    min-height: 70vh;
     height: auto;
     background-color: white;
-    padding: 20px 200px; 
+    padding: 20px 50px; 
+
+    span {
+        color: ${props => props.theme.secondary};
+        cursor: pointer;
+    }
     
     @media (max-width: 1100px) {
         padding: 20px 0;
@@ -21,7 +26,7 @@ const ProductContainer = styled.div`
         .title {
             font-size: 30px;
             text-align: left;
-            width: 90%;
+            width: 50%;
             color: darkgray;
             @media (max-width: 1100px) {
                     font-size: 30px;
@@ -30,8 +35,9 @@ const ProductContainer = styled.div`
         }
 
     p {
-        width: 90%;
+        width: 50%;
         text-align: left;
+        margin: 0;
     }
 
     .tag-searcher {
@@ -148,30 +154,28 @@ const ProductContainer = styled.div`
     }
     
     .product-types1 {
-        margin-top: 20px;
         padding: 30px;
-        width: 90%;
+        width: 70%;
         height: auto;
-        min-height: 65vh;
-        background-color: #ececec;
+        background-color: #e2e2e2;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        gap: 15px;
-        box-shadow: -2px 16px 54px -17px rgba(0,0,0,0.44);
+        gap: 5px;
 
         @media (max-width: 1100px) {
             padding: 20px;
-            width: 90vw;
             height: auto;
         }
 
 
         h1 {
-            font-size: 28px;
+            text-align: left;
+            font-size: 20px;
             font-weight: bold;
             width: 100%;
+            
             @media (max-width: 1100px) {
                 font-size: 20px;
                 

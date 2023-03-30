@@ -1,56 +1,20 @@
 [ 
     {
     "id" : "1",
-    "icon" : "fa-wallet",
-    "link" : "cuenta_mercado_pago",
-    "title" : "Cuenta Mercado Pago",
+    "icon" : "mplogo.png",
+    "link" : "configuracion_cuotas",
+    "title" : "¿Cómo configurar la herramienta para cuotas sin interés? ",
     "subTitle" : "Subtitulo 1",
-    "innerText" : "Ingresos, transferencias, extracciones, inversiones y tarjetas (Texto Mas largo)",
-    "outterText" : "Ingresos, transferencias, extracciones, inversiones y tarjetas"
-    },
-    {
-    "id" : "2",
-    "icon" : "fa-money-bill",
-    "link" : "pagos",
-    "title" : "Pagos",
-    "subTitle" : "Subtitulo 2",
-    "innerText" : "Compras, pagos y suscripciones que realizaste (Texto Mas largo)",
-    "outterText" : "Compras, pagos y suscripciones que realizaste"
-    },
-    {
-    "id" : "3",
-    "icon" : "fa-tag",
-    "link" : "ventas",
-    "title" : "Ventas",
-    "subTitle" : "Subtitulo 3",
-    "innerText" : "Tus cobros, tasas y herramientas para vender con QR, Point, link de pago, etc (Texto Mas largo)",
-    "outterText" : "Tus cobros, tasas y herramientas para vender con QR, Point, link de pago, etc"
-    },
-    {
-    "id" : "4",
-    "icon" : "fa-handshake",
-    "link" : "creditos",
-    "title" : "Créditos",
-    "subTitle" : "Subtitulo 4",
-    "innerText" : "Cómo solicitar, usar y pagar cuotas de Mercado Crédito (Texto Mas largo)",
-    "outterText" : "Cómo solicitar, usar y pagar cuotas de Mercado Crédito"
-    },
-    {
-    "id" : "5",
-    "icon" : "fa-lock",
-    "link" : "seguridad",
-    "title" : "Seguridad",
-    "subTitle" : "Subtitulo 5",
-    "innerText" : "Robo o pérdida de dispositivo y robo de cuentas (Texto Mas largo)",
-    "outterText" : "Robo o pérdida de dispositivo y robo de cuentas"
-    },
-    {
-    "id" : "6",
-    "icon" : "fa-address-book",
-    "link" : "otros_productos",
-    "title" : "Otros Productos",
-    "subTitle" : "Subtitulo 6",
-    "innerText" : "Seguros, garantias extendidas y Mercado Puntos (Texto Mas largo)",
-    "outterText" : "Seguros, garantias extendidas y Mercado Puntos"
+    "outterText" : "Ahora podes configurar tus cuotas sín interés con un monto mínimo",
+    "texts" : {
+        "text1" : "Ir a la sección Costos:",
+        "text2" : "En la parte superior de la sección de costos, se muestran las configuraciones sobre cuotas que tienen los comercios. ",
+        "text3" : "Hay que ingresar en la primera sección dentro de costos se llama “Vendé en cuotas sin interés”",
+        "text4" : "Configurar el monto mínimo a partir del cual se ofrece cada cuota: La sección de cuotas sin interés se divide en 3:",
+        "text5" : "Encendido y apagado de cuotas sin interés: el comercio puede elegir si ofrece o no cuotas sin interés para sus clientes",
+        "text6" : "Cuotas que ofrece: ",
+        "text7" : "El cliente elige hasta cuantas cuotas sin interés ofrece a sus clientes.",
+        "text8" : "Monto mínimo: Ahora el comercio podrá elegir para cada cuota, a partir de qué monto ofrece cuotas sin interés."
+        }
     }
 ]

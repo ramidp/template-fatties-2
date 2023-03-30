@@ -9,10 +9,10 @@ const ProductContainer = styled.div`
     text-align: center;
     justify-content: flex-start;
     align-items: center;
-    min-height: 93vh;
+    min-height: 70vh;
     height: auto;
     background-color: white;
-    padding: 20px 200px; 
+    padding: 20px 50px; 
     
     @media (max-width: 1100px) {
         padding: 20px 0;
@@ -21,7 +21,7 @@ const ProductContainer = styled.div`
         .title {
             font-size: 30px;
             text-align: left;
-            width: 60vw;
+            width: 50%;
             color: darkgray;
             @media (max-width: 1100px) {
                     font-size: 30px;
@@ -30,7 +30,7 @@ const ProductContainer = styled.div`
         }
 
     p {
-        width: 90%;
+        width: 50%;
         text-align: left;
     }
 
@@ -53,7 +53,6 @@ const ProductContainer = styled.div`
                 width: 95%;
                 padding-top: 5px;
             }
-
         
         .product-types {
             background-color: white;
@@ -75,8 +74,6 @@ const ProductContainer = styled.div`
             @media (max-width: 520px)    {
                 justify-content: center;               
                 }
-
-
 
             &:hover {
                 background-color: ${props => props.theme.secondaryOpact};
@@ -205,28 +202,6 @@ const ProductContainer = styled.div`
         justify-content: space-evenly;
         align-items: center;
         
-        
-        .article {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-    
-            h1 {
-                padding: 0!important;
-                font-size: 18px!important;
-                padding-bottom: 10px;
-            }
-            h2 {
-                font-size: 14px!important;
-                margin: 0;
-                width: fit-content;
-                cursor: pointer;
-                &:hover {
-                    color: ${props => props.theme.secondary};
-                }
-            }
-        }
     }
 
 `

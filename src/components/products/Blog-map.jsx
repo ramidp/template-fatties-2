@@ -1,25 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductContainer from './estiloblog'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAddressBook} from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom';
 import blogs from '../../data/blogs.json'
 import {useState} from 'react'
 import Modal from 'react-bootstrap/Modal';
 import styled from 'styled-components'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
-import { useEffect } from "react";
-
-
 
 const BlogIndividual = ({blog}) => {
 
     const [show, setShow] = useState(false);
-
-    const handleShow = () => {
-        setShow(!show)
-    }
+    
     return (
         <>
         <div 
@@ -54,7 +45,10 @@ const BlogIndividual = ({blog}) => {
             style={{color: 'black'}}
             >
             {blog.innerText}
+            <br />
+            {blog.innerText2}
             </p>
+            <a href={blog.faq}>Preguntas Frecuentes</a>
             </Modal.Body>
         <Modal.Footer>
             <p>Tags:</p>
@@ -75,63 +69,66 @@ const BlogIndividual = ({blog}) => {
 
 }
 
+    const servicesArray = [
+        {
+            'id' : 1,
+            'name' : 'Mercado Pago',
+            'logo' : 'mplogo.png',
+            'object' : '50% 10%'
+
+        },
+        {
+            'id' : 2,
+            'name' : 'Calim',
+            'logo' : 'calim-logo.png',
+            'object' : '50% 50%'
+
+        },
+        {
+            'id' : 3,
+            'name' : 'Fatties',
+            'logo' : 'logo-fatties.png',
+            'object' : '50% 40%'
+        }
+    ]
+
 
 const Blog = () => {
 
-    const navegacion = useNavigate()
-
-    const animation = 'zoom-in'
-
-    useEffect (() => {
-        Aos.init({
-            duration: 1500,
-            once: true,
-        });
-    },[])
-
 
     return (
-        <>
-        <span id="blog"></span>
         <ProductContainer>
+        <span id="blog"></span>
             <h1 className="title">Blog</h1>
             <p className="mb-4 blog-text">Todas las novedades, guias y manuales que sean de utilidad serán vistas aqui.</p>
-
                 <div className="products">
-                    {blogs.map((blog, index) => {
+                    <BlogContainer>
+
+                    {servicesArray.map((item) => {
                         return (
-                        <div
-                        data-aos={animation}
-                        key={index} onClick={() => navegacion ("/blog/" + `${blog.link}`)} 
-                        className="product-types"
-                        >
-                        <FontAwesomeIcon icon={faAddressBook} />
-                            <h1>{blog.title}</h1>
-                            <p>{blog.outterText}</p>
-                        </div>
+                            <div 
+                            className="blog-brand"
+                            key={item.id}>
+                                <img 
+                                style={{objectPosition: `${item.object}`,
+                            }}
+                                src={require('../../images/' + `${item.logo}`)} alt="" />
+                                 {
+                                blogs.filter(blog => item.name == blog.for).map((blog) => {
+                                    return (
+                                        <BlogIndividual 
+                                        key={blog.id} 
+                                        blog={blog}
+                                        />
+                                    )
+                                })
+                            }
+                            </div>
                         )
                     })}
-                    <BlogContainer>
-                        <h1 className="pt-4">Modales</h1>
-                        <div className="modal-box">
-                        {
-                            blogs.map((blog) => {
-                                return (
-                                    <BlogIndividual 
-                                    key={blog.id} 
-                                    blog={blog}
-                                    />
-                                )
-                            })
-                        }
-                        </div>
                     </BlogContainer>
-
-                    
-                    
                 </div>
         </ProductContainer>
-        </>
     );
 }
  
@@ -140,27 +137,26 @@ export default Blog
 const BlogContainer = styled.div`
     
     width: 100%;
-    height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
+    align-items: flex-start;
     flex-wrap: wrap;
 
-    .modal-box {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        flex-direction: row;
-        padding: 20px;
-        flex-wrap: wrap;
-        gap: 10px;
+    .blog-brand {
+        width: 30vw;
+        padding: 10px;
+    }
 
-        @media (max-width: 1100px) {
-            flex-direction: column;
-        }
+    img {
+        box-shadow: 0px 0px 50px -20px rgba(0,0,0,0.44);
+        border-radius: 15px;
+        width: 25vw;
+        height: 120px;
+        object-fit: cover;
+        filter: opacity(50%);
+        margin: 20px 0;
+    }
 
         .article {
             display: flex;
@@ -169,27 +165,28 @@ const BlogContainer = styled.div`
             align-items: center;
             padding: 10px;
             min-width: 15vw;
-            max-width: 30vw;
-            height: 15vh;
+            min-height: 15vh;
+            height: auto;
             box-shadow: 0px 0px 50px -20px rgba(0,0,0,0.44);
+            transition: 0.2s linear;
     
             @media (max-width: 1100px) {
                 width: 100%;
             }
     
             &:hover {
-                background-color: ${props => props.theme.secondaryOpact};
+                transform: scale(1.03);
             }
             
             p {
-                width: 50%;
+                width: 90%;
                 text-align: center;
                 margin: 0;
                 font-size: 14px;
             }
     
             h1 {
-                width: auto;
+                width: 90%;
                 padding: 0!important;
                 font-size: 16px!important;
                 padding-bottom: 10px;
@@ -205,8 +202,5 @@ const BlogContainer = styled.div`
                 }
             }
         }
-    }
-
-   
     
 `

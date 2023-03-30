@@ -30,7 +30,7 @@ const Faq = () => {
         <Container>
             <h1 className="faq-title">FAQ</h1>
             <p 
-            style={{width: "90%"}}
+            style={{width: "50%"}}
             >FAQ / </p>
             <h1>¿Con que podemos ayudarte?</h1>
 
@@ -39,30 +39,6 @@ const Faq = () => {
                 type="text"
                 onChange={handleChange}
                 placeholder="Buscador por Titulo? Por texto interno? .." />
-
-                {/* 
-                Idea of a sub-menu showing the options you get while searching, but it's gonna be a plan-B
-                {data.length != 0 ?
-                <div className="searched-data">
-                                    {
-                    filteredData.slice(0, 10).map((faq, index) => {
-                        return (
-                            <div key={faq.id} onClick={() => {navegacion('/faq/' + `${faq.link}`)}} className="card">
-                            <i className={"fa-solid " + faq.icon}></i>
-                                <div>
-                                    <h3>{faq.title}</h3>
-                                    <p>{faq.outterText}</p>
-                                </div>
-                    </div>
-                    )
-                })
-            }
-
-                </div>
-                :
-                <></>
-                } */}
-
             </div>
 
 
@@ -71,14 +47,14 @@ const Faq = () => {
             filteredData.slice(0, 10).map((faq, index) => {
                 return (
                     <div key={faq.id} onClick={() => {navegacion('/faq/' + `${faq.link}`)}} className="card">
-                    <i className={"fa-solid " + faq.icon}></i>
+                    <img src={require('../../images/' + `${faq.icon}`)} alt="" />
                         <div>
                             <h3>
-                                <b>
-                                {faq.title}
-                                </b>
-                                </h3>
-                            <p>{faq.outterText}</p>
+                                <b>{faq.title} </b>
+                                 </h3>
+                            <p
+                            style={{margin: '0'}}
+                            >{faq.outterText}</p>
                         </div>
             </div>
                     )
@@ -93,7 +69,8 @@ const Faq = () => {
 export default Faq;
 
 const Container = styled.div`
-    height: 90vh;
+    min-height: 70vh;
+    height: auto;
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -101,7 +78,7 @@ const Container = styled.div`
     flex-direction: column;
     background-color: #f5f5f5;
     padding-top: 20px; 
-    padding: 20px 200px; 
+    padding: 20px 50px; 
 
 
     .tag-searcher {
@@ -153,7 +130,7 @@ const Container = styled.div`
     }
 
     .faq-title {
-        width: 60vw;
+        width: 50%;
         text-align: left;
         color: darkgray;
         font-size: 30px;
@@ -208,6 +185,10 @@ const Container = styled.div`
                 width: 30px;
                 font-size: 22px;
                 color: ${props => props.theme.secondary};
+            }
+            img {
+                width: 40px;
+                height: 40px;
             }
         }
     }

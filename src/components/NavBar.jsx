@@ -11,8 +11,6 @@ const MenuNav = () => {
 
 const [display, setDisplay] = useState(false)
 
-const blogIcon = require ('../images/icons/blog.png')
-
 const location1 = useLocation()
 const isHome = location1.pathname === '/'
 
@@ -30,26 +28,24 @@ useEffect(() => {
   return (
     <MenuNavContainer>
             {/* <OffCanvasTop/> */}
-            <div className="hide">
                 <>
                 {isHome ?
-                <Link 
+                <Link
                 to="top"
                 spy={true}
                 smooth={true}
                 offset={-100}
                 duration={100}
-                ><h3>Home</h3>
+                >Home
 
                 </Link>
                   :
-                <a href="/"><h3>Home</h3></a>
+                <a href="/">Home</a>
                 }
                 </>
-                <a href="/blog"><h3 className="underline">Blog</h3></a>
-                <a href="/faq"><h3 className="underline">FAQ</h3></a>
-                <a href="/nosotros"><h3 className="underline">Nosotros</h3></a>
-            </div>
+                <a href="/blog">Blog</a>
+                <a href="/faq">FAQ</a>
+                <a href="/nosotros">Nosotros</a>
     </MenuNavContainer>
   );
 }
@@ -59,75 +55,28 @@ export default MenuNav;
 const MenuNavContainer = styled.div`
     color: white;
     display: flex;
-    width: 70%;
+    width: 100%;
     height: 100%;
     flex-direction: row;
-    margin-top: 70px;
-    margin: auto 0;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-
-    /* .underline {
-      display: flex;
-      justify-content: space-between;
-
-      &:hover {
-        text-decoration: underline;
-        text-underline-offset: 7px;
-      }
-    } */
+    padding-left: 50px;
 
     a {
       width: auto;
       text-decoration: none;
-
-
-      h3 {
-        text-align: center;
-        padding: 10px;
-        margin: 0;
-        font-size: 18px;
-        color: ${props => props.theme.secondary};
-        cursor: pointer;
-
-        &:hover {
-          border-radius: 7px;
-          background-color: rgba(239,73,49, 0.2);
-        }
-        @media (max-width: 1100px) {
-          padding: 10px;
-          font-size: 18px;
-      }
-
-      }
-    }
-    
-    .hide {
-      width: 90%;
+      height: 100%;
       display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      padding-left: 20%;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      padding: 0 20px;
+      color: ${props => props.theme.secondary}!important;
 
-      @media (max-width: 1100px) {
-        padding: 0;
-      }
-
-      a {
-        img {
-          width: 20px;
+      &:hover {
+          background-color: #f0f0f0;
         }
-        svg {
-          font-size: 26px;
-          padding: 10px 20px;
-          color: ${props => props.theme.secondary};
-          &:hover {
-            cursor: pointer;
-            background-color: rgba(239,73,49, 0.2);
-          }
-        }
-      }
+    }
 
-}
 `
 
