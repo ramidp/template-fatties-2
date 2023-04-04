@@ -17,7 +17,7 @@ const Logo = () => {
         });
     },[])
 
-    const logo = require('../images/logo-fatties.png')
+    const logo = require('../images/Banner/banner-2.png')
 
     return ( 
         <LogoContainer 
@@ -43,11 +43,29 @@ const LogoContainer = styled.div`
             width: 100% ;
             height: 100%;
             object-fit: none;
-            object-position: 50% 51%;
+            object-position: 50% 50%;
             mix-blend-mode: multiply;
+            animation: kenburns-top 30s ease-out both;
 
             @media (max-width: 1100px) {
                 object-position: 50% 50%;
+            }
+
+            
+            /**
+            * ----------------------------------------
+            * animation kenburns-top
+            * ----------------------------------------
+            */
+            @keyframes kenburns-top {
+            0% {
+                        transform: scale(1) translateY(0);
+                        transform-origin: 50% 16%;
+            }
+            100% {
+                        transform: scale(1.25) translateY(-15px);
+                        transform-origin: top;
+                }
             }
         }
 `

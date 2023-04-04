@@ -1,15 +1,17 @@
 import styled from "styled-components";
 import Datos from "./Datos";
 import MenuMobile from "./MenuMobile";
+import React from 'react'
 
 
-const Menu = ({handleChangeTheme} : any) => {
+
+const Menu = () => {
 
 
     return ( 
             <MenuContainer>
                 <Datos/>
-                <MenuMobile handleChangeTheme={handleChangeTheme}/>
+                <MenuMobile/>
             </MenuContainer>
      );
 }

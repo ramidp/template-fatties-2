@@ -1,20 +1,2 @@
 [ 
-    {
-    "id" : "1",
-    "icon" : "mplogo.png",
-    "link" : "configuracion_cuotas",
-    "title" : "¿Cómo configurar la herramienta para cuotas sin interés? ",
-    "subTitle" : "Subtitulo 1",
-    "outterText" : "Ahora podes configurar tus cuotas sín interés con un monto mínimo",
-    "texts" : {
-        "text1" : "Ir a la sección Costos:",
-        "text2" : "En la parte superior de la sección de costos, se muestran las configuraciones sobre cuotas que tienen los comercios. ",
-        "text3" : "Hay que ingresar en la primera sección dentro de costos se llama “Vendé en cuotas sin interés”",
-        "text4" : "Configurar el monto mínimo a partir del cual se ofrece cada cuota: La sección de cuotas sin interés se divide en 3:",
-        "text5" : "Encendido y apagado de cuotas sin interés: el comercio puede elegir si ofrece o no cuotas sin interés para sus clientes",
-        "text6" : "Cuotas que ofrece: ",
-        "text7" : "El cliente elige hasta cuantas cuotas sin interés ofrece a sus clientes.",
-        "text8" : "Monto mínimo: Ahora el comercio podrá elegir para cada cuota, a partir de qué monto ofrece cuotas sin interés."
-        }
-    }
 ]

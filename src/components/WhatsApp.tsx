@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import React from 'react'
+
 
 const WhatsAppBtn = () => {
 
@@ -28,6 +30,7 @@ const Container = styled.div`
     padding: 0 15px 15px 0;
     bottom: 0;
     right: 0;
+    z-index: 100;
     img {
         width: 50px;
 

@@ -31,14 +31,12 @@ body {
       margin: 0;
       font-size: 30px; 
       text-align: center;
-    
   }
   
   /* Main Font */
   
   * {
     font-family: 'Antonio';
-
   }
 
 
@@ -82,8 +80,9 @@ body {
        
 
        .modal-content {
-        width: 60%!important;
-        height: 80vh;
+        width: 80%!important;
+        min-height: 80vh;
+        height: auto;
         border-radius: 0px!important;
         box-shadow: 0px 0px 50px -20px rgba(0,0,0,0.44);
         padding: 30px;

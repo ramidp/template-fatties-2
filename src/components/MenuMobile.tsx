@@ -1,16 +1,17 @@
 import styled from 'styled-components'
 import NavBar from './NavBar';
 import { useLocation } from 'react-router-dom';
+import React from 'react'
 
 
-const MenuMobile = (props : {handleChangeTheme: ()=> void}) => {
+
+const MenuMobile = () => {
 
     const location = useLocation()
 
     return ( 
         <MenuMobileContainer>
                 <NavBar/>
-
         </MenuMobileContainer>
      );
 }

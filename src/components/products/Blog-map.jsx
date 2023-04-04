@@ -1,100 +1,59 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductContainer from './estiloblog'
-import blogs from '../../data/blogs.json'
-import {useState} from 'react'
-import Modal from 'react-bootstrap/Modal';
+import React, {useState} from 'react'
 import styled from 'styled-components'
-import Aos from 'aos'
-import 'aos/dist/aos.css'
+import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 
-const BlogIndividual = ({blog}) => {
-
-    const [show, setShow] = useState(false);
-    
-    return (
-        <>
-        <div 
-        className="article">
-            <h1>{blog.title}</h1>
-            <p>{blog.outterText}</p>
-            <h2 style={{color: 'red'}} onClick={() => setShow(true)}>Leer más</h2>
-        </div>
-      <Modal 
-        show={show}
-        onHide={() => setShow(false)}
-        backdrop="static"
-        keyboard={false}>
-            
-        <Modal.Header>
-          <Modal.Title>
-            <div className="title">
-                <h1
-                style={{fontSize: '28px'
-            }}>
-                <b>
-                {blog.title}
-                </b>
-                </h1>
-                <button onClick={() => setShow(false)}>X</button>
-            </div>
-            <p>Blog / {blog.link}</p>
-         </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            <p
-            style={{color: 'black'}}
-            >
-            {blog.innerText}
-            <br />
-            {blog.innerText2}
-            </p>
-            <a href={blog.faq}>Preguntas Frecuentes</a>
-            </Modal.Body>
-        <Modal.Footer>
-            <p>Tags:</p>
-                <p className="tags">
-                {blog.tags.tag1}
-                </p>
-                <p className="tags">
-                {blog.tags.tag2}
-                </p>
-                <p className="tags">
-                {blog.tags.tag3}
-                </p>
-
-        </Modal.Footer>
-      </Modal>
-        </>
-    )
-
-}
-
-    const servicesArray = [
-        {
-            'id' : 1,
-            'name' : 'Mercado Pago',
-            'logo' : 'mplogo.png',
-            'object' : '50% 10%'
-
-        },
-        {
-            'id' : 2,
-            'name' : 'Calim',
-            'logo' : 'calim-logo.png',
-            'object' : '50% 30%'
-
-        },
-        {
-            'id' : 3,
-            'name' : 'Fatties',
-            'logo' : 'logo-fatties.png',
-            'object' : '50% 40%'
-        }
-    ]
 
 
 const Blog = () => {
 
+    const banner = require('../../images/Blog/mp_1/mp1.jpg')
+
+    const blogTitles = [
+        {   
+            id: 1,
+            name: 'Ahora podes configurar tus cuotas sín interés con un monto mínimo',
+            link: '/blog/mp_1',
+        },
+        {   
+            id: 2,
+            name: 'Por qué se genera saldo a favor de Ingresos Brutos',
+            link: '/blog/calim_1'
+        },
+        {   
+            id: 3,
+            name: 'Tercer Ejemplo Fatties',
+            link: '/blog/fatties_1'
+        },
+        {   
+            id: 4,
+            name: 'Cuarto Ejemplo Fatties',
+            link: '/blog/fatties_2'
+        },
+        {   
+            id: 5,
+            name: 'Quinto Ejemplo Fatties',
+            link: '/blog/fatties_3'
+        }
+    ]
+
+    const [filteredData, setFilteredData] = useState(blogTitles)
+
+    const handleChange = (e) => {
+        const searchWord = e.target.value;
+        const newFilter = blogTitles.filter((item => {
+            return (
+                item.name.toLowerCase().includes(searchWord.toLowerCase())
+                )
+        }));
+            setFilteredData(newFilter)
+    }
+
+
+    const navegacion = useNavigate()
 
     return (
         <ProductContainer>
@@ -102,30 +61,54 @@ const Blog = () => {
             <h1 className="title">Blog</h1>
             <p className="mb-4 blog-text">Todas las novedades, guias y manuales que sean de utilidad serán vistas aqui.</p>
                 <div className="products">
-                    <BlogContainer>
-
-                    {servicesArray.map((item) => {
-                        return (
-                            <div 
-                            className="blog-brand"
-                            key={item.id}>
-                                <img 
-                                style={{objectPosition: `${item.object}`,
-                            }}
-                                src={require('../../images/' + `${item.logo}`)} alt="" />
-                                 {
-                                blogs.filter(blog => item.name == blog.for).map((blog) => {
-                                    return (
-                                        <BlogIndividual 
-                                        key={blog.id} 
-                                        blog={blog}
-                                        />
+                    <div 
+                    className='searcher'
+                    >
+                        <div className="tag-searcher">
+                            <input
+                            type="text"
+                            onChange={handleChange}
+                            placeholder="Buscador .." />
+                            <FontAwesomeIcon icon={faMagnifyingGlass}/>
+                        </div>
+                        <div className="searched-data">
+                        {
+                            filteredData.slice(0, 10).sort((a, b) => b.id - a.id).map((item, index) => {
+                                return (
+                                    <p onClick={() => navegacion(`${item.link}`)} key={item.id}>{item.name}</p>
                                     )
                                 })
                             }
-                            </div>
-                        )
-                    })}
+                        </div>
+                    </div>
+
+                    <BlogContainer>
+                        <div className="article">
+                                <div className="article_text">
+                                    <img src={banner} alt="" />
+                                    <h1>Ahora podes configurar tus cuotas sín interés con un monto mínimo</h1>
+                                    <p>Toda la información sobre como configurar tus cuotas sin interés</p>
+                                    <h2 style={{color: 'red'}} onClick={() => navegacion('/blog/mp_1')}>Leer más</h2>
+                                </div>
+                        </div>
+
+                        <div className="article">
+                                <span className="calim-blog"/>
+                                <div className="article_text">
+                                    <h1>Por qué se genera saldo a favor de Ingresos Brutos</h1>
+                                    <p>Todo lo que necesitas saber sobre saldo a Favor de Ingresos Brutos</p>
+                                    <h2 style={{color: 'red'}} onClick={() => navegacion('/blog/calim_1')}>Leer más</h2>
+                                </div>
+                        </div>
+
+                        <div className="article">
+                                <span className="fatties-blog"/>
+                                <div className="article_text">
+                                    <h1>Tercer Ejemplo Fatties</h1>
+                                    <p>Articulo relacionado a Fatties</p>
+                                    <h2 style={{color: 'red'}} onClick={() => navegacion('/blog/fatties_1')}>Leer más</h2>
+                                </div>
+                        </div>
                     </BlogContainer>
                 </div>
         </ProductContainer>
@@ -135,71 +118,102 @@ const Blog = () => {
 export default Blog
 
 const BlogContainer = styled.div`
-    
-    width: 100%;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
+    align-content: flex-start;
     flex-wrap: wrap;
+    gap: 15px;
+    width: 80%;
+    padding: 0 40px;
+    height: auto;
 
-    .blog-brand {
-        width: 30vw;
-        padding: 10px;
-    }
-
-    img {
-        box-shadow: 0px 0px 50px -20px rgba(0,0,0,0.44);
-        border-radius: 15px;
-        width: 25vw;
-        height: 80px;
-        object-fit: cover;
-        filter: opacity(50%);
-        margin: 20px 0;
-    }
-
-        .article {
+    .article {
             display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-            padding: 10px;
-            min-width: 15vw;
-            min-height: 15vh;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 20px;
+            min-width: 30%;
+            width: auto;
+            min-height: 50vh;
             height: auto;
-            box-shadow: 0px 0px 50px -20px rgba(0,0,0,0.44);
+            box-shadow: 0px 0px 80px -30px rgba(0,0,0,0.44);
             transition: 0.2s linear;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
     
             @media (max-width: 1100px) {
                 width: 100%;
             }
-    
+            
             &:hover {
                 transform: scale(1.03);
             }
+
+            .mp-blog {
+                width: 100px;
+                height: 100px;
+                background: linear-gradient(135deg, rgba(0,159,227,1) 20%, rgba(16,14,159,1) 40%, rgba(255,255,255,1) 30%);
+             }
+             
+            .calim-blog {
+                width: 100px;
+                height: 100px;
+                background: linear-gradient(135deg, rgba(33,146,165,1) 20%, rgba(191,216,71,1) 40%, rgba(255,255,255,1) 30%);
+             }
+
+            .fatties-blog {
+                width: 100px;
+                height: 100px;
+                background: linear-gradient(135deg, rgba(84,193,186,1) 20%, rgba(239,73,49,1) 40%, rgba(255,255,255,1) 30%);
+             }
+
+            .article_text {
+                display: flex;
+                height: 100%;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 10px;
+
+            }
             
             p {
-                width: 90%;
-                text-align: center;
+                width: 100%;
+                text-align: left;
                 margin: 0;
                 font-size: 14px;
+                z-index: 2;
             }
     
             h1 {
-                width: 90%;
+                width: 100%;
                 padding: 0!important;
-                font-size: 16px!important;
+                font-size: 18px!important;
                 padding-bottom: 10px;
                 font-weight: bold;
+                z-index: 2;
+                text-align: left;
             }
             h2 {
                 font-size: 14px!important;
                 margin: 0;
                 width: fit-content;
                 cursor: pointer;
+                z-index: 2;
                 &:hover {
                     color: ${props => props.theme.secondary};
                 }
+            }
+            img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                object-position: 50% 20%;
+                filter: opacity(70%);
             }
         }
     

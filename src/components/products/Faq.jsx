@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import faq from '../../data/faq.json'
-import {useState} from 'react'
+import React, {useState} from 'react'
 
 // Lo que se puede hacer es que estos puntos te manden a los links de MP Ayuda
 // Podemos crearlos de 0, pero bueno, habria que ver bien el texto. (Creo que es lo mejor para que todo se quede DENTRO de la pagina)
@@ -30,7 +30,7 @@ const Faq = () => {
         <Container>
             <h1 className="faq-title">FAQ</h1>
             <p 
-            style={{width: "50%"}}
+            style={{width: "80%"}}
             >FAQ / </p>
             <h1>¿Con que podemos ayudarte?</h1>
 
@@ -38,9 +38,8 @@ const Faq = () => {
                 <input
                 type="text"
                 onChange={handleChange}
-                placeholder="Buscador por Titulo? Por texto interno? .." />
+                placeholder="Buscar por Titulos" />
             </div>
-
 
         <div className="card-box">
             {
@@ -78,8 +77,7 @@ const Container = styled.div`
     flex-direction: column;
     background-color: #f5f5f5;
     padding-top: 20px; 
-    padding: 20px 50px; 
-
+    padding: 20px;
 
     .tag-searcher {
         display: flex;
@@ -130,12 +128,11 @@ const Container = styled.div`
     }
 
     .faq-title {
-        width: 50%;
+        width: 80%;
         text-align: left;
         color: darkgray;
         font-size: 30px;
         margin-bottom: 8px;
-
     }
     
 .card-box {
@@ -162,7 +159,7 @@ const Container = styled.div`
 
             @media (max-width: 1100px) {
             width: 80%;
-        }
+            }
     
                 &:hover {
                 cursor: pointer;
@@ -187,8 +184,9 @@ const Container = styled.div`
                 color: ${props => props.theme.secondary};
             }
             img {
-                width: 40px;
-                height: 40px;
+                width: 50px;
+                height: 50px;
+                object-fit: scale-down;
             }
         }
     }

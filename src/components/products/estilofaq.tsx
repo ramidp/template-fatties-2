@@ -26,7 +26,7 @@ const ProductContainer = styled.div`
         .title {
             font-size: 30px;
             text-align: left;
-            width: 50%;
+            width: 80%;
             color: darkgray;
             @media (max-width: 1100px) {
                     font-size: 30px;
@@ -35,7 +35,7 @@ const ProductContainer = styled.div`
         }
 
     p {
-        width: 50%;
+        width: 80%;
         text-align: left;
         margin: 0;
     }

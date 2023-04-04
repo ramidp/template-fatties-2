@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle, faKey, faGears } from '@fortawesome/free-solid-svg-icons';
 import Aos from 'aos'
 import 'aos/dist/aos.css'
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import Logo from "./Logo";
 import { Link } from 'react-scroll'
 
@@ -25,7 +25,7 @@ const BrandMain = () => {
     
     return (
         <BrandMainContainer id="top" className="p-0">
-            <Logo/>  
+            <Logo/>
             <div className="absolute">
                 <div className="brand-logo">
                         <div className="brand-title">
@@ -38,32 +38,80 @@ const BrandMain = () => {
                                 <br/>
                                 Atención personalizada.
                                 </h1>
-                            <p data-aos={animation2} data-aos-delay="2300" className="m-0 pt-0">"Cumplimos las exigencias en seguridad, claridad y confianza en la gestión de cuentas.
+                            <p data-aos={animation2} data-aos-delay="2300" className="m-0 pt-0">
+                                Cumplimos las exigencias en seguridad, claridad y confianza en la gestión de cuentas.
                                 Somos Consultores Certificados por Mercado Pago.
-                                Contribuimos en garantizar un servicio de postventa completo."
+                                Contribuimos en garantizar un servicio de postventa completo.
                             </p>
-                    </div>
+                        </div>
                         <div data-aos={animation2} data-aos-delay="2600" className="btns-box">
                             <Link 
+                            style={{display: 'flex',
+                            flexDirection: 'column',
+                            }}
                             className="contactbtn" 
                             to="servicios"
                             spy={true}
                             smooth={true}
                             offset={-63}
-                            duration={100}>Servicios</Link>
+                            duration={100}>
+                                Servicios
+                                <p
+                                style={{fontSize: '16px'}}
+                                >
+                                    Servicios de 
+                                    <br />
+                                    todo tipo
+                                </p>
+                                </Link>
 
                             <Link 
-                            className="contactbtn"
+                            style={{display: 'flex',
+                            flexDirection: 'column',
+                            }}
+                            className="contactbtn" 
                             to="marcas"
                             spy={true}
                             smooth={true}
                             offset={-63}
-                            duration={100}>Clientes</Link>
+                            duration={100}>
+                                Clientes
+                                <p
+                                style={{fontSize: '16px'}}
+                                >   
+                                    Cartera amplia
+                                </p>
+                                </Link>
+
+                            <Link 
+                            style={{display: 'flex',
+                            flexDirection: 'column',
+                            }}
+                            className="contactbtn" 
+                            to="referencias"
+                            spy={true}
+                            smooth={true}
+                            offset={-63}
+                            duration={100}>
+                                Qué dicen
+                                <br />
+                                de Nosotros?
+                                </Link>
 
                             
                             <a 
                             className="contactbtn"
-                            href="/nosotros">Sobre nosotros</a>
+                            style={{display: 'flex',
+                            flexDirection: 'column',
+                            }}
+                            href="/nosotros"
+                            >Sobre nosotros
+                               <p
+                                style={{fontSize: '16px'}}
+                                >   
+                                    Conócenos
+                                </p>
+                            </a>
                             
                         </div>
                 </div>
@@ -141,10 +189,12 @@ const BrandMainContainer = styled.div`
 
     .fattieslogo {
         position: absolute;
-        width: 50%;
+        width: 50%;        
+        font-size: 100px;
         top: -9%;
         z-index: -20;
         filter: opacity(10%);
+        
         }
 
         
@@ -155,6 +205,7 @@ const BrandMainContainer = styled.div`
         justify-content: center;
         align-items: center;
         z-index: 2;
+        
       
         .brand-logo {
             display: flex;
@@ -166,7 +217,7 @@ const BrandMainContainer = styled.div`
             display: flex;
             padding: 25px;
             gap: 150px;
-            padding-top: 150px;
+            padding-top: 100px;
             background: linear-gradient(0deg, rgba(255,255,255,1) 30%, rgba(255, 255, 255, 0) 100%);
 
 
@@ -187,7 +238,7 @@ const BrandMainContainer = styled.div`
                 text-align: left;
                 width: 70%;
                 font-size: 50px;
-                font-family: 'Anton';
+                font-weight: bold;
 
                 @media (max-width: 1100px) {
                 font-size: 24px;
@@ -210,15 +261,13 @@ const BrandMainContainer = styled.div`
                 @media (max-width: 764px) {
                 font-size: 12px;
                 }
-
             }
 
-            h1, p {
+            h1 {
                 color: white;
                 text-shadow: 0px 0px 20px black;
-             }
+                }
             }
-
         }
         
         .btns-box {
@@ -231,21 +280,24 @@ const BrandMainContainer = styled.div`
 
             .contactbtn {
                 text-align: center;
-                border-radius: 10px;
-                color: white;
+                border-top-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                color: ${props => props.theme.secondary};
                 cursor: pointer;
                 text-decoration: none;
-                background-color: ${props => props.theme.secondary};
+                border: 1px solid ${props => props.theme.secondary};
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 font-size: 24px;
-                height: 8vh;
+                height: 20vh;
                 width: 11vw;
                 box-shadow: 0px 0px 40px -30px rgba(0,0,0,1);
+                transition: ease 1s all;
                 
                 &:hover {
-                    filter: contrast(60%)
+                    color: white;
+                    background: ${props => props.theme.secondary};
                 }
 
                 @media (max-width: 1100px) {
@@ -278,7 +330,7 @@ const BrandMainContainer = styled.div`
         .features {
             height: 23.3vh;
             width: 100%;
-            padding: 10px 400px;
+            padding: 10px 250px;
             gap: 15px;
             display: flex;
             flex-direction: row;
@@ -308,7 +360,7 @@ const BrandMainContainer = styled.div`
 
 
                 .mp {
-                    height: 100px;
+                    height: 150px;
                     @media (max-width: 1100px) {
                     height: 80px;
                     }
@@ -318,7 +370,7 @@ const BrandMainContainer = styled.div`
 
                 }
                 .calim {
-                    height: 50px;
+                    height: 80px;
                     @media (max-width: 1100px) {
                     height: 40px;
                     }
@@ -385,7 +437,7 @@ const BrandMainContainer = styled.div`
             }
 
             svg {
-                font-size: 70px;
+                font-size: 90px;
                 color: ${props => props.theme.secondary}
                 ;
                 @media (max-width: 1100px) {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import 'aos/dist/aos.css'
 
 

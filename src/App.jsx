@@ -5,13 +5,13 @@ import Footer from './components/Footer';
 import Menu from './components/Menu';
 import LoadingPage from './components/LoadingPage';
 import Blog from './components/products/Blog-map';
+import Blog1 from './components/products/Blog1';
+import Blog2 from './components/products/Blog2';
 import Faq from './components/products/Faq';
 import Main from './components/Main';
 import WebFont from 'webfontloader'
-import { useState } from 'react';
-import blogs from './data/blogs.json'
+import React, { useState } from 'react';
 import faq from './data/faq.json'
-import BlogArticleMap from './components/products/BlogArticle-map';
 import FaqMap from './components/products/Faq-map';
 import WhatsAppBtn from './components/WhatsApp';
 import Nosotros from './components/Nosotros';
@@ -19,10 +19,20 @@ import WallExample from './components/WallExample';
 
 const App = () => {
 
-
   WebFont.load ({
     google: {
-      families: ['Ubuntu:400', 'Mate:400', 'Kosugi:400', 'Amiko:400', 'Anton:400', 'Antonio:400', 'Abril Fatface:400']
+      families: [
+      'Ubuntu:400', 
+      'Mate:400', 
+      'Kosugi:400', 
+      'Amiko:400', 
+      'Anton:400', 
+      'Antonio:400', 
+      'Abril Fatface:400', 
+      'Montserrat:300,400,500,700,900',
+      'Helvetica:400:700:900',
+      ''
+  ]
     }
   });
 
@@ -36,46 +46,6 @@ const App = () => {
       mainFont: "Arial", // Fuente 1
   })
 
-  let handleChangeTheme = () => {
-
-    console.log('Cambio de tema')
-
-    switch (theme.primary) {
-      case 'rgb(169, 193, 84)':
-        {setTheme({
-                primary: 'rgb(25, 87, 83)',
-                secondary: 'rgb(64, 201, 0)', // Main Color de la página
-                secondaryOpact: 'rgb(170, 156, 248)',
-                tertiary: 'rgb(245,186,63)',
-                gray: '#f1f1f1',
-                mainFont: "Arial", // Fuente 1
-                })}
-                
-        break;
-        case 'rgb(25, 87, 83)':
-          {setTheme({
-                  primary: 'rgb(84,193,186)',
-                  secondary: 'rgb(239,73,49)', // Main Color de la página
-                  secondaryOpact: 'rgb(248, 168, 156)',
-                  tertiary: 'rgb(245,186,63)',
-                  gray: '#f1f1f1',
-                  mainFont: "Arial", // Fuente 1
-                        })}
-          break;
-      default:
-        setTheme({
-          primary: 'rgb(169, 193, 84)',
-          secondary: 'rgb(16, 5, 179)', // Main Color de la página
-          secondaryOpact: 'rgb(165, 156, 248)',
-          tertiary: 'rgb(245,186,63)',
-          gray: '#f1f1f1',
-          mainFont: "Arial", // Fuente 1
-    
-        })
-        break;
-    }
-  }
-
   return (
       <AppContainer>
       <BrowserRouter>
@@ -84,7 +54,7 @@ const App = () => {
       <ThemeProvider theme={theme}>
 
         <div className="menu">
-          <Menu handleChangeTheme={handleChangeTheme}/>
+          <Menu/>
         </div>
 
         <div className="center">
@@ -92,15 +62,11 @@ const App = () => {
                   <Route path="/" element={<Main/>}/>
                   <Route path="/blog" element={<Blog/>}/>
                   {/* Dynamic Router (I used useLocation to compare blog.ink against the location of the URL)*/}
-                  {
-                    blogs.map(blog => {
-                      return (
-                        <Route key={blog.id} path={'/blog/' + blog.link} 
-                        element={<BlogArticleMap/>
-                        }/>
-                      )
-                    })
-                  }
+                  <Route path={'/blog/mp_1' } 
+                        element={<Blog1/>}/>
+                  <Route path={'/blog/calim_1' } 
+                        element={<Blog2/>}/>
+
                   {
                     faq.map(faq => {
                       return (
