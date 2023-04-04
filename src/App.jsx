@@ -7,12 +7,14 @@ import LoadingPage from './components/LoadingPage';
 import Blog from './components/products/Blog-map';
 import Blog1 from './components/products/Blog1';
 import Blog2 from './components/products/Blog2';
+import Blog3 from './components/products/Blog3';
 import Faq from './components/products/Faq';
+import Faq1 from './components/products/Faq1';
+import Faq2 from './components/products/Faq2';
+import Faq3 from './components/products/Faq3';
 import Main from './components/Main';
 import WebFont from 'webfontloader'
 import React, { useState } from 'react';
-import faq from './data/faq.json'
-import FaqMap from './components/products/Faq-map';
 import WhatsAppBtn from './components/WhatsApp';
 import Nosotros from './components/Nosotros';
 import WallExample from './components/WallExample';
@@ -62,20 +64,13 @@ const App = () => {
                   <Route path="/" element={<Main/>}/>
                   <Route path="/blog" element={<Blog/>}/>
                   {/* Dynamic Router (I used useLocation to compare blog.ink against the location of the URL)*/}
-                  <Route path={'/blog/mp_1' } 
-                        element={<Blog1/>}/>
-                  <Route path={'/blog/calim_1' } 
-                        element={<Blog2/>}/>
+                  <Route path={'/blog/mp_1'} element={<Blog1/>}/>
+                  <Route path={'/blog/calim_1' } element={<Blog2/>}/>
+                  <Route path={'/blog/fatties_1' } element={<Blog3/>}/>
+                  <Route path={'/faq/fatties_faq' } element={<Faq1/>}/>
+                  <Route path={'/faq/mercadopago_faq' } element={<Faq2/>}/>
+                  <Route path={'/faq/calim_faq' } element={<Faq3/>}/>
 
-                  {
-                    faq.map(faq => {
-                      return (
-                        <Route key={faq.id} path={'/faq/' + faq.link} 
-                        element={<FaqMap/>
-                        }/>
-                      )
-                    })
-                  }
 
                   <Route path="/faq" element={<Faq/>}/>
                   <Route path="/nosotros" element={<Nosotros/>}/>

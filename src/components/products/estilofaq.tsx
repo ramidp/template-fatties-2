@@ -9,14 +9,18 @@ const ProductContainer = styled.div`
     text-align: center;
     justify-content: flex-start;
     align-items: center;
-    min-height: 70vh;
+    min-height: 93vh;
     height: auto;
     background-color: white;
-    padding: 20px 50px; 
+    padding: 20px; 
 
-    span {
+    a {
+        text-decoration: none;
         color: ${props => props.theme.secondary};
         cursor: pointer;
+        &:hover {
+            filter: contrast(50%)
+        }
     }
     
     @media (max-width: 1100px) {
@@ -45,6 +49,30 @@ const ProductContainer = styled.div`
         width: 60vw;
     }
 
+    .faq-box {
+        padding-top: 50px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            font-size: 24px;
+            margin: 10px 0;
+            text-align: left;
+            background: lightgray;
+            padding: 10px;
+            width: 90%;
+            border-top-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        p { 
+            width: 90%;
+            margin: 0;
+            font-size: 16px;
+        }
+    }
 
     .products {
         width: 60vw;
@@ -154,27 +182,45 @@ const ProductContainer = styled.div`
     }
     
     .product-types1 {
-        padding: 30px;
+        padding: 20px;
         width: 70%;
         height: auto;
-        background-color: #e2e2e2;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
-        gap: 5px;
+        align-items: flex-start;
+        gap: 10px;
 
         @media (max-width: 1100px) {
             padding: 20px;
             height: auto;
         }
 
+        ul {
+            margin: 0;
+            width: 100%;
+            padding-left: 5%;
+            li {
+                text-align: left;
+            }
+        }
 
         h1 {
             text-align: left;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
             width: 100%;
+            border-top-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background: lightgray;
+            padding: 15px 0 15px 15px;
+            transition: ease 1s all;
+            user-select: none;
+
+            &:hover {
+                cursor: pointer;
+                background: #f0f0f0;
+            }
             
             @media (max-width: 1100px) {
                 font-size: 20px;

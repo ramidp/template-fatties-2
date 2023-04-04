@@ -6,9 +6,8 @@ const ProductContainer = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
-    display: flex;
-    flex-direction: column;
     justify-content: flex-start;
+    flex-direction: column;
     min-height: 93vh;
     height: auto;
     background-color: white;
@@ -186,14 +185,14 @@ const ProductContainer = styled.div`
     
     .product-types1 {
         padding: 30px;
-        width: 90%;
+        width: 70%;
         height: auto;
         min-height: 83vh;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        gap: 10px;
+        gap: 20px;
 
         @media (max-width: 1100px) {
             padding: 20px;
@@ -247,7 +246,7 @@ const ProductContainer = styled.div`
             }
 
             ul {
-                width: 80%;
+                width: 100%;
                 li {
                     text-align: left;
                     font-style: italic;

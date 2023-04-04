@@ -1,24 +1,22 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductContainer from './estiloblog'
-import { useNavigate } from 'react-router-dom';
 
 const Blog1 = () => {
-
-    const navegacion = useNavigate()
 
     const banner = require('../../images/Blog/mp_1/mp1.jpg')
 
     return (
         <>
-        <span id="blog1"></span>
         <ProductContainer>
                 <h1 className="title">Blog</h1>
-            <p><span
+            <p>
+                <a
+                href="/blog"
                 style={{color: 'red',
-                cursor: 'pointer',    
-            }}
-            onClick={() => navegacion('/blog')}
-            >Blog</span> / Configuración Cuotas Sin Interés</p>
+                cursor: 'pointer',
+                textDecoration: 'none'}}>
+                Blog 
+                </a> / Configuración Cuotas Sin Interés</p>
 
                     <div className="product-types1 col-2">
                         <div className="col-12">

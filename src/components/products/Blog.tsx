@@ -41,7 +41,6 @@ const Blog = () => {
                                     <br />
                                     Texto Ejemplo.
                                    </p>
-
                         </div>
 
                     </div>

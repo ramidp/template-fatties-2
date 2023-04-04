@@ -1,7 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductContainer from './estiloblog'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 import { useNavigate, useLocation } from 'react-router-dom';
 import blogs from '../../data/blogs.json'
 import React, {useState} from 'react'
@@ -21,7 +19,6 @@ const BlogArticleMap = () => {
                 <ProductContainer key={blog.id}>
                 <div className="title-btn">
                 <h1 className="title">Blog</h1>
-                <FontAwesomeIcon onClick={() => navegacion('/blog')} icon={faArrowLeft} />
                 </div>
             <p>(Aca puede ir la ruta o un subtitulo) Blog / {blog.title}</p>
 

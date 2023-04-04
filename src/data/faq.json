@@ -1,2 +1,23 @@
 [ 
+    {
+    "id" : 1,
+    "title" : "Toda la información sobre Fatties",
+    "answerTitle" : "Somos un equipo de especialistas en plataformas digitales, medios de pago, gestión/resolución de reclamos, análisis comercial y atención al cliente. Nuestro objetivo es acercar a los establecimientos y emprendedores las herramientas más innovadoras para llevar su negocio al siguiente nivel.",
+    "link" : "fatties_faq",
+    "icon" : "logo-fatties.png"
+    },
+    {
+    "id" : 2,
+    "title" : "Toda la Información que necesitas saber sobre el servicio con Mercado Pago",
+    "link" : "mercadopago_faq",
+    "icon" : "mplogo.png",
+    "answerTitle" : "Empezar a cobrar con Mercado Pago en tu comercio es muy fácil, solo necesitas tener tu CUIT validado dentro de la plataforma, si todavía no lograste validar tu información fiscal podés comunicarte con nosotros para que uno de nuestros asesores te dé una mano."
+    },
+    {
+    "id" : 3,
+    "title" : "Toda la Información que necesitas saber sobre el servicio con Calim",
+    "link" : "calim_faq",
+    "icon" : "calim-logo.png",
+    "answerTitle" : ""
+    }
 ]

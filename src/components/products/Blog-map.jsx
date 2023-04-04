@@ -11,6 +11,8 @@ import { faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 const Blog = () => {
 
     const banner = require('../../images/Blog/mp_1/mp1.jpg')
+    const banner2 = require('../../images/Blog/calim_1/calculadora.webp')
+    const banner3 = require('../../images/Blog/fatties_1/gente-trabajando-2.jpg')
 
     const blogTitles = [
         {   
@@ -28,16 +30,6 @@ const Blog = () => {
             name: 'Tercer Ejemplo Fatties',
             link: '/blog/fatties_1'
         },
-        {   
-            id: 4,
-            name: 'Cuarto Ejemplo Fatties',
-            link: '/blog/fatties_2'
-        },
-        {   
-            id: 5,
-            name: 'Quinto Ejemplo Fatties',
-            link: '/blog/fatties_3'
-        }
     ]
 
     const [filteredData, setFilteredData] = useState(blogTitles)
@@ -51,7 +43,6 @@ const Blog = () => {
         }));
             setFilteredData(newFilter)
     }
-
 
     const navegacion = useNavigate()
 
@@ -93,8 +84,8 @@ const Blog = () => {
                         </div>
 
                         <div className="article">
-                                <span className="calim-blog"/>
                                 <div className="article_text">
+                                    <img src={banner2} alt="" />
                                     <h1>Por qué se genera saldo a favor de Ingresos Brutos</h1>
                                     <p>Todo lo que necesitas saber sobre saldo a Favor de Ingresos Brutos</p>
                                     <h2 style={{color: 'red'}} onClick={() => navegacion('/blog/calim_1')}>Leer más</h2>
@@ -102,8 +93,8 @@ const Blog = () => {
                         </div>
 
                         <div className="article">
-                                <span className="fatties-blog"/>
                                 <div className="article_text">
+                                    <img src={banner3} alt="" />
                                     <h1>Tercer Ejemplo Fatties</h1>
                                     <p>Articulo relacionado a Fatties</p>
                                     <h2 style={{color: 'red'}} onClick={() => navegacion('/blog/fatties_1')}>Leer más</h2>
@@ -121,7 +112,7 @@ const BlogContainer = styled.div`
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
     flex-wrap: wrap;
@@ -136,9 +127,8 @@ const BlogContainer = styled.div`
             justify-content: flex-start;
             align-items: flex-start;
             padding: 20px;
-            min-width: 30%;
-            width: auto;
-            min-height: 50vh;
+            width: 32%;
+            min-height: 40vh;
             height: auto;
             box-shadow: 0px 0px 80px -30px rgba(0,0,0,0.44);
             transition: 0.2s linear;
@@ -153,24 +143,6 @@ const BlogContainer = styled.div`
                 transform: scale(1.03);
             }
 
-            .mp-blog {
-                width: 100px;
-                height: 100px;
-                background: linear-gradient(135deg, rgba(0,159,227,1) 20%, rgba(16,14,159,1) 40%, rgba(255,255,255,1) 30%);
-             }
-             
-            .calim-blog {
-                width: 100px;
-                height: 100px;
-                background: linear-gradient(135deg, rgba(33,146,165,1) 20%, rgba(191,216,71,1) 40%, rgba(255,255,255,1) 30%);
-             }
-
-            .fatties-blog {
-                width: 100px;
-                height: 100px;
-                background: linear-gradient(135deg, rgba(84,193,186,1) 20%, rgba(239,73,49,1) 40%, rgba(255,255,255,1) 30%);
-             }
-
             .article_text {
                 display: flex;
                 height: 100%;
@@ -178,6 +150,7 @@ const BlogContainer = styled.div`
                 justify-content: flex-start;
                 align-items: flex-start;
                 gap: 10px;
+                width: 100%;
 
             }
             
@@ -210,7 +183,7 @@ const BlogContainer = styled.div`
             }
             img {
                 width: 100%;
-                height: 200px;
+                height: 150px;
                 object-fit: cover;
                 object-position: 50% 20%;
                 filter: opacity(70%);

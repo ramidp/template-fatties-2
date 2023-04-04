@@ -32,7 +32,7 @@ const BrandMain = () => {
                                  <h1 
                                 data-aos={animation2} 
                                 data-aos-delay="2000" >
-                                Soluciones Digitales. 
+                                Soluciones digitales. 
                                 <br />
                                 Servicios complementarios.
                                 <br/>
@@ -40,7 +40,8 @@ const BrandMain = () => {
                                 </h1>
                             <p data-aos={animation2} data-aos-delay="2300" className="m-0 pt-0">
                                 Cumplimos las exigencias en seguridad, claridad y confianza en la gestión de cuentas.
-                                Somos Consultores Certificados por Mercado Pago.
+                                <br />
+                                Somos consultores certificados por Mercado Pago.
                                 Contribuimos en garantizar un servicio de postventa completo.
                             </p>
                         </div>
@@ -56,13 +57,6 @@ const BrandMain = () => {
                             offset={-63}
                             duration={100}>
                                 Servicios
-                                <p
-                                style={{fontSize: '16px'}}
-                                >
-                                    Servicios de 
-                                    <br />
-                                    todo tipo
-                                </p>
                                 </Link>
 
                             <Link 
@@ -76,11 +70,6 @@ const BrandMain = () => {
                             offset={-63}
                             duration={100}>
                                 Clientes
-                                <p
-                                style={{fontSize: '16px'}}
-                                >   
-                                    Cartera amplia
-                                </p>
                                 </Link>
 
                             <Link 
@@ -105,12 +94,9 @@ const BrandMain = () => {
                             flexDirection: 'column',
                             }}
                             href="/nosotros"
-                            >Sobre nosotros
-                               <p
-                                style={{fontSize: '16px'}}
-                                >   
-                                    Conócenos
-                                </p>
+                            >Nuestro 
+                            <br />
+                            Equipo
                             </a>
                             
                         </div>
@@ -126,7 +112,7 @@ const BrandMain = () => {
                             <h1>Representante Oficial</h1>
                             <p>Contamos con una cartera de +4000 comercios activos, que reciben mensualmente actualizaciones, soporte en vivo, visita presencial e información de nuestros servicio</p>
                             <div className="more-btn">
-                                <a className="more" href="/blog">Leer más</a>
+                                <a className="more" href="/faq/mercadopago_faq">Leer más</a>
                             </div>
                         </div>
                     </div>
@@ -136,7 +122,7 @@ const BrandMain = () => {
                         <h1>Puesta a Punto</h1>
                         <p>Solución de tus impuestos de forma fácil y práctica. Contando con Atención impositiva al instante. Todo esto y más que podrás hacerlo desde nuestra app </p>
                         <div>
-                            <a className="more" href="/service2">Leer más</a>
+                            <a className="more" href="/faq/calim_faq">Leer más</a>
                          </div>
                          </div>
                         <div data-aos={animation} className="logos-div">
@@ -251,7 +237,7 @@ const BrandMainContainer = styled.div`
             }
             p {
                 text-align: left;
-                width: 70%;
+                width: 100%;
                 font-size: 26px;
 
                 @media (max-width: 1100px) {
@@ -263,7 +249,7 @@ const BrandMainContainer = styled.div`
                 }
             }
 
-            h1 {
+            h1,p {
                 color: white;
                 text-shadow: 0px 0px 20px black;
                 }
@@ -282,7 +268,7 @@ const BrandMainContainer = styled.div`
                 text-align: center;
                 border-top-left-radius: 20px;
                 border-bottom-right-radius: 20px;
-                color: ${props => props.theme.secondary};
+                color: white;
                 cursor: pointer;
                 text-decoration: none;
                 border: 1px solid ${props => props.theme.secondary};
@@ -290,14 +276,15 @@ const BrandMainContainer = styled.div`
                 justify-content: center;
                 align-items: center;
                 font-size: 24px;
-                height: 20vh;
+                height: 12vh;
                 width: 11vw;
                 box-shadow: 0px 0px 40px -30px rgba(0,0,0,1);
                 transition: ease 1s all;
+                background:  ${props => props.theme.secondary};
                 
                 &:hover {
-                    color: white;
-                    background: ${props => props.theme.secondary};
+                    background: white;
+                    color: ${props => props.theme.secondary};
                 }
 
                 @media (max-width: 1100px) {

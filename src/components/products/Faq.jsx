@@ -13,7 +13,6 @@ const Faq = () => {
 
     const [filteredData, setFilteredData] = useState(faq)
     
-
     const handleChange = (e) => {
         const searchWord = e.target.value;
         const newFilter = faq.filter((item => {
@@ -43,7 +42,7 @@ const Faq = () => {
 
         <div className="card-box">
             {
-            filteredData.slice(0, 10).map((faq, index) => {
+            filteredData.sort((a, b) => a.icon.localeCompare(b.icon)).map((faq, index) => {
                 return (
                     <div key={faq.id} onClick={() => {navegacion('/faq/' + `${faq.link}`)}} className="card">
                     <img src={require('../../images/' + `${faq.icon}`)} alt="" />
@@ -53,7 +52,7 @@ const Faq = () => {
                                  </h3>
                             <p
                             style={{margin: '0'}}
-                            >{faq.outterText}</p>
+                            >{faq.answerTitle}</p>
                         </div>
             </div>
                     )
@@ -68,7 +67,7 @@ const Faq = () => {
 export default Faq;
 
 const Container = styled.div`
-    min-height: 70vh;
+    min-height: 93vh;
     height: auto;
     width: 100%;
     display: flex;
@@ -147,8 +146,9 @@ const Container = styled.div`
         .card {
             border-radius: 0px;
             padding: 15px 30px;
+            min-height: 15vh;
             gap: 40px;
-            width: 70%;
+            width: 65%;
             display: flex;
             flex-direction: row;
             justify-content: flex-start;

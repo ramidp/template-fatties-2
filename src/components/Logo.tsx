@@ -45,27 +45,26 @@ const LogoContainer = styled.div`
             object-fit: none;
             object-position: 50% 50%;
             mix-blend-mode: multiply;
-            animation: kenburns-top 30s ease-out both;
+            animation: kenburns-top-left 20s ease-out both;
 
             @media (max-width: 1100px) {
                 object-position: 50% 50%;
             }
-
             
             /**
             * ----------------------------------------
             * animation kenburns-top
             * ----------------------------------------
             */
-            @keyframes kenburns-top {
-            0% {
-                        transform: scale(1) translateY(0);
-                        transform-origin: 50% 16%;
-            }
-            100% {
-                        transform: scale(1.25) translateY(-15px);
-                        transform-origin: top;
+            @keyframes kenburns-top-left {
+                0% {
+                    transform: scale(1) translate(0, 0);
+                    transform-origin: 16% 16%;
                 }
-            }
+                100% {
+                    transform: scale(1.25) translate(-20px, -15px);
+                    transform-origin: top left;
+                }
         }
+    }
 `

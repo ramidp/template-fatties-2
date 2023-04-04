@@ -1,26 +1,24 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductContainer from './estiloblog'
-import { useNavigate } from 'react-router-dom';
 
 const Blog2 = () => {
-
-    const navegacion = useNavigate()
 
     const banner = require('../../images/Blog/calim_1/calculadora.webp')
 
     return (
         <>
-        <span id="blog2"></span>
         <ProductContainer>
                 <h1 className="title">Blog</h1>
-            <p><span
+                <p>
+                <a
+                href="/blog"
                 style={{color: 'red',
-                cursor: 'pointer',    
-            }}
-            onClick={() => navegacion('/blog')}
-            >Blog</span> / Saldo a Favor Ingresos Brutos</p>
+                cursor: 'pointer',
+                textDecoration: 'none'}}>
+                Blog
+                </a> / Saldo a favor ingresos brutos</p>
 
-                    <div className="product-types1 col-2">
+                    <div className="product-types1">
                         <div className="col-12">
                             <h1
                             className="blog-title">

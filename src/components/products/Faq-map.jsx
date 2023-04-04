@@ -8,7 +8,6 @@ import React from 'react'
 
 const FaqMap = () => {
 
-    const navegacion = useNavigate()
     const location = useLocation()
 
     return (
@@ -18,20 +17,21 @@ const FaqMap = () => {
                 return (
                 <ProductContainer key={faq.id}>
                     <h1 className="title">FAQ</h1>
-                    <p>
-                        <span onClick={() => navegacion('/faq')}>FAQ </span> / {faq.title}
-                    </p>
-                    <h1
-                    style={{margin: '0', padding: '20px 0px'}}
-                    >{faq.title}</h1>
-                            <div className="product-types1 col-2">
-                                    {faq.texts.text1 != "" ? <p>{faq.texts.text1}</p> : ''}
-                                    {faq.texts.text2 != "" ? <p>{faq.texts.text2}</p> : ''}
-                                    {faq.texts.text3 != "" ? <p>{faq.texts.text3}</p> : ''}
-                                    {faq.texts.text4 != "" ? <p>{faq.texts.text4}</p> : ''}
-                                    {faq.texts.text5 != "" ? <p>{faq.texts.text5}</p> : ''}
-                                    {faq.texts.text6 != "" ? <p>{faq.texts.text6}</p> : ''}
-                        </div>
+                    <p><a href="/faq">FAQ </a> / {faq.title}</p>
+                    
+                    
+                    <div className="faq-box">
+                        <h1>{faq.title}</h1>
+                        <p>{faq.answerTitle}</p>
+                        <br />
+                        <h1>{faq.texts.question1}</h1>
+                        <p>{faq.texts.answer1}</p>
+                        <br />
+                        <h1>{faq.texts.question2}</h1>
+                        <p>{faq.texts.answer2}</p>
+                        <br />
+                        
+                    </div>
                 </ProductContainer>
         
                 )
