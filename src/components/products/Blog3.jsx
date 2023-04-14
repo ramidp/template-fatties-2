@@ -1,9 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ProductContainer from './estiloblog'
+import ProductContainer from './styles/estiloblog'
+import blogs from '../../data/blogs.json'
 
 const Blog3 = () => {
 
-    const banner = require('../../images/Blog/fatties_1/gente-trabajando-2.jpg')
+    const banner = require('../../images/Blog/' + `${blogs[2].img}`)
 
     return (
         <>
@@ -16,26 +17,39 @@ const Blog3 = () => {
                 cursor: 'pointer',
                 textDecoration: 'none'}}>
                 Blog
-                </a> / Fatties_1</p>
+                </a> / {blogs[2].title}</p>
 
                     <div className="product-types1">
                         <div className="col-12">
                             <h1
                             className="blog-title">
-                            Titulo Ejemplo
-                            <br />
-                            De un Articulo de Fatties
+                            Transformación digital: para la mitad de los comercios, los consumidores gastan más cuando pagan con código QR o con tarjetas
                             </h1>
                             <img src={banner} alt="" />
                         </div>
                             
                             <h3><strong>Tags:</strong> Tag1, Tag2, Tag3</h3>
 
-                        <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et debitis itaque tenetur iure laudantium nostrum tempore omnis doloremque, commodi impedit culpa esse suscipit! Doloribus et recusandae blanditiis odit odio, quo sit. Reiciendis, exercitationem amet corporis aspernatur recusandae harum molestias magnam libero placeat dicta repellendus error eius soluta voluptate rerum ea, sit rem. Et veniam quos voluptatum magni exercitationem sed sit quo, maiores, itaque alias fugiat soluta enim a dolore placeat. Odio adipisci reprehenderit neque magni molestias ratione aliquam repudiandae atque sequi deserunt maxime dignissimos, illo possimus, provident quo esse voluptatem rerum vel nostrum eligendi vero, quam distinctio? Quisquam, deleniti voluptates.
-                        </p> 
-                        <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, vel?</h1>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat quam dignissimos deleniti maxime autem in, accusamus libero neque animi aut alias, ipsum ipsam sed facilis enim voluptatum exercitationem consequatur aliquam ad! Numquam eligendi consequatur omnis natus atque et tenetur quam dolor error fugit veniam inventore, nulla quae tempora iure cupiditate exercitationem magnam? Quos odio fuga beatae magni, optio, voluptatem nesciunt dolores rem sapiente necessitatibus minus amet aliquid, vel aut placeat vero quisquam dolore quibusdam officia. Quia iste quo sunt illum delectus, tempora aliquam, velit laborum deleniti, consectetur suscipit iusto vel voluptatem beatae fuga ex nulla provident asperiores adipisci? Facere aliquam debitis, minus eaque expedita maiores excepturi provident cumque vitae magni sequi repudiandae dolorum nihil adipisci. Ullam, nam! Maiores tempora vel officia perspiciatis fugiat illum. Perferendis repudiandae harum nostrum, quos deleniti corrupti doloremque totam non officiis expedita maiores! Ducimus dolorum tempore nobis necessitatibus, harum eos autem repellendus inventore placeat quae quam commodi incidunt velit saepe earum quibusdam aut molestiae odit sunt quis et! Veritatis aliquid ad magnam cum amet doloribus, voluptatem fugit nemo, vel eaque tenetur, consequatur voluptatibus dolorum accusantium officia non quaerat obcaecati facilis suscipit nihil quisquam qui debitis! Doloremque neque quas nemo voluptate quam temporibus nulla quae incidunt ipsum deleniti provident perspiciatis est eligendi, dicta ea sed repellendus! Aut in pariatur, ut suscipit perferendis id harum temporibus nesciunt cumque hic maxime, cupiditate consequuntur? Animi, ipsam. Labore sunt sed praesentium dolor cupiditate aspernatur, fugit minus quis iste architecto atque nihil cum necessitatibus dolorum error veritatis. Illo eum quisquam cumque deleniti laudantium saepe aspernatur voluptate laborum vero! Consequuntur ex aliquam modi, voluptas optio recusandae qui adipisci et, mollitia earum suscipit vitae beatae quam amet. Quas quo corporis esse, illum impedit placeat, quasi, velit sequi at suscipit eligendi neque? Doloribus, fuga quis. Totam, voluptatibus? Aspernatur provident dolores exercitationem corrupti aut ratione aliquid!</p>
+                            <p>
+                            <strong>
+                            Para los comercios PyME, la digitalización resulta una herramienta innovadora para aprovechar oportunidades en el actual contexto económico con alta inflación. En el mes de la vuelta a clases, los comercios del rubro con cobros digitales mostraron crecimiento en la facturación (+33,5%, en pesos constantes) y en el número de operaciones (+54,7%, en pesos constantes) respecto a 2022.
+                            </strong>
+                            </p>
+                            <br />
+                            <p>
+                            <strong>Buenos Aires, 11 de abril de 2022.-</strong> La mitad de los comercios Pyme declara haber realizado esfuerzos de transformación digital en los últimos 6 meses y que los consumidores gastan más cuando pagan con código QR o tarjetas. En este contexto, adoptar nuevas soluciones de cobro encabeza la lista de iniciativas de transformación con el principal objetivo de aumentar sus ventas.
+                            <br/>
+                            <br/>
+                            Los datos se desprenden de la primera entrega del informe de negocios digitalizados “Perspectiva de Comercio PyME” de Mercado Pago, un reporte mensual elaborado junto con la consultora Invecq, que refleja la evolución de la digitalización, a través de una encuesta realizada a más de 1.400 comercios PyME que operan con las herramientas de la plataforma.  
+                            <br/>
+                            <br/>
+                            “Vendedores y compradores se adaptan cada vez más rápido a la transformación digital, con soluciones que ofrecen más opciones al cliente y, de ese modo, impulsan más ventas. En ese sentido, el informe Perspectiva de Comercio PyME nos permitirá tener un seguimiento mensual de la experiencia de los comercios que operan con soluciones de cobro digitales, en todos los rincones del país”, <strong>dijo Agustín Viola, Director de PyMEs de Mercado Pago.</strong>
+                            <br/>
+                            <br/>
+                            El informe incluye además un análisis de los datos en el marco de la coyuntura económica del país. "En este difícil contexto macroeconómico, la digitalización de los comercios PyME resulta una herramienta de innovación útil como protección y aprovechamiento de oportunidades. Dado que la tasa actual de inflación implica grandes desafíos, este fenómeno posibilita un mayor set de opciones para resguardar a los establecimientos de la  desvalorización de sus flujos operativos”, precisó <strong>Santiago Bulat, Director de Invecq.</strong>
+
+                            </p>
+
                     </div>
         </ProductContainer>
         </>

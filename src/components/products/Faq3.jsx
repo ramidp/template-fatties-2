@@ -1,9 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ProductContainer from './estilofaq'
+import ProductContainer from './styles/estilofaq'
 import { useState } from 'react';
 
 
-const Faq2 = () => {
+const Faq3 = () => {
 
     const logowhatsapp = require('../../images/icons/whatsapp.png')
 
@@ -12,7 +12,6 @@ const Faq2 = () => {
     const [show3, setShow3] = useState(false)
     const [show4, setShow4] = useState(false)
     const [show5, setShow5] = useState(false)
-    const [show6, setShow6] = useState(false)
 
     return (
         <>
@@ -21,34 +20,41 @@ const Faq2 = () => {
             <p>
                 <a href="/faq">
                 FAQ 
-                </a> / Titulo del FAQ sobre Calim</p>
+                </a> / Info FAQ sobre Calim</p>
 
                 <div className="product-types1 mt-3">
-
                     <h2
-                    style={{color: 'gray',
-                    textAlign: 'left',
-                    fontSize: '22px',
-                    width: '100%',
-                     }}
+                    className="subtitle-faq"
                     >
-                        Texto Introductorio al Servicio con Calim y todas las dudas al respecto
+                        Texto sobre toda la información que se necesita para las preguntas frecuentes con el servicio Calim
                     </h2>
                     <br />
 
-                    <h1 onClick={() => setShow2(!show2)}>Pregunta 1</h1>
-                    {show2 &&
-                    <>
-                    <p>
-                        Texto de Pregunta 1
-                    </p>
-                    <br />
-                    </>
-                    }
+                    <div
+                    style={{width: '100%',
+                    gap: '20px'
+                    }}
+                    >
+                        <div>
+                        <h1 onClick={() => setShow1(!show1)}>¿Cómo empezar a gestionar mi contabilidad por Calim?</h1>
+                        {show1 &&
+                        <>
+                        <p>
+                            Podés enviarnos un WhatsApp a la siguiente línea de WhatsApp para que uno de nuestros asesores especializados en Calim se contacten con uds.
+                            Contáctanos al 
+                            <a style={{color: 'rgb(23, 146, 68)'}} target="_blank" href="https://api.whatsapp.com/send?phone=5491123956360&text=Hola, qué tal? Me gustaría hacerles una consulta."> WhatsApp
+                            <img style={{height: '20px'}} src={logowhatsapp} alt="" />
+                            </a>
+                        </p>
+                            <br />
+                        </>
+                        }
+                        </div>
+                    </div>
                 </div>
         </ProductContainer>
         </>
     );
 }
  
-export default Faq2;
+export default Faq3;

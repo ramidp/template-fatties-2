@@ -1,48 +1,20 @@
-[ 
-    {
-        "id" : "1",
-        "for" : "Mercado Pago",
-        "icon" : "mplogo.png",
-        "link" : "mercadopago_1",
-        "title" : "Ahora podes configurar tus cuotas sín interés con un monto mínimo",
-        "subTitle" : "Subtitulo 1",
-        "outterText" : "Configurar tus cuotas sin interés con un monto mínimo es así de fácil y rápido",
-        "innerText" :  "Al poder elegir el monto mínimo a partir del cual se ofrecen cuotas sin interés, el comercio se asegura de que está absorbiendo el costo de financiamiento en ventas de montos relevantes y que no lo ofrece cuando la venta es de un monto chico.",
-        "innerText2" : "En caso de que el comercio quiera seguir ofreciendo cuotas sin interés sin importar el monto mínimo, puede dejar en cada cuota el espacio en blanco “Sin monto mínimo” y la experiencia de venta será igual a la que viene teniendo hasta ahora, tanto el comercio como el cliente.",
-        "faq" : "/faq/configuracion_cuotas",
-        "tags" : {
-            "tag1" : "Cuotas",
-            "tag2" : "Sin interés",
-            "tag3" : "Monto Mínimo"
-        }
+[
+    {   
+        "id": 1,
+        "title": "Ahora podes configurar tus cuotas sín interés con un monto mínimo",
+        "link" : "mp_1",
+        "img" : "mp_1/mp1.jpg"
     },
-    {
-        "id" : "2",
-        "for" : "Calim",
-        "icon" : "calim-logo.png",
-        "link" : "calim_1",
-        "title" : "Por qué se genera saldo a favor de Ingresos Brutos",
-        "subTitle" : "Subtitulo 2",
-        "outterText" : "Todo lo que necesitas saber sobre saldo a Favor de Ingresos Brutos",
-        "innerText" : "Cuando hablamos de saldo a favor de un impuesto, nos referimos a un excedente de dinero que el fisco, como por ejemplo AFIP o ARBA, posee de un contribuyente. En la actualidad encontramos que, por aplicación de los diversos regímenes de recaudación, es frecuente el cúmulo de saldos a favor en Ingresos Brutos",
-        "innerText2" : "Algunas razones por las que podés generar saldo a favor:",
-        "innerText3" : "Te realizaron retenciones en acreditaciones bancarias sobre ingresos que no están gravados, es decir, sobre importes que no están alcanzados por el impuesto.",
-        "innerText4" : "Realizaste un pago doble o erróneo de algún período.",
-        "innerText5" : "Se aplicó de manera incorrecta el Convenio Multilateral. Recordemos que este régimen impositivo de Ingresos Brutos alcanza a aquellas personas que realizan operaciones comerciales en distintas provincias. Las múltiples retenciones de las diferentes jurisdicciones dan lugar a errores o imprecisiones que, muchas veces, generan saldo a favor.",
-        "innerText6" : "¿Se puede pedir la devolución del saldo a favor de Ingresos Brutos?",
-        "innerText7" : "Sí, en todas las provincias y CABA se puede tramitar la devolución del saldo a favor. Si bien cada jurisdicción se rige por sus normas locales, específicamente por sus códigos fiscales o tributarios, coinciden en la posibilidad de solicitar el recupero de los saldos a través de un procedimiento administrativo. También puede optarse por otras variantes que establecen los organismos de recaudación locales.",
-        "innerText8" : "Además de la solicitud de devolución, las provincias suelen ofrecer las siguientes opciones:",
-        "innerText9" : "La reducción de la alícuota de Ingresos Brutos para que se consuma el saldo generado.",
-        "innerText10" : "La emisión de un certificado de exclusión.",
-        "innerText11" : "La compensación con otros impuestos locales e inclusive, en ciertos casos, como en Córdoba, la posibilidad de transferir el saldo a un tercero.",
-        "innerText12" : "Es importante tener presente que el saldo a favor es dinero del contribuyente y, por lo tanto, podrá disponer del mismo para cancelar deudas con el fisco, consumirlo, o bien podrá serle devuelto. Para ello, deberá presentar el correspondiente reclamo administrativo ante ARBA, AGIP o la dirección de rentas en las que haya acumulado el saldo.",
-        "innerText13" : "Cuándo conviene iniciar el reclamo por saldo a favor",
-        "innerText14" : "Tal como mencionamos, para que puedas obtener la devolución del saldo a favor deberás hacer un reclamo administrativo ante el fisco local, cumpliendo con los requisitos formales del mismo y acompañando pruebas que constaten la existencia del saldo.",
-        "innerText15" : "A partir del momento en el que inicies el reclamo, comenzarán a regir los intereses y se interrumpirá el plazo de prescripción. Por eso, es importante no demorarse para solicitar la devolución del saldo, ya que en la medida en que no se efectúe, no correrán los intereses y la deuda a tu favor podrá prescribir.",
-        "tags" : {
-            "tag1" : "Saldo a Favor",
-            "tag2" : "Ingresos Brutos",
-            "tag3" : "Fisco"
-        }
+    {   
+        "id": 2,
+        "title": "Por qué se genera saldo a favor de Ingresos Brutos",
+        "link": "calim_1",
+        "img": "calim_1/calculadora.webp"
+    },
+    {   
+        "id": 3,
+        "title": "Transformación digital: para la mitad de los comercios, los consumidores gastan más cuando pagan con código QR o con tarjetas",
+        "link": "mp_2",
+        "img": "mp_2/mp-photo.webp"
     }
 ]

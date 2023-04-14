@@ -14,6 +14,11 @@ const ProductContainer = styled.div`
     background-color: white;
     padding: 20px; 
 
+    @media (max-width: 1100px) {
+        padding: 20px 0;
+    }
+
+
     a {
         text-decoration: none;
         color: ${props => props.theme.secondary};
@@ -63,7 +68,7 @@ const ProductContainer = styled.div`
             text-align: left;
             background: lightgray;
             padding: 10px;
-            width: 90%;
+            width: 100%;
             border-top-left-radius: 10px;
             border-bottom-right-radius: 10px;
         }
@@ -183,17 +188,29 @@ const ProductContainer = styled.div`
     
     .product-types1 {
         padding: 20px;
-        width: 70%;
+        width: 80%;
         height: auto;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        gap: 10px;
 
-        @media (max-width: 1100px) {
-            padding: 20px;
+        @media (max-width: 764px) {
+            width: 95%;;
+        }
+
+        .subtitle-faq {
+            color: gray;
+            font-size: 20px;
+            text-align: left;
             height: auto;
+            @media (max-width: 1100px) {
+                    font-size: 18px;
+                }
+                @media (max-width: 764px) {
+                font-size: 16px;
+                }
+
         }
 
         ul {
@@ -202,6 +219,13 @@ const ProductContainer = styled.div`
             padding-left: 5%;
             li {
                 text-align: left;
+                @media (max-width: 1100px) {
+                    font-size: 14px;
+                }
+                @media (max-width: 764px) {
+                font-size: 12px;
+                }
+
             }
         }
 
@@ -224,7 +248,9 @@ const ProductContainer = styled.div`
             
             @media (max-width: 1100px) {
                 font-size: 20px;
-                
+            }
+            @media (max-width: 764px) {
+                font-size: 16px;
             }
         }
             
@@ -241,10 +267,10 @@ const ProductContainer = styled.div`
                 font-size: 16px;
                 @media (max-width: 1100px) {
                     font-size: 14px;
-                    
                 }
-
-
+                @media (max-width: 764px) {
+                font-size: 12px;
+                }
             }
     }
 

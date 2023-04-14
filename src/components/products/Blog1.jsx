@@ -1,9 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ProductContainer from './estiloblog'
+import ProductContainer from './styles/estiloblog'
+import blogs from '../../data/blogs.json'
+
 
 const Blog1 = () => {
 
-    const banner = require('../../images/Blog/mp_1/mp1.jpg')
+    const banner = require('../../images/Blog/' + `${blogs[0].img}`)
 
     return (
         <>
@@ -16,7 +18,7 @@ const Blog1 = () => {
                 cursor: 'pointer',
                 textDecoration: 'none'}}>
                 Blog 
-                </a> / Configuración Cuotas Sin Interés</p>
+                </a> / {blogs[0].title}</p>
 
                     <div className="product-types1 col-2">
                         <div className="col-12">
@@ -40,22 +42,16 @@ const Blog1 = () => {
 
                     <h1>¿Cómo se configura esta nueva herramienta? </h1>
 
-                    <p><strong>Ir a la sección Costos:</strong>
-                        En la parte superior de la sección de costos, se muestran las configuraciones sobre cuotas que tienen los comercios.
-                        <br />
-                        Ir a cuotas sin interés: Hay que ingresar en la primera sección dentro de costos se llama “Vendé en cuotas sin interés”
-                        <br />
-                        Configurar el monto mínimo a partir del cual se ofrece cada cuota: La sección de cuotas sin interés se divide en 3:
-                        <br />
-                        Encendido y apagado de cuotas sin interés: el comercio puede elegir si ofrece o no cuotas sin interés para sus clientes
-                        <br />
-                        Cuotas que ofrece: el cliente elige hasta cuantas cuotas sin interés ofrece a sus clientes.
-                        <br />
-                        <strong>Monto mínimo:</strong>Ahora el comercio podrá elegir para cada cuota, a partir de qué monto ofrece cuotas sin interés.
-                        </p>
-
-                        
-
+                    <ul>
+                        <li><strong>Ir a la sección Costos:</strong>En la parte superior de la sección de costos, se muestran las configuraciones sobre cuotas que tienen los comercios.</li>
+                        <li><strong>Ir a cuotas sin interés:</strong> Hay que ingresar en la primera sección dentro de costos se llama “Vendé en cuotas sin interés”</li>
+                        <li><strong> Configurar el monto mínimo a partir del cual se ofrece cada cuota:</strong> La sección de cuotas sin interés se divide en 3:</li>
+                            <ul>
+                                <ol><strong>Encendido y apagado de cuotas sin interés:</strong> el comercio puede elegir si ofrece o no cuotas sin interés para sus clientes</ol>
+                                <ol><strong> Cuotas que ofrece:</strong> el cliente elige hasta cuantas cuotas sin interés ofrece a sus clientes.</ol>
+                                <ol><strong>Monto mínimo:</strong>Ahora el comercio podrá elegir para cada cuota, a partir de qué monto ofrece cuotas sin interés.</ol>
+                            </ul>
+                    </ul>
                     </div>
         </ProductContainer>
         </>

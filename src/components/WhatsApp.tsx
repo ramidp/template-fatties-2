@@ -27,7 +27,7 @@ const Container = styled.div`
     position: fixed;
     justify-content: flex-end;
     align-items: flex-end;
-    padding: 0 15px 15px 0;
+    padding: 0 5px 15px 0;
     bottom: 0;
     right: 0;
     z-index: 100;

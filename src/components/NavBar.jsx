@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Link } from 'react-scroll'
-
 
 const MenuNav = () => {
 
@@ -11,22 +9,13 @@ const [display, setDisplay] = useState(false)
 const location1 = useLocation()
 const isHome = location1.pathname === '/'
 
-useEffect(() => {
-
-  if (window.innerWidth <= 1100) {
-    setDisplay(true)
-  } else {
-    setDisplay(false)
-  }
-
-},[display])
-
+const fatties = require('../images/logo-fatties.png')
 
   return (
     <MenuNavContainer>
             {/* <OffCanvasTop/> */}
                 <>
-                {isHome ?
+                {/* {isHome ?
                 <Link
                 to="top"
                 spy={true}
@@ -38,7 +27,12 @@ useEffect(() => {
                 </Link>
                   :
                 <a href="/">Home</a>
-                }
+                } */}
+                <a 
+                className="logo"
+                href="/">
+                  <img src={fatties} alt="" />
+                </a>
                 </>
                 <a href="/blog">Blog</a>
                 <a href="/faq">FAQ</a>
@@ -59,7 +53,18 @@ const MenuNavContainer = styled.div`
     align-items: center;
     padding-left: 50px;
 
+    .logo {
+      padding: 0;
+      transition: ease 0.5s all;
+
+      &:hover{
+        background: inherit!important;
+        filter: contrast(70%);
+      }
+    }
+
     a {
+      transition: ease 0.5s all;
       width: auto;
       text-decoration: none;
       height: 100%;
@@ -71,7 +76,11 @@ const MenuNavContainer = styled.div`
       color: ${props => props.theme.secondary}!important;
 
       &:hover {
-          background-color: #f0f0f0;
+          background-color: #e0e0e0;
+        }
+
+        img {
+          height: 60px;
         }
     }
 

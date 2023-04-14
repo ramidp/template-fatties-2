@@ -1,9 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ProductContainer from './estiloblog'
+import ProductContainer from './styles/estiloblog'
+import blogs from '../../data/blogs.json'
+
 
 const Blog2 = () => {
 
-    const banner = require('../../images/Blog/calim_1/calculadora.webp')
+    const banner = require('../../images/Blog/' + `${blogs[1].img}`)
 
     return (
         <>
@@ -16,7 +18,7 @@ const Blog2 = () => {
                 cursor: 'pointer',
                 textDecoration: 'none'}}>
                 Blog
-                </a> / Saldo a favor ingresos brutos</p>
+                </a> / {blogs[1].title}</p>
 
                     <div className="product-types1">
                         <div className="col-12">

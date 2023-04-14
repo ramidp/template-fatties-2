@@ -18,6 +18,7 @@ import React, { useState } from 'react';
 import WhatsAppBtn from './components/WhatsApp';
 import Nosotros from './components/Nosotros';
 import WallExample from './components/WallExample';
+import IconMenu from './components/products/IconMenu';
 
 const App = () => {
 
@@ -49,11 +50,12 @@ const App = () => {
   })
 
   return (
-      <AppContainer>
+    <ThemeProvider theme={theme}>
+    <AppContainer>
       <BrowserRouter>
       <LoadingPage/>
       <WhatsAppBtn/>
-      <ThemeProvider theme={theme}>
+      <IconMenu/>
 
         <div className="menu">
           <Menu/>
@@ -66,7 +68,7 @@ const App = () => {
                   {/* Dynamic Router (I used useLocation to compare blog.ink against the location of the URL)*/}
                   <Route path={'/blog/mp_1'} element={<Blog1/>}/>
                   <Route path={'/blog/calim_1' } element={<Blog2/>}/>
-                  <Route path={'/blog/fatties_1' } element={<Blog3/>}/>
+                  <Route path={'/blog/mp_2' } element={<Blog3/>}/>
                   <Route path={'/faq/fatties_faq' } element={<Faq1/>}/>
                   <Route path={'/faq/mercadopago_faq' } element={<Faq2/>}/>
                   <Route path={'/faq/calim_faq' } element={<Faq3/>}/>
@@ -74,14 +76,14 @@ const App = () => {
 
                   <Route path="/faq" element={<Faq/>}/>
                   <Route path="/nosotros" element={<Nosotros/>}/>
-                  <Route path="/images/banner-ejemplo-choto.png" element={<WallExample/>}/>
+                  <Route path="/images/" element={<WallExample/>}/>
                   {/* <Route path="/Products" element={<Products/>}/> */}
                 </Routes>
                 <Footer/>
         </div>
-      </ThemeProvider>
       </BrowserRouter>
     </AppContainer>
+    </ThemeProvider>
   );
 }
 

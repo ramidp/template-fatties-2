@@ -1,44 +1,23 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ProductContainer from './estiloblog'
+import ProductContainer from './styles/estiloblog'
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
+import blogs from '../../data/blogs.json'
 
 
 
 const Blog = () => {
 
-    const banner = require('../../images/Blog/mp_1/mp1.jpg')
-    const banner2 = require('../../images/Blog/calim_1/calculadora.webp')
-    const banner3 = require('../../images/Blog/fatties_1/gente-trabajando-2.jpg')
-
-    const blogTitles = [
-        {   
-            id: 1,
-            name: 'Ahora podes configurar tus cuotas sín interés con un monto mínimo',
-            link: '/blog/mp_1',
-        },
-        {   
-            id: 2,
-            name: 'Por qué se genera saldo a favor de Ingresos Brutos',
-            link: '/blog/calim_1'
-        },
-        {   
-            id: 3,
-            name: 'Tercer Ejemplo Fatties',
-            link: '/blog/fatties_1'
-        },
-    ]
-
-    const [filteredData, setFilteredData] = useState(blogTitles)
+    const [filteredData, setFilteredData] = useState(blogs)
 
     const handleChange = (e) => {
         const searchWord = e.target.value;
-        const newFilter = blogTitles.filter((item => {
+        const newFilter = blogs.filter((item => {
             return (
-                item.name.toLowerCase().includes(searchWord.toLowerCase())
+                item.title.toLowerCase().includes(searchWord.toLowerCase())
                 )
         }));
             setFilteredData(newFilter)
@@ -52,9 +31,24 @@ const Blog = () => {
             <h1 className="title">Blog</h1>
             <p className="mb-4 blog-text">Todas las novedades, guias y manuales que sean de utilidad serán vistas aqui.</p>
                 <div className="products">
-                    <div 
-                    className='searcher'
-                    >
+
+                    <BlogContainer>
+                        {
+                            blogs.map((blog) => {
+                                return (
+                                    <div 
+                                    key={blog.id}
+                                    className="article">
+                                            <img src={require('../../images/Blog/' + `${blog.img}`)} alt="" />
+                                            <h1>{blog.title}</h1>
+                                            <p>{blog.subtitle}</p>
+                                            <h2 onClick={() => navegacion('/blog/' +`${blog.link}`)}>Leer más</h2>
+                                     </div>
+                                    )
+                            })
+                        }
+                    </BlogContainer>
+                    <div className='searcher'>
                         <div className="tag-searcher">
                             <input
                             type="text"
@@ -66,41 +60,12 @@ const Blog = () => {
                         {
                             filteredData.slice(0, 10).sort((a, b) => b.id - a.id).map((item, index) => {
                                 return (
-                                    <p onClick={() => navegacion(`${item.link}`)} key={item.id}>{item.name}</p>
+                                    <p onClick={() => navegacion(`${item.link}`)} key={item.id}>{item.title}</p>
                                     )
                                 })
                             }
                         </div>
                     </div>
-
-                    <BlogContainer>
-                        <div className="article">
-                                <div className="article_text">
-                                    <img src={banner} alt="" />
-                                    <h1>Ahora podes configurar tus cuotas sín interés con un monto mínimo</h1>
-                                    <p>Toda la información sobre como configurar tus cuotas sin interés</p>
-                                    <h2 style={{color: 'red'}} onClick={() => navegacion('/blog/mp_1')}>Leer más</h2>
-                                </div>
-                        </div>
-
-                        <div className="article">
-                                <div className="article_text">
-                                    <img src={banner2} alt="" />
-                                    <h1>Por qué se genera saldo a favor de Ingresos Brutos</h1>
-                                    <p>Todo lo que necesitas saber sobre saldo a Favor de Ingresos Brutos</p>
-                                    <h2 style={{color: 'red'}} onClick={() => navegacion('/blog/calim_1')}>Leer más</h2>
-                                </div>
-                        </div>
-
-                        <div className="article">
-                                <div className="article_text">
-                                    <img src={banner3} alt="" />
-                                    <h1>Tercer Ejemplo Fatties</h1>
-                                    <p>Articulo relacionado a Fatties</p>
-                                    <h2 style={{color: 'red'}} onClick={() => navegacion('/blog/fatties_1')}>Leer más</h2>
-                                </div>
-                        </div>
-                    </BlogContainer>
                 </div>
         </ProductContainer>
     );
@@ -118,12 +83,17 @@ const BlogContainer = styled.div`
     flex-wrap: wrap;
     gap: 15px;
     width: 80%;
-    padding: 0 40px;
+    padding: 0 20px 0 30px;
     height: auto;
+
+    @media (max-width: 1100px) {
+        width: 100%;
+        padding: 20px 10px 0 10px;
+    }
 
     .article {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
             padding: 20px;
@@ -134,24 +104,15 @@ const BlogContainer = styled.div`
             transition: 0.2s linear;
             border-top-left-radius: 20px;
             border-bottom-right-radius: 20px;
+            gap: 10px;
     
             @media (max-width: 1100px) {
                 width: 100%;
+                min-height: auto;
             }
             
             &:hover {
                 transform: scale(1.03);
-            }
-
-            .article_text {
-                display: flex;
-                height: 100%;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: flex-start;
-                gap: 10px;
-                width: 100%;
-
             }
             
             p {
@@ -163,13 +124,19 @@ const BlogContainer = styled.div`
             }
     
             h1 {
+                min-height: 10vh;
                 width: 100%;
-                padding: 0!important;
-                font-size: 18px!important;
+                padding: 0;
+                font-size: 18px;
                 padding-bottom: 10px;
                 font-weight: bold;
                 z-index: 2;
                 text-align: left;
+
+                @media (max-height: 720px) {
+                min-height: 15vh;
+                }
+              
             }
             h2 {
                 font-size: 14px!important;
@@ -177,8 +144,9 @@ const BlogContainer = styled.div`
                 width: fit-content;
                 cursor: pointer;
                 z-index: 2;
+                color: ${props => props.theme.secondary};
                 &:hover {
-                    color: ${props => props.theme.secondary};
+                    filter: contrast(50%);
                 }
             }
             img {

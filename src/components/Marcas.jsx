@@ -228,9 +228,12 @@ const Marcas = () => {
           <span id="marcas"></span>
             <div className="another-section">
               <h3>
-                Ellos confian en nosotros, nosotros confiamos en ellos.
-                <br />
-                Más de 30 empresas trabajando con nosotros.
+              <strong
+              >Crecer juntos es nuestra meta.</strong>
+              <br />
+              Ayudamos a más de 3500 comercios, emprendedores 
+              <br />
+              y empresas a lograr sus objetivos a través de nuestro equipo de asesores
                 </h3>
             </div>
             <div className="carousel-sect">
@@ -262,16 +265,22 @@ export default Marcas;
 
 const Container = styled.div`
     width: 100%;
-    height: 50vh;    
+    min-height: 73vh;
+    height: auto;    
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     background-color: white;
-    gap: 30px;
+    gap: 50px;
+
+    span {
+            padding-top: 7vh;
+            margin-top: -7vh;
+        }
 
     @media (max-width: 1100px) {
-      min-height: 63vh;
+      min-height: 73vh;
       height: auto;
     }
     @media (max-height: 720px) {
@@ -292,8 +301,8 @@ const Container = styled.div`
         content: '';
         position: absolute;
         width: 10%;
-        height: 100%;
-        background: linear-gradient(to left, rgba(255,255,255,0.5) 0%, rgba(255,255,255,1) 100%);
+        height: 70%;
+        background: linear-gradient(to left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 60%);
         z-index: 2;
       }
 
@@ -301,10 +310,10 @@ const Container = styled.div`
         content: '';
         position: absolute;
         width: 10%;
-        height: 100%;
+        height: 70%;
         right: -2%;
         top: 0;
-        background: linear-gradient(to right, rgba(255,255,255,0.5) 0%, rgba(255,255,255,1) 100%);
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 60%);
         z-index: 2;
       }
 
@@ -322,11 +331,11 @@ const Container = styled.div`
         }
 
         .wallimg {
-          background-image: url('http://localhost:3000/static/media/banner-ejemplo-choto.6659d8ed5b7c4c713afc.png');
+          background-image: url('http://localhost:3000/static/media/banner-ejemplo-choto1.4ebf9af058eb66ca4388.png');
           background-size: 1948px 329px;
           background-position: 0 0;
           width: 100%;
-          height: 288px;
+          height: 450px;
           background-repeat: repeat-x;
           animation-duration: 2000s;
           animation-timing-function: linear;

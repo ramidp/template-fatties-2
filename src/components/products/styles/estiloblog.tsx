@@ -43,6 +43,13 @@ const ProductContainer = styled.div`
         padding: 10px;
         border-top-left-radius: 16px;
         border-bottom-right-radius: 16px;
+        margin-right: 20px;
+
+        @media (max-width: 1100px) {
+            width: 100%;
+            height: 20vh;
+                }
+
 
         .tag-searcher {
             display: flex;
@@ -74,6 +81,7 @@ const ProductContainer = styled.div`
         .searched-data {
             border-radius: 10px;
             padding: 10px 0;
+            overflow-y: auto;
             
             p {
                 width: 100%;
@@ -99,6 +107,7 @@ const ProductContainer = styled.div`
         @media (max-width: 1100px) {
                 width: 95%;
                 padding-top: 5px;
+                flex-direction: column-reverse;
             }
         
         .product-types {
@@ -119,7 +128,7 @@ const ProductContainer = styled.div`
                 flex-direction: column;
             }
             @media (max-width: 520px)    {
-                justify-content: center;               
+                justify-content: center;
                 }
 
             &:hover {
@@ -146,9 +155,6 @@ const ProductContainer = styled.div`
                 font-size: 16px;
                 font-weight: bold;
 
-            @media (max-width: 520px)    {
-                font-size: 16px;
-                }
             }
             p {
                 width: auto;
@@ -184,7 +190,7 @@ const ProductContainer = styled.div`
     }
     
     .product-types1 {
-        padding: 30px;
+        padding: 20px 0px;
         width: 70%;
         height: auto;
         min-height: 83vh;
@@ -195,7 +201,7 @@ const ProductContainer = styled.div`
         gap: 20px;
 
         @media (max-width: 1100px) {
-            padding: 20px;
+            padding: 20px 10px;
             width: 90vw;
             height: auto;
         }
@@ -207,13 +213,29 @@ const ProductContainer = styled.div`
 
         .blog-title {
             position: absolute;
-            width: auto;
+            width: 60%;
             color: white;
             z-index: 2;
-            font-size: 50px;
-            padding: 50px 100px;
+            font-size: 2.5em;
+            padding: 2% 0% 0% 2%; 
             text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
-               1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;        
+               1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;  
+               
+               @media (max-width: 1100px) {
+                    width: 80%;
+                    font-size: 40px;
+                }
+                @media (max-width: 870px) {
+                    padding: 5% 0% 0% 2%;
+                    font-size: 28px;
+                }
+                @media (max-width: 600px) {
+                    font-size: 24px;
+                }
+                @media (max-width: 376px) {
+                    font-size: 22px;
+                }
+
             }
 
         h1 {    
@@ -237,7 +259,7 @@ const ProductContainer = styled.div`
             p {
                 width: 100%;
                 text-align: left;
-                font-size: 16px;
+                font-size: 18px;
                 margin: 0;
                 
                 @media (max-width: 1100px) {
@@ -256,10 +278,18 @@ const ProductContainer = styled.div`
                 width: 100%;
                 height: 220px;
                 object-fit: cover;
-                object-position: 50% 20%;
+                object-position: 50% 30%;
                 filter: opacity(80%);
                 border-top-left-radius: 20px;
                 border-bottom-right-radius: 20px;
+
+                @media (max-width: 1100px) {
+                    height: 200px;
+                }
+                @media (max-width: 600px) {
+                    height: 150px;
+                }
+
 
             }
     }

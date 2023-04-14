@@ -75,8 +75,12 @@ const Container = styled.div`
     align-items: center;
     flex-direction: column;
     background-color: #f5f5f5;
-    padding-top: 20px; 
     padding: 20px;
+
+    @media (max-width: 1100px) {
+        padding: 20px 0;
+    }
+
 
     .tag-searcher {
         display: flex;
@@ -141,14 +145,14 @@ const Container = styled.div`
     gap: 5px;
     padding-top: 20px;
     text-decoration: none;
-    width: 100%;
+    width: 90%;
 
         .card {
             border-radius: 0px;
             padding: 15px 30px;
             min-height: 15vh;
             gap: 40px;
-            width: 65%;
+            width: 85%;
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
@@ -158,7 +162,8 @@ const Container = styled.div`
             color: black;
 
             @media (max-width: 1100px) {
-            width: 80%;
+            width: 100%;
+            min-height: 10vh;
             }
     
                 &:hover {
