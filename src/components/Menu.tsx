@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Datos from "./Datos";
-import MenuMobile from "./MenuMobile";
 import React from 'react'
+import NavBar from "./NavBar";
 
 
 
@@ -11,7 +11,7 @@ const Menu = () => {
     return ( 
             <MenuContainer>
                 <Datos/>
-                <MenuMobile/>
+                <NavBar/>
             </MenuContainer>
      );
 }
@@ -20,7 +20,7 @@ export default Menu;
 
 const MenuContainer = styled.div`
     width: 100%;
-    height: 7vh;
+    height: 70px;
     display: flex;
     position: fixed;
     left: 0;

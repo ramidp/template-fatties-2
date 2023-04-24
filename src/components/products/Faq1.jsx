@@ -18,7 +18,9 @@ const Faq1 = () => {
         <ProductContainer>
             <h1 className="title">FAQ</h1>
             <p>
-                <a href="/faq">
+                <a 
+               className="faq-anchor"
+               href="/faq">
                 FAQ 
                 </a> / ¿Qué es Fatties, como puedo comunicarme con uno de sus asesores?</p>
 

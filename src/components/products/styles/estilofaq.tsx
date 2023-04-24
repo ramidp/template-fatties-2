@@ -9,7 +9,7 @@ const ProductContainer = styled.div`
     text-align: center;
     justify-content: flex-start;
     align-items: center;
-    min-height: 93vh;
+    min-height: ${props => props.theme.mainHeight};
     height: auto;
     background-color: white;
     padding: 20px; 
@@ -19,12 +19,13 @@ const ProductContainer = styled.div`
     }
 
 
-    a {
+    .faq-anchor {
         text-decoration: none;
         color: ${props => props.theme.secondary};
-        cursor: pointer;
         &:hover {
-            filter: contrast(50%)
+            cursor: default;
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
     }
     

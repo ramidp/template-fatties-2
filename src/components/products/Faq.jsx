@@ -165,6 +165,12 @@ const Container = styled.div`
             width: 100%;
             min-height: 10vh;
             }
+            @media (max-width: 764px) {
+            flex-direction: column;
+            gap: 5px;
+            align-items: flex-start;
+            padding: 15px;
+            }
     
                 &:hover {
                 cursor: pointer;

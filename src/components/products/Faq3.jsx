@@ -18,7 +18,9 @@ const Faq3 = () => {
         <ProductContainer>
             <h1 className="title">FAQ</h1>
             <p>
-                <a href="/faq">
+                <a 
+                className="faq-anchor"
+                href="/faq">
                 FAQ 
                 </a> / Info FAQ sobre Calim</p>
 

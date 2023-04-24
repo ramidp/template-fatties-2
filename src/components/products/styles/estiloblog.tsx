@@ -8,7 +8,7 @@ const ProductContainer = styled.div`
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    min-height: 93vh;
+    min-height: ${props => props.theme.mainHeight};
     height: auto;
     background-color: white;
     padding: 20px;
@@ -32,6 +32,16 @@ const ProductContainer = styled.div`
         width: 80%;
         margin: 0;
         text-align: left;
+    }
+
+    .anchor-blog {
+        text-decoration: none;
+        color: ${props => props.theme.secondary};
+        &:hover {
+            cursor: default;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
     }
 
     .searcher {    

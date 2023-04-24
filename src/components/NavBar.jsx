@@ -52,6 +52,12 @@ const MenuNavContainer = styled.div`
     justify-content: flex-start;
     align-items: center;
     padding-left: 50px;
+    background-color: white;
+
+    @media (max-width: 1100px) {
+      padding: 0;
+      justify-content: center;
+    }
 
     .logo {
       padding: 0;
@@ -71,7 +77,7 @@ const MenuNavContainer = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      cursor: pointer;
+      cursor: default;
       padding: 0 20px;
       color: ${props => props.theme.secondary}!important;
 

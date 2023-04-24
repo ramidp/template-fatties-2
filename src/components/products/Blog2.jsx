@@ -14,9 +14,7 @@ const Blog2 = () => {
                 <p>
                 <a
                 href="/blog"
-                style={{color: 'red',
-                cursor: 'pointer',
-                textDecoration: 'none'}}>
+                class="anchor-blog">
                 Blog
                 </a> / {blogs[1].title}</p>
 

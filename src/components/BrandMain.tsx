@@ -80,33 +80,41 @@ const BrandMain = () => {
                 <div  className="features-box">
                 <span id="servicios"></span>
 
-                    <div style={{background: '#f0f0f0'}} className="features">
-                        <div data-aos={animation} className="logos-div">
-                            <img className="mp" src={logoMp} alt="" />
-                        </div>
-                        <div data-aos={animation} className="features-info">
-                            <h1>Representante Oficial</h1>
-                            <p>Contamos con una cartera de +4000 comercios activos, que reciben mensualmente actualizaciones, soporte en vivo, visita presencial e información de nuestros servicio</p>
-                            <div className="more-btn">
-                                <a className="more" href="/faq/mercadopago_faq">Leer más</a>
+                    <a 
+                    className="features-anchor"
+                    style={{background: '#f0f0f0'}}
+                    href="/faq/mercadopago_faq">
+                        <div  className="features">
+                            <div data-aos={animation} className="logos-div">
+                                <img className="mp" src={logoMp} alt="" />
+                            </div>
+                            <div data-aos={animation} className="features-info">
+                                <h1>Representante Oficial</h1>
+                                <p>Contamos con una cartera de +4000 comercios activos, que reciben mensualmente actualizaciones, soporte en vivo, visita presencial e información de nuestros servicio</p>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <div style={{background: 'white'}} className="features">
-                        <div data-aos={animation} className="logos-div">
-                            <img className="calim" src={logoCalim} alt="" />
-                        </div>
-                        <div data-aos={animation} className="features-info">
-                            <h1>Puesta a Punto</h1>
-                            <p>Solución de tus impuestos de forma fácil y práctica. Contando con Atención impositiva al instante. Todo esto y más que podrás hacerlo desde nuestra app </p>
-                            <div>
-                                <a className="more" href="/faq/calim_faq">Leer más</a>
+                    <a 
+                    className="features-anchor"
+                    style={{background: 'white'}}
+                    href="/faq/calim_faq">
+                        <div  className="features">
+                            <div data-aos={animation} className="logos-div">
+                                <img className="calim" src={logoCalim} alt="" />
                             </div>
-                         </div>
-                    </div>
-
-                    <div style={{background: '#f0f0f0'}} className="features">
+                            <div data-aos={animation} className="features-info">
+                                <h1>Puesta a Punto</h1>
+                                <p>Solución de tus impuestos de forma fácil y práctica. Contando con Atención impositiva al instante. Todo esto y más que podrás hacerlo desde nuestra app </p>
+                             </div>
+                        </div>
+                    </a>
+                    
+                    <a 
+                    className="features-anchor"
+                    style={{background: '#f0f0f0'}}
+                    href="/faq/fatties_faq">
+                    <div  className="features">
                         <div data-aos={animation} className="logos-div">
                             <FontAwesomeIcon icon={faPhoneVolume} />
                         </div>
@@ -114,27 +122,26 @@ const BrandMain = () => {
                             <h1>Atención telefónica personalizada</h1>
                             <p>Nuestro canal de atención telefónica es una herramienta conveniente y eficiente para que nuestros clientes se comuniquen con nosotros. 
                             Contamos con un equipo de profesionales altamente capacitados que están disponibles para brindar ayuda y solucionar cualquier consulta o problema que puedas tener.</p>
-                            <div >
-                                <a className="more" href="/faq/fatties_faq">Leer más</a>
-                            </div>
                          </div>
 
                     </div>
+                    </a>
 
-                    <div style={{background: 'white'}}className="features">
-                        <div data-aos={animation} className="logos-div">
-                            <FontAwesomeIcon icon={faHandshake} />
-                        </div>
-                        <div data-aos={animation} className="features-info">
-                            <h1>Conectar</h1>
-                            <p>En Fatties lo que ofrecemos como uno de nuestros servicios es conectar clientes con clientes para todo tipo de servicios.
-                                Nos interesa hacer de nexo entre gente que busca un servicio y gente que ofrece dicho servicio.</p>                        
-                            <div>
-                                <a className="more" href="/faq/fatties_faq">Leer más</a>
+                    <a 
+                    className="features-anchor"
+                    style={{background: 'white'}}
+                    href="/faq/fatties_faq">
+                        <div  className="features">
+                            <div data-aos={animation} className="logos-div">
+                                <FontAwesomeIcon icon={faHandshake} />
                             </div>
-                         </div>
+                            <div data-aos={animation} className="features-info">
+                                <h1>Conectar</h1>
+                                <p>En Fatties lo que ofrecemos como uno de nuestros servicios es conectar clientes con clientes para todo tipo de servicios.
+                                    Nos interesa hacer de nexo entre gente que busca un servicio y gente que ofrece dicho servicio.</p>                        
+                            </div>
                     </div>
-
+                    </a>
                 </div>
             </div>
         </BrandMainContainer>
@@ -146,7 +153,7 @@ export default BrandMain;
 
 const BrandMainContainer = styled.div`
     height: auto;
-    min-height: 186vh;
+    min-height: calc(2 x ${props => props.theme.mainHeight});
     width: 100%;
     display: flex;
     z-index: 2;
@@ -174,28 +181,20 @@ const BrandMainContainer = styled.div`
         .brand-logo {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: space-evenly;
             align-items: center;
-            height: auto;
-            min-height: 93vh;
+            height: ${props => props.theme.mainHeight};
             width: 100%;
             display: flex;
             padding: 25px;
             gap: 150px;
-            padding-top: 100px;
             background: linear-gradient(15deg, rgba(255,255,255,1) 30%, rgba(255, 255, 255, 0) 70%);
 
-            @media (max-height: 720px) {
-                gap: 50px;
-            }
-
             @media (max-width: 1100px) {
-                padding: 5px;
-                padding-top: 50px;
+                gap: 100px;
             }
-
-            @media (max-width: 500px) {
-                gap: 70px;
+            @media (max-width: 764px) {
+                gap: 50px;
             }
 
             .brand-title {
@@ -209,7 +208,7 @@ const BrandMainContainer = styled.div`
 
                 h1 {
                 text-align: left;
-                width: 70%;
+                width: 100%;
                 font-size: 50px;
                 font-weight: bold;
 
@@ -225,20 +224,17 @@ const BrandMainContainer = styled.div`
             }
             p {
                 text-align: left;
-                width: 80%;
-                font-size: 26px;
+                width: 100%;
+                font-size: 24px;
 
                 @media (max-width: 1100px) {
                 font-size: 20px;
                 }
 
                 @media (max-width: 764px) {
-                    width: 100%;
+                    font-size: 16px;
                 }
             }
-
-            h1,p {
-                }
             }
         }
         
@@ -262,22 +258,22 @@ const BrandMainContainer = styled.div`
             .contactbtn {
                 text-align: center;
                 color: white;
-                cursor: pointer;
+                cursor: default;
                 text-decoration: none;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-size: 24px;
-                height: 12vh;
+                font-size: 20px;
+                height: 10vh;
                 width: 11vw;
-                transition: ease 1s all;
+                transition: ease 0.5s all;
                 border-top-left-radius: 15px;
                 border-bottom-right-radius: 15px;
                 background: ${props => props.theme.secondary};
                 border: 1px solid ${props => props.theme.secondary};
                 
                 @media (max-height: 720px) {
-                    font-size: 20px;
+                    font-size: 18px;
                 }
 
 
@@ -289,14 +285,14 @@ const BrandMainContainer = styled.div`
     
                 @media (max-width: 764px) {
                     padding: 5px 15px;
-                    font-size: 16px;
-                    height: 10vh;
-                    width: 70%;
+                    height: 100%;
+                    width: 90%;
+                    font-size: 14px;
                 }
 
                 &:hover {
                     filter: contrast(200%);
-                    animation: movimiento2 0.8s forwards;                    
+                    animation: movimiento2 0.5s forwards;                    
                     
                     @keyframes movimiento2 {
                         0% {transform: translate(0px, 0px);}
@@ -311,8 +307,7 @@ const BrandMainContainer = styled.div`
     
     .features-box {
         width: 100%;
-        min-height: 93vh;
-        height: auto;
+        height: ${props => props.theme.mainHeight};
         font-size: 1em;
         display: flex;
         flex-direction: column;
@@ -321,15 +316,22 @@ const BrandMainContainer = styled.div`
         background-color: white;
 
         span {
-            padding-top: 7vh;
-            margin-top: -7vh;
+            padding-top: 70px;
+            margin-top: -70px;
         }
 
          
+    .features-anchor {
+        text-decoration: none;
+        width: 100%;
+        cursor: default;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
         .features {
             height: 23.3vh;
-            width: 100%;
-            padding: 10px 280px;
+            width: 50vw;
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -337,9 +339,14 @@ const BrandMainContainer = styled.div`
             color: black;
             gap: 5px;
 
+            &:hover {
+            cursor: pointer;
+            filter: opacity(50%);
+        }
 
             @media (max-width: 1475px) {
                 padding: 10px 50px;
+                width: 100%;
                 }
 
              @media (max-width: 764px) {
@@ -353,6 +360,11 @@ const BrandMainContainer = styled.div`
                 justify-content: center;
                 align-items: center;
                 filter: opacity(70%);
+
+                @media (max-width: 500px) {
+                width: 50%;
+                }
+
 
                 .mp {
                     height: 100px;
@@ -386,6 +398,10 @@ const BrandMainContainer = styled.div`
                 @media (max-width: 764px) {
                     gap: 10px;
                 }
+                @media (max-width: 500px) {
+                width: 50%;
+                }
+
 
                 .more {
                     background-color: transparent;
@@ -403,7 +419,7 @@ const BrandMainContainer = styled.div`
                 p {
                 text-align: left;
                 width: 100%;
-                font-size: 18px;
+                font-size: 16px;
                 margin: 0;
 
                 @media (max-height: 720px) {
@@ -415,6 +431,9 @@ const BrandMainContainer = styled.div`
                 }
                 @media (max-width: 764px) {
                 font-size: 12px; 
+                }
+                @media (max-width: 500px) {
+                display: none;
                 }
             
             }
@@ -438,6 +457,11 @@ const BrandMainContainer = styled.div`
                  width: 100%;
                  font-size: 18px;
                 }
+                
+                @media (max-width: 500px) {
+                 padding-left: 10px;
+                }
+                
 
             }
             }
@@ -454,7 +478,7 @@ const BrandMainContainer = styled.div`
                 }
 
             }
-            
+            }
         }
     }
 

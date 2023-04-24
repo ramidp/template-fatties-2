@@ -99,25 +99,29 @@ export default Referencias;
 
 const Container = styled.div`
     width: 100%;
-    height: 93vh;
+    height: ${props => props.theme.mainHeight};
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     color: ${props => props.theme.secondary};
-    background: #d8d8d8e8;
-    user-select: none;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 5%, #f0f0f093 60%, ${props => props.theme.gray} 98%);    user-select: none;
 
     span {
-            padding-top: 13vh;
-            margin-top: -13vh;
+            padding-top: 127px;
+            margin-top: -127px;
         }
 
     
     .title {
       h1 {
+        text-align: center;
         margin: 0;
         color: ${props => props.theme.secondary};
+
+        @media (max-width: 1100px) {
+          font-size: 20px;
+        }
       }
     }
 
@@ -144,6 +148,7 @@ const Container = styled.div`
           }
           @media (max-width: 764px) {
             width: 95%;
+            height: 70vh;
           }
 
         div {
@@ -184,7 +189,7 @@ const Container = styled.div`
         h1 {
           text-align: center;
           width: 70%;
-          font-size: 32px;
+          font-size: 28px;
 
           @media (max-height: 720px) {
             font-size: 26px;

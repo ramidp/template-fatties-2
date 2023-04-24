@@ -37,12 +37,12 @@ const Blog = () => {
                             blogs.map((blog) => {
                                 return (
                                     <div 
+                                    onClick={() => navegacion('/blog/' +`${blog.link}`)}
                                     key={blog.id}
                                     className="article">
                                             <img src={require('../../images/Blog/' + `${blog.img}`)} alt="" />
                                             <h1>{blog.title}</h1>
                                             <p>{blog.subtitle}</p>
-                                            <h2 onClick={() => navegacion('/blog/' +`${blog.link}`)}>Leer más</h2>
                                      </div>
                                     )
                             })
@@ -94,17 +94,16 @@ const BlogContainer = styled.div`
     .article {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: flex-start;
             padding: 20px;
             width: 32%;
-            min-height: 40vh;
+            min-height: 35vh;
             height: auto;
             box-shadow: 0px 0px 80px -30px rgba(0,0,0,0.44);
             transition: 0.2s linear;
             border-top-left-radius: 20px;
             border-bottom-right-radius: 20px;
-            gap: 10px;
     
             @media (max-width: 1100px) {
                 width: 100%;
@@ -112,6 +111,8 @@ const BlogContainer = styled.div`
             }
             
             &:hover {
+                cursor: pointer;
+                filter: opacity(70%);
                 transform: scale(1.03);
             }
             
@@ -137,17 +138,6 @@ const BlogContainer = styled.div`
                 min-height: 15vh;
                 }
               
-            }
-            h2 {
-                font-size: 14px!important;
-                margin: 0;
-                width: fit-content;
-                cursor: pointer;
-                z-index: 2;
-                color: ${props => props.theme.secondary};
-                &:hover {
-                    filter: contrast(50%);
-                }
             }
             img {
                 width: 100%;

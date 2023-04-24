@@ -265,8 +265,7 @@ export default Marcas;
 
 const Container = styled.div`
     width: 100%;
-    min-height: 73vh;
-    height: auto;    
+    height: calc(82vh - 70px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -275,8 +274,8 @@ const Container = styled.div`
     gap: 50px;
 
     span {
-            padding-top: 7vh;
-            margin-top: -7vh;
+            padding-top: 90px;
+            margin-top: -90px;
         }
 
     @media (max-width: 1100px) {
