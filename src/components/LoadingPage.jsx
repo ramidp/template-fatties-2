@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+
 
 const LoadingPage = () => {
 
@@ -17,7 +18,6 @@ const LoadingPage = () => {
 
     return ( 
         <LoadingPageContainer className={hideLoading}>
-              {/* <div className="lds-facebook"><div></div><div></div><div></div></div> */}
                 <img className="logo1" src={logo} alt="" />
         </LoadingPageContainer>
      );
@@ -34,7 +34,7 @@ const LoadingPageContainer = styled.div`
     flex-direction: column;
     margin: 0;
     width: 100%;
-    padding-top: 200px;
+    padding-top: 300px;
     height: 100%;
     z-index: 1000;
     animation-name: disolve;
@@ -55,12 +55,17 @@ const LoadingPageContainer = styled.div`
           filter: opacity(0%);
           height: 200px;
           animation-name: lightup;
-          animation-duration: 2s;
+          animation-duration: 1.5s;
 
             @keyframes lightup {
-            0% {filter: opacity(0%)}
-            50% {filter: opacity(100%)}
-            100% {filter: opacity(0%)}
+            0% {filter: opacity(0%);
+            }
+            50% {filter: opacity(100%);
+                transform: scale(1.5);
+            }
+            100% {filter: opacity(0%);
+                  transform: scale(1);
+            }
         }
 
 
@@ -69,42 +74,5 @@ const LoadingPageContainer = styled.div`
         100% {filter: opacity(0%)}
     }
   }
-
-  .lds-facebook {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-  }
-  .lds-facebook div {
-    display: inline-block;
-    position: absolute;
-    left: 8px;
-    width: 16px;
-    background: gray;
-    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-  }
-  .lds-facebook div:nth-child(1) {
-    left: 8px;
-    animation-delay: -0.24s;
-  }
-  .lds-facebook div:nth-child(2) {
-    left: 32px;
-    animation-delay: -0.12s;
-  }
-  .lds-facebook div:nth-child(3) {
-    left: 56px;
-    animation-delay: 0;
-  }
-  @keyframes lds-facebook {
-    0% {
-      top: 8px;
-      height: 64px;
-    }
-    50%, 100% {
-      top: 24px;
-      height: 32px;
-    }
-}
     
 `

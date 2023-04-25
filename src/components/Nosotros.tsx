@@ -175,6 +175,7 @@ const Container = styled.div`
                 }
 
             p {
+                margin: 0;
                 font-size: 18px;
                 color: ${props => props.theme.secondary};
 

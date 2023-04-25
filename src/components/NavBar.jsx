@@ -1,55 +1,33 @@
 import styled from 'styled-components';
-import { OffCanvasTop } from './OffCanvasTop';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faBlog, faQuestion, faAddressBook} from '@fortawesome/free-solid-svg-icons';
-import { useLocation } from 'react-router-dom';
-import { Link } from 'react-scroll'
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
 const MenuNav = () => {
 
-const [display, setDisplay] = useState(false)
+  const [active, setActive] = useState(true)
 
-const blogIcon = require ('../images/icons/blog.png')
+  useEffect(() => {
 
-const location1 = useLocation()
-const isHome = location1.pathname === '/'
+    setTimeout(() => {
+      setActive(false)
+    }, 3000)
 
-useEffect(() => {
-
-  if (window.innerWidth <= 1100) {
-    setDisplay(true)
-  } else {
-    setDisplay(false)
-  }
-
-},[display])
+  },[])
 
 
   return (
     <MenuNavContainer>
-            {/* <OffCanvasTop/> */}
-            <div className="hide">
-                <>
-                {isHome ?
-                <Link 
-                to="top"
-                spy={true}
-                smooth={true}
-                offset={-100}
-                duration={100}
-                ><h3>Home</h3>
-
-                </Link>
-                  :
-                <a href="/"><h3>Home</h3></a>
-                }
-                </>
-                <a href="/blog"><h3 className="underline">Blog</h3></a>
-                <a href="/faq"><h3 className="underline">FAQ</h3></a>
-                <a href="/contacto"><h3 className="underline">Contacto</h3></a>
-            </div>
+                <a href="#servicios">SERVICIOS</a>
+                <a href="/nosotros">¿QUIÉNES SOMOS?</a>
+                <a href="#contacto">CONTACTO</a>
+                <div 
+                onClick={() => setActive(!active)}
+                className={
+                  active ? 'search-bar active' : 'search-bar'}>
+                  <FontAwesomeIcon icon={faSearch} />
+                </div>
     </MenuNavContainer>
   );
 }
@@ -57,76 +35,74 @@ useEffect(() => {
 export default MenuNav;
 
 const MenuNavContainer = styled.div`
-    color: white;
     display: flex;
-    width: 70%;
+    width: 100%;
     height: 100%;
     flex-direction: row;
-    margin-top: 70px;
-    margin: auto 0;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    padding-right: 200px;
 
-    /* .underline {
-      display: flex;
-      justify-content: space-between;
+    @media (max-width: 1100px) {
+      padding: 0;
+      justify-content: center;
+    }
 
-      &:hover {
-        text-decoration: underline;
-        text-underline-offset: 7px;
-      }
-    } */
+    .logo {
+      padding: 0;
+      transition: ease 0.5s all;
 
-    a {
-      width: auto;
-      text-decoration: none;
-
-
-      h3 {
-        text-align: center;
-        padding: 10px;
-        margin: 0;
-        font-size: 18px;
-        color: ${props => props.theme.secondary};
-        cursor: pointer;
-
-        &:hover {
-          background-color: rgba(239,73,49, 0.2);
-        }
-        @media (max-width: 1100px) {
-          padding: 10px;
-          font-size: 18px;
-      }
-
+      &:hover{
+        filter: contrast(70%);
       }
     }
-    
-    .hide {
-      width: 90%;
+   
+    .search-bar {
       display: flex;
-      flex-direction: row;
       justify-content: flex-start;
-      padding-left: 20%;
+      align-items: center;
+      width: 50px;
+      height: 30px;
+      background: linear-gradient(50deg, #7cdaa3 10%, ${props => props.theme.primary} 40%);
+      border-radius: 20px;
+      padding-left: 10px ;
+      transition: width 0.7s ease;
 
-      @media (max-width: 1100px) {
-        padding: 0;
+      svg {
+        font-size: 18px;
+        color: white;
       }
 
-      a {
+      &:hover {
+        cursor: pointer;
+        filter: contrast(120%);
+      }
+    }
+
+    .active {
+      width: 150px!important;
+    }
+
+    a {
+      width: 150px;
+      text-decoration: none;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: default;
+      font-weight: 400;
+      color: black!important;
+
+      &:hover {
+          cursor: pointer;
+          font-weight: 700;
+        }
+
         img {
-          width: 20px;
+          height: 60px;
         }
-        svg {
-          font-size: 26px;
-          padding: 10px 20px;
-          color: ${props => props.theme.secondary};
-          &:hover {
-            cursor: pointer;
-            background-color: rgba(239,73,49, 0.2);
-          }
-        }
-      }
+    }
 
-}
 `
 

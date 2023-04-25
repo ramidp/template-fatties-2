@@ -1,56 +1,23 @@
 [ 
     {
-    "id" : "1",
-    "icon" : "fa-wallet",
-    "link" : "cuenta_mercado_pago",
-    "title" : "Cuenta Mercado Pago",
-    "subTitle" : "Subtitulo 1",
-    "innerText" : "Ingresos, transferencias, extracciones, inversiones y tarjetas (Texto Mas largo)",
-    "outterText" : "Ingresos, transferencias, extracciones, inversiones y tarjetas"
+    "id" : 1,
+    "title" : "Toda la información sobre Fatties",
+    "answerTitle" : "Somos un equipo de especialistas en plataformas digitales, medios de pago, gestión/resolución de reclamos, análisis comercial y atención al cliente. Nuestro objetivo es acercar a los establecimientos y emprendedores las herramientas más innovadoras para llevar su negocio al siguiente nivel.",
+    "link" : "fatties_faq",
+    "icon" : "logo-fatties.png"
     },
     {
-    "id" : "2",
-    "icon" : "fa-money-bill",
-    "link" : "pagos",
-    "title" : "Pagos",
-    "subTitle" : "Subtitulo 2",
-    "innerText" : "Compras, pagos y suscripciones que realizaste (Texto Mas largo)",
-    "outterText" : "Compras, pagos y suscripciones que realizaste"
+    "id" : 2,
+    "title" : "Toda la Información que necesitas saber sobre el servicio con Mercado Pago",
+    "link" : "mercadopago_faq",
+    "icon" : "mplogo.png",
+    "answerTitle" : "Empezar a cobrar con Mercado Pago en tu comercio es muy fácil, solo necesitas tener tu CUIT validado dentro de la plataforma, si todavía no lograste validar tu información fiscal podés comunicarte con nosotros para que uno de nuestros asesores te dé una mano."
     },
     {
-    "id" : "3",
-    "icon" : "fa-tag",
-    "link" : "ventas",
-    "title" : "Ventas",
-    "subTitle" : "Subtitulo 3",
-    "innerText" : "Tus cobros, tasas y herramientas para vender con QR, Point, link de pago, etc (Texto Mas largo)",
-    "outterText" : "Tus cobros, tasas y herramientas para vender con QR, Point, link de pago, etc"
-    },
-    {
-    "id" : "4",
-    "icon" : "fa-handshake",
-    "link" : "creditos",
-    "title" : "Créditos",
-    "subTitle" : "Subtitulo 4",
-    "innerText" : "Cómo solicitar, usar y pagar cuotas de Mercado Crédito (Texto Mas largo)",
-    "outterText" : "Cómo solicitar, usar y pagar cuotas de Mercado Crédito"
-    },
-    {
-    "id" : "5",
-    "icon" : "fa-lock",
-    "link" : "seguridad",
-    "title" : "Seguridad",
-    "subTitle" : "Subtitulo 5",
-    "innerText" : "Robo o pérdida de dispositivo y robo de cuentas (Texto Mas largo)",
-    "outterText" : "Robo o pérdida de dispositivo y robo de cuentas"
-    },
-    {
-    "id" : "6",
-    "icon" : "fa-address-book",
-    "link" : "otros_productos",
-    "title" : "Otros Productos",
-    "subTitle" : "Subtitulo 6",
-    "innerText" : "Seguros, garantias extendidas y Mercado Puntos (Texto Mas largo)",
-    "outterText" : "Seguros, garantias extendidas y Mercado Puntos"
+    "id" : 3,
+    "title" : "Toda la Información que necesitas saber sobre el servicio con Calim",
+    "link" : "calim_faq",
+    "icon" : "calim-logo.png",
+    "answerTitle" : "Toda la información que necesitas saber sobre el servicio que Fatties ofrece en conjunto a Calim puedes consultarlo en esta sección"
     }
 ]

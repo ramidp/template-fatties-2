@@ -34,7 +34,7 @@ const ContenedorAlerta = styled.div`
     justify-content: center;
     align-items: center;
     animation: ${slideDown} 4s ease forwards;
- 
+     
     p {
  
         background: ${props => props.theme.secondary};

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState } from "react";
-import Aos from 'aos'
+import React, { useEffect, useState } from "react";
 import 'aos/dist/aos.css'
 
 
@@ -14,7 +13,6 @@ const Marcas = () => {
   const [logos, setLogos] = useState([])
   
   useEffect(() => {
-
     setLogos(
         [
           {brand : 
@@ -224,32 +222,25 @@ const Marcas = () => {
         ]) 
     },[])
 
-  const animation = 'zoom-in'
-
-  useEffect (() => {
-      Aos.init({
-          duration: 2500,
-          once: true,
-      });
-  },[])
-
     return ( 
       <Container
-        datos-aos={animation}
-        datos-aos-delay="2500"
       >
           <span id="marcas"></span>
             <div className="another-section">
+              <h1>
+              Crecer juntos 
+              <br />
+              es nuestra meta.</h1>
               <h3>
-                Ellos confian en nosotros, nosotros confiamos en ellos.
-                <br />
-                Más de 30 empresas trabajando con nosotros.
-                </h3>
+              Ayudamos a más de 3500 comercios, emprendedores y
+              <br />
+              empresas a lograr sus objetivos a través de nuestro equipo de asesores
+
+              </h3>
             </div>
-            <div className="carousel-section">
-                <div
-                className="marcas-div m-0">
-                {
+            <div className="carousel-sect">
+              <div className="marcas-div">
+                {/* {
                   logos.sort((a, b) => a.brand.name.localeCompare(b.brand.name)).map((logo) => {
                     return (
                     <a
@@ -263,10 +254,10 @@ const Marcas = () => {
                     </a>
                     )
                   })
-                }
-                </div>
-            </div>
-            <div className="wallpaper">
+                } */}
+
+                <div className="wallimg"></div>
+              </div>
             </div>
         </Container>
      );
@@ -276,76 +267,113 @@ export default Marcas;
 
 const Container = styled.div`
     width: 100%;
-    height: 93vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 50px;
-    background-color: ${props => props.theme.secondary};
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    gap: 70px;
+
+    span {
+            padding-top: 90px;
+            margin-top: -90px;
+        }
 
     @media (max-width: 1100px) {
-      min-height: 40vh;
+      min-height: 73vh;
       height: auto;
     }
     @media (max-height: 720px) {
       padding-top: 20px;
     }
 
-    .carousel-item {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .carousel-section {
-      width: 100%;
-      height: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+   
+    .carousel-sect {
+     height: auto;
+     position: relative;
+     width: 100%;
+     display: flex;
+     overflow: hidden;
 
-      button, span, a {
-        display: none;
+      &::after{
+        top: 0;
+        left: -2%;
+        content: '';
+        position: absolute;
+        width: 10%;
+        height: 100%;
+        background: linear-gradient(to left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 60%);
+        z-index: 2;
       }
-  
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 10%;
+        height: 100%;
+        right: -2%;
+        top: 0;
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 60%);
+        z-index: 2;
+      }
+
+      
       .marcas-div {
-        width: auto;
-        max-width: 70vw;
-        margin: 10px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        gap: 10px;
+        justify-content: center;
         align-items: center;
-        gap: 30px;
-
-        @media (max-width: 1100px) {
-          width: 90%;
+        width: calc(250px * 16);
+        animation: scroll 10s linear infinite;
+        &:hover {
+          animation-play-state: paused;
         }
- 
-          .logo-a, img {
-            display: block;
 
-              img {
-                height: 80%;
-                transition: all 0.3s ease-in;
-                &:hover {
-                  height: 90%;
-                }
-              }
+        .wallimg {
+          background-image: url('http://localhost:3000/static/media/banner-ejemplo-choto1.4ebf9af058eb66ca4388.png');
+          background-size: 1948px 329px;
+          background-position: 0 0;
+          width: 100%;
+          height: 427px;
+          background-repeat: repeat-x;
+          animation-duration: 2000s;
+          animation-timing-function: linear;
+          animation-delay: 0s;
+          animation-iteration-count: infinite;
+          animation-direction: normal;
+          animation-fill-mode: none;
+          animation-play-state: running;
+          animation-name: carousel;
 
-            @media (max-width: 764px) {
-              height: 40px;
-            }
-
-            &:hover {
-                  cursor: pointer;
-                  filter: contrast(70%)
-                }
-              }
+            @keyframes carousel {
+              0% {background-position: 0 0}
+              100% {background-position: -100000px 0}
         }
+
+        /* @keyframes scroll {
+          0% {transform: translateX(0)};
+          100% { transform: translateX(calc(-250px * 7))}
+        } */
+      }
+
+      a {
+        perspective: 100px;
+        cursor: default;
+
+        img {
+          height: 70px;
+          display: flex;
+          align-items: center;
+          transition: transform 1s;
+          &:hover {
+            transform: translateZ(10px);
+          }
+        }
+      }
     }
-
+  }
     .another-section {
       height: auto;
       display: flex;
@@ -355,13 +383,22 @@ const Container = styled.div`
       /* background-color: ${props => props.theme.secondary}; */
       z-index: 1;
 
+        h1 {
+          margin: 0;
+          width: 100%;
+          font-size: 60px;
+          font-weight: bold;
+          text-align: center;
+          color: #4b4b4b;
+          padding-bottom: 30px;
+        }
         h3 {
         margin: 0;
         width: 100%;
-        font-size: 26px;
+        font-size: 30px;
         text-align: center;
-        padding: 0 100px ;
-        color: white;
+        font-weight: 200;
+        color: #4b4b4b;
 
         @media (max-width: 1475px) {
             padding: 10px;

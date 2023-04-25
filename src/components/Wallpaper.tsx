@@ -2,21 +2,23 @@ import styled from "styled-components";
 
 const Wallpaper = () => {
     return ( 
-        <WallpaperScreen>
-        </WallpaperScreen>
+
+        <Container>
+
+            
+        </Container>
      );
 }
  
 export default Wallpaper;
 
-const WallpaperScreen = styled.div `
-    
-    background-color: #c9c8c8;
+const Container = styled.div`
+    width: 0;
+    height: 0;
+    border-right: 30vw solid transparent;
+    border-left: 35vw solid rgb(243, 124, 105);
+    border-bottom: 50vw solid ${props => props.theme.secondary};
     position: fixed;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    bottom: 0;
-    right: 0;
+    animation: bgmovement 1s ease forwards;
     
 `

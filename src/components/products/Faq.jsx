@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import faq from '../../data/faq.json'
-import {useState} from 'react'
+import React, {useState} from 'react'
 
 // Lo que se puede hacer es que estos puntos te manden a los links de MP Ayuda
 // Podemos crearlos de 0, pero bueno, habria que ver bien el texto. (Creo que es lo mejor para que todo se quede DENTRO de la pagina)
@@ -13,7 +13,6 @@ const Faq = () => {
 
     const [filteredData, setFilteredData] = useState(faq)
     
-
     const handleChange = (e) => {
         const searchWord = e.target.value;
         const newFilter = faq.filter((item => {
@@ -29,53 +28,31 @@ const Faq = () => {
         <span id="faq"></span>
         <Container>
             <h1 className="faq-title">FAQ</h1>
+            <p 
+            style={{width: "80%"}}
+            >FAQ / </p>
             <h1>¿Con que podemos ayudarte?</h1>
 
             <div className="tag-searcher col-12 mb-3">
                 <input
                 type="text"
                 onChange={handleChange}
-                placeholder="Buscador por Titulo? Por texto interno? .." />
-
-                {/* 
-                Idea of a sub-menu showing the options you get while searching, but it's gonna be a plan-B
-                {data.length != 0 ?
-                <div className="searched-data">
-                                    {
-                    filteredData.slice(0, 10).map((faq, index) => {
-                        return (
-                            <div key={faq.id} onClick={() => {navegacion('/faq/' + `${faq.link}`)}} className="card">
-                            <i className={"fa-solid " + faq.icon}></i>
-                                <div>
-                                    <h3>{faq.title}</h3>
-                                    <p>{faq.outterText}</p>
-                                </div>
-                    </div>
-                    )
-                })
-            }
-
-                </div>
-                :
-                <></>
-                } */}
-
+                placeholder="Buscar por Titulos" />
             </div>
-
 
         <div className="card-box">
             {
-            filteredData.slice(0, 10).map((faq, index) => {
+            filteredData.sort((a, b) => a.icon.localeCompare(b.icon)).map((faq, index) => {
                 return (
                     <div key={faq.id} onClick={() => {navegacion('/faq/' + `${faq.link}`)}} className="card">
-                    <i className={"fa-solid " + faq.icon}></i>
+                    <img src={require('../../images/' + `${faq.icon}`)} alt="" />
                         <div>
                             <h3>
-                                <b>
-                                {faq.title}
-                                </b>
-                                </h3>
-                            <p>{faq.outterText}</p>
+                                <b>{faq.title} </b>
+                                 </h3>
+                            <p
+                            style={{margin: '0'}}
+                            >{faq.answerTitle}</p>
                         </div>
             </div>
                     )
@@ -90,14 +67,20 @@ const Faq = () => {
 export default Faq;
 
 const Container = styled.div`
-    height: 90vh;
+    min-height: 93vh;
+    height: auto;
     width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     background-color: #f5f5f5;
-    padding-top: 20px; 
+    padding: 20px;
+
+    @media (max-width: 1100px) {
+        padding: 20px 0;
+    }
+
 
     .tag-searcher {
         display: flex;
@@ -107,7 +90,7 @@ const Container = styled.div`
         padding-top: 20px;
 
         input {
-            width: 50%;
+            width: 60%;
             height: 40px;
             padding-left: 10px;
             @media (max-width: 1100px) {
@@ -116,7 +99,7 @@ const Container = styled.div`
         }
 
         .searched-data {
-            width: 50%;
+            width: 100%;
             min-height: 20%;
             height: auto;
             position: fixed;
@@ -148,12 +131,11 @@ const Container = styled.div`
     }
 
     .faq-title {
-        width: 60vw;
+        width: 80%;
         text-align: left;
         color: darkgray;
         font-size: 30px;
         margin-bottom: 8px;
-
     }
     
 .card-box {
@@ -163,13 +145,14 @@ const Container = styled.div`
     gap: 5px;
     padding-top: 20px;
     text-decoration: none;
-    width: 100%;
+    width: 90%;
 
         .card {
             border-radius: 0px;
             padding: 15px 30px;
+            min-height: 15vh;
             gap: 40px;
-            width: 60%;
+            width: 85%;
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
@@ -179,10 +162,15 @@ const Container = styled.div`
             color: black;
 
             @media (max-width: 1100px) {
-            width: 80%;
-        }
-
-            
+            width: 100%;
+            min-height: 10vh;
+            }
+            @media (max-width: 764px) {
+            flex-direction: column;
+            gap: 5px;
+            align-items: flex-start;
+            padding: 15px;
+            }
     
                 &:hover {
                 cursor: pointer;
@@ -205,6 +193,11 @@ const Container = styled.div`
                 width: 30px;
                 font-size: 22px;
                 color: ${props => props.theme.secondary};
+            }
+            img {
+                width: 50px;
+                height: 50px;
+                object-fit: scale-down;
             }
         }
     }

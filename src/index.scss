@@ -5,6 +5,12 @@ body {
     padding: 0;
     margin: 0;
     display: block;
+    scroll-behavior: smooth;
+  }
+  
+  #root {
+    background-color: rgb(228, 228, 228);
+
   }
   
   body .offcanvas-backdrop.show {
@@ -31,16 +37,13 @@ body {
       margin: 0;
       font-size: 30px; 
       text-align: center;
-    
   }
   
   /* Main Font */
   
   * {
-    font-family: 'Antonio';
-
+    font-family: 'Poppins';
   }
-
 
   // Scrollbar
 
@@ -56,12 +59,12 @@ body {
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(240, 120, 102); 
+  background: rgb(239,73,49); 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(239,73,49); 
+  background: rgb(175, 82, 68); 
 }
 
   
@@ -82,12 +85,19 @@ body {
        
 
        .modal-content {
-        width: 60%!important;
-        height: 80vh;
+        width: 80%!important;
+        min-height: 80vh;
+        height: auto;
         border-radius: 0px!important;
         box-shadow: 0px 0px 50px -20px rgba(0,0,0,0.44);
         padding: 30px;
 
+        .modal-body {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+  
+        }
 
 
         @media (max-width: 1100px) {
@@ -110,7 +120,7 @@ body {
            p {  
                 color: darkgray;
                 margin: 0;
-                font-size: 14px;
+                font-size: 16px;
            }
            button {
             background-color: inherit;
@@ -119,10 +129,8 @@ body {
            .modal-footer {
                display: flex;
                justify-content: flex-start;
-               p {
-               }
            }
        }
     }
 }
-    
+  

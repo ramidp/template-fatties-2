@@ -3,11 +3,10 @@ import React, { useState } from 'react'
 import {ReactComponent as FacebookLogo} from '../images/icons/facebook.svg'
 import {ReactComponent as InstagramLogo} from '../images/icons/instagram.svg'
 import {ReactComponent as LinkedInLogo} from '../images/icons/linkedin.svg'
+import {ReactComponent as WhatsAppLogo} from '../images/icons/whatsapp.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLocationDot, faEnvelope, faPhone,faRegistered} from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faPhone, faAt } from '@fortawesome/free-solid-svg-icons';
 import Alerta from '../components/Alerta'
-
-
 
 const Footer = () => {
 
@@ -50,87 +49,59 @@ const Footer = () => {
         <>
         <span id="contacto"></span>
             <FooterContainer>
-                    <div className="contenedor col-12 m-0">
-                                {/* <h1>Contactanos por este formulario o vía WhatsApp</h1>
-                                <form onSubmit={handleSubmit}>
-                                    <input 
-                                    className="inputname" 
-                                    type="text" 
-                                    name="nombre" 
-                                    placeholder="Nombre"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}/>  
-
-                                    <input 
-                                    className="inputcorreo" 
-                                    type="text" 
-                                    name="correo"   
-                                    placeholder="E-mail"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}/>  
-
-                                    <input 
-                                    className="inputtel" 
-                                    type="number" 
-                                    name="telefono" 
-                                    placeholder="Telefono"
-                                    value={telephone}
-                                    onChange={(e) => setTelephone(e.target.value)}/>
-
-                                    <textarea
-                                    className="textmsg"  
-                                    name="mensaje" 
-                                    placeholder="Escribir mensaje"
-                                    value={message}
-                                    onChange={(e) => setMessage(e.target.value)} />
-
-                                    
-                                    <button type="submit">Enviar</button>
-
-                                </form>  */}
-                    </div>
-                        <div className="third-part">
-                            <p>Atención comercial: Lunes a viernes de 9 a 18.
+                        <div className="first-part">
+                            <p>
+                                <strong>
+                                Atención comercial: Lunes a viernes de 9 a 18.
+                                </strong>
                                 <br />
                                 Somos una empresa de servicios y consultoria, su información es totalmente confidencial. 
                                 <br />
-                                To0dos los derechos reservados. El uso del sitio web fatties.com.ar está sujeto a los Términos de uso de Fatties y la Política de privacidad.</p>
+                                Todos los derechos reservados.
+                               </p>
                         </div>
-                    <div>
+                        <div>
+
                         <div className="second-part">
-                            <div className="tel-email-location d-flex flex-column">
+                            <div className="brand-info">
                                 <div>
                                 <FontAwesomeIcon icon={faLocationDot} />
                                 <p>Igualdad 1449, 3° A, Haedo, Buenos Aires</p>
                                 </div>
                                 <div>
-                                <FontAwesomeIcon icon={faEnvelope} />
+                                <FontAwesomeIcon icon={faAt} />
                                     <p>mercadopago@fatties.com.ar</p>
                                 </div>
                                 <div>
                                 <FontAwesomeIcon icon={faPhone} />
                                     <p>	Oficinas: +54 (011) 5-263-8549 </p>
-                                    <p>	Celular: +54 (011) 2395-6360 </p>
+                                </div>
+                                <div>
+                                <WhatsAppLogo
+                                style={{height: '25px'}}
+                                />
+                                    <p> +54 (011) 2395-6360 </p>
                                 </div>
                             </div>
                             <div className="copyright">
                                 {/* <FontAwesomeIcon icon={faRegistered} /> */}
                                 <div>
+                                    <a href="https://www.linkedin.com/company/fatties/" target="_blank"><LinkedInLogo/> </a>
                                     <a href="https://www.facebook.com/mp.vendedores/" target="_blank" ><FacebookLogo/> </a>
                                     <a href="https://www.instagram.com/fatties.ac" target="_blank"><InstagramLogo/> </a>
-                                    <a href="https://www.linkedin.com/company/fatties/" target="_blank"><LinkedInLogo/> </a>
                                 </div>
                                 <p>©  2023 Fatties Mercado Pago.</p> 
                             </div>
                         </div>
-                        {/* <div className="signature">
+                        <div className="third-part">
                             <p>
-                                    Creado por ramidp@gmail.com (Template Retail)
+                                <strong>
+                                El uso del sitio web fatties.com.ar está sujeto a los Términos de uso de Fatties y la Política de privacidad
+                                </strong>
                                 </p>
-                                <a href="https://linktr.ee/ramidp" target="_blank">Proyectos&Contacto</a>
+                        </div>
+                        </div>
 
-                        </div> */}
-                    </div>
                     <Alerta
                     tipo={alerta.tipo}
                     mensaje={alerta.mensaje}
@@ -145,218 +116,98 @@ const Footer = () => {
 export default Footer;
 
 const FooterContainer = styled.div`
-    width: 100%;
-    height: 43vh;
-    background: ${props => props.theme.gray};
     display: flex;
+    height: 55vh;
     flex-direction: column;
+    background-color: white;
     justify-content: space-between;
-    z-index: 30;
-
-    .contenedor {
-        z-index: 2;
-        gap: 20px;
-        width: 100%;
+    
+    .first-part {
+        height: 20vh;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-
-            @media (max-width: 1100px) {
-                background: ${props => props.theme.gray};
-                padding-top: 0px;
-            }
-
-            form {
-                height: auto;
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                flex-direction: column;
-                padding: 30px 0;
-                width: 70%;
-                background-color: white;
-                box-shadow: 0px 0px 30px -15px rgba(0,0,0,1);
-                z-index: 2;
-                
-                    input, textarea {
-                        font-size: 15px;
-                        width: 80%;
-                        padding: 5px 0;
-                        padding-left: 10px;
-                        margin: 10px 0;
-                        resize: none;
-                        border: 1px solid darkgray;
-                        &::placeholder {
-                            color: ${props => props.theme.secondary}
-                        }
-
-                        @media (max-width: 1100px) {
-                            width: 80%;
-                }
-                    }
-
-                    textarea {
-                    height: 80px;
-                    &::placeholder {
-                        display: flex;
-                        
-                    }
-                }
-
-
-                    button {
-                    margin-top: 15px;
-                    width: 20%;
-                    padding: 10px;
-                    background-color: ${props => props.theme.secondary};
-                    border: none;
-                    color: white;
-                    &:hover {
-                        filter: contrast(70%)
-                    }
-                        @media (max-width: 1100px) {
-                        width: 50%;
-                        }
-                }
-                @media (max-width: 1100px) {
-                     display: none;
-            }
+        background: linear-gradient(270deg, orange 10% ,${props => props.theme.secondary} 45%);
+        padding: 30px 0;
+        p {
+            text-align: center;
+            color: white;
+            font-size: 22px;
         }
-
-            }
-
-            a {
-                text-decoration: none;
-            }
-            h1 {
-                display: inline;
-                color: white;
-                font-size: 28px;
-                text-align: center;
-
-                @media (max-width: 1100px) {
-                    display: none;
-                }
-    
-        @media (max-width: 1100px) {
-            width: 100%!important;
-            display: none;
-            }
-        }
-
-    .alert {
-        margin-top: 10px;
-        color: ${props => props.theme.fontPrim};
     }
-
     .second-part {
-        z-index: 10;
-        background-color: ${props => props.theme.gray};
-        height: 20vh;
-        display: grid;
-        grid-template-columns: repeat(2, 50%);
-        justify-items: center; // En GRID se usa justify-items, no content.
+        height: 25vh;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
         align-items: center;
+        background-color: #696969;
+        padding: 0 200px;
 
-        @media (max-width: 1100px) {
-                height: auto;
+        .brand-info {
+            color: white;
+            fill: white;
+            display: grid;
+            height: 100%;
+            width: 70%;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 50% 50%;
+            padding: 50px 30px 20px 30px;
+
+            div {
+                gap: 20px;
+                width: 100%;
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: flex-start;
+                p {
+                    margin: 0;
+                    font-size: 14px;
                 }
+            }
 
+        }
 
         .copyright {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                flex-direction: column;
-                div {
-                    height: auto;
-                    background-color: inherit;
-                }
-                p {
-                    width: 100%;
-                    padding: 10px;
-                }
-                a {
-                svg {
-                    height: 30px;
-                    fill: white; // Color de las redes, buscamos sus colores o usamos un color para todas?
-                    &:hover {
-                        filter: invert(50%);
-                        }
-                        @media (max-width: 1100px) {
-                        width: 25px;   
-                        }
-                    }
-                }    
-
-            }
-
-        svg {
-            font-size: 18px;
-        }
-
-        div {
-            gap: 0 20px;
-            padding: 10px;
             color: white;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            background-color: #686767;
-            width: 100%;
+            gap: 30px;
             height: 100%;
-            
+            width: 30%;
+            padding: 50px 30px 20px 30px;
+
             p {
-                margin: 0;
-                width: 80%;
-                text-align: left;
                 font-size: 14px;
-                @media (max-width: 1100px) {
-                 font-size: 12px;   
-                }
+                text-align: center;
+
             }
+            a { 
+                text-decoration: none;
+                svg {
+                    margin: 0 5px;
+                    width: 40px;
+                    fill: white;
+                    &:hover {
+                        filter: contrast(30%);
+                    }
+                }
+            } 
+            
         }
     }
     .third-part {
-        z-index: 10;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-        padding: 20px 0;
-
+        background-color: #696969;
+        padding-bottom: 30px;
         p {
             margin: 0;
-            text-align: center;
-            color: black;
-            width: 70%;
-            @media (max-width: 1100px) {
-                font-size: 12px;
-                width: 90%;
-            }
-        }
-    }
-    .signature {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        background-color: ${props => props.theme.secondary};
-        text-align: center;
-        gap: 30px;
-        a, p {
-            margin: 0;
             color: white;
-            text-decoration: none;
-        }
-        a {
-            &:hover {
-            filter: contrast(70%);
-            }
+            text-align: center;
+            font-family: 900;
         }
     }
 

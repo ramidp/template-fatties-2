@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import BrandMain from './BrandMain';
 import Marcas from './Marcas';
-import Nosotros from './Nosotros';
+import Referencias from './Referencias';
+import React from 'react'
 
 
 
@@ -11,7 +12,7 @@ const Main = () => {
     <AppContainer>
           <BrandMain/>
           <Marcas/>
-          <Nosotros/>
+          <Referencias/>
     </AppContainer>
 );
 }

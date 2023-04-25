@@ -1,86 +1,20 @@
-[ {
-    "id" : "1",
-    "icon" : "",
-    "link" : "servicio_personalizado",
-    "title" : "Servicio Personalizado",
-    "subTitle" : "Subtitulo 1",
-    "innerText" : "En Fatties tenemos un servicio completamente personaliza. No solo la venta, sino que también el post-venta, teniendo un número exlusivo de WhatsApp con atención inmediata y por nuestro personal.",
-    "outterText" : "¿No sabes cómo funciona el servicio? ¿Tenes alguna duda? Un asesor puede visitar tu comercio sin costo alguno ni compromiso.",
-    "tags" : {
-        "tag1" : "Servicio",
-        "tag2" : "Personalización",
-        "tag3" : "Post-Venta"
+[
+    {   
+        "id": 1,
+        "title": "Ahora podes configurar tus cuotas sín interés con un monto mínimo",
+        "link" : "mp_1",
+        "img" : "mp_1/mp1.jpg"
+    },
+    {   
+        "id": 2,
+        "title": "Por qué se genera saldo a favor de Ingresos Brutos",
+        "link": "calim_1",
+        "img": "calim_1/calculadora.webp"
+    },
+    {   
+        "id": 3,
+        "title": "Transformación digital: para la mitad de los comercios, los consumidores gastan más cuando pagan con código QR o con tarjetas",
+        "link": "mp_2",
+        "img": "mp_2/mp-photo.webp"
     }
-},
-{   
-    "id" :"2",
-    "icon" : "",
-    "link" : "inflacion_100",
-    "title" : "Inflacion al 100%",
-    "subTitle" : "Blog2 Example",
-    "innerText" : "Texto Ejemplo. No tengo idea que escrbir, pero tengo que mandarle por lo menos 20 palabras o más",
-    "outterText" : "Texto Ejemplo 2, Sigo sin idea de que escribir, pero tengo que mandarle fruta como para poder escribir aunque sea 30 palabras",
-    "tags" : {
-        "tag1" : "Servicio",
-        "tag2" : "Personalización",
-        "tag3" : "Post-Venta"
-    }
-},
-{   
-    "id" : "3",
-    "icon" : "",
-    "link" : "ejemplo_3",
-    "title" : "Ejemplo 3",
-    "subTitle" : "Blog3 Example",
-    "innerText" : "Texto Interno y mas largo",
-    "outterText" : "Texto Corto",
-    "tags" : {
-        "tag1" : "Servicio",
-        "tag2" : "Personalización",
-        "tag3" : "Post-Venta"
-    }
-},
-{   
-    "id" : "4",
-    "icon" : "",
-    "link" : "ejemplo_4",
-    "title" : "Ejemplo 4",
-    "subTitle" : "Blog4 Example",
-    "innerText" : "Texto Interno y mas largo",
-    "outterText" : "Texto Corto",
-    "tags" : {
-        "tag1" : "Servicio",
-        "tag2" : "Personalización",
-        "tag3" : "Post-Venta"
-    }
-},
-{   
-    "id" : "5",
-    "icon" : "",
-    "link" : "ejemplo_5",
-    "title" : "Ejemplo 5",
-    "subTitle" : "Blog5 Example",
-    "innerText" : "Texto Interno y mas largo",
-    "outterText" : "Texto Corto",
-    "tags" : {
-        "tag1" : "Servicio",
-        "tag2" : "Personalización",
-        "tag3" : "Post-Venta"
-    }
-},
-{   
-    "id" : "6",
-    "icon" : "",
-    "link" : "ejemplo_6",
-    "title" : "Ejemplo 6",
-    "subTitle" : "Blog6 Example",
-    "innerText" : "Texto Interno y mas largo",
-    "outterText" : "Texto Corto",
-    "tags" : {
-        "tag1" : "Servicio",
-        "tag2" : "Personalización",
-        "tag3" : "Post-Venta"
-    }
-}
-
 ]

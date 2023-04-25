@@ -1,212 +1,151 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ProductContainer from './estiloblog'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAddressBook} from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom';
-import blogs from '../../data/blogs.json'
-import {useState} from 'react'
-import Modal from 'react-bootstrap/Modal';
+import ProductContainer from './styles/estiloblog'
+import React, {useState} from 'react'
 import styled from 'styled-components'
-import Aos from 'aos'
-import 'aos/dist/aos.css'
-import { useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
+import blogs from '../../data/blogs.json'
 
-
-
-const BlogIndividual = ({blog}) => {
-
-    const [show, setShow] = useState(false);
-
-    const handleShow = () => {
-        setShow(!show)
-    }
-    return (
-        <>
-        <div 
-        className="article">
-            <h1>{blog.title}</h1>
-            <p>{blog.outterText}</p>
-            <h2 style={{color: 'red'}} onClick={() => setShow(true)}>Leer más</h2>
-        </div>
-      <Modal 
-        show={show}
-        onHide={() => setShow(false)}
-        backdrop="static"
-        keyboard={false}>
-            
-        <Modal.Header>
-          <Modal.Title>
-            <div className="title">
-                <h1
-                style={{fontSize: '28px'
-            }}>
-                <b>
-                {blog.title}
-                </b>
-                </h1>
-                <button onClick={() => setShow(false)}>X</button>
-            </div>
-            <p>Blog / {blog.link}</p>
-         </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            <p
-            style={{color: 'black'}}
-            >
-            {blog.innerText}
-            </p>
-            </Modal.Body>
-        <Modal.Footer>
-            <p>Tags:</p>
-                <p className="tags">
-                {blog.tags.tag1}
-                </p>
-                <p className="tags">
-                {blog.tags.tag2}
-                </p>
-                <p className="tags">
-                {blog.tags.tag3}
-                </p>
-
-        </Modal.Footer>
-      </Modal>
-        </>
-    )
-
-}
 
 
 const Blog = () => {
 
+    const [filteredData, setFilteredData] = useState(blogs)
+
+    const handleChange = (e) => {
+        const searchWord = e.target.value;
+        const newFilter = blogs.filter((item => {
+            return (
+                item.title.toLowerCase().includes(searchWord.toLowerCase())
+                )
+        }));
+            setFilteredData(newFilter)
+    }
+
     const navegacion = useNavigate()
 
-    const animation = 'zoom-in'
-
-    useEffect (() => {
-        Aos.init({
-            duration: 1500,
-            once: true,
-        });
-    },[])
-
-
     return (
-        <>
-        <span id="blog"></span>
         <ProductContainer>
+        <span id="blog"></span>
             <h1 className="title">Blog</h1>
             <p className="mb-4 blog-text">Todas las novedades, guias y manuales que sean de utilidad serán vistas aqui.</p>
-
                 <div className="products">
-                    {blogs.map((blog, index) => {
-                        return (
-                        <div
-                        data-aos={animation}
-                        key={index} onClick={() => navegacion ("/blog/" + `${blog.link}`)} 
-                        className="product-types"
-                        >
-                        <FontAwesomeIcon icon={faAddressBook} />
-                            <h1>{blog.title}</h1>
-                            <p>{blog.outterText}</p>
-                        </div>
-                        )
-                    })}
+
                     <BlogContainer>
-                        <h1 className="pt-4">Modales</h1>
-                        <div className="modal-box">
                         {
                             blogs.map((blog) => {
                                 return (
-                                    <BlogIndividual 
-                                    key={blog.id} 
-                                    blog={blog}
-                                    />
-                                )
+                                    <div 
+                                    onClick={() => navegacion('/blog/' +`${blog.link}`)}
+                                    key={blog.id}
+                                    className="article">
+                                            <img src={require('../../images/Blog/' + `${blog.img}`)} alt="" />
+                                            <h1>{blog.title}</h1>
+                                            <p>{blog.subtitle}</p>
+                                     </div>
+                                    )
                             })
                         }
-                        </div>
                     </BlogContainer>
-
-                    
-                    
+                    <div className='searcher'>
+                        <div className="tag-searcher">
+                            <input
+                            type="text"
+                            onChange={handleChange}
+                            placeholder="Buscador .." />
+                            <FontAwesomeIcon icon={faMagnifyingGlass}/>
+                        </div>
+                        <div className="searched-data">
+                        {
+                            filteredData.slice(0, 10).sort((a, b) => b.id - a.id).map((item, index) => {
+                                return (
+                                    <p onClick={() => navegacion(`${item.link}`)} key={item.id}>{item.title}</p>
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
                 </div>
         </ProductContainer>
-        </>
     );
 }
  
 export default Blog
 
 const BlogContainer = styled.div`
-    
-    width: 100%;
-    height: 100%;
+
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
     flex-wrap: wrap;
+    gap: 15px;
+    width: 80%;
+    padding: 0 20px 0 30px;
+    height: auto;
 
-    .modal-box {
+    @media (max-width: 1100px) {
         width: 100%;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        flex-direction: row;
-        padding: 20px;
-        flex-wrap: wrap;
-        gap: 10px;
+        padding: 20px 10px 0 10px;
+    }
 
-        @media (max-width: 1100px) {
-            flex-direction: column;
-        }
-
-        .article {
+    .article {
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-            padding: 10px;
-            min-width: 20vw;
-            width: auto;
-            height: 15vh;
-            box-shadow: 0px 0px 50px -20px rgba(0,0,0,0.44);
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+            width: 32%;
+            min-height: 35vh;
+            height: auto;
+            box-shadow: 0px 0px 80px -30px rgba(0,0,0,0.44);
+            transition: 0.2s linear;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
     
             @media (max-width: 1100px) {
                 width: 100%;
+                min-height: auto;
             }
-    
+            
             &:hover {
-                background-color: ${props => props.theme.secondaryOpact};
+                cursor: pointer;
+                filter: opacity(70%);
+                transform: scale(1.03);
             }
             
             p {
-                width: 50%;
-                text-align: center;
+                width: 100%;
+                text-align: left;
                 margin: 0;
-                font-size: 12px;
+                font-size: 14px;
+                z-index: 2;
             }
     
             h1 {
-                width: auto;
-                padding: 0!important;
-                font-size: 14px!important;
+                min-height: 10vh;
+                width: 100%;
+                padding: 0;
+                font-size: 18px;
                 padding-bottom: 10px;
                 font-weight: bold;
-            }
-            h2 {
-                font-size: 14px!important;
-                margin: 0;
-                width: fit-content;
-                cursor: pointer;
-                &:hover {
-                    color: ${props => props.theme.secondary};
+                z-index: 2;
+                text-align: left;
+
+                @media (max-height: 720px) {
+                min-height: 15vh;
                 }
+              
+            }
+            img {
+                width: 100%;
+                height: 150px;
+                object-fit: cover;
+                object-position: 50% 20%;
+                filter: opacity(70%);
             }
         }
-    }
-
-   
     
 `
