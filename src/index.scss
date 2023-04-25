@@ -5,6 +5,12 @@ body {
     padding: 0;
     margin: 0;
     display: block;
+    scroll-behavior: smooth;
+  }
+  
+  #root {
+    background-color: rgb(228, 228, 228);
+
   }
   
   body .offcanvas-backdrop.show {
@@ -36,9 +42,8 @@ body {
   /* Main Font */
   
   * {
-    font-family: 'Rubik';
+    font-family: 'Poppins';
   }
-
 
   // Scrollbar
 
@@ -54,12 +59,12 @@ body {
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(95, 101, 187); 
+  background: rgb(239,73,49); 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(95, 101, 187); 
+  background: rgb(175, 82, 68); 
 }
 
   

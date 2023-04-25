@@ -1,42 +1,33 @@
 import styled from 'styled-components';
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 
 const MenuNav = () => {
 
-const [display, setDisplay] = useState(false)
+  const [active, setActive] = useState(true)
 
-const location1 = useLocation()
-const isHome = location1.pathname === '/'
+  useEffect(() => {
 
-const fatties = require('../images/logo-fatties.png')
+    setTimeout(() => {
+      setActive(false)
+    }, 3000)
+
+  },[])
+
 
   return (
     <MenuNavContainer>
-            {/* <OffCanvasTop/> */}
-                <>
-                {/* {isHome ?
-                <Link
-                to="top"
-                spy={true}
-                smooth={true}
-                offset={-100}
-                duration={100}
-                >Home
-
-                </Link>
-                  :
-                <a href="/">Home</a>
-                } */}
-                <a 
-                className="logo"
-                href="/">
-                  <img src={fatties} alt="" />
-                </a>
-                </>
-                <a href="/blog">Blog</a>
-                <a href="/faq">FAQ</a>
-                <a href="/nosotros">Nosotros</a>
+                <a href="#servicios">SERVICIOS</a>
+                <a href="/nosotros">¿QUIÉNES SOMOS?</a>
+                <a href="#contacto">CONTACTO</a>
+                <div 
+                onClick={() => setActive(!active)}
+                className={
+                  active ? 'search-bar active' : 'search-bar'}>
+                  <FontAwesomeIcon icon={faSearch} />
+                </div>
     </MenuNavContainer>
   );
 }
@@ -44,15 +35,13 @@ const fatties = require('../images/logo-fatties.png')
 export default MenuNav;
 
 const MenuNavContainer = styled.div`
-    color: white;
     display: flex;
     width: 100%;
     height: 100%;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
-    padding-left: 50px;
-    background-color: white;
+    padding-right: 200px;
 
     @media (max-width: 1100px) {
       padding: 0;
@@ -64,25 +53,50 @@ const MenuNavContainer = styled.div`
       transition: ease 0.5s all;
 
       &:hover{
-        background: inherit!important;
         filter: contrast(70%);
       }
     }
+   
+    .search-bar {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 50px;
+      height: 30px;
+      background: linear-gradient(50deg, #7cdaa3 10%, ${props => props.theme.primary} 40%);
+      border-radius: 20px;
+      padding-left: 10px ;
+      transition: width 0.7s ease;
+
+      svg {
+        font-size: 18px;
+        color: white;
+      }
+
+      &:hover {
+        cursor: pointer;
+        filter: contrast(120%);
+      }
+    }
+
+    .active {
+      width: 150px!important;
+    }
 
     a {
-      transition: ease 0.5s all;
-      width: auto;
+      width: 150px;
       text-decoration: none;
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       cursor: default;
-      padding: 0 20px;
-      color: ${props => props.theme.secondary}!important;
+      font-weight: 400;
+      color: black!important;
 
       &:hover {
-          background-color: #e0e0e0;
+          cursor: pointer;
+          font-weight: 700;
         }
 
         img {

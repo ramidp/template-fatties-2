@@ -28,9 +28,11 @@ const App = () => {
       families: [
       'Anton:400',
       'Antonio:400',
-      'Montserrat:300',
+      'Montserrat:400',
       'Roboto:400,700,900',
-      'Rubik:300',
+      'Rubik:300,400,700,900,1100',
+      'Poppins:300,400,700,900',
+      'Inter:300,400,700,900',
   ]
     }
   });
@@ -43,7 +45,7 @@ const App = () => {
       tertiary: 'rgb(245,186,63)',
       gray: '#f0f0f0',
       mainFont: "Arial", // Fuente 1,
-      mainHeight: 'calc(100vh - 70px)'
+      mainHeight: 'calc(100vh)'
   })
 
   return (
@@ -74,7 +76,6 @@ const App = () => {
                     <Route path="/nosotros" element={<Nosotros/>}/>
                     <Route path="/images/" element={<WallExample/>}/>
                   </Routes>
-                  
                   <Footer/>
           </div>
       </BrowserRouter>
@@ -89,18 +90,17 @@ const AppContainer = styled.div`
     margin: 0 auto;
     display: flex;
     height: auto;
-    width: 100%;
+    width: 80%;
     flex-direction: column;
+    box-shadow: 0px 0px 100px -30px gray;
 
     .menu {
       font-family: ${props => props.theme.mainFont};
       width: 100%;
-      height: 70px;
     }
 
     .center {
       width: 100%;
-      box-shadow: 29px 10px 56px -9px rgba(0,0,0,0.27);
       background-color: inherit;
     }
      

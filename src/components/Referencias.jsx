@@ -20,7 +20,8 @@ const Referencias = () => {
     return ( 
       <>
       <Container>
-      <span id="referencias"></span>
+      <span 
+      id="referencias"></span>
           <div className="references-box">
 
               {hide ?
@@ -99,10 +100,10 @@ export default Referencias;
 
 const Container = styled.div`
     width: 100%;
-    height: ${props => props.theme.mainHeight};
+    height: 70vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     color: ${props => props.theme.secondary};
     background: linear-gradient(180deg, rgba(255,255,255,1) 5%, #f0f0f093 60%, ${props => props.theme.gray} 98%);    user-select: none;
@@ -142,6 +143,7 @@ const Container = styled.div`
       justify-content: center;
       align-items: center;
       gap: 20px;
+      margin-bottom: 50px;
 
       @media (max-width: 1100px) {
             width: 80%;

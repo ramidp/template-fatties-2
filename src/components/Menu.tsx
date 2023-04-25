@@ -1,17 +1,28 @@
 import styled from "styled-components";
 import Datos from "./Datos";
-import React from 'react'
+import React, { useState } from 'react'
 import NavBar from "./NavBar";
-
-
 
 const Menu = () => {
 
+    const [color, setColor] = useState(false)
+    
+    const changeColor = () => {
+      if (window.scrollY >=  70) {
+        setColor(true)
+      } else {
+        setColor(false)
+      }
+    }
+    
+    window.addEventListener('scroll', changeColor)
 
     return ( 
             <MenuContainer>
-                <Datos/>
+                <div className={color ? 'menu-white' : 'menu-transparent'}>
+                {/* <Datos/> */}
                 <NavBar/>
+                </div>
             </MenuContainer>
      );
 }
@@ -23,10 +34,22 @@ const MenuContainer = styled.div`
     height: 70px;
     display: flex;
     position: fixed;
-    left: 0;
-    padding: 0;
-    margin: 0;
     z-index: 100;
-    box-shadow: -2px 16px 54px -27px rgba(0, 0, 0, 0.753);
+    left: 0;
+    
+    .menu-transparent {
+        width: 100%;
+        height: 70px;
+        transition: 500ms linear;
+        background-color: transparent;
+    }
+    .menu-white {
+        width: 100%;
+        height: 70px;
+        transition: 500ms linear;
+        background: linear-gradient(70deg, orange 10% ,${props => props.theme.secondary} 45%, rgba(255, 255, 255, 1) 45.07%);
+        box-shadow: 0px 0px 100px -20px black;
+    }
+    
     `
     

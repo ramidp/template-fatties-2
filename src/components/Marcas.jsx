@@ -227,14 +227,16 @@ const Marcas = () => {
       >
           <span id="marcas"></span>
             <div className="another-section">
+              <h1>
+              Crecer juntos 
+              <br />
+              es nuestra meta.</h1>
               <h3>
-              <strong
-              >Crecer juntos es nuestra meta.</strong>
+              Ayudamos a más de 3500 comercios, emprendedores y
               <br />
-              Ayudamos a más de 3500 comercios, emprendedores 
-              <br />
-              y empresas a lograr sus objetivos a través de nuestro equipo de asesores
-                </h3>
+              empresas a lograr sus objetivos a través de nuestro equipo de asesores
+
+              </h3>
             </div>
             <div className="carousel-sect">
               <div className="marcas-div">
@@ -265,13 +267,13 @@ export default Marcas;
 
 const Container = styled.div`
     width: 100%;
-    height: calc(82vh - 70px);
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-color: white;
-    gap: 50px;
+    gap: 70px;
 
     span {
             padding-top: 90px;
@@ -300,7 +302,7 @@ const Container = styled.div`
         content: '';
         position: absolute;
         width: 10%;
-        height: 70%;
+        height: 100%;
         background: linear-gradient(to left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 60%);
         z-index: 2;
       }
@@ -309,7 +311,7 @@ const Container = styled.div`
         content: '';
         position: absolute;
         width: 10%;
-        height: 70%;
+        height: 100%;
         right: -2%;
         top: 0;
         background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 60%);
@@ -334,7 +336,7 @@ const Container = styled.div`
           background-size: 1948px 329px;
           background-position: 0 0;
           width: 100%;
-          height: 450px;
+          height: 427px;
           background-repeat: repeat-x;
           animation-duration: 2000s;
           animation-timing-function: linear;
@@ -361,7 +363,6 @@ const Container = styled.div`
         cursor: default;
 
         img {
-
           height: 70px;
           display: flex;
           align-items: center;
@@ -382,13 +383,22 @@ const Container = styled.div`
       /* background-color: ${props => props.theme.secondary}; */
       z-index: 1;
 
+        h1 {
+          margin: 0;
+          width: 100%;
+          font-size: 60px;
+          font-weight: bold;
+          text-align: center;
+          color: #4b4b4b;
+          padding-bottom: 30px;
+        }
         h3 {
         margin: 0;
         width: 100%;
-        font-size: 26px;
+        font-size: 30px;
         text-align: center;
-        padding: 0 100px ;
-        color: ${props => props.theme.secondary};
+        font-weight: 200;
+        color: #4b4b4b;
 
         @media (max-width: 1475px) {
             padding: 10px;

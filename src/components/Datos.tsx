@@ -16,7 +16,6 @@ export default Datos;
 
 const DatosContainer = styled.div`
         width: 15%;
-        background-color: ${props => props.theme.secondary};
         display: flex;
         justify-content: center;
         align-items: center;
@@ -27,7 +26,8 @@ const DatosContainer = styled.div`
         p {
             text-align: center;
             font-size: 15px;
-            color: white;
+            font-weight: bold;
+            color: ${props => props.theme.secondary};
             padding: 0;
             margin: 0;
         }
