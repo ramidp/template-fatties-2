@@ -90,9 +90,14 @@ const AppContainer = styled.div`
     margin: 0 auto;
     display: flex;
     height: auto;
-    width: 80%;
+    width: 70%;
     flex-direction: column;
     box-shadow: 0px 0px 100px -30px gray;
+
+    @media (max-width: 1100px) {
+            width: 100%;
+        }
+
 
     .menu {
       font-family: ${props => props.theme.mainFont};
@@ -102,6 +107,7 @@ const AppContainer = styled.div`
     .center {
       width: 100%;
       background-color: inherit;
+      z-index: 9;
     }
      
 `

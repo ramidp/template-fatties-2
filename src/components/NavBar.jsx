@@ -12,7 +12,7 @@ const MenuNav = () => {
 
     setTimeout(() => {
       setActive(false)
-    }, 3000)
+    }, 2000)
 
   },[])
 
@@ -41,20 +41,16 @@ const MenuNavContainer = styled.div`
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 200px;
+    padding-right: 300px;
+    z-index: 100;
 
     @media (max-width: 1100px) {
       padding: 0;
       justify-content: center;
     }
 
-    .logo {
-      padding: 0;
-      transition: ease 0.5s all;
-
-      &:hover{
-        filter: contrast(70%);
-      }
+    @media (max-width: 764px) {
+      display: none;
     }
    
     .search-bar {
@@ -66,7 +62,7 @@ const MenuNavContainer = styled.div`
       background: linear-gradient(50deg, #7cdaa3 10%, ${props => props.theme.primary} 40%);
       border-radius: 20px;
       padding-left: 10px ;
-      transition: width 0.7s ease;
+      transition: width 1.5s ease;
 
       svg {
         font-size: 18px;
@@ -93,10 +89,19 @@ const MenuNavContainer = styled.div`
       cursor: default;
       font-weight: 400;
       color: black!important;
+      
+      @media (max-width: 764px) {
+        width: max-content;
+        padding: 0 10px;
+      }
 
       &:hover {
-          cursor: pointer;
-          font-weight: 700;
+        cursor: pointer;
+        font-weight: 700;
+        
+        @media (max-width: 1100px) {
+            background-color: #dfdfdf;
+          }
         }
 
         img {
