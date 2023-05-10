@@ -267,7 +267,8 @@ export default Marcas;
 
 const Container = styled.div`
     width: 100%;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -391,6 +392,10 @@ const Container = styled.div`
           text-align: center;
           color: #4b4b4b;
           padding-bottom: 30px;
+
+          @media (max-width: 1100px) {
+          font-size: 40px;
+          }
         }
         h3 {
         margin: 0;

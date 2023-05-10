@@ -121,39 +121,78 @@ const FooterContainer = styled.div`
     flex-direction: column;
     background-color: white;
     justify-content: space-between;
+
+
     
     .first-part {
-        height: 20vh;
+        min-height: 20vh;
+        height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
         background: linear-gradient(270deg, orange 10% ,${props => props.theme.secondary} 45%);
         padding: 30px 0;
+
+
         p {
             text-align: center;
             color: white;
             font-size: 22px;
+
+            @media (max-width: 1100px) {
+            font-size: 18px;
+        }
+
+            @media (max-width: 764px) {
+            font-size: 14px;
+        }
+
         }
     }
     .second-part {
-        height: 25vh;
+        height: auto;
+        min-height: 25vh;
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         background-color: #696969;
-        padding: 0 200px;
+        padding: 0 100px;
+
+        @media (max-width: 1400px) {
+            padding: 0 10px;
+        }
+
+        @media (max-width: 1100px) {
+            padding: 0px;
+            flex-direction: column;
+        }
+
 
         .brand-info {
             color: white;
             fill: white;
             display: grid;
+            gap: 10px;
             height: 100%;
             width: 70%;
             grid-template-columns: 50% 50%;
             grid-template-rows: 50% 50%;
             padding: 50px 30px 20px 30px;
+
+            @media (max-width: 1100px) {
+            padding: 20px;
+            width: 100%;
+            }
+
+            @media (max-width: 800px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            }
+
 
             div {
                 gap: 20px;
@@ -162,7 +201,16 @@ const FooterContainer = styled.div`
                 flex-direction: row;
                 justify-content: flex-start;
                 align-items: flex-start;
+                padding: 10px 0;
+
+
+                @media (max-width: 800px) {
+                justify-content: center;
+                align-items: center;
+                }
+
                 p {
+                    text-align: center;
                     margin: 0;
                     font-size: 14px;
                 }
@@ -181,10 +229,15 @@ const FooterContainer = styled.div`
             width: 30%;
             padding: 50px 30px 20px 30px;
 
+            @media (max-width: 1100px) {
+            width: 100%;
+            padding: 20px;
+            }
+
+
             p {
                 font-size: 14px;
                 text-align: center;
-
             }
             a { 
                 text-decoration: none;
@@ -203,11 +256,19 @@ const FooterContainer = styled.div`
     .third-part {
         background-color: #696969;
         padding-bottom: 30px;
+        height: auto;
+
         p {
             margin: 0;
             color: white;
             text-align: center;
             font-family: 900;
+
+            @media (max-width: 1100px) {
+                    padding: 0 50px;
+                    font-size: 14px;
+                }
+
         }
     }
 

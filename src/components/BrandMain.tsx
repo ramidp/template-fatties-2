@@ -15,7 +15,7 @@ const BrandMain = () => {
 
     const animation = 'zoom-in'
     const animation2 = 'fade-zoom-in'
-    const animation3 = 'fade-right'
+    const animation3 = 'fade-out'
 
     useEffect (() => {
         Aos.init({
@@ -202,9 +202,14 @@ const BrandMainContainer = styled.div`
             height: 100vh;
             display: flex;
             // Buena solucion para que la linea diagonal no tenga pixeles, es sumarle .03% al que divide.  
-            background: linear-gradient(70deg, orange 10% ,${props => props.theme.secondary} 45%, rgba(255, 255, 255, 1) 45.04%);
+            background: linear-gradient(70deg, orange 10% ,${props => props.theme.secondary} 49%, rgba(255, 255, 255, 1) 49.04%);
             animation: bgmovement 4s ease forwards;
             background-size: 200% 200%;
+
+            @media (max-width: 1100px) {
+                height: 90vh;
+                background: linear-gradient(70deg, orange 10% ,${props => props.theme.secondary} 68%);
+            }
 
 
             @keyframes bgmovement {
@@ -220,10 +225,27 @@ const BrandMainContainer = styled.div`
                 width: 100%;
                 padding: 25px 0 0 50px;
                 height: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                
+                @media (max-width: 1100px) {
+                    height: 100%;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 30px ;
+                }
 
                 img {
                     width: 250px;
                     filter: brightness(0%) invert(100%);
+
+                    @media (max-width: 1100px) {
+                        width: 350px;
+                    }
+
                     &:hover {
                         cursor: pointer;
                         filter: brightness(0%) contrast(5%);
@@ -242,12 +264,14 @@ const BrandMainContainer = styled.div`
 
 
                 @media (max-width: 1100px) {
+                padding: 0;
+                text-align: center;
                 width: 100%;
-                font-size: 40px;
+                font-size: 60px;
                 }
 
                 @media (max-width: 764px) {
-                font-size: 30px;
+                font-size: 40px;
                 }
 
             }
@@ -259,7 +283,8 @@ const BrandMainContainer = styled.div`
 
 
                 @media (max-width: 1100px) {
-                font-size: 20px;
+                text-align: center;
+                width: 100%;
                 }
 
                 @media (max-width: 764px) {
@@ -283,7 +308,7 @@ const BrandMainContainer = styled.div`
                 grid-template-rows: repeat(2, 50%);
                 justify-items: center;
                 align-content: center;
-                gap: 20px;
+                padding-top: 30px;
             }
 
             .contactbtn {
@@ -294,18 +319,18 @@ const BrandMainContainer = styled.div`
                 justify-content: center;
                 align-items: center;
                 font-size: 20px;
-                height: 30%;
+                padding: 10px 30px;
                 width: 20%;
                 border-radius: 15px;
                 background: linear-gradient(50deg, #7cdaa3 10%, ${props => props.theme.primary} 40%);
-                
-                @media (max-height: 720px) {
-                    font-size: 18px;
-                }
+
                 @media (max-width: 1100px) {
                     font-size: 16px;
-                    height: 6vh;
-                    width: 10vw;
+                }
+                
+                @media (max-width: 764px) {
+                    font-size: 16px;
+                    width: 80%;
                 }
 
                 &:hover {
@@ -326,8 +351,6 @@ const BrandMainContainer = styled.div`
         align-items: center;
         background-color: white;
         gap: 50px;
-        padding: 50px 0;
-
 
     .features-title {
         width: 100%;
@@ -340,6 +363,10 @@ const BrandMainContainer = styled.div`
         text-align: center;
         font-weight: 700;
         font-size: 70px;
+
+        @media (max-width: 764px) {
+          font-size: 50px;
+        }
     }
     
     .f1 {
@@ -359,7 +386,8 @@ const BrandMainContainer = styled.div`
         box-shadow: 0px 0px 100px -45px black;
 
         .features {
-            height: 60vh;
+            min-height: 60vh;
+            height: auto;
             width: 90%;
             display: flex;
             flex-direction: column;
@@ -368,15 +396,12 @@ const BrandMainContainer = styled.div`
             color: black;
             padding: 50px 0;
 
-            /* @media (max-width: 1475px) {
-                padding: 10px 50px;
+            @media (max-width: 1100px) {
+                padding: 40px 20px;
                 width: 100%;
+                min-height: 50vh;
                 }
 
-             @media (max-width: 764px) {
-                padding: 5px;
-            }
- */
             
             .logos-div {
                 display: flex;
@@ -394,10 +419,7 @@ const BrandMainContainer = styled.div`
                     filter: brightness(20%) invert(100%);
                     height: 200px;
                     @media (max-width: 1100px) {
-                    height: 100px;
-                    }
-                    @media (max-width: 764px) {
-                    height: 70px;
+                    height: 120px;
                     }
 
                 }
@@ -405,10 +427,7 @@ const BrandMainContainer = styled.div`
                     filter: brightness(0%) invert(100%);
                     height: 90px;
                     @media (max-width: 1100px) {
-                    height: 40px;
-                    }
-                    @media (max-width: 764px) {
-                    height: 30px;
+                    height: 50px;
                     }
                 }
             }
@@ -416,50 +435,43 @@ const BrandMainContainer = styled.div`
                 p {
                 text-align: justify;
                 width: 65%;
-                font-size: 24px;
+                font-size: 22px;
                 margin: 0;
                 color: white;
 
-                @media (max-height: 720px) {
-                    font-size: 14px;
+                @media (max-width: 1400px) {
+                font-size: 18px; 
+                width: 90%;
                 }
 
                 @media (max-width: 1100px) {
                 font-size: 14px; 
+                width: 90%;
                 }
-                @media (max-width: 764px) {
-                font-size: 12px; 
-                }
-                @media (max-width: 500px) {
-                display: none;
-                }
-            
             }
             h1 {
                 text-transform: uppercase;
                 color: white;
                 width: 100%;
                 text-align: center;
-                font-size: 60px;
+                font-size: 50px;
                 font-weight: bold;
                 margin: 0;
 
-                @media (max-height: 720px) {
-                    font-size: 24px;
+                @media (max-width: 1400px) {
+                font-size: 36px; 
+                width: 90%;
                 }
 
                 @media (max-width: 1100px) {
                  width: 100%;
-                 font-size: 20px;
                 }
+
                 @media (max-width: 764px) {
                  width: 100%;
-                 font-size: 18px;
+                 font-size: 24px;
                 }
-                
-                @media (max-width: 500px) {
-                 padding-left: 10px;
-                }
+
             }
             .underline {
                 width: 70%;
@@ -473,10 +485,7 @@ const BrandMainContainer = styled.div`
                 color: white;
 
                 @media (max-width: 1100px) {
-                    font-size: 50px;
-                }
-                @media (max-width: 764px) {
-                    font-size: 40px;
+                    font-size: 60px;
                 }
 
             }

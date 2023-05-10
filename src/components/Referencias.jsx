@@ -100,27 +100,32 @@ export default Referencias;
 
 const Container = styled.div`
     width: 100%;
-    height: 70vh;
+    min-height: 70vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     color: ${props => props.theme.secondary};
     background: linear-gradient(180deg, rgba(255,255,255,1) 5%, #f0f0f093 60%, ${props => props.theme.gray} 98%);    user-select: none;
+    padding: 20px 0;
 
     span {
             padding-top: 127px;
             margin-top: -127px;
         }
-
     
     .title {
       h1 {
         text-align: center;
         margin: 0;
         color: ${props => props.theme.secondary};
+        font-size: 36px;
 
         @media (max-width: 1100px) {
+          font-size: 30px;
+        }
+        @media (max-width: 764px) {
           font-size: 20px;
         }
       }
@@ -133,12 +138,17 @@ const Container = styled.div`
         &:hover {
           filter: contrast(10%);
         }
+
+        @media (max-width: 764px) {
+          font-size: 20px;
+        }
       }
 
 
     .references-box {
       width: 70%;
-      height: 50vh;
+      min-height: 50vh;
+      height: auto;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -148,9 +158,9 @@ const Container = styled.div`
       @media (max-width: 1100px) {
             width: 80%;
           }
+
           @media (max-width: 764px) {
             width: 95%;
-            height: 70vh;
           }
 
         div {
