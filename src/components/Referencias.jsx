@@ -114,8 +114,8 @@ const Container = styled.div`
     background-repeat: no-repeat;
 
     span {
-            padding-top: 100px;
-            margin-top: -100px;
+            padding-top: 200px;
+            margin-top: -200px;
 
             @media (max-width: 764px) {
               padding-top: 0px;

@@ -36,6 +36,7 @@ const ProductContainer = styled.div`
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 6vh;
 
             .blog-text {
                 margin: 0;

@@ -28,17 +28,20 @@ const Faq = () => {
         <span id="faq"></span>
         <Container>
             <h1 className="faq-title">FAQ</h1>
-            <p 
-            style={{width: "80%"}}
-            >FAQ / </p>
-            <h1>¿Con que podemos ayudarte?</h1>
 
-            <div className="tag-searcher col-12 mb-3">
+            <div className="faq-text-bg">
+                <h1>¿Con que podemos ayudarte?</h1>
+            </div>
+
+            <div className="underline"></div>
+
+            <div className="tag-searcher">
                 <input
                 type="text"
                 onChange={handleChange}
                 placeholder="Buscar por Titulos" />
             </div>
+
 
         <div className="card-box">
             {
@@ -67,35 +70,45 @@ const Faq = () => {
 export default Faq;
 
 const Container = styled.div`
-    min-height: 93vh;
+    min-height: 100vh;
     height: auto;
     width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    background-color: #f5f5f5;
-    padding: 20px;
-
-    @media (max-width: 1100px) {
-        padding: 20px 0;
-    }
-
+    background: linear-gradient(140deg, orange 10% ,${props => props.theme.secondary} 60%);
+    margin-bottom: 50px;
+    padding: 100px 0 50px 0;
 
     .tag-searcher {
+        width: 75%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding-top: 20px;
+        margin: 0 10px 30px 10px;
+
 
         input {
-            width: 60%;
-            height: 40px;
-            padding-left: 10px;
-            @media (max-width: 1100px) {
-                width: 80%;
-            }
+                background: white;
+                color: ${props => props.theme.secondary};
+                border: none;
+                height: 40px;
+                width: 100%;
+                padding-left: 10px;
+                border-top-left-radius: 8px;
+                border-bottom-right-radius: 8px;
+                
+                &:focus {
+                    border: none;
+                    outline: none;
+                    background: #f1f1f1;
+                }
+                &::placeholder {
+                    color: ${props => props.theme.secondary};
+                }
         }
 
         .searched-data {
@@ -119,30 +132,67 @@ const Container = styled.div`
         }
     }
 
-    h1 {
-        font-size: 24px;
-        margin-bottom: 8px;
-        text-align: center;
-        @media (max-width: 1100px) {
-            font-size: 24px;
-            margin-bottom: 10px;
-            
+    .faq-text-bg {
+
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 6vh;
+
+
+        h1 {
+            margin: 0;
+            font-size: 72px;
+            background: -webkit-linear-gradient(40deg, orange 10% ,${props => props.theme.secondary} 60%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 30px;
+            width: 100%;
+            text-align: center;
+            padding: 5px 10px;
+            font-weight: 100;
+    
+            @media (max-width: 1100px) {
+                font-size: 26px;
+                }
+    
+            @media (max-width: 764px) {
+                    font-size: 20px;
+                    }
         }
+
     }
 
+    .underline {
+            margin: 30px 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(40deg,  rgba(255, 138, 43, 0.068) 10%, #ffa60097 30% , #ffffff 80%);
+        }
+
+
     .faq-title {
-        width: 80%;
-        text-align: left;
-        color: darkgray;
-        font-size: 30px;
-        margin-bottom: 8px;
+        font-size: 60px;
+        text-align: center;
+        width: 100%;
+        color: white;
+            font-weight: bold;
+            @media (max-width: 1100px) {
+                    font-size: 50px;
+                    }
+
+            @media (max-width: 764px) {
+                    font-size: 40px;
+                    }
     }
     
 .card-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 30px;
     padding-top: 20px;
     text-decoration: none;
     width: 90%;
@@ -157,9 +207,11 @@ const Container = styled.div`
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
-            background-color: white;
-            box-shadow: 0px 0px 40px -20px rgba(0,0,0,0.44);
-            color: black;
+            background-color: transparent;
+            box-shadow: 0px 0px 10px 5px rgba(68, 68, 68, 0.44);
+            color: white;
+            border-radius: 10px;
+            transition: 800ms ease all;
 
             @media (max-width: 1100px) {
             width: 100%;
@@ -170,12 +222,12 @@ const Container = styled.div`
             gap: 5px;
             align-items: flex-start;
             padding: 15px;
-            }
+            
+                }
     
                 &:hover {
                 cursor: pointer;
-                border-left: 5px solid ${props => props.theme.primary};
-                border-right: 5px solid ${props => props.theme.primary};
+                transform: scale(1.05);
                 filter: contrast(90%);
             }
     
