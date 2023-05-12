@@ -1,20 +1,30 @@
 [
     {   
         "id": 1,
-        "title": "Ahora podes configurar tus cuotas sín interés con un monto mínimo",
+        "title": "Configurar cuotas sin interés con un monto mínimo",
         "link" : "mp_1",
+        "date" : "10 de Agosto, 2023",
         "img" : "mp_1/mp1.jpg"
     },
     {   
         "id": 2,
-        "title": "Por qué se genera saldo a favor de Ingresos Brutos",
+        "title": "Transformación digital",
         "link": "calim_1",
+        "date" : "10 de Agosto, 2023",
         "img": "calim_1/calculadora.webp"
     },
     {   
         "id": 3,
-        "title": "Transformación digital: para la mitad de los comercios, los consumidores gastan más cuando pagan con código QR o con tarjetas",
+        "title": "Saldo a favor de Ingresos Brutos",
         "link": "mp_2",
+        "date" : "10 de Agosto, 2023",
         "img": "mp_2/mp-photo.webp"
+    },
+    {   
+        "id": 4,
+        "title": "Cuarto Ejemplo",
+        "link": "calim_2",
+        "date" : "20 de Agosto, 2023",
+        "img": "calim_2/calim_2.png"
     }
 ]

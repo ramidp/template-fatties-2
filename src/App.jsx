@@ -17,7 +17,6 @@ import WebFont from 'webfontloader'
 import React, { useState } from 'react';
 import WhatsAppBtn from './components/WhatsApp';
 import Nosotros from './components/Nosotros';
-import WallExample from './components/WallExample';
 import IconMenu from './components/IconMenu';
 import Error404 from './components/Error404';
 
@@ -54,7 +53,7 @@ const App = () => {
       <BrowserRouter>
         <LoadingPage/>
         <WhatsAppBtn/>
-        <IconMenu/>
+        {/* <IconMenu/> */}
 
           <div className="menu">
             <Menu/>
@@ -67,14 +66,13 @@ const App = () => {
                     <Route path="/blog" element={<Blog/>}/>
                     {/* Dynamic Router (I used useLocation to compare blog.link against the location of the URL)*/}
                     <Route path={'/blog/mp_1'} element={<Blog1/>}/>
-                    <Route path={'/blog/calim_1' } element={<Blog2/>}/>
-                    <Route path={'/blog/mp_2' } element={<Blog3/>}/>
+                    <Route path={'/blog/mp_2' } element={<Blog2/>}/>
+                    <Route path={'/blog/calim_1' } element={<Blog3/>}/>
                     <Route path={'/faq/fatties_faq' } element={<Faq1/>}/>
                     <Route path={'/faq/mercadopago_faq' } element={<Faq2/>}/>
                     <Route path={'/faq/calim_faq' } element={<Faq3/>}/>
                     <Route path="/faq" element={<Faq/>}/>
                     <Route path="/nosotros" element={<Nosotros/>}/>
-                    <Route path="/images/" element={<WallExample/>}/>
                   </Routes>
                   <Footer/>
           </div>
@@ -92,7 +90,7 @@ const AppContainer = styled.div`
     height: auto;
     width: 70%;
     flex-direction: column;
-    box-shadow: 0px 0px 100px -30px gray;
+    box-shadow: 0px 0px 50px 5px gray;
 
     @media (max-width: 1100px) {
             width: 100%;
@@ -107,7 +105,6 @@ const AppContainer = styled.div`
     .center {
       width: 100%;
       background-color: inherit;
-      z-index: 9;
     }
      
 `

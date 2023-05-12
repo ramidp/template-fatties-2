@@ -1,35 +1,35 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ProductContainer from './styles/estiloblog'
+import ProductContainer from './styles/estiloblog-item'
 import blogs from '../../data/blogs.json'
 
 
 const Blog2 = () => {
 
-    const banner = require('../../images/Blog/' + `${blogs[1].img}`)
+    const banner = require('../../images/Blog/' + `${blogs[2].img}`)
 
     return (
         <>
         <ProductContainer>
-                <h1 className="title">Blog</h1>
                 <p>
                 <a
                 href="/blog"
-                class="anchor-blog">
+                className="anchor-blog">
                 Blog
-                </a> / {blogs[1].title}</p>
+                </a> / {blogs[2].title}</p>
 
                     <div className="product-types1">
-                        <div className="col-12">
+                        <div className="col-12 col-12 d-flex flex-column gap-4">
                             <h1
                             className="blog-title">
                             Por qué se genera saldo a favor 
                             <br />
-                            de Ingresos Brutos</h1>
+                            de <strong>Ingresos Brutos</strong></h1>
                             <img src={banner} alt="" />
                         </div>
                             
                             <h3><strong>Tags:</strong> Saldo a Favor, Ingresos Brutos, Fisco</h3>
 
+                    <div className="blog-text">
                         <p>
                         Cuando hablamos de saldo a favor de un impuesto, nos referimos a un excedente de dinero que el fisco, como por ejemplo AFIP o ARBA, posee de un contribuyente. En la actualidad encontramos que, por aplicación de los diversos regímenes de recaudación, es frecuente el cúmulo de saldos a favor en Ingresos Brutos.
                         </p>
@@ -56,6 +56,8 @@ const Blog2 = () => {
                         A partir del momento en el que inicies el reclamo, comenzarán a regir los intereses y se interrumpirá el plazo de prescripción. Por eso, es <strong>importante no demorarse para solicitar la devolución</strong> del saldo, ya que en la medida en que no se efectúe, no correrán los intereses y la deuda a tu favor podrá prescribir.
                         </p>
                     </div>
+                </div>
+                        
         </ProductContainer>
         </>
     );

@@ -1,7 +1,9 @@
 import styled from "styled-components";
-import Datos from "./Datos";
 import React, { useState, useEffect } from 'react'
 import NavBar from "./NavBar";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTabletButton } from '@fortawesome/free-solid-svg-icons';
+
 
 const Menu = () => {
 
@@ -27,10 +29,10 @@ const Menu = () => {
                 <NavBar/>
                 </div>
 
-                <h1
-                onClick={() => setHidden('visible')}
-                >
-                  |||</h1>
+                  <FontAwesomeIcon 
+                  className="mobile-btn"
+                  onClick={() => setHidden(true)}
+                  icon={faTabletButton}/>
                 <div
                 className={hidden ? 'hidden-menu visible' : 'hidden-menu hidden'}
                 >
@@ -38,10 +40,13 @@ const Menu = () => {
                   onClick={() => setHidden(false)}
                   >X</p>
 
+                  <div>
                   <a onClick={() => setHidden(false)} href="/">HOME</a>
-                  <a onClick={() => setHidden(false)} href="#servicios">SERVICIOS</a>
+                  <a onClick={() => setHidden(false)} href="/blog">BLOG</a>
+                  <a onClick={() => setHidden(false)} href="/faq">FAQ</a>
                   <a onClick={() => setHidden(false)} href="/nosotros">¿QUIÉNES SOMOS?</a>
                   <a onClick={() => setHidden(false)} href="#contacto">CONTACTO</a>
+                  </div>
                 </div>
                 <></>
                 
@@ -64,51 +69,67 @@ const MenuContainer = styled.div`
     .hidden-menu {
       position: fixed;
       width: 100%;
-      height: 100%;
+      height: 100vh;
       background-color: ${props => props.theme.secondary};
-      filter: opacity(90%);
       top: 0;
       display: flex;
-      flex-direction: column;
+      flex-direction: row-reverse;
       align-items: flex-start;
-      padding-left: 20px;
-      transition: opacity 0.5s linear;
+      justify-content: center;
+      padding: 5px 20px;
+      transition: 0.5s ease;
       z-index: 100;
+
+      div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 50px 0 0 20px;
+      }
 
       p {
         cursor: pointer;
         font-size: 40px;
         z-index: 11;
+        color: white;
+        font-weight: bold;
+        &:hover {
+          filter: contrast(30%);
+        }
       }
       
       a {
           font-size: 22px;
           text-decoration: none;
           color: white;
-          &:hover {
+          &:hover { 
             filter: contrast(30%)
           }
         }
       }
 
       .hidden {
-        opacity: 0;
-        z-index: -10;
-
+        visibility: hidden;
+        opacity: 0!important;
       }
   
       .visible {
-        opacity: 1;
+        visibility: visible;
+        opacity: 1!important
       }
 
-      h1 {
+      .mobile-btn {
         color: white;
+        font-size: 30px;
         width: auto;
         margin-right: 10px;
         display: none;
         cursor: pointer;
-        padding: 5px;
+        padding: 10px;
         background-color: ${props => props.theme.secondary};
+        border-radius: 10px;
+        border: 1px solid white;
 
         &:hover {
           filter: contrast(50%);
@@ -137,18 +158,17 @@ const MenuContainer = styled.div`
         width: 100%;
         height: 70px;
         transition: 500ms linear;
-        background: linear-gradient(70deg, orange 10% ,${props => props.theme.secondary} 48%, rgba(255, 255, 255, 1) 48.07%);
-        box-shadow: 0px 0px 100px -20px black;
+        background: linear-gradient(70deg, orange 10% ,${props => props.theme.secondary} 40%, rgba(255, 255, 255, 1) 40.07%);
+        box-shadow: 0px 0px 10px 5px gray;
         z-index: 100;
 
         @media (max-width: 764px) {
           display: none;
         }
-
-
         @media (max-width: 1100px) {
           background: rgba(255,255,255,0.95);
         }
+        
     }
     
     `

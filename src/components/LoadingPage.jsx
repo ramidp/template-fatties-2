@@ -57,6 +57,10 @@ const LoadingPageContainer = styled.div`
           animation-name: lightup;
           animation-duration: 1.5s;
 
+          @media (max-width: 764px) {
+            height: 150px;
+          }
+
             @keyframes lightup {
             0% {filter: opacity(0%);
             }

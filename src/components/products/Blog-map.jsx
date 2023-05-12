@@ -1,17 +1,22 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductContainer from './styles/estiloblog'
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 import blogs from '../../data/blogs.json'
+import { a } from 'react-spring';
 
 
 
 const Blog = () => {
+    
+    useEffect(() => {
+        setFilteredData('')
+    },[])
 
-    const [filteredData, setFilteredData] = useState(blogs)
+    const [filteredData, setFilteredData] = useState([])
 
     const handleChange = (e) => {
         const searchWord = e.target.value;
@@ -20,52 +25,100 @@ const Blog = () => {
                 item.title.toLowerCase().includes(searchWord.toLowerCase())
                 )
         }));
+
+        if (searchWord === '') {
+            setFilteredData([])
+        } else {
             setFilteredData(newFilter)
+        }
     }
 
-    const navegacion = useNavigate()
 
     return (
         <ProductContainer>
         <span id="blog"></span>
-            <h1 className="title">Blog</h1>
-            <p className="mb-4 blog-text">Todas las novedades, guias y manuales que sean de utilidad serán vistas aqui.</p>
-                <div className="products">
+            <h1 className="title">BLOG</h1>
+            <div className='blog-text-bg'>
+            <p className="blog-text">Novedades, guias y manuales.</p>
+            </div>
+            <div className="underline"></div>
 
-                    <BlogContainer>
-                        {
-                            blogs.map((blog) => {
-                                return (
-                                    <div 
-                                    onClick={() => navegacion('/blog/' +`${blog.link}`)}
-                                    key={blog.id}
-                                    className="article">
-                                            <img src={require('../../images/Blog/' + `${blog.img}`)} alt="" />
-                                            <h1>{blog.title}</h1>
-                                            <p>{blog.subtitle}</p>
-                                     </div>
-                                    )
-                            })
-                        }
-                    </BlogContainer>
-                    <div className='searcher'>
+            <div className="products">
+
+                <div className='searcher'>
                         <div className="tag-searcher">
                             <input
                             type="text"
                             onChange={handleChange}
                             placeholder="Buscador .." />
-                            <FontAwesomeIcon icon={faMagnifyingGlass}/>
+                            {/* <FontAwesomeIcon icon={faMagnifyingGlass}/> */}
                         </div>
-                        <div className="searched-data">
+                        <div className="relative-pos">
                         {
-                            filteredData.slice(0, 10).sort((a, b) => b.id - a.id).map((item, index) => {
-                                return (
-                                    <p onClick={() => navegacion(`${item.link}`)} key={item.id}>{item.title}</p>
-                                    )
-                                })
-                            }
+                            filteredData.length > 0 ?
+                            <div className="searched-data">
+                            {
+                                filteredData.slice(0, 10).sort((a, b) => b.id - a.id).map((item, index) => {
+                                    return (
+                                        <a href={'/blog/' + item.link} key={item.id}>{item.title}</a>
+                                        )
+                                    })
+                                }
+                            </div>
+                            :
+                            <>
+                            </>
+                        }
                         </div>
                     </div>
+
+
+                    <BlogContainer>
+                        {
+                            blogs.slice(0, 1).map((blog) => {
+                                return (
+                                    <div 
+                                    key={blog.id}
+                                    className="article-0">
+                                            <div className="article-0-text">
+
+                                                <div>
+                                                    <h1>{blog.title}</h1>
+                                                    <p>{blog.date}</p>
+                                                </div>
+
+                                                <a 
+                                                className="nav-btn"
+                                                href={'/blog/' + blog.link}>
+                                                    Leer mas 
+                                                </a>
+
+                                            </div>
+                                            <img src={require('../../images/Blog/' + `${blog.img}`)} alt="" />
+                                     </div>
+                                    )
+                            })
+                        }
+
+                        {
+                            blogs.slice(1, 100).map((blog) => {
+                                return (
+                                    <div 
+                                    key={blog.id}
+                                    className="article">
+                                            <img src={require('../../images/Blog/' + `${blog.img}`)} alt="" />
+                                            <h1>{blog.title}</h1>
+                                            <p>{blog.date}</p>
+                                            <a 
+                                        className="nav-btn"
+                                        href={'/blog/' + blog.link}>
+                                            Leer mas 
+                                        </a>
+                                     </div>
+                                    )
+                            })
+                        }
+                    </BlogContainer>
                 </div>
         </ProductContainer>
     );
@@ -81,8 +134,8 @@ const BlogContainer = styled.div`
     align-items: flex-start;
     align-content: flex-start;
     flex-wrap: wrap;
-    gap: 15px;
-    width: 80%;
+    gap: 50px 20px;
+    width: 100%;
     padding: 0 20px 0 30px;
     height: auto;
 
@@ -96,55 +149,166 @@ const BlogContainer = styled.div`
             flex-direction: column;
             justify-content: space-between;
             align-items: flex-start;
-            padding: 20px;
-            width: 32%;
-            min-height: 35vh;
+            width: calc(33.30% - 13.33px);
+            min-height: 40vh;
+            gap: 15px;
             height: auto;
-            box-shadow: 0px 0px 80px -30px rgba(0,0,0,0.44);
             transition: 0.2s linear;
-            border-top-left-radius: 20px;
-            border-bottom-right-radius: 20px;
+            border-bottom: 1.5px solid white;
+            
     
             @media (max-width: 1100px) {
                 width: 100%;
                 min-height: auto;
-            }
-            
-            &:hover {
-                cursor: pointer;
-                filter: opacity(70%);
-                transform: scale(1.03);
-            }
-            
-            p {
-                width: 100%;
-                text-align: left;
-                margin: 0;
-                font-size: 14px;
-                z-index: 2;
+                gap: 15px;
             }
     
+            .nav-btn {
+                font-size: 14px;
+                text-decoration: none;
+                color: white;
+                cursor: pointer;
+                width: fit-content;
+                padding-bottom: 5px;
+
+
+
+                &::after {
+                    content: ' >>'
+                }
+
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+
             h1 {
-                min-height: 10vh;
+                min-height: 8vh;
                 width: 100%;
                 padding: 0;
-                font-size: 18px;
+                font-size: 26px;
                 padding-bottom: 10px;
-                font-weight: bold;
+                font-weight: 500;
                 z-index: 2;
                 text-align: left;
+                color: white;
 
                 @media (max-height: 720px) {
                 min-height: 15vh;
                 }
+
+                @media (max-width: 1400px) {
+                font-size: 24px;
+                }
+
+                @media (max-width: 1100px) {
+                font-size: 22px;
+                min-height: 5vh;
+                }
               
             }
+
+            p {     
+                font-size: 14px;
+                color: white;
+                }
+
             img {
                 width: 100%;
                 height: 150px;
                 object-fit: cover;
                 object-position: 50% 20%;
-                filter: opacity(70%);
+            }
+        }
+
+    .article-0 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            height: 44vh;
+            transition: 0.2s linear;
+            
+            @media (max-width: 1100px) {
+                flex-direction: column-reverse;
+                width: 100%;
+                height: auto;
+                gap: 15px;
+            }
+            
+            .article-0-text {
+                width: 35%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                border-bottom: 1.5px solid white;
+
+                @media (max-width: 1100px) {
+                    width: 100%;
+                }
+
+
+                p {
+                    font-size: 14px;
+                    color: white;
+                }
+
+                .nav-btn {
+                text-decoration: none;
+                color: white;
+                cursor: pointer;
+                width: fit-content;
+                padding-bottom: 5px;
+                font-size: 14px;
+
+                @media (max-width: 1100px) {
+                    padding-top: 15px;
+                }
+
+                &::after {
+                    content: ' >>'
+                }
+
+                &:hover {
+                    font-weight: bold;
+                }
+                }
+
+                h1 {
+                    min-height: 10vh;
+                    width: 100%;
+                    padding: 0;
+                    font-size: 40px;
+                    padding-bottom: 10px;
+                    font-weight: 400;
+                    z-index: 2;
+                    text-align: left;
+                    color: white;
+    
+                    @media (max-width: 1100px) {
+                    font-size: 22px;
+                    min-height: 5vh;
+                    }
+
+                    @media (max-height: 720px) {
+                    min-height: 15vh;
+                    }
+                  
+                }
+            }
+   
+            img {
+                width: 60%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 50% 20%;
+
+                @media (max-width: 1100px) {
+                    width: 100%;
+                    height: 200px;
+                }
             }
         }
     

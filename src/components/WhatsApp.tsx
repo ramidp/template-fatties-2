@@ -21,16 +21,15 @@ const WhatsAppBtn = () => {
 export default WhatsAppBtn;
 
 const Container = styled.div`
-    width: auto;
-    height: auto;
     display: flex;
     position: fixed;
     justify-content: flex-end;
     align-items: flex-end;
     padding: 0 10px 15px 0;
-    bottom: 0;
-    right: 0;
-    z-index: 100;
+    bottom: 0%;
+    right: 0%;
+    z-index: 5;
+
     img {
         width: 50px;
 

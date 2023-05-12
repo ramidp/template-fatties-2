@@ -9,12 +9,12 @@ import { Link } from 'react-scroll'
 
 const BrandMain = () => {
 
-    const logo = require('../images/logo-fatties.png')
+    const logo = require('../images/fatties-white.png')
     const logoMp = require('../images/mplogo.png')
     const logoCalim = require('../images/calim-logo.png')
+    const wallimg = require('../images/celular-v2.png')
 
     const animation = 'zoom-in'
-    const animation2 = 'fade-zoom-in'
     const animation3 = 'fade-out'
 
     useEffect (() => {
@@ -28,48 +28,42 @@ const BrandMain = () => {
         <BrandMainContainer id="top" className="p-0">
             {/* <Logo/> */}
             <div className="absolute">
-                <div className="brand-logo">
+                <div className="brand-logo"
+                            data-aos={animation3}
+                            data-aos-delay='2500'
+                >
                         <div className="brand-title">
-                                <a 
-                                data-aos={animation3}
-                                data-aos-delay='2000'
-                                href="/">
-                                    <img src={logo} alt="" />
-                                </a>
+                            <div className="brand-title-1">
+                                    <img className="fatties-logo" src={logo} alt="" />
                                  <h1 
-                                data-aos={animation2} 
-                                data-aos-delay="2200" >
-                                Soluciones 
+                                >
+                                Soluciones
                                 <br /> 
                                 <span>
                                 digitales
                                 </span>
                                 </h1>
-                            <p data-aos={animation2} data-aos-delay="2400" className="m-0 pt-0">
-                                Somos consultores certificados por Mercado Pago.
+                            <p className="m-0 pt-0">
+                                Somos consultores certificados por 
+                                <br />
+                                Mercado Pago.
                                 <br />
                                 Contribuimos en garantizar un servicio de postventa completo.
                             </p>
+
+                            </div>
+
+                            <img className="cellphone-logo" src={wallimg} alt="" />
+
                         </div>
                         <div className="btns-box">
 
-                            <a href="/blog"
-                             data-aos={animation2} 
-                             data-aos-delay="2600"
+                            <a href="#servicios"
                             className="contactbtn"
                             >
-                                BLOG
-                            </a>
-                            <a href="/faq"
-                            data-aos={animation2}
-                            data-aos-delay="2600"
-                            className="contactbtn"
-                            >
-                                FAQ
+                                SERVICIOS
                             </a>
                             <a 
-                            data-aos={animation2} 
-                            data-aos-delay="2600"
                             className="contactbtn"
                             style={{display: 'flex',
                             flexDirection: 'column',
@@ -79,8 +73,6 @@ const BrandMain = () => {
                                 CLIENTES
                             </a>
                             <a href="#referencias"
-                             data-aos={animation2} 
-                             data-aos-delay="2600"
                             className="contactbtn"
                             >
                                 REFERENCIAS
@@ -89,6 +81,7 @@ const BrandMain = () => {
                         </div>
                 </div>
                 <div  className="features-box">
+                    
                 <span id="servicios"></span>
 
                             <h1
@@ -171,16 +164,6 @@ const BrandMainContainer = styled.div`
     width: 100%;
     display: flex;
     z-index: 2;
-
-    .fattieslogo {
-        position: absolute;
-        width: 50%;        
-        font-size: 100px;
-        top: -9%;
-        z-index: -20;
-        filter: opacity(10%);
-        }
-
         
     .absolute {
         width: 100%;
@@ -190,25 +173,31 @@ const BrandMainContainer = styled.div`
         justify-content: center;
         align-items: center;
         z-index: 2;
-        background-color: #e2e2e2;
-        
+        background-color: white;
       
         .brand-logo {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: flex-start;
+            align-items: flex-start;
             width: 100%;
-            height: 100vh;
+            min-height: 100vh;
+            height: auto;
+            gap: 7vh;
             display: flex;
             // Buena solucion para que la linea diagonal no tenga pixeles, es sumarle .03% al que divide.  
-            background: linear-gradient(70deg, orange 10% ,${props => props.theme.secondary} 49%, rgba(255, 255, 255, 1) 49.04%);
+            background: linear-gradient(70deg, orange 10% ,${props => props.theme.secondary} 40%, rgba(255, 255, 255, 1) 40.04%);
             animation: bgmovement 4s ease forwards;
-            background-size: 200% 200%;
+            background-size: 200vw 200vw;
+
 
             @media (max-width: 1100px) {
-                height: 90vh;
                 background: linear-gradient(70deg, orange 10% ,${props => props.theme.secondary} 68%);
+                gap: 10vh;
+            }
+
+            @media (max-width: 764px) {
+                gap: 10vh;
             }
 
 
@@ -223,34 +212,76 @@ const BrandMainContainer = styled.div`
             
             .brand-title {
                 width: 100%;
-                padding: 25px 0 0 50px;
+                padding: 70px 100px 0 100px ;
+                min-height: 70vh;
                 height: auto;
                 display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: flex-start;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
                 
+                @media (max-width: 1400px) {
+                    padding: 70px 50px 0 50px;
+                }
+
                 @media (max-width: 1100px) {
-                    height: 100%;
+                    flex-direction: column;
+                    min-height: 50vh;
+                }
+
+                .brand-title-1 {
+                    width: 50%;
+                    gap: 20px;
+                    display: flex;
                     flex-direction: column;
                     justify-content: center;
-                    align-items: center;
-                    padding: 30px ;
-                }
-
-                img {
-                    width: 250px;
-                    filter: brightness(0%) invert(100%);
+                    align-content: center;
 
                     @media (max-width: 1100px) {
-                        width: 350px;
+                        width: 100%;
                     }
 
-                    &:hover {
-                        cursor: pointer;
-                        filter: brightness(0%) contrast(5%);
+                    a { 
+                        width: fit-content;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        
+                        @media (max-width: 1100px) {
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                        }
+                        
+                    }
+
+                    .fatties-logo {
+                        width: 200px;
+                        
+                        @media (max-width: 1100px) {
+                            align-self: center;
+                            width: 150px;
+                        }
+
+                        @media (max-width: 764px) {
+                            width: 150px;
+                        }
+    
                     }
                 }
+
+                .cellphone-logo {
+                    width: 50%;
+                    height: 80%;
+                    object-fit: scale-down;
+
+                    @media (max-width: 1100px) {
+                        display: none;
+                    }
+                }
+
 
                 span {
                     font-weight: bold;
@@ -259,28 +290,46 @@ const BrandMainContainer = styled.div`
                 h1 {
                 text-align: left;
                 width: 100%;
-                font-size: 80px;
+                font-size: 60px;
                 color: white;
+                text-shadow: 0px 0px 3px ${props => props.theme.secondary};
 
+                @media (max-width: 1400px) {
+                padding: 0;
+                font-size: 50px;
+                }
 
                 @media (max-width: 1100px) {
                 padding: 0;
                 text-align: center;
                 width: 100%;
-                font-size: 60px;
                 }
 
                 @media (max-width: 764px) {
                 font-size: 40px;
                 }
 
+                @media (max-height: 720px) {
+                font-size: 50px;
+                }
+
             }
             p {
                 text-align: left;
-                width: 50%;
-                font-size: 24px;
+                width: 80%;
+                font-size: 20px;
                 color: white;
+                text-shadow: 0px 0px 3px ${props => props.theme.secondary};
 
+                @media (max-height: 720px) {
+                padding-bottom: 20px;
+                font-size: 18px;
+                }
+
+                @media (max-width: 1400px) {
+                width: 100%;
+                font-size: 18px
+                }
 
                 @media (max-width: 1100px) {
                 text-align: center;
@@ -299,33 +348,35 @@ const BrandMainContainer = styled.div`
             justify-content: space-evenly;
             align-items: center;
             width: 100%;
-            height: 20vh;
-            background: white;
+            min-height: 10vh;
+            height: auto;
+            padding: 10px;
 
             @media (max-width: 764px) {
-                display: grid;
-                grid-template-columns: repeat(2, 50%);
-                grid-template-rows: repeat(2, 50%);
+                display: flex;
+                flex-wrap: wrap;
                 justify-items: center;
                 align-content: center;
-                padding-top: 30px;
+                gap: 20px;
             }
 
             .contactbtn {
                 text-align: center;
-                color: white;
+                color: ${props => props.theme.secondary};
                 text-decoration: none;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-size: 20px;
+                font-size: 18px;
                 padding: 10px 30px;
                 width: 20%;
                 border-radius: 15px;
-                background: linear-gradient(50deg, #7cdaa3 10%, ${props => props.theme.primary} 40%);
+                border: 1px solid ${props => props.theme.secondary};
+                background: white;
+                transition: 0.5s ease all;
 
                 @media (max-width: 1100px) {
-                    font-size: 16px;
+                    font-size: 14px;
                 }
                 
                 @media (max-width: 764px) {
@@ -334,8 +385,11 @@ const BrandMainContainer = styled.div`
                 }
 
                 &:hover {
+                    border: 1px solid white;
+                    background-color: ${props => props.theme.secondary};
+                    color: white;
                     cursor: pointer;
-                    filter: contrast(150%);
+                    filter: brightness(150%);
                     }
             }
         }
@@ -362,10 +416,14 @@ const BrandMainContainer = styled.div`
         color: white;
         text-align: center;
         font-weight: 700;
-        font-size: 70px;
+        font-size: 60px;
+
+        @media (max-width: 1400px) {
+          font-size: 50px;
+        }
 
         @media (max-width: 764px) {
-          font-size: 50px;
+          font-size: 40px;
         }
     }
     
@@ -378,28 +436,37 @@ const BrandMainContainer = styled.div`
 
     .features-anchor {
         text-decoration: none;
-        width: 85%;
+        width: 70%;
         cursor: default;
         display: flex;
         justify-content: center;
         align-items: center;
-        box-shadow: 0px 0px 100px -45px black;
+        box-shadow: 0px 0px 10px 5px rgba(107, 107, 107, 0.5);
+
+        @media (max-width: 764px) {
+            width: 90%;
+        }
 
         .features {
-            min-height: 60vh;
+            min-height: 50vh;
             height: auto;
-            width: 90%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
             color: black;
             padding: 50px 0;
+            gap: 10px;
 
             @media (max-width: 1100px) {
                 padding: 40px 20px;
                 width: 100%;
-                min-height: 50vh;
+                min-height: 45vh;
+                }
+
+            @media (max-width: 764px) {
+                min-height: 45vh;
                 }
 
             
@@ -417,17 +484,26 @@ const BrandMainContainer = styled.div`
 
                 .mp {
                     filter: brightness(20%) invert(100%);
-                    height: 200px;
+                    height: 180px;
+
                     @media (max-width: 1100px) {
-                    height: 120px;
+                    height: 150px;
+                    }
+
+                    @media (max-width: 764px) {
+                    height: 130px;
                     }
 
                 }
                 .calim {
                     filter: brightness(0%) invert(100%);
-                    height: 90px;
+                    height: 65px;
+
                     @media (max-width: 1100px) {
                     height: 50px;
+                    }
+                    @media (max-width: 764px) {
+                    height: 40px;
                     }
                 }
             }
@@ -435,13 +511,13 @@ const BrandMainContainer = styled.div`
                 p {
                 text-align: justify;
                 width: 65%;
-                font-size: 22px;
+                font-size: 18px;
                 margin: 0;
                 color: white;
 
                 @media (max-width: 1400px) {
-                font-size: 18px; 
-                width: 90%;
+                font-size: 16px; 
+                width: 80%;
                 }
 
                 @media (max-width: 1100px) {
@@ -454,7 +530,7 @@ const BrandMainContainer = styled.div`
                 color: white;
                 width: 100%;
                 text-align: center;
-                font-size: 50px;
+                font-size: 40px;
                 font-weight: bold;
                 margin: 0;
 
@@ -469,7 +545,7 @@ const BrandMainContainer = styled.div`
 
                 @media (max-width: 764px) {
                  width: 100%;
-                 font-size: 24px;
+                 font-size: 20px;
                 }
 
             }
@@ -481,11 +557,15 @@ const BrandMainContainer = styled.div`
             }
 
             svg {
-                font-size: 90px;
+                font-size: 70px;
                 color: white;
 
                 @media (max-width: 1100px) {
                     font-size: 60px;
+                }
+
+                @media (max-width: 764px) {
+                    font-size: 50px;
                 }
 
             }

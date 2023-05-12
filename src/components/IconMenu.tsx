@@ -1,9 +1,23 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLocationDot, faUsers ,faHome, faGears, faRegistered} from '@fortawesome/free-solid-svg-icons';
+import { faHome} from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-scroll";
 import { useLocation } from "react-router-dom";
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
+
 const IconMenu = () => {
+
+    const animation3 = 'fade-out'
+
+    useEffect (() => {
+        Aos.init({
+            duration: 1500,
+            once: true,
+        });
+    },[])
+    
 
     const location1 = useLocation()
     const isHome = location1.pathname === '/'
@@ -16,6 +30,8 @@ const IconMenu = () => {
                     isHome &&
 
                     <Link
+                    data-aos={animation3}
+                    
                     to="top"
                     spy={true}
                     smooth={true}
@@ -35,12 +51,10 @@ export default IconMenu;
 
 const Container = styled.div`
     position: fixed;
-    width: auto;
-    height: 100%;
     background: transparent;
     z-index: 10;
     right: 0%;
-    top: 9%;
+    top: 10%;
 
     .menu-div {
         gap: 15px;

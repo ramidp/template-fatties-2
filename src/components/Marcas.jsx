@@ -277,8 +277,13 @@ const Container = styled.div`
     gap: 70px;
 
     span {
-            padding-top: 90px;
-            margin-top: -90px;
+            padding-top: 50px;
+            margin-top: -50px;
+
+            @media (max-width: 764px) {
+              padding-top: 0px;
+              margin-top: 0px;
+            }
         }
 
     @media (max-width: 1100px) {
@@ -333,7 +338,7 @@ const Container = styled.div`
         }
 
         .wallimg {
-          background-image: url('http://localhost:3000/static/media/banner-ejemplo-choto1.4ebf9af058eb66ca4388.png');
+          background-image: url('https://i.ibb.co/MMkQ0pD/banner-example-2.png');
           background-size: 1948px 329px;
           background-position: 0 0;
           width: 100%;
@@ -387,35 +392,35 @@ const Container = styled.div`
         h1 {
           margin: 0;
           width: 100%;
-          font-size: 60px;
+          font-size: 50px;
           font-weight: bold;
           text-align: center;
           color: #4b4b4b;
           padding-bottom: 30px;
 
-          @media (max-width: 1100px) {
+          @media (max-width: 1400px) {
           font-size: 40px;
           }
+
+          @media (max-width: 764px) {
+          font-size: 30px;
+          }
+          
         }
         h3 {
         margin: 0;
         width: 100%;
-        font-size: 30px;
+        font-size: 24px;
         text-align: center;
         font-weight: 200;
         color: #4b4b4b;
-
-        @media (max-width: 1475px) {
-            padding: 10px;
-          }
+        padding: 10px 20px;
 
         @media (max-width: 1100px) {
-            padding: 0;
-            font-size: 24px;
+            font-size: 22px;
           }
 
           @media (max-width: 764px) {
-            padding: 0;
             font-size: 18px;
             }
       }

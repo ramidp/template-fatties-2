@@ -52,7 +52,9 @@ const Footer = () => {
                         <div className="first-part">
                             <p>
                                 <strong>
-                                Atención comercial: Lunes a viernes de 9 a 18.
+                                Atención comercial: 
+                                <br />
+                                Lunes a viernes de 9 a 18.
                                 </strong>
                                 <br />
                                 Somos una empresa de servicios y consultoria, su información es totalmente confidencial. 
@@ -117,7 +119,8 @@ export default Footer;
 
 const FooterContainer = styled.div`
     display: flex;
-    height: 55vh;
+    min-height: 55vh;
+    height: auto;
     flex-direction: column;
     background-color: white;
     justify-content: space-between;
@@ -131,21 +134,25 @@ const FooterContainer = styled.div`
         justify-content: center;
         align-items: center;
         background: linear-gradient(270deg, orange 10% ,${props => props.theme.secondary} 45%);
-        padding: 30px 0;
-
+        padding: 20px;
+        width: 100%;
 
         p {
             text-align: center;
             color: white;
-            font-size: 22px;
+            font-size: 20px;
+
+            @media (max-height: 720px) {
+            font-size: 18px;
+            }
+
+            @media (max-width: 1400px) {
+            font-size: 18px;
+            }
 
             @media (max-width: 1100px) {
-            font-size: 18px;
-        }
-
-            @media (max-width: 764px) {
             font-size: 14px;
-        }
+             }
 
         }
     }
@@ -179,7 +186,7 @@ const FooterContainer = styled.div`
             width: 70%;
             grid-template-columns: 50% 50%;
             grid-template-rows: 50% 50%;
-            padding: 50px 30px 20px 30px;
+            padding: 50px 30px 20px;
 
             @media (max-width: 1100px) {
             padding: 20px;
@@ -209,7 +216,7 @@ const FooterContainer = styled.div`
                 align-items: center;
                 }
 
-                p {
+                p { 
                     text-align: center;
                     margin: 0;
                     font-size: 14px;
@@ -238,6 +245,7 @@ const FooterContainer = styled.div`
             p {
                 font-size: 14px;
                 text-align: center;
+                margin: 0;
             }
             a { 
                 text-decoration: none;
