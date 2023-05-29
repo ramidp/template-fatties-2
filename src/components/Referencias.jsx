@@ -34,7 +34,14 @@ const Referencias = () => {
       id: 3,
      reference: '"El ideal son 100 caracteres, acorde a las pruebas que fui viendo."',
      image: '',
-     person: 'Ramiro De Pao',
+     person: 'Rodrigo De Paolo',
+     charge: 'CEO de Asta'
+    },
+    {
+      id: 4,
+     reference: '"El ideal son 100 caracteres, acorde a las pruebas que fui viendo."',
+     image: '',
+     person: 'Paolo Rodriguez',
      charge: 'CEO de Asta'
     },
   ]
@@ -47,9 +54,8 @@ const Referencias = () => {
 
     return ( 
       <>
+      <span id='referencias'></span>
       <Container>
-      <span 
-      id="referencias"></span>
           <div className="references-box">
               <div className="bubble-wall"
                     >
@@ -78,7 +84,7 @@ const Referencias = () => {
                         </div>
 
                       {
-                        item.id < 3 ?
+                        item.id < 4 ?
                         <FontAwesomeIcon 
                         onClick={() => handleIdReference(item.id)}
                         icon={faArrowRight}/>
@@ -99,19 +105,20 @@ export default Referencias;
 
 const Container = styled.div`
     width: 100%;
-    min-height: 50vh;
+    min-height: calc(60vh - 100px);
     height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     color: white;
     user-select: none;
-    padding: 100px 0;
     background-color: white;
     background-image: url('https://i.ibb.co/rZVK4z2/Wall-bubbles.png');
     background-size: contain;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+    padding: 50px 0;
+    margin-bottom: 100px;
 
     span {
             padding-top: 200px;
@@ -140,16 +147,24 @@ const Container = styled.div`
       }
     }
 
-      svg, span {
-        cursor: pointer;
+      span {
+        cursor: default;
         width: 45px;
-        font-size: 40px;
-        color: white;
+      }
 
+      svg {
+        width: 45px;
+        font-size: 22px;
+        color: white;
+        
         &:hover {
+          cursor: pointer;
           filter: contrast(10%);
         }
 
+        @media (max-width: 1400px) {
+          font-size: 22px;
+        }
         @media (max-width: 764px) {
           font-size: 14px;
         }
@@ -158,41 +173,36 @@ const Container = styled.div`
 
 
     .references-box {
-      width: 90%;
-      min-height: 50vh;
+      width: 100%;
       height: auto;
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 10px;
-      padding: 0 100px;
-
-      @media (max-width: 1400px) {
-        padding: 0 20px;
-          }
-
-      @media (max-width: 1100px) {
-        padding: 0 20px;
-          }
-
-          @media (max-width: 764px) {
-            padding: 0 10px;
-          }
-          
-        
         
         .bubble-wall {
-          background-image: url('https://i.ibb.co/fvyKskv/orange-bubble.png');
-          width: 50vw;
-          height: 70vh;
-          background-size: contain;
+          background-image: url('https://i.ibb.co/2K9jwdj/burbuja200px.png');
+          background-size: 100% 100%;
+          height: 450px;
+          width: 650px;
+          padding: 50px 0;
           background-repeat: no-repeat;
+          background-position: center;
           display: flex;
           justify-content: center;
           align-items: center;
           animation-name: movimiento;
           animation-duration: 1.3s;
           animation-iteration-count: infinite;
+
+          @media (max-width: 1400px) {
+            height: 400px;
+            width: 600px;
+          }
+
+          @media (max-width: 764px) {
+            height: 300px;
+            background-size: contain;
+          }
             
             @keyframes movimiento {
                 0% {transform: translate(0px, 0px);}
@@ -212,26 +222,33 @@ const Container = styled.div`
           
           .reference-all {
             display: flex;
-            padding:0 ;
-            margin: 0;
+            padding: 0;
             flex-direction: row;
             justify-content: center;
             align-items: center;
+            position: relative;
+            left: 3%;
 
-            
+            @media (max-width: 764px) {
+              width: 90%;
+            }
+
             span {
               width: 45px;
             }
+
             .reference {
               display: flex;
               align-items: center;
               justify-content: center;
               flex-direction: column;
-              width: 50%;
-              height: auto;
-              gap: 10px;
-              border-top-left-radius: 50px;
-              border-bottom-right-radius: 50px;
+              width: 40%;
+              height: 100%;
+              gap: 20px;
+
+              @media (max-width: 764px) {
+                gap: 10px;
+              }
         
             img {
               height: 50px;
@@ -243,11 +260,12 @@ const Container = styled.div`
         
             h1 {
               text-align: center;
-              width: 80%;
-              font-size: 26px;
-        
-              @media (max-height: 720px) {
-                font-size: 22px;
+              width: 90%;
+              font-size: 22px;
+              margin: 0;
+
+              @media (max-width: 1400px) {
+                font-size: 20px;
               }
               @media (max-width: 1100px) {
                 width: 70%;
@@ -257,17 +275,28 @@ const Container = styled.div`
                 width: 90%;
                 font-size: 18px;
               }
+              @media (max-width: 450px) {
+                font-size: 16px;
+              }
             }
+
             h4, h5 {
               text-align: center;
-              font-size: 30px;
+              font-size: 24px;
               font-weight: bold;
+              margin: 0;
 
+              @media (max-width: 1400px) {
+                font-size: 22px;
+              }
               @media (max-width: 1100px) {
                 font-size: 20px;
               }
               @media (max-width: 764px) {
                 font-size: 16px;
+               }
+              @media (max-width: 450px) {
+                font-size: 14px;
               }
         
             }

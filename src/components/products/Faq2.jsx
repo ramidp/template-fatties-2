@@ -16,7 +16,6 @@ const Faq2 = () => {
     return (
         <>
         <ProductContainer>
-            <h1 className="title">FAQ</h1>
             <p>
                 <a 
                className="faq-anchor"

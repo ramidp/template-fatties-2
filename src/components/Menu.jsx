@@ -7,6 +7,7 @@ import { faTabletButton } from '@fortawesome/free-solid-svg-icons';
 
 const Menu = () => {
 
+
     const [color, setColor] = useState(false)
     
     const changeColor = () => {
@@ -24,8 +25,8 @@ const Menu = () => {
     return ( 
             <MenuContainer
             >
-                <div className={color ? 'menu-white' : 'menu-transparent'}>
-                {/* <Datos/> */}
+                <div 
+                className={color ? 'menu-white' : 'menu-transparent'}>
                 <NavBar/>
                 </div>
 
@@ -43,12 +44,11 @@ const Menu = () => {
                   <div>
                   <a onClick={() => setHidden(false)} href="/">HOME</a>
                   <a onClick={() => setHidden(false)} href="/blog">BLOG</a>
-                  <a onClick={() => setHidden(false)} href="/faq">FAQ</a>
+                  {/* <a onClick={() => setHidden(false)} href="/faq">FAQ</a> */}
                   <a onClick={() => setHidden(false)} href="/nosotros">¿QUIÉNES SOMOS?</a>
                   <a onClick={() => setHidden(false)} href="#contacto">CONTACTO</a>
                   </div>
                 </div>
-                <></>
                 
             </MenuContainer>
      );
@@ -65,7 +65,7 @@ const MenuContainer = styled.div`
     justify-content: flex-end;
     align-items: center;
     z-index: 10;
-    
+
     .hidden-menu {
       position: fixed;
       width: 100%;
@@ -77,8 +77,8 @@ const MenuContainer = styled.div`
       align-items: flex-start;
       justify-content: center;
       padding: 5px 20px;
-      transition: 0.5s ease;
-      z-index: 100;
+      transition: 500ms ease-in-out;
+      z-index: 10;
 
       div {
         width: 100%;
@@ -90,8 +90,7 @@ const MenuContainer = styled.div`
 
       p {
         cursor: pointer;
-        font-size: 40px;
-        z-index: 11;
+        font-size: 30px;
         color: white;
         font-weight: bold;
         &:hover {
@@ -140,33 +139,52 @@ const MenuContainer = styled.div`
         }
       }
     
+   
 
     .menu-transparent {
         width: 100%;
         height: 70px;
-        transition: 500ms linear;
+        transition: 500ms ease-out;
         background-color: transparent;
-        z-index: 100;
+        z-index: 10;
 
         @media (max-width: 764px) {
           display: none;
         }
+
+          a {
+          img {
+            height: 30px;
+            transition: 500ms linear;
+            cursor: pointer; 
+
+          }
+      } 
 
       }
 
     .menu-white {
         width: 100%;
         height: 70px;
-        transition: 500ms linear;
-        background: linear-gradient(70deg, orange 10% ,${props => props.theme.secondary} 40%, rgba(255, 255, 255, 1) 40.07%);
+        transition: 500ms ease-in;
+        background: linear-gradient(70deg, orange 10% ,${props => props.theme.secondary} 40%, rgba(255, 255, 255, 1) 40.12%);
         box-shadow: 0px 0px 10px 5px gray;
-        z-index: 100;
+        z-index: 10;
+
+        a {
+          img {
+            height: 30px;
+            transition: 500ms ease-in-out;
+            cursor: pointer; 
+            
+          }
+        }
 
         @media (max-width: 764px) {
           display: none;
         }
         @media (max-width: 1100px) {
-          background: rgba(255,255,255,0.95);
+          background: rgba(255,255,255,1);
         }
         
     }

@@ -51,15 +51,18 @@ const Footer = () => {
             <FooterContainer>
                         <div className="first-part">
                             <p>
-                                <strong>
+                                <span>
                                 Atención comercial: 
+                                </span>
                                 <br />
-                                Lunes a viernes de 9 a 18.
-                                </strong>
+                                Lunes a viernes de 9 a 18hs.
                                 <br />
-                                Somos una empresa de servicios y consultoria, su información es totalmente confidencial. 
                                 <br />
+                                Somos una empresa de servicios y consultoría, su información es totalmente confidencial. 
+                                <br />
+                                <span>
                                 Todos los derechos reservados.
+                                </span>
                                </p>
                         </div>
                         <div>
@@ -141,6 +144,10 @@ const FooterContainer = styled.div`
             text-align: center;
             color: white;
             font-size: 20px;
+
+            span {
+                font-weight: 700;
+            }
 
             @media (max-height: 720px) {
             font-size: 18px;

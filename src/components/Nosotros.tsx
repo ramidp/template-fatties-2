@@ -16,6 +16,7 @@ const Nosotros = () => {
         <>
         <span id="nosotros"></span>
             <Container>
+                <div className="wallpaper"></div>
                     <div className="text-us">
 
                         <div className="title-underline">
@@ -27,6 +28,7 @@ const Nosotros = () => {
                         <p>A través de <strong>Fatties</strong>, nos encargamos de promover servicios financieros, destinados al <strong>crecimiento y desarrollo</strong> de las PyMEs.
                             Acompañamos al negocio en todas las etapas del proceso, desde la necesidad de desarrollar nuevas herramientas, hasta el alta y presentación de los documentos necesarios.
                             <br />
+                            <br />
                             Contamos con un amplio departamento de BackOffice que <strong>instruye y guía</strong> a los interesados con la documentación respaldatoria y el posterior análisis de la misma, para luego ser procesada por las entidades financieras.</p>
 
 
@@ -34,7 +36,9 @@ const Nosotros = () => {
                     </div>
 
                     <div className="title-underline">
-                            <h1>NUESTRO EQUIPO</h1>
+                            <h1
+                            style={{padding: "0 10px"}}
+                            >NUESTRO EQUIPO</h1>
                             <div className="underline"></div>
                         </div>
 
@@ -110,41 +114,41 @@ export default Nosotros;
 const Container = styled.div`
     width: 100%;
     height: auto;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     z-index: 2;
     flex-direction: column;
-    background: linear-gradient(45deg, orange 10% ,${props => props.theme.secondary} 60%);
+    background-image: url('https://i.ibb.co/0rBMC8T/FONDO-LINEAS.png'), 
+    linear-gradient(245deg, orange 10% ,${props => props.theme.secondary} 60%);
+    background-size: cover;
+    padding-top: 100px;
+    padding-bottom: 100px;
     margin-bottom: 50px;
-    padding-bottom: 50px;
 
     .title-underline {
         width: 100%;
         display: flex;
         flex-direction: column;
         text-align: center;
-        gap: 58px;
+        gap: 6.6vh;
 
             @media (max-width: 1100px) {
-            gap: 53px;
-            }
-
-            @media (max-width: 764px) {
-            gap: 43px;
+            gap: 6.7vh;
             }
 
         .underline {
             margin: 30px 0;
             width: 100%;
             height: 10px;
-            background: linear-gradient(40deg,  rgba(255, 138, 43, 0.068) 10%, #ffa60097 30% , #ffffff 80%);
+            background: linear-gradient(245deg,  rgba(255, 138, 43, 0.068) 10%, #ffa60097 30% , #ffffff 80%);
         }
 
 
         h1 {
             font-size: 60px;
-            font-weight: 700;
+            font-weight: 900;
             color: white;
             padding-bottom: 5px;
             margin: 0;
@@ -163,7 +167,6 @@ const Container = styled.div`
     }
     
     .text-us {
-            padding: 100px 0 50px 0;
             width: 100%;
             min-height: 100vh;
             height: auto;
@@ -172,55 +175,17 @@ const Container = styled.div`
             justify-content: flex-start;
             align-items: center;
             z-index: 2;
-            
 
-            .title-underline {
-                width: 100%;
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                flex-direction: column;
-                gap: 58px;
-
-                @media (max-width: 1100px) {
-                gap: 53px;
-                }
-
-                @media (max-width: 764px) {
-                    gap: 43px;
+            @media (max-width: 1400px) {
+                    padding-bottom: 50px;
                 }
 
 
-                h1 {
-                    font-size: 60px;
-                    font-weight: 700;
-                    color: white;
-                    padding-bottom: 5px;
-                    margin: 0;
-                    text-align: center;
-    
-                    @media (max-width: 1100px) {
-                        font-size: 50px;
-                    }
-
-                    @media (max-width: 764px) {
-                        font-size: 40px;
-                    }
-    
-                }
-    
-                .underline {
-                    margin: 30px 0;
-                    width: 100%;
-                    height: 10px;
-                    background: linear-gradient(40deg,  rgba(255, 138, 43, 0.068) 10%, #ffa60097 30% , #ffffff 80%);
-                }
-            }
 
             p {
-                width: 60%;
-                padding: 80px 50px;
-                text-align: justify;
+                width: 55%;
+                padding: 50px 20px;
+                text-align: center;
                 line-height: 30px;
                 align-self: flex-start;
                 margin: 20px 100px;
@@ -238,6 +203,7 @@ const Container = styled.div`
                 }
 
                 @media (max-width: 1100px) {
+                    align-self: center;
                     font-size: 14px;
                     width: 70%;
                 }
@@ -246,8 +212,8 @@ const Container = styled.div`
                     font-size: 14px;
                     width: 90%;
                     align-self: center;
-                    margin: auto;
                     padding: 20px 40px;
+                    line-height: 24px;
                 }
             }
         }
@@ -284,13 +250,16 @@ const Container = styled.div`
 
         
         .cards {
-            width: 100%;
+            width: 80%;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             gap: 10px;
             height: auto;
+            padding: 50px 10px;
+            border: 2px solid white;
+            border-radius: 10px;
 
             @media (max-width: 1100px) {
                 flex-direction: column;
@@ -298,8 +267,11 @@ const Container = styled.div`
                 }
 
             @media (max-width: 764px) {
-                width: 80%;
                 flex-direction: row;
+                }
+
+            @media (max-width: 400px) {
+                width: 95%;
                 }
 
             p {

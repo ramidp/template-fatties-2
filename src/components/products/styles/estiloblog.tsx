@@ -13,14 +13,18 @@ const ProductContainer = styled.div`
     padding-top: 100px;
     padding-bottom: 50px;
     margin-bottom: 50px;
-    background: linear-gradient(140deg, orange 10% ,${props => props.theme.secondary} 60%);
+    background-image:url('https://i.ibb.co/0rBMC8T/FONDO-LINEAS.png'),
+    linear-gradient(140deg, orange 10% ,${props => props.theme.secondary} 60%);
+    background-size: cover;
 
         .title {
             font-size: 60px;
             text-align: center;
             width: 100%;
             color: white;
-            font-weight: bold;
+            font-weight: 900;
+            margin-bottom: 20px;
+
             @media (max-width: 1100px) {
                     font-size: 50px;
                     }
@@ -36,12 +40,12 @@ const ProductContainer = styled.div`
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 6vh;
+            height: 5vh;
 
             .blog-text {
                 margin: 0;
                 font-size: 72px;
-                background: -webkit-linear-gradient(120deg, orange 10% ,${props => props.theme.secondary} 60%);
+                background: -webkit-linear-gradient(140deg, orange 10% ,${props => props.theme.secondary} 60%);
                 -webkit-background-clip: text;
                 background-clip: text;
                 -webkit-text-fill-color: transparent;

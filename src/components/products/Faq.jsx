@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
 import faq from '../../data/faq.json'
 import React, {useState} from 'react'
 
@@ -9,7 +8,6 @@ import React, {useState} from 'react'
 
 const Faq = () => {
 
-    const navegacion = useNavigate()
 
     const [filteredData, setFilteredData] = useState(faq)
     
@@ -47,7 +45,9 @@ const Faq = () => {
             {
             filteredData.sort((a, b) => a.icon.localeCompare(b.icon)).map((faq, index) => {
                 return (
-                    <div key={faq.id} onClick={() => {navegacion('/faq/' + `${faq.link}`)}} className="card">
+
+                    <a key={faq.id} className="card" href={'/faq/' + faq.link}>
+
                     <img src={require('../../images/' + `${faq.icon}`)} alt="" />
                         <div>
                             <h3>
@@ -57,7 +57,7 @@ const Faq = () => {
                             style={{margin: '0'}}
                             >{faq.answerTitle}</p>
                         </div>
-            </div>
+                    </a>
                     )
                 })
             }
@@ -77,7 +77,9 @@ const Container = styled.div`
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    background: linear-gradient(140deg, orange 10% ,${props => props.theme.secondary} 60%);
+    background-image:url('https://i.ibb.co/0rBMC8T/FONDO-LINEAS.png'),
+    linear-gradient(20deg, orange 10% ,${props => props.theme.secondary} 60%);
+    background-size: cover;
     margin-bottom: 50px;
     padding: 100px 0 50px 0;
 
@@ -138,13 +140,13 @@ const Container = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 6vh;
+        height: 5vh;
 
 
         h1 {
             margin: 0;
             font-size: 72px;
-            background: -webkit-linear-gradient(40deg, orange 10% ,${props => props.theme.secondary} 60%);
+            background: -webkit-linear-gradient(20deg, orange 10% ,${props => props.theme.secondary} 60%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -152,7 +154,7 @@ const Container = styled.div`
             width: 100%;
             text-align: center;
             padding: 5px 10px;
-            font-weight: 100;
+            font-weight: 200;
     
             @media (max-width: 1100px) {
                 font-size: 26px;
@@ -178,7 +180,10 @@ const Container = styled.div`
         text-align: center;
         width: 100%;
         color: white;
-            font-weight: bold;
+        font-weight: 900;
+        margin-bottom: 20px;
+
+
             @media (max-width: 1100px) {
                     font-size: 50px;
                     }
@@ -198,18 +203,20 @@ const Container = styled.div`
     width: 90%;
 
         .card {
+            text-decoration: none;
             border-radius: 0px;
             padding: 15px 30px;
-            min-height: 15vh;
-            gap: 40px;
-            width: 85%;
+            min-height: 12vh;
+            height: auto;
+            gap: 30px;
+            width: 90%;
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
-            background-color: transparent;
+            background-color: white;
             box-shadow: 0px 0px 10px 5px rgba(68, 68, 68, 0.44);
-            color: white;
+            color: black;
             border-radius: 10px;
             transition: 800ms ease all;
 
@@ -217,11 +224,12 @@ const Container = styled.div`
             width: 100%;
             min-height: 10vh;
             }
+
             @media (max-width: 764px) {
             flex-direction: column;
             gap: 5px;
-            align-items: flex-start;
-            padding: 15px;
+            align-items: center;
+            padding: 5px 15px;
             
                 }
     
@@ -233,10 +241,22 @@ const Container = styled.div`
     
             h3 {
                 font-size: 16px;
+                @media (max-width: 1400px) {
+                    font-size: 14px;
+                }
+
+                @media (max-width: 1100px) {
+                    text-align: center;
+                }
+                
             }
             p {
                 font-size: 14px;
-                font-weight: 300;
+                font-weight: 400;
+                @media (max-width: 1400px) {
+                    font-size: 12px;
+                }
+
                 @media (max-width: 1100px) {
                     display: none;
                 }

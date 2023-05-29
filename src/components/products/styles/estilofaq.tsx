@@ -11,11 +11,12 @@ const ProductContainer = styled.div`
     align-items: center;
     min-height: ${props => props.theme.mainHeight};
     height: auto;
+    padding: 100px 0px;
     background-color: white;
-    padding: 20px; 
+
 
     @media (max-width: 1100px) {
-        padding: 20px 0;
+        padding-top:  100px;
     }
 
 
@@ -23,21 +24,17 @@ const ProductContainer = styled.div`
         text-decoration: none;
         color: ${props => props.theme.secondary};
         &:hover {
-            cursor: default;
             text-decoration: underline;
             text-underline-offset: 3px;
         }
     }
-    
-    @media (max-width: 1100px) {
-        padding: 20px 0;
-    }
 
         .title {
-            font-size: 30px;
-            text-align: left;
-            width: 80%;
-            color: darkgray;
+            font-size: 60px;
+            text-align: center;
+            font-weight: 900;
+            width: 100%;
+            color: white;
             @media (max-width: 1100px) {
                     font-size: 30px;
                     }
@@ -45,9 +42,10 @@ const ProductContainer = styled.div`
         }
 
     p {
-        width: 80%;
+        width: 85%;
         text-align: left;
         margin: 0;
+
     }
 
     .tag-searcher {
@@ -139,7 +137,7 @@ const ProductContainer = styled.div`
                 font-size: 18px;
                 font-weight: bold;
 
-            @media (max-width: 512px)    {
+            @media (max-width: 764px)   {
                 font-size: 16px;
                 }
                 
@@ -188,8 +186,8 @@ const ProductContainer = styled.div`
     }
     
     .product-types1 {
-        padding: 20px;
-        width: 80%;
+        width: 90%;
+        padding: 10px 20px;
         height: auto;
         display: flex;
         flex-direction: column;
@@ -197,21 +195,30 @@ const ProductContainer = styled.div`
         align-items: flex-start;
 
         @media (max-width: 764px) {
-            width: 95%;;
+            width: 95%;
         }
 
         .subtitle-faq {
-            color: gray;
-            font-size: 20px;
+            color: black;
+            font-weight: 600;
+            width: 100%;
+            background-color: white;
+            font-size: 18px;
             text-align: left;
             height: auto;
-            @media (max-width: 1100px) {
-                    font-size: 18px;
-                }
+            padding: 5px;
+            margin: 5px 0 20px 0;
+
                 @media (max-width: 764px) {
-                font-size: 16px;
+                font-size: 14px;
                 }
 
+        }
+
+        .faq-hidden-text {
+            background-color: #eeeeee;
+            padding: 20px;
+            line-height: 28px;
         }
 
         ul {
@@ -219,14 +226,23 @@ const ProductContainer = styled.div`
             width: 100%;
             padding-left: 5%;
             li {
+
                 text-align: left;
                 @media (max-width: 1100px) {
                     font-size: 14px;
                 }
+
                 @media (max-width: 764px) {
                 font-size: 12px;
                 }
 
+                a {
+                    color: ${prop => prop.theme.secondary};
+                    text-underline-offset: 3px;
+                    &:hover {
+                        filter: contrast(50%);
+                    }
+                }
             }
         }
 
@@ -244,7 +260,7 @@ const ProductContainer = styled.div`
 
             &:hover {
                 cursor: pointer;
-                background: #f0f0f0;
+                background: #868686;
             }
             
             @media (max-width: 1100px) {

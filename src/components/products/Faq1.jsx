@@ -16,7 +16,6 @@ const Faq1 = () => {
     return (
         <>
         <ProductContainer>
-            <h1 className="title">FAQ</h1>
             <p>
                 <a 
                className="faq-anchor"
@@ -36,6 +35,8 @@ const Faq1 = () => {
 
                     <div
                     style={{width: '100%',
+                    display: "flex",
+                    flexDirection: 'column',
                     gap: '20px'
                     }}
                     >
@@ -43,7 +44,7 @@ const Faq1 = () => {
                             
                         <h1 onClick={() => setShow1(!show1)}>¿Cuáles servicios y plataformas representa Fatties?</h1>
                         {show1 &&
-                        <>
+                        <div className="faq-hidden-text">
                         <p>Actualmente contamos con 2 plataformas, las cuales promovemos y recomendamos a cada uno de los clientes de la consultora.
                         </p>
                             <ul>
@@ -51,15 +52,15 @@ const Faq1 = () => {
                                 <li><a href="https://calim.com.ar/" target="_blank">Calim</a></li>
                             </ul>
                             <br />
-                        </>
+                        </div>
                         }
                         </div>
 
                         <div>
                             <h1 onClick={() => setShow2(!show2)}>¿Cómo obtener un representante oficial de mercado pago?</h1>
                             {   show2 &&
-                                <>
-                                <p>Para que Mercado Pago asigne tu comercio o emprendimiento al programa de Representantes Oficiales de Fatties, necesitamos que se contacten por nuestro canal de WhatsApp y validar la siguiente información:</p>
+                        <div className="faq-hidden-text">
+                        <p>Para que Mercado Pago asigne tu comercio o emprendimiento al programa de Representantes Oficiales de Fatties, necesitamos que se contacten por nuestro canal de WhatsApp y validar la siguiente información:</p>
                                 <ul>
                                     <li>Uso actual de la plataforma (Cobrar con una o más soluciones de pago: QR, Point, Link de Pago)</li>
                                     <li>Tener correctamente cargados tus datos fiscales dentro de la app.</li>
@@ -68,7 +69,7 @@ const Faq1 = () => {
                                 </ul>
                             <p><strong>Aquellos comercios que no cumplan con la resolución de la encuesta perderán el cupo dentro del programa. Dada la alta demanda de cupos para el programa de representación Fatties solo prestará el servicio a aquellos comercios que mantengan la encuesta de calidad resuelta.</strong></p>
                             <br />
-                            </>
+                            </div>
                             }
                         </div>
                         
@@ -77,15 +78,15 @@ const Faq1 = () => {
                         <h1 onClick={() => setShow3(!show3)}>¿Cómo completar la encuesta de calidad de Mercado Pago para mantener mi cupo dentro del programa de representantes?</h1>
                         {
                             show3 &&
-                            <>
-                                <p>Podés comunicarte con nosotros y te pasamos el link de la encuesta, también les dejamos un QR el cual escaneando los redirige para que también puedan completarla.
-                                Si tenés alguna duda, podés comunicarte por el canal de <a style={{color: 'rgb(23, 146, 68)'}} target="_blank" href="https://api.whatsapp.com/send?phone=5491123956360&text=Hola, qué tal? Me gustaría hacerles una consulta."> WhatsApp
+                            <div className="faq-hidden-text">
+                            <p>Podés comunicarte con nosotros y te pasamos el link de la encuesta, también les dejamos un QR el cual escaneando los redirige para que también puedan completarla.
+                                Si tenés alguna duda, podés comunicarte por el canal de <a style={{color: 'rgb(23, 146, 68)', textUnderlineOffset: '3px'}} target="_blank" href="https://api.whatsapp.com/send?phone=5491123956360&text=Hola, qué tal? Me gustaría hacerles una consulta."> WhatsApp
                                 <img style={{height: '20px'}} src={logowhatsapp} alt="" />
                                 </a>
                                 exclusivo.
                                 </p>
                                 <br/>
-                            </>
+                            </div>
                         }
                         </div>
                         
@@ -93,7 +94,7 @@ const Faq1 = () => {
                         <h1 onClick={() => setShow4(!show4)}>¿Qué servicio brinda Fatties como representante oficial de Mercado Pago?</h1>
                     { 
                     show4 &&
-                    <>
+                    <div className="faq-hidden-text">
                     <p>Como representantes asignados de su comercio o emprendimiento contarán sin costo alguno con los siguientes beneficios:</p>
                             <ul>
                                 <li>Canal de soporte exclusivo a cargo de Fatties por WhatsApp (lunes a viernes de 9 a 18 hs)</li>
@@ -104,7 +105,7 @@ const Faq1 = () => {
                                 <li>Los envíos de los materiales son sin cargo.</li>
                             </ul>
                             <br />
-                    </>
+                    </div>
                         }
                         </div>
 
@@ -113,12 +114,15 @@ const Faq1 = () => {
                         <h1 onClick={() => setShow5(!show5)}>Tengo un problema con mi cuenta de mercado pago, ¿Qué hago?</h1>
                         {
                         show5 &&
-                            <p>Comunícate con nuestro centro de atención telefónica, envíanos un <a style={{color: 'rgb(23, 146, 68)'}}
+                        <div className="faq-hidden-text">
+                            <p>Comunícate con nuestro centro de atención telefónica, envíanos un <a style={{color: 'rgb(23, 146, 68)', textUnderlineOffset: '3px'}}
                             target="_blank" href="https://api.whatsapp.com/send?phone=5491123956360&text=Hola, qué tal? Me gustaría hacerles una consulta.">
                             WhatsApp
                             <img style={{height: '20px'}} src={logowhatsapp} alt="" />
                         </a>
-                            con tu consulta o reclamo así lo gestionamos ante la plataforma correspondiente.</p>}
+                            con tu consulta o reclamo así lo gestionamos ante la plataforma correspondiente.</p>
+                            </div>
+                            }
                         </div>
                     </div>
                 </div>

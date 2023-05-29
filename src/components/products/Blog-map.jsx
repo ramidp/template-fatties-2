@@ -188,7 +188,7 @@ const BlogContainer = styled.div`
                 padding: 0;
                 font-size: 26px;
                 padding-bottom: 10px;
-                font-weight: 500;
+                font-weight: 600;
                 z-index: 2;
                 text-align: left;
                 color: white;
@@ -280,13 +280,18 @@ const BlogContainer = styled.div`
                     min-height: 10vh;
                     width: 100%;
                     padding: 0;
-                    font-size: 40px;
+                    font-size: 36px;
                     padding-bottom: 10px;
-                    font-weight: 400;
+                    font-weight: 600;
                     z-index: 2;
                     text-align: left;
                     color: white;
     
+                    @media (max-width: 1400px) {
+                    font-size: 30px;
+                    min-height: 5vh;
+                    }
+                    
                     @media (max-width: 1100px) {
                     font-size: 22px;
                     min-height: 5vh;

@@ -27,7 +27,7 @@ const App = () => {
       families: [
       'Anton:400',
       'Antonio:400',
-      'Montserrat:400',
+      'Montserrat:300,400,600,700,800,900',
       'Roboto:400,700,900',
       'Rubik:300,400,700,900,1100',
       'Poppins:300,400,700,900',
@@ -90,7 +90,8 @@ const AppContainer = styled.div`
     height: auto;
     width: 70%;
     flex-direction: column;
-    box-shadow: 0px 0px 50px 5px gray;
+    box-shadow: 0px 0px 10px 10px rgba(124, 124, 124, 0.5);
+    background-color: white;
 
     @media (max-width: 1100px) {
             width: 100%;

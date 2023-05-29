@@ -268,17 +268,18 @@ export default Marcas;
 const Container = styled.div`
     width: 100%;
     height: auto;
-    min-height: 100vh;
+    min-height: calc(100vh);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     background-color: white;
-    gap: 70px;
+    gap: 30px;
+    padding: 100px 0;
 
     span {
-            padding-top: 50px;
-            margin-top: -50px;
+            padding-top: 80px;
+            margin-top: -80px;
 
             @media (max-width: 764px) {
               padding-top: 0px;
@@ -338,11 +339,10 @@ const Container = styled.div`
         }
 
         .wallimg {
-          background-image: url('https://i.ibb.co/MMkQ0pD/banner-example-2.png');
-          background-size: 1948px 329px;
-          background-position: 0 0;
+          background-image: url('https://i.ibb.co/CzQ20dC/banner-1-01.jpg');
+          background-size: cover;
           width: 100%;
-          height: 427px;
+          height: 400px;
           background-repeat: repeat-x;
           animation-duration: 2000s;
           animation-timing-function: linear;
@@ -393,10 +393,9 @@ const Container = styled.div`
           margin: 0;
           width: 100%;
           font-size: 50px;
-          font-weight: bold;
+          font-weight: 900;
           text-align: center;
-          color: #4b4b4b;
-          padding-bottom: 30px;
+          padding-bottom: 10px;
 
           @media (max-width: 1400px) {
           font-size: 40px;
@@ -412,8 +411,7 @@ const Container = styled.div`
         width: 100%;
         font-size: 24px;
         text-align: center;
-        font-weight: 200;
-        color: #4b4b4b;
+        font-weight: 400;
         padding: 10px 20px;
 
         @media (max-width: 1100px) {

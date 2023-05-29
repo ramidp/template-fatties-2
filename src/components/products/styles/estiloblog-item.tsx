@@ -61,9 +61,8 @@ const ProductContainer = styled.div`
         .blog-title {
             width: 100%;
             text-align: left;
-            color: black;
             z-index: 2;
-            font-size: 40px;
+            font-size: 46px;
             font-weight: 400;
                
                @media (max-width: 1100px) {
@@ -107,11 +106,17 @@ const ProductContainer = styled.div`
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
-                line-height: 25px;
-                font-size: 14px;
-                    @media (max-width: 1100px) {
-                        font-size: 12px;
-                    }
+                line-height: 28px;
+                font-size: 16px;
+
+                
+                @media (max-width: 1100px) {
+                    font-size: 14px;
+                }
+
+                @media (max-width: 764px) {
+                    font-size: 12px;
+                }
 
                 p {
                     width: 100%;

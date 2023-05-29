@@ -7,13 +7,11 @@ import { useLocation } from 'react-router-dom';
 
 const MenuNav = () => {
 
-  const logo = require('../images/fatties-white.png')
+  const logo = require('../images/fattiescolores200.png')
 
   const [active, setActive] = useState(true)
 
   const location = useLocation().pathname;
-  
- 
 
   useEffect(() => {
     setTimeout(() => {
@@ -24,8 +22,9 @@ const MenuNav = () => {
 
 
   return (
-    <MenuNavContainer>
-
+    <MenuNavContainer
+    className={location === '/' ? '' : 'menu-white'}
+    >
 
               {
               location !== '/' &&
@@ -37,8 +36,8 @@ const MenuNav = () => {
                 <a href="/blog">
                   <h1>BLOG</h1></a>
 
-                <a href="/faq">
-                  <h1>FAQ</h1></a>
+                {/* <a href="/faq">
+                  <h1>FAQ</h1></a> */}
 
                 <a href="/nosotros">
                   <h1>¿QUIÉNES SOMOS?</h1></a>
@@ -77,17 +76,9 @@ const MenuNavContainer = styled.div`
 
     a {
       img {
-        padding-right: 15px;
-        height: 30px;
-        transition: 0.5s ease all;
-        filter: brightness(0%) invert(1);
-
-        &:hover {
-          filter:brightness(0%) invert(1) contrast(60%);
-
-        }
+        transition: 500ms ease-in-out;
       }
-    } 
+    }
     
     .search-bar {
       display: flex;
