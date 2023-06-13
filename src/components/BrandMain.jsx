@@ -2,8 +2,6 @@ import styled from "styled-components";
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import React, { useEffect, useState } from "react";
-import Logo from "./Logo";
-import { Link } from 'react-scroll'
 import Service from "./products/Service";
 import { faPhoneVolume, faHandshake } from '@fortawesome/free-solid-svg-icons';
 
@@ -15,7 +13,6 @@ const BrandMain = () => {
     const logoCalim = require('../images/calim-logo.png')
     const wallimg = require('../images/celular-v2.png')
 
-    const animation = 'zoom-in'
     const animation3 = 'fade-out'
 
     useEffect (() => {
@@ -29,8 +26,9 @@ const BrandMain = () => {
         {
             id: 1,
             title: 'Representante Oficial',
-            text: 'Contamos con una cartera de +4000 comercios activos, que reciben mensualmente actualizaciones, soporte en vivo, visita presencial e información de nuestros servicio',
-            text2: 'Ejemplo de texto que explique el Servicio',
+            subtitle: 'Subtitulo',
+            text: 'Brindamos asesoría completa en el uso de la plataforma de Mercado Pago.',
+            text2: 'Asesoria integral para el uso de la plataforma. Podrás contar con, reposicion de materiales de forma diaria, garantia para tu lector de tarjetas y ademas, cobertura ante contracargo y/o desconocimiento de tus ventas',
             logo: logoMp,
             anchorclass: ' mp-div',
             logoclass: 'mp',
@@ -38,7 +36,8 @@ const BrandMain = () => {
         {
             id: 2,
             title: 'Puesta a Punto',
-            text: 'Solución de tus impuestos de forma fácil y práctica. Contando con Atención impositiva al instante. Todo esto y más que podrás hacerlo desde nuestra app',
+            subtitle: 'Subtitulo',
+            text: 'Solución para el manejo de tus impuestos de forma fácil y práctica. Contamos con asesoramiento impositivo en tiempo real.',
             text2: 'Ejemplo de texto que explique el Servicio',
             logo: logoCalim,
             anchorclass: ' calim-div',
@@ -47,20 +46,23 @@ const BrandMain = () => {
         {
             id: 3,
             title: 'Atención telefónica',
-            text: 'Nuestro canal de atención telefónica es una herramienta conveniente y eficiente para que nuestros clientes se comuniquen con nosotros.Contamos con un equipo de profesionales altamente capacitados que están disponibles para brindar ayuda y solucionar cualquier consulta o problema que puedas tener.',
-            text2: 'Ejemplo de texto que explique el Servicio',
+            subtitle: 'Subtitulo',
+            text: 'Canal de atención telefónica eficiente y conveniente para que puedas comunicarte con nosotros. Contamos con asesores altamente capacitados para brindar ayuda y asesoramiento sobre cualquier duda o consulta que puedan tener.',
+            text2: 'Nuestros clientes cuentan con un canal de atención telefónica que combina conocimiento y experiencia. Enfocados en la excelencia del servicio al cliente, ofrecemos un canal de atención telefónica que se distingue por su conocimiento y experiencia. Nuestros asesores altamente capacitados están a disposición para brindar ayuda y asesoramiento sobre cualquier duda o consulta sobre la plataforma u otro servicio brindado.',
             logo: faPhoneVolume,
             anchorclass: ' f2',
-            logoclass: '',
+            logoclass: 'svg-serv svg1',
         },
         {
             id: 4,
             title: 'Conectar',
-            text: 'En Fatties lo que ofrecemos como uno de nuestros servicios es conectar clientes con clientes para todo tipo de servicios. Nos interesa hacer de nexo entre gente que busca un servicio y gente que ofrece dicho servicio',
-            text2: 'Ejemplo de texto que explique el Servicio',
+            subtitle: 'Subtitulo',
+            text: 'En Fatties ofrecemos conectar clientes con clientes para todo tipo de servicios. Hacemos de nexo entre gente que busca un servicio y gente que ofrece dicho servicio',
+            text2: 'A que nos referimos con Conectar?',
+            text3: 'Conectamos Cliente con Cliente. Buscas un servicio de Diseño Gráfico? Nosotros te lo podemos brindar. Desarrollo Web? También podemos asesorarte y vincularte. Logistica, Edición de Video? Tenemos una cartera de más de 4000+ clientes dispuestos a ser conectados.',
             logo: faHandshake,
             anchorclass: ' f1',
-            logoclass: '',
+            logoclass: 'svg-serv svg2',
         }
     ]
     
@@ -84,11 +86,9 @@ const BrandMain = () => {
                                 </span>
                                 </h1>
                             <p className="m-0 pt-0">
-                                Somos consultores certificados por 
-                                <br />
-                                Mercado Pago.
-                                <br />
-                                Contribuimos en garantizar un servicio de postventa completo.
+                            Representantes Oficiales y 
+                            Consultores certificados de 
+                            Mercado Pago.
                             </p>
 
                             </div>
@@ -120,6 +120,23 @@ const BrandMain = () => {
                             
                         </div>
                 </div>
+
+                <div
+                className='phrase'
+                >
+                
+                <p 
+                data-aos="fade-in"
+                data-aos-delay="100"
+                className="m-0 pt-0">
+                "Contribuimos experiencia y conocimiento 
+                <br />
+                para el crecimiento de su negocio."
+                </p>
+
+
+                </div>
+
                 <div  
                 className="features-box">
                     
@@ -192,21 +209,40 @@ const BrandMainContainer = styled.div`
                 width: 50px;
 
                 &:hover {
-                    transform: scale(1.15);
+                    transform: scale(1.1);
                     filter: contrast(50%);
                 }
             }
 
             .modal-service-box {
                     border-radius: 20px;
-                    box-shadow: 0px 0px 5px 5px rgba(58, 58, 58, 0.281);
+                    box-shadow: 0px 0px 10px 5px rgba(58, 58, 58, 0.281);
                     display: flex;
                     background-color: white;
                     width: 65%;
-                    height: 70%;
+                    min-height: 50%;
+                    height: auto;
                     flex-direction: column;
-                    justify-content: space-around;
+                    justify-content: space-between;
                     align-items: center;
+                    padding: 50px;
+
+                    @media (max-width: 764px) {
+                        width: 90%;
+                        min-height: 85%;
+                    }
+
+                    p {
+                        font-size: 18px;
+                        font-weight: 300;
+                    }
+
+                    h1 {
+                        background-color: blue;
+                        padding: 5px 20px;
+                        border-radius: 5px;
+                        color: white;
+                    }
 
                     h1, h3 {
                         text-align: center;
@@ -233,6 +269,35 @@ const BrandMainContainer = styled.div`
         justify-content: center;
         align-items: center;
         background-color: white;
+
+        .phrase {
+            background-color: gray;
+            width: 100%;
+            height: 40vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 50px 0 0 0;
+
+
+            p { 
+                font-size: 30px;
+                color: white;
+                font-weight: 600;
+                text-align: center;
+                text-shadow: 0px 0px 5px black;
+
+                @media (max-width: 1100px) {
+                font-size: 26px;
+                 }
+
+                @media (max-width: 764px) {
+                font-size: 22px;
+                 }
+
+            }
+        }
       
         .brand-logo {
             display: flex;
@@ -245,7 +310,7 @@ const BrandMainContainer = styled.div`
             gap: 7vh;
             display: flex;
             // Buena solucion para que la linea diagonal no tenga pixeles, es sumarle .03% al que divide.  
-            background: linear-gradient(70deg, orange 10% ,${props => props.theme.secondary} 40%, rgba(255, 255, 255, 1) 40.04%);
+            background: linear-gradient(110deg, orange 10% ,${props => props.theme.secondary} 39%, rgba(255, 255, 255, 1) 39.025%);
             animation: bgmovement 4s ease forwards;
             background-size: 200vw 200vw;
 
@@ -386,14 +451,13 @@ const BrandMainContainer = styled.div`
             p {
                 text-align: left;
                 font-weight: 600;
-                width: 80%;
-                font-size: 20px;
+                width: 70%;
+                font-size: 22px;
                 color: white;
                 text-shadow: 0px 0px 3px ${props => props.theme.secondary};
 
                 @media (max-width: 1400px) {
                 width: 100%;
-                font-size: 18px
                 }
 
                 @media (max-width: 1100px) {
@@ -402,7 +466,8 @@ const BrandMainContainer = styled.div`
                 }
 
                 @media (max-width: 764px) {
-                    font-size: 16px;
+                    font-size: 18px;
+                    padding: 0 30px;
                 }
             }
             }
@@ -470,6 +535,11 @@ const BrandMainContainer = styled.div`
         align-items: center;
         background-color: white;
         gap: 50px;
+
+        #servicios {
+            padding-top: 15px;
+            margin-top: -15px;
+        }
 
        
     .features-title {

@@ -17,10 +17,12 @@ import WebFont from 'webfontloader'
 import React, { useState } from 'react';
 import WhatsAppBtn from './components/WhatsApp';
 import Nosotros from './components/Nosotros';
-import IconMenu from './components/IconMenu';
 import Error404 from './components/Error404';
+import AstaSign from './components/AstaSign';
 
 const App = () => {
+
+  
 
   WebFont.load ({
     google: {
@@ -32,6 +34,7 @@ const App = () => {
       'Rubik:300,400,700,900,1100',
       'Poppins:300,400,700,900',
       'Inter:300,400,700,900',
+      'Raleway:200,300,400,500,600,700,800,900',
   ]
     }
   });
@@ -75,6 +78,7 @@ const App = () => {
                     <Route path="/nosotros" element={<Nosotros/>}/>
                   </Routes>
                   <Footer/>
+                  <AstaSign/>
           </div>
       </BrowserRouter>
     </AppContainer>

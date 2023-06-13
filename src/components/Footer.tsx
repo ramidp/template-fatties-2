@@ -58,7 +58,10 @@ const Footer = () => {
                                 Lunes a viernes de 9 a 18hs.
                                 <br />
                                 <br />
-                                Somos una empresa de servicios y consultoría, su información es totalmente confidencial. 
+                                Somos una empresa de servicios y consultoría, que brinda soluciones digitales.  
+                                <br />
+                                Su información es totalmente confidencial.
+                                <br />
                                 <br />
                                 <span>
                                 Todos los derechos reservados.
@@ -79,7 +82,7 @@ const Footer = () => {
                                 </div>
                                 <div>
                                 <FontAwesomeIcon icon={faPhone} />
-                                    <p>	Oficinas: +54 (011) 5-263-8549 </p>
+                                    <p> +54 (011) 5-263-8549 </p>
                                 </div>
                                 <div>
                                 <WhatsAppLogo
@@ -139,6 +142,7 @@ const FooterContainer = styled.div`
         background: linear-gradient(270deg, orange 10% ,${props => props.theme.secondary} 45%);
         padding: 20px;
         width: 100%;
+        margin-bottom: 70px;
 
         p {
             text-align: center;

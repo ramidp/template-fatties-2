@@ -88,9 +88,9 @@ const ProductContainer = styled.div`
         }
     }
 
-    .searcher { 
+    .searcher {
         width: 100%;
-        display: flex;
+        display: none;
         flex-direction: column;
         height: auto;
         padding: 10px;
@@ -99,6 +99,12 @@ const ProductContainer = styled.div`
         margin: 0 10px 30px 10px;
 
         @media (max-width: 1100px) {
+            width: 95%;
+            margin: 0 10px 20px 10px;
+                }
+
+        @media (max-width: 764px) {
+            display: flex;
             width: 95%;
             margin: 0 10px 20px 10px;
                 }
@@ -153,6 +159,9 @@ const ProductContainer = styled.div`
                     font-size: 16px;
                     padding: 5px 15px;
                     margin: 0;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
                     color: ${props => props.theme.secondary};
                     &:hover {
                         cursor: pointer;

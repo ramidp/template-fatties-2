@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import Aos from 'aos'
 import 'aos/dist/aos.css'
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight, faGreaterThan } from '@fortawesome/free-solid-svg-icons';
+
+
 
 const Service = ({service}) => {
 
@@ -13,7 +16,7 @@ const Service = ({service}) => {
 
     useEffect (() => {
         Aos.init({
-            duration: 1000,
+            duration: 500,
             once: true,
         });
     },[])
@@ -32,19 +35,32 @@ const Service = ({service}) => {
                     <div 
                     className={"features-div" + `${service.anchorclass}`}
                     data-aos={animation}
-                    onClick={() => {setModal(true); setClosedModal(true)}}
                     >
                         <div  className="features">
                             <div className="logos-div">
                                 {service.logo == logoMp || service.logo == logoCalim ? <img 
                                 className={service.logoclass} src={service.logo} alt="" />
                                 :
-                                <FontAwesomeIcon icon={service.logo} />
+                                <FontAwesomeIcon 
+                                className={service.logoclass}
+                                icon={service.logo} />
                             }
                             </div>
                                 <h1>{service.title}</h1>
                                 <div className="underline"></div>
                                 <p>{service.text}</p>
+
+                                <div
+                                className="read-more"
+                                >
+                                    <h3
+                                    onClick={() => {setModal(true); setClosedModal(true)}}
+                                    >Leer más
+                                    </h3>
+                                    <FontAwesomeIcon 
+                                    className='svg-more'
+                                    icon={faArrowRight}/>
+                                </div>
                         </div>
 
                     </div>
@@ -63,11 +79,11 @@ const Service = ({service}) => {
                                 
                                 <div>
                                     <h1>{service.title}</h1>
-                                    <h3>Subtitulo</h3>
+                                    <h3>{service.subtitle}</h3>
                                 </div>
                                 <p>{service.text2}</p>
+                                {service.text3 && <p>{service.text3}</p>}
                                 <a href="">Link a FAQ</a>
-
                             </div>
                         </div>    
                         }
@@ -88,9 +104,13 @@ const Container = styled.div`
 
     .mp-div {
         background: linear-gradient(50deg,  #100E9F 5%, #009FE3 30%, white 90%);
+        /* background: linear-gradient(240deg, orange 10% ,${props => props.theme.secondary} 30%); */
+        
     }
     .calim-div {
         background: linear-gradient(50deg,#C0D749 30%, #2192A5 70%);
+        /* background: linear-gradient(50deg, #7cdaa3 10%, ${props => props.theme.primary} 40%); */
+
     }
 
     .f1 {
@@ -103,43 +123,76 @@ const Container = styled.div`
 
     .features-div {
         text-decoration: none;
-        width: 70%;
+        width: 50vw;
+        min-height: 45vh;
+        height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
         box-shadow: 0px 0px 10px 5px rgba(107, 107, 107, 0.5);
-        cursor: pointer;
 
         &:hover {
             transform: scale(1.05)
         }
 
+        @media (max-width: 1100px) {
+            width: 70vw;
+            min-height: 45vh;
+        }
 
         @media (max-width: 764px) {
-            width: 90%;
+            width: 90vw;
         }
 
         .features {
-            min-height: 45vh;
-            height: auto;
-            width: 100%;
+            width: calc(100% - 20px);
+            height: calc(100% - 20px);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-around;
             color: black;
             padding: 50px 0;
-            gap: 10px;
+            gap: 15px;
+            background-color: white;
 
             @media (max-width: 1100px) {
                 padding: 40px 20px;
-                width: 100%;
-                min-height: 45vh;
                 }
 
-            @media (max-width: 764px) {
-                min-height: 45vh;
-                }
+            
+                .read-more {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 5px 15px;
+                    gap: 10px;
+                    transition: 300ms ease all;
+
+
+                    h3 {
+                    font-size: 16px;
+                    border-radius: 7px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: 600;
+                    cursor: pointer;
+                    margin: 0;
+
+
+                    }
+                    
+                    .svg-more {
+                        font-size: 12px;
+                    }
+
+                    &:hover {
+                        color: ${props => props.theme.secondary};
+                    }
+
+            }
 
             
             .logos-div {
@@ -147,7 +200,6 @@ const Container = styled.div`
                 width: 100%;
                 justify-content: center;
                 align-items: center;
-                filter: grayscale(100%);
 
                 @media (max-width: 500px) {
                 width: 50%;
@@ -155,8 +207,7 @@ const Container = styled.div`
 
 
                 .mp {
-                    filter: brightness(20%) invert(100%);
-                    height: 180px;
+                    height: 170px;
 
                     @media (max-width: 1100px) {
                     height: 150px;
@@ -168,7 +219,6 @@ const Container = styled.div`
 
                 }
                 .calim {
-                    filter: brightness(0%) invert(100%);
                     height: 65px;
 
                     @media (max-width: 1100px) {
@@ -185,7 +235,7 @@ const Container = styled.div`
                 width: 90%;
                 font-size: 18px;
                 margin: 0;
-                color: white;
+                color: gray;
 
                 @media (max-width: 1400px) {
                 font-size: 16px; 
@@ -199,7 +249,7 @@ const Container = styled.div`
             }
             h1 {
                 text-transform: uppercase;
-                color: white;
+                color: gray;
                 width: 100%;
                 text-align: center;
                 font-size: 40px;
@@ -228,16 +278,31 @@ const Container = styled.div`
                 border-radius: 50%;
             }
 
-            svg {
-                font-size: 70px;
+            .svg1 {
+                background: linear-gradient(240deg, orange 10% ,${props => props.theme.secondary} 30%);
+            }
+
+            .svg2 {
+                background: linear-gradient(50deg, #7cdaa3 10%, ${props => props.theme.primary} 40%);
+            }
+
+            .svg-serv {
                 color: white;
+                border-radius: 50%;
+                padding: 20px;
+                width: 55px;
+                height: 55px;
 
                 @media (max-width: 1100px) {
-                    font-size: 60px;
+                    width: 45px;
+                    height: 45px;
+                    padding: 20px;
                 }
 
                 @media (max-width: 764px) {
-                    font-size: 50px;
+                    width: 40px;
+                    height: 40px;
+                    padding: 15px;
                 }
 
             }

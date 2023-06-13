@@ -1,15 +1,31 @@
 import styled from "styled-components";
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 const WhatsAppBtn = () => {
 
     const logowhatsapp = require('../images/icons/whatsapp.png')
 
+    let timeHour = new Date().getHours()
+
+    let [timeValue, setTimeValue] = useState('')
+
+    useEffect(() => {
+        if (timeHour > 13 && timeHour < 19)  {
+            setTimeValue('Buenas tardes') 
+        } else if (timeHour >= 6 && timeHour <= 13) {
+            setTimeValue('Buenos días') 
+        } else {
+            setTimeValue('Buenas noches') 
+        }
+    },[timeHour])
+
+    const mensaje = timeValue + ', me gustaría hacer una consulta.'
+
     return ( 
         <Container>
             <div>
-                <a href="https://api.whatsapp.com/send?phone=5491123956360&text=Hola, qué tal? Me gustaría hacerles una consulta."
+                <a href={"https://api.whatsapp.com/send?phone=5491123956360&text=" + `${mensaje}`}
                 target="_blank">
                 <img src={logowhatsapp} alt="" />
                 </a>

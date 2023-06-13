@@ -12,215 +12,215 @@ const Marcas = () => {
   
   const [logos, setLogos] = useState([])
   
-  useEffect(() => {
-    setLogos(
-        [
-          {brand : 
-            {
-              id: 1,
-              name: 'Co Pain',
-              img: require('../images/Brands-Logos/co-pain.webp'),
-              link: 'https://www.instagram.com/copain_boulangerie'
-          }},
-          {brand : 
-            {
-              id: 2,
-              name: 'Cafe Martinez',
-              img: require('../images/Brands-Logos/Cafe-Martinez.webp'),
-              link: 'http://www.cafemartinez.com/'
-          }},
-          {brand : 
-            {
-              id: 3,
-              name: 'Dietetica Tommy',
-              img: require('../images/Brands-Logos/tommy.png'),
-              link: 'https://www.dieteticastomy.com.ar/'
-          }},
-          {brand : 
-            {
-              id: 4,
-              name: 'Freddo',
-              img: require('../images/Brands-Logos/Freddo-logo.png'),
-              link: 'https://ar.freddo.com/'
-          }},
-          {brand : 
-            {
-              id: 5,
-              name: 'Deniro',
-              img: require('../images/Brands-Logos/deniro.png'),
-              link: 'https://www.denirohamburgueseria.com.ar/'
-          }},
-          {brand : 
-            {
-              id: 6,
-              name: 'Den Helder',
-              img: require('../images/Brands-Logos/den-helder.png'),
-              link: 'https://denhelder.com.ar/'
-          }},
-          {brand : 
-            {
-              id: 7,
-              name: 'Panaderia El Calafate',
-              img: require('../images/Brands-Logos/el-calafate.jpg'),
-              link: 'https://www.instagram.com/elcalafatepanificacion/?hl=en'
-          }},
-          {brand : 
-            {
-              id: 8,
-              name: 'La Ferneteria',
-              img: require('../images/Brands-Logos/ferneteria.png'),
-              link: 'https://www.laferneteria.com/'
-          }},
-          {brand : 
-            {
-              id: 9,
-              name: 'La Farola',
-              img: require('../images/Brands-Logos/la-farola.png'),
-              link: 'https://www.instagram.com/lafarolaoriginal_'
-          }},
-          {brand : 
-            {
-              id: 10,
-              name: 'Basta de Lobby',
-              img: require('../images/Brands-Logos/basta-de-lobby.png'),
-              link: 'https://bastadelobby.com/'
-          }},
-          {brand : 
-            {
-              id: 11,
-              name: 'Casper Pet Store',
-              img: require('../images/Brands-Logos/casper-pet.png'),
-              link: 'https://casperpetstore.com.ar/'
-          }},
-          {brand : 
-            {
-              id: 12,
-              name: 'Coquitos Online',
-              img: require('../images/Brands-Logos/coquitos-online.png'),
-              link: ''
-          }},
-          {brand : 
-            {
-              id: 13,
-              name: 'Don Blanco',
-              img: require('../images/Brands-Logos/don-blanco1.jpg'),
-              link: 'https://www.instagram.com/pasteleriadonblanco'
-          }},
-          {brand : 
-            {
-              id: 14,
-              name: 'El Desembarco',
-              img: require('../images/Brands-Logos/el-desembarco.png'),
-              link: 'https://www.instagram.com/eldesembarcook'
-          }},
-          {brand : 
-            {
-              id: 15,
-              name: 'Il Vero Pippo',
-              img: require('../images/Brands-Logos/il-vero-pippo.png'),
-              link: 'https://pippo.com.ar/'
-          }},
-          {brand : 
-            {
-              id: 16,
-              name: 'La Choripaneria',
-              img: require('../images/Brands-Logos/la-choripaneria.jpg'),
-              link: 'https://www.instagram.com/choripaneriaalpaso'
-          }},
-          {brand : 
-            {
-              id: 17,
-              name: 'La Continental',
-              img: require('../images/Brands-Logos/la-continental.jpg'),
-              link: 'https://www.lacontinental.com/'
-          }},
-          {brand : 
-            {
-              id: 18,
-              name: 'Tropea',
-              img: require('../images/Brands-Logos/latino-sandwich.png'),
-              link: 'https://www.latinosandwich.com/'
-          }},
-          {brand : 
-            {
-              id: 19,
-              name: 'Las Cuartetas',
-              img: require('../images/Brands-Logos/las-cuartetas.jpg'),
-              link: 'http://www.lascuartetas.com/'
-          }},
-          {brand : 
-            {
-              id: 20,
-              name: 'Perlutti',
-              img: require('../images/Brands-Logos/perlutti.png'),
-              link: 'https://www.pertutti.com.ar/'
-          }},
-          {brand : 
-            {
-              id: 21,
-              name: 'Pompeya',
-              img: require('../images/Brands-Logos/pompeya.jpg'),
-              link: 'https://www.instagram.com/pompeyapubsocial_'
-          }},
-          {brand : 
-            {
-              id: 22,
-              name: 'Sei Tu',
-              img: require('../images/Brands-Logos/sei-tu1.png'),
-              link: 'https://www.seitu.com/'
-          }},
-          {brand : 
-            {
-              id: 23,
-              name: 'Sig School',
-              img: require('../images/Brands-Logos/sigschool.png'),
-              link: 'https://www.instagram.com/sigschoolargentina'
-          }},
-          {brand : 
-            {
-              id: 24,
-              name: 'Super Todo',
-              img: require('../images/Brands-Logos/super-todo.png'),
-              link: 'https://supertodo.com.ar/'
-          }},
-          {brand : 
-            {
-              id: 25,
-              name: 'Tante Frida',
-              img: require('../images/Brands-Logos/tante-frida.png'),
-              link: 'http://tantefrida.com/'
-          }},
-          {brand : 
-            {
-              id: 26,
-              name: 'Tomasso',
-              img: require('../images/Brands-Logos/tomasso.png'),
-              link: 'https://tomassopizzas.com.ar/'
-          }},
-          {brand : 
-            {
-              id: 27,
-              name: 'Tostado Cafe Club',
-              img: require('../images/Brands-Logos/tostado-cafe-club.png'),
-              link: 'http://www.tostadocafeclub.com/'
-          }},
-          {brand : 
-            {
-              id: 28,
-              name: 'Vitalcer',
-              img: require('../images/Brands-Logos/vitalcer.png'),
-              link: 'http://www.vitalcer.com/'
-          }},
-          {brand : 
-            {
-              id: 29,
-              name: 'Tropea',
-              img: require('../images/Brands-Logos/tropea.png'),
-              link: 'http://tropea.com.ar'
-          }},
+  // useEffect(() => {
+  //   setLogos(
+  //       [
+  //         {brand : 
+  //           {
+  //             id: 1,
+  //             name: 'Co Pain',
+  //             img: require('../images/Brands-Logos/co-pain.webp'),
+  //             link: 'https://www.instagram.com/copain_boulangerie'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 2,
+  //             name: 'Cafe Martinez',
+  //             img: require('../images/Brands-Logos/Cafe-Martinez.webp'),
+  //             link: 'http://www.cafemartinez.com/'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 3,
+  //             name: 'Dietetica Tommy',
+  //             img: require('../images/Brands-Logos/tommy.png'),
+  //             link: 'https://www.dieteticastomy.com.ar/'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 4,
+  //             name: 'Freddo',
+  //             img: require('../images/Brands-Logos/Freddo-logo.png'),
+  //             link: 'https://ar.freddo.com/'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 5,
+  //             name: 'Deniro',
+  //             img: require('../images/Brands-Logos/deniro.png'),
+  //             link: 'https://www.denirohamburgueseria.com.ar/'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 6,
+  //             name: 'Den Helder',
+  //             img: require('../images/Brands-Logos/den-helder.png'),
+  //             link: 'https://denhelder.com.ar/'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 7,
+  //             name: 'Panaderia El Calafate',
+  //             img: require('../images/Brands-Logos/el-calafate.jpg'),
+  //             link: 'https://www.instagram.com/elcalafatepanificacion/?hl=en'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 8,
+  //             name: 'La Ferneteria',
+  //             img: require('../images/Brands-Logos/ferneteria.png'),
+  //             link: 'https://www.laferneteria.com/'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 9,
+  //             name: 'La Farola',
+  //             img: require('../images/Brands-Logos/la-farola.png'),
+  //             link: 'https://www.instagram.com/lafarolaoriginal_'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 10,
+  //             name: 'Basta de Lobby',
+  //             img: require('../images/Brands-Logos/basta-de-lobby.png'),
+  //             link: 'https://bastadelobby.com/'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 11,
+  //             name: 'Casper Pet Store',
+  //             img: require('../images/Brands-Logos/casper-pet.png'),
+  //             link: 'https://casperpetstore.com.ar/'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 12,
+  //             name: 'Coquitos Online',
+  //             img: require('../images/Brands-Logos/coquitos-online.png'),
+  //             link: ''
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 13,
+  //             name: 'Don Blanco',
+  //             img: require('../images/Brands-Logos/don-blanco1.jpg'),
+  //             link: 'https://www.instagram.com/pasteleriadonblanco'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 14,
+  //             name: 'El Desembarco',
+  //             img: require('../images/Brands-Logos/el-desembarco.png'),
+  //             link: 'https://www.instagram.com/eldesembarcook'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 15,
+  //             name: 'Il Vero Pippo',
+  //             img: require('../images/Brands-Logos/il-vero-pippo.png'),
+  //             link: 'https://pippo.com.ar/'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 16,
+  //             name: 'La Choripaneria',
+  //             img: require('../images/Brands-Logos/la-choripaneria.jpg'),
+  //             link: 'https://www.instagram.com/choripaneriaalpaso'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 17,
+  //             name: 'La Continental',
+  //             img: require('../images/Brands-Logos/la-continental.jpg'),
+  //             link: 'https://www.lacontinental.com/'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 18,
+  //             name: 'Tropea',
+  //             img: require('../images/Brands-Logos/latino-sandwich.png'),
+  //             link: 'https://www.latinosandwich.com/'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 19,
+  //             name: 'Las Cuartetas',
+  //             img: require('../images/Brands-Logos/las-cuartetas.jpg'),
+  //             link: 'http://www.lascuartetas.com/'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 20,
+  //             name: 'Perlutti',
+  //             img: require('../images/Brands-Logos/perlutti.png'),
+  //             link: 'https://www.pertutti.com.ar/'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 21,
+  //             name: 'Pompeya',
+  //             img: require('../images/Brands-Logos/pompeya.jpg'),
+  //             link: 'https://www.instagram.com/pompeyapubsocial_'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 22,
+  //             name: 'Sei Tu',
+  //             img: require('../images/Brands-Logos/sei-tu1.png'),
+  //             link: 'https://www.seitu.com/'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 23,
+  //             name: 'Sig School',
+  //             img: require('../images/Brands-Logos/sigschool.png'),
+  //             link: 'https://www.instagram.com/sigschoolargentina'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 24,
+  //             name: 'Super Todo',
+  //             img: require('../images/Brands-Logos/super-todo.png'),
+  //             link: 'https://supertodo.com.ar/'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 25,
+  //             name: 'Tante Frida',
+  //             img: require('../images/Brands-Logos/tante-frida.png'),
+  //             link: 'http://tantefrida.com/'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 26,
+  //             name: 'Tomasso',
+  //             img: require('../images/Brands-Logos/tomasso.png'),
+  //             link: 'https://tomassopizzas.com.ar/'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 27,
+  //             name: 'Tostado Cafe Club',
+  //             img: require('../images/Brands-Logos/tostado-cafe-club.png'),
+  //             link: 'http://www.tostadocafeclub.com/'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 28,
+  //             name: 'Vitalcer',
+  //             img: require('../images/Brands-Logos/vitalcer.png'),
+  //             link: 'http://www.vitalcer.com/'
+  //         }},
+  //         {brand : 
+  //           {
+  //             id: 29,
+  //             name: 'Tropea',
+  //             img: require('../images/Brands-Logos/tropea.png'),
+  //             link: 'http://tropea.com.ar'
+  //         }},
           
-        ]) 
-    },[])
+  //       ]) 
+  //   },[])
 
     return ( 
       <Container
@@ -232,12 +232,12 @@ const Marcas = () => {
               <br />
               es nuestra meta.</h1>
               <h3>
-              Ayudamos a más de 3500 comercios, emprendedores y
+              Asesoramos a mas de 5000 emprendedores, comercios 
               <br />
-              empresas a lograr sus objetivos a través de nuestro equipo de asesores
-
+              y empresas en el pais, a través de nuestra agencia.
               </h3>
             </div>
+
             <div className="carousel-sect">
               <div className="marcas-div">
                 {/* {
@@ -268,7 +268,7 @@ export default Marcas;
 const Container = styled.div`
     width: 100%;
     height: auto;
-    min-height: calc(100vh);
+    min-height: calc(80vh);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -339,10 +339,10 @@ const Container = styled.div`
         }
 
         .wallimg {
-          background-image: url('https://i.ibb.co/CzQ20dC/banner-1-01.jpg');
-          background-size: cover;
+          background-image: url('https://i.ibb.co/gyQqkJb/banner-2.png');
+          background-size: 90%;
           width: 100%;
-          height: 400px;
+          height: 300px;
           background-repeat: repeat-x;
           animation-duration: 2000s;
           animation-timing-function: linear;

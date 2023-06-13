@@ -2,11 +2,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductContainer from './styles/estiloblog'
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
-import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faStopwatch} from '@fortawesome/free-solid-svg-icons';
 import blogs from '../../data/blogs.json'
-import { a } from 'react-spring';
 
 
 
@@ -87,11 +85,19 @@ const Blog = () => {
                                                     <p>{blog.date}</p>
                                                 </div>
 
-                                                <a 
-                                                className="nav-btn"
-                                                href={'/blog/' + blog.link}>
-                                                    Leer mas 
-                                                </a>
+                                                <div>
+                                                    <a
+                                                    className="nav-btn"
+                                                    href={'/blog/' + blog.link}>
+                                                        Leer mas
+                                                    </a>
+                                                    <p
+                                                    className="reading-time"
+                                                    >
+                                                    Menos de 3 minutos
+                                                    <FontAwesomeIcon icon={faStopwatch}/>
+                                                    </p>
+                                                </div>
 
                                             </div>
                                             <img src={require('../../images/Blog/' + `${blog.img}`)} alt="" />
@@ -106,14 +112,33 @@ const Blog = () => {
                                     <div 
                                     key={blog.id}
                                     className="article">
-                                            <img src={require('../../images/Blog/' + `${blog.img}`)} alt="" />
+                                            <img 
+                                            className="banner"
+                                            src={require('../../images/Blog/' + `${blog.img}`)} alt="" />
+
+                                            <div className="icon-div">
+                                                <img 
+                                                className="icon-brand"
+                                                src={require('../../images/' + `${blog.icon}`)} alt="" />
+                                            </div>
+
                                             <h1>{blog.title}</h1>
                                             <p>{blog.date}</p>
-                                            <a 
-                                        className="nav-btn"
-                                        href={'/blog/' + blog.link}>
-                                            Leer mas 
-                                        </a>
+
+                                        <div>
+                                            <a
+                                            className="nav-btn"
+                                            href={'/blog/' + blog.link}>
+                                                Leer mas
+                                            </a>
+                                            <p
+                                            className="reading-time"
+                                            >
+                                            Menos de {blog.time} minutos
+                                            <FontAwesomeIcon icon={faStopwatch}/>
+                                            </p>
+                                        </div>
+
                                      </div>
                                     )
                             })
@@ -151,7 +176,6 @@ const BlogContainer = styled.div`
             align-items: flex-start;
             width: calc(33.30% - 13.33px);
             min-height: 40vh;
-            gap: 15px;
             height: auto;
             transition: 0.2s linear;
             border-bottom: 1.5px solid white;
@@ -211,13 +235,57 @@ const BlogContainer = styled.div`
             p {     
                 font-size: 14px;
                 color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                
+                }
+            .reading-time {
+                font-size: 14px;
+                color: #dddddd;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 0;
+                margin: 0;
+
+                svg {
+                    font-size: 18px;
+                    color: #dddddd;
                 }
 
-            img {
+            }
+
+            .banner {
                 width: 100%;
                 height: 150px;
                 object-fit: cover;
                 object-position: 50% 20%;
+            }
+
+            .icon-div {
+                height: 140px;
+                width: 20%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+
+                @media (max-width: 1100px) {
+                    width: 82%;
+                }
+                
+                position: absolute;
+                
+                .icon-brand {
+                    width: 80px;
+                    filter: brightness(0) invert(100%);
+
+                    @media (max-width: 1100px) {
+                        width: 60px;
+                    }
+                }
             }
         }
 
@@ -228,7 +296,7 @@ const BlogContainer = styled.div`
             align-items: flex-start;
             width: 100%;
             height: 44vh;
-            transition: 0.2s linear;
+            transition: 300ms ease all;
             
             @media (max-width: 1100px) {
                 flex-direction: column-reverse;
@@ -253,6 +321,28 @@ const BlogContainer = styled.div`
                 p {
                     font-size: 14px;
                     color: white;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 10px;
+
+                }
+
+                .reading-time {
+                    font-size: 14px;
+                    color: #dddddd;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 10px 0;
+                    margin: 0;
+
+                    svg {
+                        font-size: 18px;
+                        color: #dddddd;
+                    }
+
                 }
 
                 .nav-btn {

@@ -152,23 +152,14 @@ const MenuContainer = styled.div`
           display: none;
         }
 
-          a {
-          img {
-            height: 30px;
-            transition: 500ms linear;
-            cursor: pointer; 
-
-          }
-      } 
-
       }
 
     .menu-white {
         width: 100%;
         height: 70px;
         transition: 500ms ease-in;
-        background: linear-gradient(70deg, orange 10% ,${props => props.theme.secondary} 40%, rgba(255, 255, 255, 1) 40.12%);
-        box-shadow: 0px 0px 10px 5px gray;
+        background: linear-gradient(110deg, orange 1% ,${props => props.theme.secondary} 54%, rgba(255, 255, 255, 1) 54.07%);
+        box-shadow: 0px 0px 5px 5px rgba(124, 124, 124, 0.5);
         z-index: 10;
 
         a {

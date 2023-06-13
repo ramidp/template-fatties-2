@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useLocation } from 'react-router-dom';
+import blogs from '../data/blogs.json'
+import SearcherBar from './SearchearBar';
 
 
 const MenuNav = () => {
@@ -10,8 +12,10 @@ const MenuNav = () => {
   const logo = require('../images/fattiescolores200.png')
 
   const [active, setActive] = useState(true)
-
+  
   const location = useLocation().pathname;
+
+  // Esto se desbloquea cuando se termine, porque por cada cambio se vuelve a renderizar y entonces aplica el useEffect
 
   useEffect(() => {
     setTimeout(() => {
@@ -20,18 +24,27 @@ const MenuNav = () => {
 
   },[])
 
+ const [isHome, setIsHome] = useState(true)
 
   return (
     <MenuNavContainer
+    style={{ justifyContent: location === '/' ? 'flex-end' : 'space-between'}}
     className={location === '/' ? '' : 'menu-white'}
     >
 
               {
               location !== '/' &&
+
               <a href="/">
                 <img src={logo} alt="" />
               </a>
               }
+
+
+              <div
+              style={{ display: 'flex',
+              gap: '20px'}}
+              >
 
                 <a href="/blog">
                   <h1>BLOG</h1></a>
@@ -44,11 +57,23 @@ const MenuNav = () => {
 
                 <a href="#contacto"><h1>CONTACTO</h1></a>
                 <div 
-                onClick={() => setActive(!active)}
                 className={
                   active ? 'search-bar active' : 'search-bar'}>
-                  <FontAwesomeIcon icon={faSearch} />
+                  <FontAwesomeIcon icon={faSearch} 
+                  onClick={() => setActive(!active)}
+                  />
+                  { active && 
+                  <SearcherBar
+                  active={active}
+                  />
+                  }
                 </div>
+
+              </div>
+
+                  
+
+                
     </MenuNavContainer>
   );
 }
@@ -60,25 +85,42 @@ const MenuNavContainer = styled.div`
     width: 100%;
     height: 100%;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    padding-right: 350px;
     z-index: 100;
-    gap: 30px;
+    gap: 25px;
+    padding:  0 300px;
+
+    @media (max-width: 1600px) {
+      padding: 0 260px;
+    }
 
     @media (max-width: 1400px) {
-      padding-right: 220px;
+      padding: 0 220px;
     }
 
     @media (max-width: 1100px) {
-      padding-right: 50px;
+      padding: 0 50px;
     }
 
     a {
-      img {
-        transition: 500ms ease-in-out;
-      }
-    }
+          img {
+            height: 30px;
+            transition: 500ms linear;
+            cursor: pointer; 
+            filter: brightness(0%) invert(1);
+
+            @media (max-width: 1100px) {
+              filter: invert(0) brightness(100%);
+            }
+
+            &:hover {
+              filter: brightness(0%) invert(1) contrast(50%);
+            }
+
+          }
+      } 
+
     
     .search-bar {
       display: flex;
@@ -91,19 +133,29 @@ const MenuNavContainer = styled.div`
       padding-left: 10px ;
       transition: width 1.5s ease;
 
+      input {
+        background-color: transparent;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
       svg {
         font-size: 18px;
         color: white;
-      }
 
-      &:hover {
+        &:hover {
         cursor: pointer;
-        filter: contrast(120%);
+        filter: contrast(70%);
       }
     }
+      }
+
+     
 
     .active {
-      width: 150px!important;
+      width: 250px!important;
     }
 
     a {
@@ -124,7 +176,7 @@ const MenuNavContainer = styled.div`
         justify-content: center;
         align-items: center;
         cursor: default;
-        font-weight: 400;
+        font-weight: 600;
         color: black;
         
         @media (max-width: 764px) {
@@ -135,10 +187,6 @@ const MenuNavContainer = styled.div`
         &:hover {
           cursor: pointer;
           color: ${props => props.theme.primary};
-          }
-  
-          img {
-            height: 60px;
           }
       }
     } 

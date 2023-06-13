@@ -4,27 +4,38 @@
         "title": "Configurar cuotas sin interés con un monto mínimo",
         "link" : "mp_1",
         "date" : "10 de Agosto, 2023",
-        "img" : "mp_1/mp1.jpg"
+        "img" : "mp_1/mp1.jpg",
+        "icon" : "mplogo.png",
+        "time": "3" 
     },
     {   
         "id": 2,
         "title": "Transformación digital",
         "link": "calim_1",
         "date" : "10 de Agosto, 2023",
-        "img": "calim_1/calculadora.webp"
+        "img": "calim_1/calculadora.webp",
+        "icon" : "calim-logo.png",
+        "time": "2" 
+        
     },
     {   
         "id": 3,
         "title": "Saldo a favor de Ingresos Brutos",
         "link": "mp_2",
         "date" : "10 de Agosto, 2023",
-        "img": "mp_2/mp-photo.webp"
+        "img": "mp_2/mp-photo.webp",
+        "icon" : "calim-logo.png",
+        "time": "3" 
+        
     },
     {   
         "id": 4,
         "title": "Cuarto Ejemplo",
         "link": "calim_2",
         "date" : "20 de Agosto, 2023",
-        "img": "calim_2/calim_2.png"
+        "img": "calim_2/calim_2.png",
+        "icon" : "calim-logo.png",
+        "time": "5" 
+
     }
 ]
