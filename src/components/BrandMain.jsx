@@ -121,7 +121,7 @@ const BrandMain = () => {
                         </div>
                 </div>
 
-                <div
+                {/* <div
                 className='phrase'
                 >
                 
@@ -135,7 +135,7 @@ const BrandMain = () => {
                 </p>
 
 
-                </div>
+                </div> */}
 
                 <div  
                 className="features-box">
