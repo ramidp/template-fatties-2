@@ -121,7 +121,7 @@ const Container = styled.div`
     z-index: 2;
     flex-direction: column;
     background-image: url('https://i.ibb.co/0rBMC8T/FONDO-LINEAS.png'), 
-    linear-gradient(245deg, orange 10% ,${props => props.theme.secondary} 60%);
+    linear-gradient(245deg, ${props => props.theme.tertiary} 10% ,${props => props.theme.secondary} 60%);
     background-size: cover;
     padding-top: 100px;
     padding-bottom: 100px;
@@ -142,7 +142,7 @@ const Container = styled.div`
             margin: 30px 0;
             width: 100%;
             height: 10px;
-            background: linear-gradient(245deg,  rgba(255, 138, 43, 0.068) 10%, #ffa60097 30% , #ffffff 80%);
+            background: linear-gradient(245deg,  rgba(255, 138, 43, 0.068) 10%, ${props => props.theme.tertiary}  30% , #ffffff 80%);
         }
 
 

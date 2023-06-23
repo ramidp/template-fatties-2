@@ -47,6 +47,7 @@ const Menu = () => {
                   {/* <a onClick={() => setHidden(false)} href="/faq">FAQ</a> */}
                   <a onClick={() => setHidden(false)} href="/nosotros">¿QUIÉNES SOMOS?</a>
                   <a onClick={() => setHidden(false)} href="#contacto">CONTACTO</a>
+                  
                   </div>
                 </div>
                 
@@ -158,7 +159,7 @@ const MenuContainer = styled.div`
         width: 100%;
         height: 70px;
         transition: 500ms ease-in;
-        background: linear-gradient(110deg, orange 1% ,${props => props.theme.secondary} 54%, rgba(255, 255, 255, 1) 54.07%);
+        background: linear-gradient(70deg, ${prop => prop.theme.tertiary}  1% ,${props => props.theme.secondary} 43%, rgba(255, 255, 255, 1) 43.09%);
         box-shadow: 0px 0px 5px 5px rgba(124, 124, 124, 0.5);
         z-index: 10;
 

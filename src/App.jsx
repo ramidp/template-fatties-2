@@ -8,6 +8,7 @@ import Blog from './components/products/Blog-map';
 import Blog1 from './components/products/Blog1';
 import Blog2 from './components/products/Blog2';
 import Blog3 from './components/products/Blog3';
+import Blog4 from './components/products/Blog4';
 import Faq from './components/products/Faq';
 import Faq1 from './components/products/Faq1';
 import Faq2 from './components/products/Faq2';
@@ -42,6 +43,7 @@ const App = () => {
   const [theme, setTheme] = useState({
 
       primary: 'rgb(84,193,186)',
+      primaryOpact: '#7cdaa3',
       secondary: 'rgb(239,73,49)', // Main Color de la página
       secondaryOpact: 'rgb(248, 168, 156)',
       tertiary: 'rgb(245,186,63)',
@@ -71,6 +73,7 @@ const App = () => {
                     <Route path={'/blog/mp_1'} element={<Blog1/>}/>
                     <Route path={'/blog/mp_2' } element={<Blog2/>}/>
                     <Route path={'/blog/calim_1' } element={<Blog3/>}/>
+                    <Route path={'/blog/mp_3' } element={<Blog4/>}/>
                     <Route path={'/faq/fatties_faq' } element={<Faq1/>}/>
                     <Route path={'/faq/mercadopago_faq' } element={<Faq2/>}/>
                     <Route path={'/faq/calim_faq' } element={<Faq3/>}/>

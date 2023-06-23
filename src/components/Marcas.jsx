@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import 'aos/dist/aos.css'
 
 
@@ -340,9 +340,9 @@ const Container = styled.div`
 
         .wallimg {
           background-image: url('https://i.ibb.co/gyQqkJb/banner-2.png');
-          background-size: 90%;
+          background-size: cover;
           width: 100%;
-          height: 300px;
+          height: 350px;
           background-repeat: repeat-x;
           animation-duration: 2000s;
           animation-timing-function: linear;
@@ -356,7 +356,11 @@ const Container = styled.div`
             @keyframes carousel {
               0% {background-position: 0 0}
               100% {background-position: -100000px 0}
-        }
+          }
+
+            @media (max-width: 764px) {
+              height: 250px;          
+            }
 
         /* @keyframes scroll {
           0% {transform: translateX(0)};

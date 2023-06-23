@@ -71,15 +71,14 @@ const ProductContainer = styled.div`
             font-weight: 400;
                
                @media (max-width: 1100px) {
+                    text-align: center;
                     font-size: 32px;
                 }
 
                 @media (max-width: 600px) {
-                    font-size: 22px;
+                    font-size: 26px;
                 }
-                @media (max-width: 376px) {
-                    font-size: 20px;
-                }
+
 
             }
     
@@ -124,6 +123,7 @@ const ProductContainer = styled.div`
                     
                     h1 {
                         width: auto;
+                        font-size: 24px;
                         padding-bottom: 10px;
                     }
                     
@@ -131,6 +131,7 @@ const ProductContainer = styled.div`
                         text-align: left;
                         width: 100%;
                         margin: 0;
+                        font-size: 18px;
                         padding-bottom: 10px;
                     }
                     
@@ -143,9 +144,11 @@ const ProductContainer = styled.div`
                             padding: 0;
                             padding-bottom: 5px;
                             text-align: left;
+                            font-size: 16px;
                             font-style: italic;
                         }
                         ol {
+                            font-size: 16px;
                             padding-bottom: 5px;
                             padding: 0;
                             text-align: left;
@@ -160,7 +163,7 @@ const ProductContainer = styled.div`
             margin: 10px 0;
             width: 100%;
             height: 10px;
-            background: linear-gradient(50deg, white 5%, #7cdaa3 20%, ${props => props.theme.primary} 60%, white 95%);
+            background: linear-gradient(50deg, white 5%, ${props => props.theme.secondaryOpact} 20%, ${props => props.theme.primary} 60%, white 95%);
                 }
 
             .wall-img {

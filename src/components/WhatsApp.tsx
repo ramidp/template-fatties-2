@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import React, { useEffect, useState } from 'react'
+import { logEvent } from "firebase/analytics";
+import { analytics } from '../firebase/firebaseConfig'
 
 
 const WhatsAppBtn = () => {
@@ -26,6 +28,9 @@ const WhatsAppBtn = () => {
         <Container>
             <div>
                 <a href={"https://api.whatsapp.com/send?phone=5491123956360&text=" + `${mensaje}`}
+                onClick={() => {
+                        logEvent(analytics, 'Test WhatsApp Button')
+                }}
                 target="_blank">
                 <img src={logowhatsapp} alt="" />
                 </a>

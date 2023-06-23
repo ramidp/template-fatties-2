@@ -98,7 +98,7 @@ const Footer = () => {
                                     <a href="https://www.facebook.com/mp.vendedores/" target="_blank" ><FacebookLogo/> </a>
                                     <a href="https://www.instagram.com/fatties.ac" target="_blank"><InstagramLogo/> </a>
                                 </div>
-                                <p>©  2023 Fatties Mercado Pago.</p> 
+                                <p>©  2023 Fatties</p> 
                             </div>
                         </div>
                         <div className="third-part">
@@ -139,11 +139,10 @@ const FooterContainer = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(270deg, orange 10% ,${props => props.theme.secondary} 45%);
+        background: linear-gradient(270deg, ${props => props.theme.tertiary} 10% ,${props => props.theme.secondary} 45%);
         padding: 20px;
         width: 100%;
-        margin-bottom: 70px;
-
+       
         p {
             text-align: center;
             color: white;
@@ -264,8 +263,11 @@ const FooterContainer = styled.div`
                     margin: 0 5px;
                     width: 40px;
                     fill: white;
+                    transition: 300ms ease all;
+
                     &:hover {
-                        filter: contrast(30%);
+                        transform: scale(1.05);
+                        filter: contrast(50%);
                     }
                 }
             } 

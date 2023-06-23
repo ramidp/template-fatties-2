@@ -5,8 +5,6 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight, faGreaterThan } from '@fortawesome/free-solid-svg-icons';
 
-
-
 const Service = ({service}) => {
 
 
@@ -38,7 +36,7 @@ const Service = ({service}) => {
                     >
                         <div  className="features">
                             <div className="logos-div">
-                                {service.logo == logoMp || service.logo == logoCalim ? <img 
+                                {service.logo === logoMp || service.logo == logoCalim ? <img 
                                 className={service.logoclass} src={service.logo} alt="" />
                                 :
                                 <FontAwesomeIcon 
@@ -81,8 +79,18 @@ const Service = ({service}) => {
                                     <h1>{service.title}</h1>
                                     <h3>{service.subtitle}</h3>
                                 </div>
-                                <p>{service.text2}</p>
-                                {service.text3 && <p>{service.text3}</p>}
+                                
+                                <div>
+                                    <p><strong> {service.text2} </strong></p>
+                                    {service.text3 && <p>{service.text3}</p>}
+                                    {service.text4 && <p>{service.text4}</p>}
+                                    {service.text5 && <p>{service.text5}</p>}
+                                    {service.text6 && <p>{service.text6}</p>}
+                                    {service.text7 && <p>{service.text7}</p>}
+                                    {service.text8 && <p>{service.text8}</p>}                              
+
+                                </div>
+                                <a href={service.contacttext} target='_blank'>Contacto</a>
                                 <a href="">Link a FAQ</a>
                             </div>
                         </div>    
@@ -114,10 +122,10 @@ const Container = styled.div`
     }
 
     .f1 {
-        background: linear-gradient(50deg, #7cdaa3 10%, ${props => props.theme.primary} 40%);
+        background: linear-gradient(50deg, ${props => props.theme.primaryOpact} 10%, ${props => props.theme.primary} 40%);
     }
     .f2 {
-        background: linear-gradient(240deg, orange 10% ,${props => props.theme.secondary} 30%);
+        background: linear-gradient(240deg, ${props => props.theme.tertiary} 10% ,${props => props.theme.secondary} 30%);
     }
 
 
@@ -250,7 +258,7 @@ const Container = styled.div`
             h1 {
                 text-transform: uppercase;
                 color: gray;
-                width: 100%;
+                width: 70%;
                 text-align: center;
                 font-size: 40px;
                 font-weight: 800;
@@ -279,11 +287,11 @@ const Container = styled.div`
             }
 
             .svg1 {
-                background: linear-gradient(240deg, orange 10% ,${props => props.theme.secondary} 30%);
+                background: linear-gradient(240deg, ${prop => prop.theme.tertiary}  10% ,${props => props.theme.secondary} 30%);
             }
 
             .svg2 {
-                background: linear-gradient(50deg, #7cdaa3 10%, ${props => props.theme.primary} 40%);
+                background: linear-gradient(50deg, ${prop => prop.theme.primaryOpact} 10%, ${props => props.theme.primary} 40%);
             }
 
             .svg-serv {

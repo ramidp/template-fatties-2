@@ -4,8 +4,6 @@ import blogs from '../data/blogs.json'
 
 const SearcherBar = () => {
 
-
-
     useEffect(() => {
         setFilteredData('')
     },[])
@@ -98,7 +96,7 @@ const Container = styled.div`
                 color: white;
                 border: none;
                 height: 40px;
-                width: 100%;
+                width: 60%;
                 padding-left: 10px;
                 border-top-left-radius: 8px;
                 border-bottom-right-radius: 8px;

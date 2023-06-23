@@ -26,40 +26,55 @@ const BrandMain = () => {
         {
             id: 1,
             title: 'Representante Oficial',
-            subtitle: 'Subtitulo',
-            text: 'Brindamos asesoría completa en el uso de la plataforma de Mercado Pago.',
-            text2: 'Asesoria integral para el uso de la plataforma. Podrás contar con, reposicion de materiales de forma diaria, garantia para tu lector de tarjetas y ademas, cobertura ante contracargo y/o desconocimiento de tus ventas',
+            subtitle: 'Asociación con Mercado Pago',
+            text: 'Somos Partner oficial de Mercado Pago, brindamos asistencia y asesoramiento en el uso de la plataforma.',
+            text2: 'Por tener a Fatties como consultora certificada su comercio accede sin costo alguno a los siguientes beneficios:',
+            text3: 'Reposición de materiales de marca sin costo: cartelería QR y rollos de papel para Point.',
+            text4: 'Recambio de lectores (garantía de por vida)',
+            text5: 'Acceso a bonificaciones de tasas exclusivas para su marca.',
+            text6: 'Canal de atención telefónica exclusivo de lunes a viernes de 9 a 18 hs.',
+            text7: 'Acceso a nuevas funcionalidades y herramientas de la plataforma de la mano de una empresa con 5 años de experiencia en el rubro.',
+            text8: 'Si tu comercio todavía no tiene un consultor asignado, no dudes en contactarnos nuestros asesores con gusto les informaran como darse de alta al programa de representación.',
+            contacttext: 'https://api.whatsapp.com/send?phone=5491123956360&text="Buenas, Me gustaría contactarlos para más información sobre sus servicios asociados a Mercado Pago y querría hablar con un representante"',
             logo: logoMp,
             anchorclass: ' mp-div',
             logoclass: 'mp',
         },
         {
             id: 2,
-            title: 'Puesta a Punto',
-            subtitle: 'Subtitulo',
-            text: 'Solución para el manejo de tus impuestos de forma fácil y práctica. Contamos con asesoramiento impositivo en tiempo real.',
-            text2: 'Ejemplo de texto que explique el Servicio',
+            title: 'Partner Oficial',
+            subtitle: 'Asociación con Calim',
+            text: 'Soluciones contables para Monotributos, Responsables inscriptos y Empresas. Gestioná tus inscripciones, liquidaciones de sueldos y todo tipo de trámites ante AFIP 100% online.',
+            text2: 'Sueldos: Liquidaciones, Form 931 mensual, Asesoría, Novedades y Libro de sueldo digital',
+            text3: 'Monotributos: Inscripciones, recategorizaciones, facturador móvil, asistencia.',
+            text4: 'Resp Inscriptos: Inscripciones, declaraciones juradas, facturador móvil.',
+            text5: 'Empresas: Creación de SA y SRL, Impuestos y balances, facturador móvil, asistencia con contador.',
+            text6: 'Para saber más sobre como suscribirse a Calim y tener una reunión con uno de nuestros representantes contactanos.',
+            contacttext: 'https://api.whatsapp.com/send?phone=5491123956360&text="Buenas, Me gustaría contactarlos para más información sobre sus servicios asociados a Calim y querría hablar con un representante"',
             logo: logoCalim,
             anchorclass: ' calim-div',
             logoclass: 'calim',
         },
         {
             id: 3,
-            title: 'Atención telefónica',
-            subtitle: 'Subtitulo',
-            text: 'Canal de atención telefónica eficiente y conveniente para que puedas comunicarte con nosotros. Contamos con asesores altamente capacitados para brindar ayuda y asesoramiento sobre cualquier duda o consulta que puedan tener.',
-            text2: 'Nuestros clientes cuentan con un canal de atención telefónica que combina conocimiento y experiencia. Enfocados en la excelencia del servicio al cliente, ofrecemos un canal de atención telefónica que se distingue por su conocimiento y experiencia. Nuestros asesores altamente capacitados están a disposición para brindar ayuda y asesoramiento sobre cualquier duda o consulta sobre la plataforma u otro servicio brindado.',
+            title: 'Centro de atención telefónica',
+            subtitle: 'Servicio exclusivo de Fatties',
+            text: 'Nuestro call center es el corazón de nuestro servicio al cliente. Con un equipo de agentes altamente capacitados y comprometidos, nos enfocamos en brindar una experiencia excepcional a cada persona que nos contacta. Nuestro centro de atención telefónica utiliza tecnología de vanguardia y procesos eficientes para garantizar una comunicación fluida y eficaz',
+            text2: 'Nuestro centro de atención, se encuentra disponible de Lunes a Viernes de 9 a 18 hs,',
+            text3: 'Si estás interesado en sumar el servicio de Atención telefónica para tu marca no dudes en contactarnos',
+            contacttext: 'https://api.whatsapp.com/send?phone=5491123956360&text="Buenas, Me gustaría contactarlos por el servicio de Atención telefónica"',
             logo: faPhoneVolume,
             anchorclass: ' f2',
             logoclass: 'svg-serv svg1',
         },
         {
             id: 4,
-            title: 'Conectar',
-            subtitle: 'Subtitulo',
+            title: 'Cross-Selling Estratégico',
+            subtitle: 'Servicio exclusivo de Fatties',
             text: 'En Fatties ofrecemos conectar clientes con clientes para todo tipo de servicios. Hacemos de nexo entre gente que busca un servicio y gente que ofrece dicho servicio',
-            text2: 'A que nos referimos con Conectar?',
-            text3: 'Conectamos Cliente con Cliente. Buscas un servicio de Diseño Gráfico? Nosotros te lo podemos brindar. Desarrollo Web? También podemos asesorarte y vincularte. Logistica, Edición de Video? Tenemos una cartera de más de 4000+ clientes dispuestos a ser conectados.',
+            text2: 'Nuestro equipo de expertos en ventas trabaja en estrecha colaboración contigo para desarrollar un programa de cross-selling adaptado a tus necesidades específicas. Comenzamos analizando en detalle tu cartera propia de comercios y evaluando las oportunidades de ventas cruzadas entre ellos. A partir de ahí, diseñamos estrategias y tácticas personalizadas para promover y fomentar la colaboración entre tus comercios, incentivando a tus clientes a realizar compras adicionales.',
+            text3: 'Para tener una llamada con uno de nuestros representantes y saber mas sobre nuestras campañas de ventas contactanos.',
+            contacttext: 'https://api.whatsapp.com/send?phone=5491123956360&text="Buenas, Me gustaría contactarlos por servicio de Cross-Selling"',
             logo: faHandshake,
             anchorclass: ' f1',
             logoclass: 'svg-serv svg2',
@@ -86,9 +101,7 @@ const BrandMain = () => {
                                 </span>
                                 </h1>
                             <p className="m-0 pt-0">
-                            Representantes Oficiales y 
-                            Consultores certificados de 
-                            Mercado Pago.
+                            Somos tu aliado digital en el crecimiento de tu comercio.
                             </p>
 
                             </div>
@@ -220,11 +233,12 @@ const BrandMainContainer = styled.div`
                     display: flex;
                     background-color: white;
                     width: 65%;
-                    min-height: 50%;
+                    min-height: 40%;
                     height: auto;
                     flex-direction: column;
-                    justify-content: space-between;
+                    justify-content: flex-start;
                     align-items: center;
+                    gap: 10px 0;
                     padding: 50px;
 
                     @media (max-width: 764px) {
@@ -235,13 +249,19 @@ const BrandMainContainer = styled.div`
                     p {
                         font-size: 18px;
                         font-weight: 300;
+                        text-align: left;
+                        width: 100%;
+                        margin: 0;
+                        margin-bottom: 5px;
                     }
 
                     h1 {
-                        background-color: blue;
-                        padding: 5px 20px;
+                        background-color: ${ prop => prop.theme.secondary};
+                        padding: 10px 100px;
+                        text-align: center;
                         border-radius: 5px;
                         color: white;
+                        display: flex;
                     }
 
                     h1, h3 {
@@ -310,13 +330,13 @@ const BrandMainContainer = styled.div`
             gap: 7vh;
             display: flex;
             // Buena solucion para que la linea diagonal no tenga pixeles, es sumarle .03% al que divide.  
-            background: linear-gradient(110deg, orange 10% ,${props => props.theme.secondary} 39%, rgba(255, 255, 255, 1) 39.025%);
+            background: linear-gradient(74deg, ${prop => prop.theme.tertiary} 10% ,${props => props.theme.secondary} 40%, rgba(255, 255, 255, 1) 40.04%);
             animation: bgmovement 4s ease forwards;
             background-size: 200vw 200vw;
 
 
             @media (max-width: 1100px) {
-                background: linear-gradient(70deg, orange 10% ,${props => props.theme.secondary} 68%);
+                background: linear-gradient(70deg, ${prop => prop.theme.tertiary}  10% ,${props => props.theme.secondary} 68%);
                 gap: 10vh;
             }
 
@@ -392,7 +412,7 @@ const BrandMainContainer = styled.div`
                     }
 
                     .fatties-logo {
-                        height: 150px;
+                        height: 100px;
                         width: 200px;
                         object-fit: scale-down;
 
@@ -451,7 +471,7 @@ const BrandMainContainer = styled.div`
             p {
                 text-align: left;
                 font-weight: 600;
-                width: 70%;
+                width: 100%;
                 font-size: 22px;
                 color: white;
                 text-shadow: 0px 0px 3px ${props => props.theme.secondary};
@@ -548,7 +568,7 @@ const BrandMainContainer = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(240deg, orange 10% ,${props => props.theme.secondary} 30%);
+        background: linear-gradient(240deg, ${prop => prop.theme.tertiary}  10% ,${props => props.theme.secondary} 30%);
         color: white;
         text-align: center;
         font-weight: 900;

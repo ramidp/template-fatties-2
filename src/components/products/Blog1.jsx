@@ -43,7 +43,7 @@ const Blog1 = () => {
                                     <h1>¿Cómo se configura esta nueva herramienta? </h1>
 
                                     <ul>
-                                        <li><strong>Ir a la sección Costos:</strong>En la parte superior de la sección de costos, se muestran las configuraciones sobre cuotas que tienen los comercios.</li>
+                                        <li><strong>Ir a la sección Costos:</strong> En la parte superior de la sección de costos, se muestran las configuraciones sobre cuotas que tienen los comercios.</li>
                                         <li><strong>Ir a cuotas sin interés:</strong> Hay que ingresar en la primera sección dentro de costos se llama “Vendé en cuotas sin interés”</li>
                                         <li><strong> Configurar el monto mínimo a partir del cual se ofrece cada cuota:</strong> La sección de cuotas sin interés se divide en 3:</li>
                                             <ul>

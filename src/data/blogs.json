@@ -30,12 +30,12 @@
     },
     {   
         "id": 4,
-        "title": "Cuarto Ejemplo",
-        "link": "calim_2",
-        "date" : "20 de Agosto, 2023",
-        "img": "calim_2/calim_2.png",
-        "icon" : "calim-logo.png",
-        "time": "5" 
+        "title": "Vinculá tu lector Smart a tu QR impreso",
+        "link": "mp_3",
+        "date" : "22 de Junio, 2023",
+        "img": "mp_3/mp_3.png",
+        "icon" : "mplogo.png",
+        "time": "7" 
 
     }
 ]

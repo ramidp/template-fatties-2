@@ -14,7 +14,7 @@ const ProductContainer = styled.div`
     padding-bottom: 50px;
     margin-bottom: 50px;
     background-image:url('https://i.ibb.co/0rBMC8T/FONDO-LINEAS.png'),
-    linear-gradient(140deg, orange 10% ,${props => props.theme.secondary} 60%);
+    linear-gradient(140deg, ${props => props.theme.tertiary} 10% ,${props => props.theme.secondary} 60%);
     background-size: cover;
 
         .title {
@@ -45,7 +45,7 @@ const ProductContainer = styled.div`
             .blog-text {
                 margin: 0;
                 font-size: 72px;
-                background: -webkit-linear-gradient(140deg, orange 10% ,${props => props.theme.secondary} 60%);
+                background: -webkit-linear-gradient(140deg, ${props => props.theme.tertiary} 10% ,${props => props.theme.secondary} 60%);
                 -webkit-background-clip: text;
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
@@ -69,7 +69,7 @@ const ProductContainer = styled.div`
             margin: 30px 0;
             width: 100%;
             height: 10px;
-            background: linear-gradient(40deg,  rgba(255, 138, 43, 0.068) 10%, #ffa60097 30% , #ffffff 80%);
+            background: linear-gradient(40deg,  rgba(255, 138, 43, 0.068) 10%, ${props => props.theme.tertiary} 30% , #ffffff 80%);
         }
 
 

@@ -31,7 +31,7 @@ const ContainerError404 = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 50vh;
+    height: 70vh;
     background-color: ${props => props.theme.secondary};
     margin-bottom: 50px;
 

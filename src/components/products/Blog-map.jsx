@@ -266,11 +266,11 @@ const BlogContainer = styled.div`
             }
 
             .icon-div {
-                height: 140px;
-                width: 20%;
+                height: 100px;
+                width: 20.5%;
                 display: flex;
                 justify-content: flex-end;
-                align-items: flex-end;
+                align-items: flex-start;
 
                 @media (max-width: 1100px) {
                     width: 82%;
@@ -279,9 +279,14 @@ const BlogContainer = styled.div`
                 position: absolute;
                 
                 .icon-brand {
-                    width: 80px;
-                    filter: brightness(0) invert(100%);
-
+                    height: 40px;
+                    width: 100px;
+                    object-fit: scale-down;
+                    padding: 10px;
+                    margin-top: 10px; 
+                    background-color: white;
+                    border-radius: 15px;
+                    
                     @media (max-width: 1100px) {
                         width: 60px;
                     }

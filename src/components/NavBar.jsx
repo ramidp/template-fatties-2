@@ -24,8 +24,6 @@ const MenuNav = () => {
 
   },[])
 
- const [isHome, setIsHome] = useState(true)
-
   return (
     <MenuNavContainer
     style={{ justifyContent: location === '/' ? 'flex-end' : 'space-between'}}
@@ -128,7 +126,7 @@ const MenuNavContainer = styled.div`
       align-items: center;
       width: 50px;
       height: 30px;
-      background: linear-gradient(50deg, #7cdaa3 10%, ${props => props.theme.primary} 40%);
+      background: linear-gradient(50deg, ${props => props.theme.primaryOpact} 10%, ${props => props.theme.primary} 40%);
       border-radius: 20px;
       padding-left: 10px ;
       transition: width 1.5s ease;
