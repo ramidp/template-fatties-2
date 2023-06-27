@@ -116,11 +116,11 @@ const Blog = () => {
                                             className="banner"
                                             src={require('../../images/Blog/' + `${blog.img}`)} alt="" />
 
-                                            <div className="icon-div">
+                                            {/* <div className="icon-div">
                                                 <img 
                                                 className="icon-brand"
                                                 src={require('../../images/' + `${blog.icon}`)} alt="" />
-                                            </div>
+                                            </div> */}
 
                                             <h1>{blog.title}</h1>
                                             <p>{blog.date}</p>
@@ -175,12 +175,16 @@ const BlogContainer = styled.div`
             justify-content: space-between;
             align-items: flex-start;
             width: calc(33.30% - 13.33px);
-            min-height: 40vh;
+            min-height: 45vh;
             height: auto;
             transition: 0.2s linear;
             border-bottom: 1.5px solid white;
             
     
+            @media (max-width: 1400px) {
+                min-height: 55vh;
+            }
+            
             @media (max-width: 1100px) {
                 width: 100%;
                 min-height: auto;
@@ -209,9 +213,8 @@ const BlogContainer = styled.div`
             h1 {
                 min-height: 8vh;
                 width: 100%;
-                padding: 0;
+                padding: 10px 0;
                 font-size: 26px;
-                padding-bottom: 10px;
                 font-weight: 600;
                 z-index: 2;
                 text-align: left;
@@ -260,7 +263,7 @@ const BlogContainer = styled.div`
 
             .banner {
                 width: 100%;
-                height: 150px;
+                height: 200px;
                 object-fit: cover;
                 object-position: 50% 20%;
             }
@@ -279,10 +282,10 @@ const BlogContainer = styled.div`
                 position: absolute;
                 
                 .icon-brand {
-                    height: 40px;
-                    width: 100px;
+                    height: 50px;
+                    width: 80px;
                     object-fit: scale-down;
-                    padding: 10px;
+                    padding: 5px;
                     margin-top: 10px; 
                     background-color: white;
                     border-radius: 15px;
@@ -376,7 +379,7 @@ const BlogContainer = styled.div`
                     width: 100%;
                     padding: 0;
                     font-size: 36px;
-                    padding-bottom: 10px;
+                    padding: 10px;
                     font-weight: 600;
                     z-index: 2;
                     text-align: left;

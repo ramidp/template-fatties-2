@@ -153,7 +153,7 @@ const MenuNavContainer = styled.div`
      
 
     .active {
-      width: 250px!important;
+      width: 180px!important;
     }
 
     a {

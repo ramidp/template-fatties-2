@@ -106,6 +106,7 @@ const ProductContainer = styled.div`
 
                 line-height: 28px;
                 font-size: 16px;
+                background-color: #dfdfdf;
 
                 
                 @media (max-width: 1100px) {
@@ -113,7 +114,6 @@ const ProductContainer = styled.div`
                 }
 
                 .inner-text {
-                    background-color: #e6e6e6;
                     padding: 20px;
                     line-height: 35px;
 
@@ -125,6 +125,9 @@ const ProductContainer = styled.div`
                         width: auto;
                         font-size: 24px;
                         padding-bottom: 10px;
+                        @media (max-width: 764px) {
+                            font-size: 20px;
+                        }
                     }
                     
                     p {
@@ -133,11 +136,15 @@ const ProductContainer = styled.div`
                         margin: 0;
                         font-size: 18px;
                         padding-bottom: 10px;
+                        @media (max-width: 764px) {
+                            font-size: 16px;
+                        }
                     }
                     
                     ul {
                         padding-bottom: 10px;
                         display: flex;
+                        text-align: left;
                         flex-direction: column;
                         width: 100%;
                         li {
@@ -163,36 +170,38 @@ const ProductContainer = styled.div`
             margin: 10px 0;
             width: 100%;
             height: 10px;
-            background: linear-gradient(50deg, white 5%, ${props => props.theme.secondaryOpact} 20%, ${props => props.theme.primary} 60%, white 95%);
+            background: linear-gradient(50deg, white 5%, ${props => props.theme.primaryOpact} 20%, ${props => props.theme.primary} 60%, white 95%);
                 }
 
             .wall-img {
-                background-color: white;
-                width: 50%;
+                background-color: #dfdfdf;
+                width: 65%;
                 float: right;
 
                 @media (max-width: 1100px) {
                     float: none;
                     margin: 0;
                     width: 100%;
+                    background-color: white;
                 }
 
                 img {
-                    width: calc(100% - 20px);
-                    height: 250px;
+                    width: calc(100% - 30px);
+                    height: calc(450px - 30px);
                     object-fit: cover;
                     object-position: 50% 30%;
-                    filter: opacity(40%);
-                    margin-bottom: 20px;
-                    margin-left: 20px;
+                    margin-bottom: 30px;
+                    margin-left: 30px;
     
                     @media (max-width: 1100px) {
                         height: 200px;
                         width: 100%;
                         margin-left : 0;
                     }
-                    @media (max-width: 600px) {
-                        height: 150px;
+                    @media (max-width: 764px) {
+                        height: 200px;
+                        margin: 0;
+                        margin-bottom: 10px;
                     }
     
     

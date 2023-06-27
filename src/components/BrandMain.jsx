@@ -242,8 +242,9 @@ const BrandMainContainer = styled.div`
                     padding: 50px;
 
                     @media (max-width: 764px) {
-                        width: 90%;
+                        width: 100%;
                         min-height: 85%;
+                        padding: 10px
                     }
 
                     p {
@@ -262,6 +263,11 @@ const BrandMainContainer = styled.div`
                         border-radius: 5px;
                         color: white;
                         display: flex;
+                        font-size: 30px;
+                    }
+
+                    h3 {
+                        font-size: 24px;
                     }
 
                     h1, h3 {
@@ -327,13 +333,12 @@ const BrandMainContainer = styled.div`
             width: 100%;
             min-height: 100vh;
             height: auto;
-            gap: 7vh;
+            gap: 3vh;
             display: flex;
             // Buena solucion para que la linea diagonal no tenga pixeles, es sumarle .03% al que divide.  
-            background: linear-gradient(74deg, ${prop => prop.theme.tertiary} 10% ,${props => props.theme.secondary} 40%, rgba(255, 255, 255, 1) 40.04%);
+            background: linear-gradient(105deg, ${prop => prop.theme.tertiary} 10% ,${props => props.theme.secondary} 37%, rgba(255, 255, 255, 1) 37.04%);
             animation: bgmovement 4s ease forwards;
             background-size: 200vw 200vw;
-
 
             @media (max-width: 1100px) {
                 background: linear-gradient(70deg, ${prop => prop.theme.tertiary}  10% ,${props => props.theme.secondary} 68%);
@@ -346,14 +351,14 @@ const BrandMainContainer = styled.div`
             }
 
             @media (max-height: 720px) {
-                gap: 0vh;
+                gap: 5vh;
                 padding: 0 0 50px 0;
             }
 
 
             @keyframes bgmovement {
                 0% {
-                    background-position: 100% 100%;
+                    background-position: 80% 80%;
                 }
                 100% {
                     background-position: 30% 50%;
@@ -362,8 +367,8 @@ const BrandMainContainer = styled.div`
             
             .brand-title {
                 width: 100%;
-                padding: 70px 100px 0 100px ;
-                min-height: 70vh;
+                padding: 90px 70px 0 70px ;
+                min-height: 60vh;
                 height: auto;
                 display: flex;
                 flex-direction: row;
@@ -371,7 +376,7 @@ const BrandMainContainer = styled.div`
                 align-items: center;
                 
                 @media (max-width: 1400px) {
-                    padding: 70px 50px 0 50px;
+                    padding: 90px 50px 0 50px;
                 }
 
                 @media (max-width: 1100px) {
@@ -385,11 +390,16 @@ const BrandMainContainer = styled.div`
 
                 .brand-title-1 {
                     width: 50%;
-                    gap: 20px;
+                    height: 100%;
+                    gap: 50px;
                     display: flex;
                     flex-direction: column;
-                    justify-content: center;
-                    align-content: center;
+                    justify-content: flex-start;
+                    align-content: flex-start;
+
+                    @media (max-width: 1400px) {
+                        gap: 30px;
+                    }
 
                     @media (max-width: 1100px) {
                         width: 100%;
@@ -412,8 +422,8 @@ const BrandMainContainer = styled.div`
                     }
 
                     .fatties-logo {
-                        height: 100px;
-                        width: 100px;
+                        height: 150px;
+                        width: 150px;
                         object-fit: scale-down;
 
                         
@@ -430,9 +440,9 @@ const BrandMainContainer = styled.div`
                 }
 
                 .cellphone-logo {
-                    width: 50%;
-                    height: 80%;
-                    object-fit: scale-down;
+                    width: 60%;
+                    height: 90%;
+                    object-fit: contain;
 
                     @media (max-width: 1100px) {
                         display: none;
@@ -441,20 +451,25 @@ const BrandMainContainer = styled.div`
 
 
                 span {
-                    font-weight: bold;
+                    font-weight: bolder;
                 }
 
                 h1 {
                 text-align: left;
                 font-weight: 600;
                 width: 100%;
-                font-size: 60px;
+                font-size: 70px;
                 color: white;
                 text-shadow: 0px 0px 3px ${props => props.theme.secondary};
 
+                @media (max-width: 1500px)  {
+                padding: 0;
+                font-size: 60px;
+                }
+
                 @media (max-width: 1400px) {
                 padding: 0;
-                font-size: 50px;
+                font-size: 55px;
                 }
 
                 @media (max-width: 1100px) {
@@ -471,13 +486,14 @@ const BrandMainContainer = styled.div`
             p {
                 text-align: left;
                 font-weight: 600;
-                width: 100%;
+                width: 70%;
                 font-size: 22px;
                 color: white;
                 text-shadow: 0px 0px 3px ${props => props.theme.secondary};
 
+
                 @media (max-width: 1400px) {
-                width: 100%;
+                width: 80%;
                 }
 
                 @media (max-width: 1100px) {

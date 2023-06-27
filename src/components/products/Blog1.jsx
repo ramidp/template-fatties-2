@@ -47,8 +47,8 @@ const Blog1 = () => {
                                         <li><strong>Ir a cuotas sin interés:</strong> Hay que ingresar en la primera sección dentro de costos se llama “Vendé en cuotas sin interés”</li>
                                         <li><strong> Configurar el monto mínimo a partir del cual se ofrece cada cuota:</strong> La sección de cuotas sin interés se divide en 3:</li>
                                             <ul>
-                                                <ol><strong>Encendido y apagado de cuotas sin interés:</strong> el comercio puede elegir si ofrece o no cuotas sin interés para sus clientes</ol>
-                                                <ol><strong> Cuotas que ofrece:</strong> el cliente elige hasta cuantas cuotas sin interés ofrece a sus clientes.</ol>
+                                                <ol><strong>Encendido y apagado de cuotas sin interés:</strong> El comercio puede elegir si ofrece o no cuotas sin interés para sus clientes</ol>
+                                                <ol><strong> Cuotas que ofrece:</strong> El cliente elige hasta cuantas cuotas sin interés ofrece a sus clientes.</ol>
                                                 <ol><strong>Monto mínimo:</strong>Ahora el comercio podrá elegir para cada cuota, a partir de qué monto ofrece cuotas sin interés.</ol>
                                             </ul>
                                     </ul>

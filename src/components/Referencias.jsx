@@ -18,32 +18,32 @@ const Referencias = () => {
   const referencesArray = [
     {
       id: 1,
-      reference: '"El ideal son 100 caracteres, acorde a las pruebas que fui viendo."',
+      reference: '"Gran empresa y aliado con quien trabajar"',
       image: '',
-      person: 'Pedro Gonzalez',
-      charge: 'CEO de Algun lugar'
+      person: 'Ramiro De Palo',
+      charge: 'CEO de Asta'
     },
-    {
-      id: 2,
-      reference: '"El ideal son 100 caracteres, acorde a las pruebas que fui viendo."',
-      image: '',
-      person: 'Martin Navarro',
-      charge: 'CEO de otro lugar'
-    },
-    {
-      id: 3,
-     reference: '"El ideal son 100 caracteres, acorde a las pruebas que fui viendo."',
-     image: '',
-     person: 'Rodrigo De Paolo',
-     charge: 'CEO de Asta'
-    },
-    {
-      id: 4,
-     reference: '"El ideal son 100 caracteres, acorde a las pruebas que fui viendo."',
-     image: '',
-     person: 'Paolo Rodriguez',
-     charge: 'CEO de Asta'
-    },
+    // {
+    //   id: 2,
+    //   reference: '"El ideal son 100 caracteres, acorde a las pruebas que fui viendo."',
+    //   image: '',
+    //   person: 'Martin Navarro',
+    //   charge: 'CEO de otro lugar'
+    // },
+    // {
+    //   id: 3,
+    //  reference: '"El ideal son 100 caracteres, acorde a las pruebas que fui viendo."',
+    //  image: '',
+    //  person: 'Rodrigo De Paolo',
+    //  charge: 'CEO de Asta'
+    // },
+    // {
+    //   id: 4,
+    //  reference: '"El ideal son 100 caracteres, acorde a las pruebas que fui viendo."',
+    //  image: '',
+    //  person: 'Paolo Rodriguez',
+    //  charge: 'CEO de Asta'
+    // },
   ]
 
   const [idReference, setIdReference] = useState(1)
@@ -54,9 +54,10 @@ const Referencias = () => {
 
     return ( 
       <>
-      <span id='referencias'></span>
       <Container>
-          <div className="references-box">
+          <div 
+          id='referencias'
+          className="references-box">
               <div className="bubble-wall"
                     >
               {referencesArray.filter(item => item.id === idReference).map((item, index) => {
@@ -65,14 +66,14 @@ const Referencias = () => {
                     className="reference-all"
                     id={item.id}
                     key={item.id}>
-                        {
+                        {/* {
                         item.id > 1 ?
                         <FontAwesomeIcon 
                         onClick={() => handleIdReference(item.id - 2)}
                         icon={faArrowLeft}/>
                         :
                         <span></span>
-                      }
+                      } */}
 
                         <div
                         className='reference'
@@ -83,14 +84,14 @@ const Referencias = () => {
                           <h5>{item.charge}</h5>
                         </div>
 
-                      {
+                      {/* {
                         item.id < 4 ?
                         <FontAwesomeIcon 
                         onClick={() => handleIdReference(item.id)}
                         icon={faArrowRight}/>
                         :
                         <span></span>
-                      }
+                      } */}
                     </div>
                   )})}
               </div>
@@ -120,9 +121,9 @@ const Container = styled.div`
     padding: 50px 0;
     margin-bottom: 100px;
 
-    span {
-            padding-top: 200px;
-            margin-top: -200px;
+    #referencias {
+            padding-top: 150px;
+            margin-top: -150px;
 
             @media (max-width: 764px) {
               padding-top: 0px;
@@ -221,6 +222,7 @@ const Container = styled.div`
 
           
           .reference-all {
+            width: 100%;
             display: flex;
             padding: 0;
             flex-direction: row;
@@ -242,7 +244,7 @@ const Container = styled.div`
               align-items: center;
               justify-content: center;
               flex-direction: column;
-              width: 40%;
+              width: 50%;
               height: 100%;
               gap: 20px;
 

@@ -117,7 +117,7 @@ const Container = styled.div`
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     z-index: 2;
     flex-direction: column;
     background-image: url('https://i.ibb.co/0rBMC8T/FONDO-LINEAS.png'), 
@@ -180,26 +180,27 @@ const Container = styled.div`
                     padding-bottom: 50px;
                 }
 
-
-
             p {
-                width: 55%;
-                padding: 50px 20px;
+                width: calc(80% - 60px);
+                margin: 30px auto;
+                padding: 50px 100px;
                 text-align: center;
-                line-height: 30px;
+                line-height: 35px;
                 align-self: flex-start;
-                margin: 20px 100px;
-                font-size: 20px;
+                font-size: 22px;
                 color: black;
                 background-color: #ffffffca;
                 
-                @media (max-width: 1500px) {
+                @media (max-width: 1600px) {
                     width: 70%;
+                    padding: 50px;
+                    font-size: 20px;
+                    margin: 15px auto;
                 }
 
                 @media (max-width: 1400px) {
                     font-size: 18px;
-                    width: 80%;
+                    line-height: 30px;
                 }
 
                 @media (max-width: 1100px) {
@@ -234,19 +235,15 @@ const Container = styled.div`
             
         @media (max-width: 1100px) {
             grid-template-columns: repeat(2, 50%);
-            grid-template-rows: repeat(2, 50%);
-            
+            grid-template-rows: repeat(2, 50%);            
             }
 
-        @media (max-width: 764px) {
+        /* @media (max-width: 764px) {
             padding-top: 20px;
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            display: flex;          
             gap: 30px 10px;
-            }
+            } */
 
         
         .cards {
@@ -266,12 +263,9 @@ const Container = styled.div`
                 justify-content: center;
                 }
 
+        
             @media (max-width: 764px) {
-                flex-direction: row;
-                }
-
-            @media (max-width: 400px) {
-                width: 95%;
+                padding: 20px 5px;
                 }
 
             p {

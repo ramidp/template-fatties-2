@@ -159,7 +159,7 @@ const MenuContainer = styled.div`
         width: 100%;
         height: 70px;
         transition: 500ms ease-in;
-        background: linear-gradient(70deg, ${prop => prop.theme.tertiary}  1% ,${props => props.theme.secondary} 43%, rgba(255, 255, 255, 1) 43.09%);
+        background: linear-gradient(105deg, ${prop => prop.theme.tertiary}  1% ,${props => props.theme.secondary} 47.5%, rgba(255, 255, 255, 1) 47.59%);
         box-shadow: 0px 0px 5px 5px rgba(124, 124, 124, 0.5);
         z-index: 10;
 
