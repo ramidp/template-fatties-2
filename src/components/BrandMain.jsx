@@ -413,7 +413,7 @@ const BrandMainContainer = styled.div`
 
                     .fatties-logo {
                         height: 100px;
-                        width: 200px;
+                        width: 100px;
                         object-fit: scale-down;
 
                         
