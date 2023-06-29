@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled, {keyframes} from 'styled-components';
 // Agregamos keyframes para darle la animacion a la alerta.
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { useContext, useEffect } from 'react'
+import React from 'react'
 import 'aos/dist/aos.css'
 
 const Logo = () => {

@@ -3,8 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useLocation } from 'react-router-dom';
-import blogs from '../data/blogs.json'
-import SearcherBar from './SearchearBar';
+import { logEvent } from 'firebase/analytics';
+import { analytics } from '../firebase/firebaseConfig';
+import SearcherBar from './SearcherBar';
 
 
 const MenuNav = () => {
@@ -33,7 +34,9 @@ const MenuNav = () => {
               {
               location !== '/' &&
 
-              <a href="/">
+              <a 
+              onClick={() => logEvent(analytics, 'Menu | Home')}
+              href="/">
                 <img src={logo} alt="" />
               </a>
               }
@@ -44,21 +47,27 @@ const MenuNav = () => {
               gap: '20px'}}
               >
 
-                <a href="/blog">
+                <a 
+                onClick={() => logEvent(analytics, 'Menu | Blog')}
+                href="/blog">
                   <h1>BLOG</h1></a>
 
                 {/* <a href="/faq">
                   <h1>FAQ</h1></a> */}
 
-                <a href="/nosotros">
+                <a 
+                onClick={() => logEvent(analytics, 'Menu | Nosotros')}
+                href="/nosotros">
                   <h1>¿QUIÉNES SOMOS?</h1></a>
 
-                <a href="#contacto"><h1>CONTACTO</h1></a>
+                <a
+                onClick={() => logEvent(analytics, 'Menu | Contacto')}
+                href="#contacto"><h1>CONTACTO</h1></a>
                 <div 
                 className={
                   active ? 'search-bar active' : 'search-bar'}>
                   <FontAwesomeIcon icon={faSearch} 
-                  onClick={() => setActive(!active)}
+                  onClick={() => {setActive(!active); logEvent(analytics, 'Menu | Buscador')}}
                   />
                   { active && 
                   <SearcherBar
@@ -87,7 +96,7 @@ const MenuNavContainer = styled.div`
     align-items: center;
     z-index: 100;
     gap: 25px;
-    padding:  0 300px;
+    padding:  0 17vw;
 
     @media (max-width: 1600px) {
       padding: 0 260px;
@@ -143,6 +152,10 @@ const MenuNavContainer = styled.div`
         font-size: 18px;
         color: white;
 
+        @media (min-width: 2048px) {
+            font-size: 22px;
+          }
+
         &:hover {
         cursor: pointer;
         filter: contrast(70%);
@@ -153,8 +166,13 @@ const MenuNavContainer = styled.div`
      
 
     .active {
-      width: 180px!important;
-    }
+      width: 180px;
+
+    @media (min-width: 2048px) {
+            width: 200px;
+          }
+          
+}
 
     a {
       width: auto;
@@ -167,7 +185,7 @@ const MenuNavContainer = styled.div`
       h1 {
         margin: 0;
         width: auto;
-        font-size: 14px!important;
+        font-size: 14px;
         text-decoration: none;
         height: 100%;
         display: flex;
@@ -176,6 +194,11 @@ const MenuNavContainer = styled.div`
         cursor: default;
         font-weight: 600;
         color: black;
+
+      @media (min-width: 2048px)  {
+          font-size: 20px;
+          }
+
         
         @media (max-width: 764px) {
           width: max-content;

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import {ReactComponent as InstagramLogo} from '../images/icons/instagram.svg'
+import { logEvent } from 'firebase/analytics';
+import { analytics } from '../firebase/firebaseConfig';
 
 const AstaSign = () => {
     return ( 
@@ -8,7 +9,9 @@ const AstaSign = () => {
 
             <p>Hecho por:</p>
 
-            <a href="https://asta-portfolio.web.app/"
+            <a 
+            onClick={() => logEvent(analytics, 'AstaSign | Asta eStudio')}
+            href="https://asta-portfolio.web.app/"
             target='_blank'
             >
             <span>アスタ</span> | Asta
@@ -40,6 +43,10 @@ p {
     color: #494949;
     font-weight: 500;
     font-size: 14px;
+
+    @media (min-width: 2048px) {
+        font-size: 18px;
+    }
     
 }
 
@@ -57,6 +64,11 @@ a {
     padding: 5px 0;
     transition: 500ms ease all;
     font-family: 'Raleway'!important;
+
+    @media (min-width: 2048px) {
+        font-size: 20px;
+    }
+    
 
     &:hover {
         color: white;

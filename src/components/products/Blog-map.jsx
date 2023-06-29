@@ -3,8 +3,10 @@ import ProductContainer from './styles/estiloblog'
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass, faStopwatch} from '@fortawesome/free-solid-svg-icons';
+import {faStopwatch} from '@fortawesome/free-solid-svg-icons';
 import blogs from '../../data/blogs.json'
+import { logEvent } from 'firebase/analytics';
+import { analytics } from '../../firebase/firebaseConfig';
 
 
 
@@ -49,7 +51,6 @@ const Blog = () => {
                             type="text"
                             onChange={handleChange}
                             placeholder="Buscador .." />
-                            {/* <FontAwesomeIcon icon={faMagnifyingGlass}/> */}
                         </div>
                         <div className="relative-pos">
                         {
@@ -87,6 +88,7 @@ const Blog = () => {
 
                                                 <div>
                                                     <a
+                                                    onClick={() => logEvent(analytics, 'Blog | ' + `${blog.title}`)}
                                                     className="nav-btn"
                                                     href={'/blog/' + blog.link}>
                                                         Leer mas
@@ -115,18 +117,12 @@ const Blog = () => {
                                             <img 
                                             className="banner"
                                             src={require('../../images/Blog/' + `${blog.img}`)} alt="" />
-
-                                            {/* <div className="icon-div">
-                                                <img 
-                                                className="icon-brand"
-                                                src={require('../../images/' + `${blog.icon}`)} alt="" />
-                                            </div> */}
-
                                             <h1>{blog.title}</h1>
                                             <p>{blog.date}</p>
 
                                         <div>
                                             <a
+                                            onClick={() => logEvent(analytics, 'Blog | ' + `${blog.title}`)}
                                             className="nav-btn"
                                             href={'/blog/' + blog.link}>
                                                 Leer mas
@@ -199,6 +195,9 @@ const BlogContainer = styled.div`
                 width: fit-content;
                 padding-bottom: 5px;
 
+                @media (min-width: 2048px) {
+                    font-size: 18px;
+                }              
 
 
                 &::after {
@@ -219,6 +218,10 @@ const BlogContainer = styled.div`
                 z-index: 2;
                 text-align: left;
                 color: white;
+
+                @media (min-width: 2048px) {
+                font-size: 30px;
+                }
 
                 @media (max-height: 720px) {
                 min-height: 15vh;
@@ -242,6 +245,10 @@ const BlogContainer = styled.div`
                 justify-content: center;
                 align-items: center;
                 gap: 5px;
+
+                @media (min-width: 2048px) {
+                    font-size: 20px;
+                    }
                 
                 }
             .reading-time {
@@ -253,6 +260,10 @@ const BlogContainer = styled.div`
                 gap: 10px;
                 padding: 10px 0;
                 margin: 0;
+
+                @media (min-width: 2048px) {
+                    font-size: 18px;
+                }    
 
                 svg {
                     font-size: 18px;
@@ -266,6 +277,10 @@ const BlogContainer = styled.div`
                 height: 200px;
                 object-fit: cover;
                 object-position: 50% 20%;
+
+                @media (min-width: 2048px) {
+                    height: 250px;
+                }    
             }
 
             .icon-div {
@@ -334,6 +349,10 @@ const BlogContainer = styled.div`
                     align-items: center;
                     gap: 10px;
 
+                    @media (min-width: 2048px) {
+                    font-size: 18px;
+                }    
+
                 }
 
                 .reading-time {
@@ -346,6 +365,10 @@ const BlogContainer = styled.div`
                     padding: 10px 0;
                     margin: 0;
 
+                    @media (min-width: 2048px) {
+                    font-size: 18px;
+                    }    
+
                     svg {
                         font-size: 18px;
                         color: #dddddd;
@@ -354,12 +377,21 @@ const BlogContainer = styled.div`
                 }
 
                 .nav-btn {
-                text-decoration: none;
-                color: white;
-                cursor: pointer;
-                width: fit-content;
-                padding-bottom: 5px;
-                font-size: 14px;
+                    text-decoration: none;
+                    color: white;
+                    cursor: pointer;
+                    width: fit-content;
+                    padding-bottom: 5px;
+                    font-size: 14px;
+
+                    @media (min-width: 2048px) {
+                    font-size: 20px;
+                    }
+
+
+                @media (min-width: 2048px) {
+                    font-size: 20px;
+                    }
 
                 @media (max-width: 1100px) {
                     padding-top: 15px;
@@ -379,11 +411,15 @@ const BlogContainer = styled.div`
                     width: 100%;
                     padding: 0;
                     font-size: 36px;
-                    padding: 10px;
+                    padding: 10px 0;
                     font-weight: 600;
                     z-index: 2;
                     text-align: left;
                     color: white;
+
+                    @media (min-width: 2048px) {
+                    font-size: 42px;
+                    }
     
                     @media (max-width: 1400px) {
                     font-size: 30px;

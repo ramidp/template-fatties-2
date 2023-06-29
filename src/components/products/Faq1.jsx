@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductContainer from './styles/estilofaq'
 import { useState } from 'react';
 
-
 const Faq1 = () => {
 
     const logowhatsapp = require('../../images/icons/whatsapp.png')

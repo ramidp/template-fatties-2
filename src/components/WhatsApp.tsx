@@ -29,7 +29,7 @@ const WhatsAppBtn = () => {
             <div>
                 <a href={"https://api.whatsapp.com/send?phone=5491123956360&text=" + `${mensaje}`}
                 onClick={() => {
-                        logEvent(analytics, 'Test WhatsApp Button')
+                        logEvent(analytics, 'Contacto | WhatsAppBtn')
                 }}
                 target="_blank">
                 <img src={logowhatsapp} alt="" />
@@ -110,10 +110,27 @@ const Container = styled.div`
 
     img {
         width: 50px;
+        transition: 300ms ease all;
 
-        &:hover {
-            filter: contrast(80%);
-        }
+        @media (min-width: 2046px) {
+            width: 70px;
+            }
+
+
+
+        @media (min-width: 765px) {
+                &:hover {
+                        transform: scale(1.05);
+                        filter: contrast(50%);                       
+                }
+                }
+
+                @media (max-width: 764px) {
+                &:active {
+                        transform: scale(1.05);
+                        filter: contrast(50%); 
+                }
+                }
 
     @media (max-width: 1100px) {
             width: 40px;

@@ -21,6 +21,6 @@ export default Main;
 
 const AppContainer = styled.div`
   width: 100%;
-  height: auto;
+  height: auto; 
 
 `

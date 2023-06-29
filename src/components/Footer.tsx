@@ -7,6 +7,9 @@ import {ReactComponent as WhatsAppLogo} from '../images/icons/whatsapp.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faPhone, faAt } from '@fortawesome/free-solid-svg-icons';
 import Alerta from '../components/Alerta'
+import { logEvent } from "firebase/analytics";
+import { analytics } from "../firebase/firebaseConfig";
+
 
 const Footer = () => {
 
@@ -86,7 +89,6 @@ const Footer = () => {
                                 </div>
                                 <div>
                                 <WhatsAppLogo
-                                style={{height: '25px'}}
                                 />
                                     <p> +54 (011) 2395-6360 </p>
                                 </div>
@@ -94,9 +96,15 @@ const Footer = () => {
                             <div className="copyright">
                                 {/* <FontAwesomeIcon icon={faRegistered} /> */}
                                 <div>
-                                    <a href="https://www.linkedin.com/company/fatties/" target="_blank"><LinkedInLogo/> </a>
-                                    <a href="https://www.facebook.com/mp.vendedores/" target="_blank" ><FacebookLogo/> </a>
-                                    <a href="https://www.instagram.com/fatties.ac" target="_blank"><InstagramLogo/> </a>
+                                    <a 
+                                    onClick={() => logEvent(analytics, 'Footer | LinkedIn')}
+                                    href="https://www.linkedin.com/company/fatties/" target="_blank"><LinkedInLogo/> </a>
+                                    <a 
+                                    onClick={() => logEvent(analytics, 'Footer | Facebook')}
+                                    href="https://www.facebook.com/mp.vendedores/" target="_blank" ><FacebookLogo/> </a>
+                                    <a 
+                                    onClick={() => logEvent(analytics, 'Footer | Instagram')}
+                                    href="https://www.instagram.com/fatties.ac" target="_blank"><InstagramLogo/> </a>
                                 </div>
                                 <p>©  2023 Fatties</p> 
                             </div>
@@ -148,6 +156,10 @@ const FooterContainer = styled.div`
             color: white;
             font-size: 20px;
 
+            @media (min-width: 2048px) {
+                    font-size: 26px;
+                }
+
             span {
                 font-weight: 700;
             }
@@ -156,7 +168,7 @@ const FooterContainer = styled.div`
             }
 
             @media (max-width: 764px) {
-            font-size: 16px;
+            font-size: 14px;
             }
 
             
@@ -216,17 +228,29 @@ const FooterContainer = styled.div`
                 justify-content: flex-start;
                 align-items: flex-start;
                 padding: 10px 0;
-
-
+                
+                
                 @media (max-width: 800px) {
-                justify-content: center;
-                align-items: center;
+                    justify-content: center;
+                    align-items: center;
+                }
+                
+                svg {
+                    height: 22px;
+                    @media (min-width: 2048px) {
+                    font-size: 26px;
+                    height: 30px;
+                }
                 }
 
                 p { 
                     text-align: center;
                     margin: 0;
                     font-size: 14px;
+
+                    @media (min-width: 2048px) {
+                    font-size: 20px;
+                }
                 }
             }
 
@@ -253,6 +277,9 @@ const FooterContainer = styled.div`
                 font-size: 14px;
                 text-align: center;
                 margin: 0;
+                @media (min-width: 2048px) {
+                    font-size: 20px;
+                }
             }
             a { 
                 text-decoration: none;
@@ -260,11 +287,24 @@ const FooterContainer = styled.div`
                     margin: 0 5px;
                     width: 40px;
                     fill: white;
-                    transition: 300ms ease all;
+                    transition: 500ms ease all;
 
-                    &:hover {
-                        transform: scale(1.05);
-                        filter: contrast(50%);
+                    @media (min-width: 2048px) {
+                       width: 50px;
+                    }
+
+                    @media (min-width: 765px) {
+                        &:hover {
+                            transform: scale(1.05);
+                            filter: contrast(50%);                       
+                        }
+                    }
+
+                    @media (max-width: 764px) {
+                        &:active {
+                            transform: scale(1.05);
+                            filter: contrast(50%); 
+                        }
                     }
                 }
             } 
@@ -281,6 +321,10 @@ const FooterContainer = styled.div`
             color: white;
             text-align: center;
             font-family: 900;
+
+            @media (min-width: 2048px) {
+                    font-size: 20px;
+                }
 
             @media (max-width: 1100px) {
                     padding: 0 50px;

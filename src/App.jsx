@@ -15,7 +15,7 @@ import Faq2 from './components/products/Faq2';
 import Faq3 from './components/products/Faq3';
 import Main from './components/Main';
 import WebFont from 'webfontloader'
-import React, { useState } from 'react';
+import React from 'react';
 import WhatsAppBtn from './components/WhatsApp';
 import Nosotros from './components/Nosotros';
 import Error404 from './components/Error404';
@@ -40,7 +40,7 @@ const App = () => {
     }
   });
 
-  const [theme, setTheme] = useState({
+  const theme = {
 
       primary: 'rgb(84,193,186)',
       primaryOpact: '#7cdaa3',
@@ -50,7 +50,7 @@ const App = () => {
       gray: '#f0f0f0',
       mainFont: "Arial", // Fuente 1,
       mainHeight: 'calc(100vh)'
-  })
+  }
 
   return (
     <ThemeProvider theme={theme}>

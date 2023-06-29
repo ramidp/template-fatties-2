@@ -1,15 +1,43 @@
 import styled from "styled-components";
 import { ReactComponent as LinkedInLogo } from '../images/icons/linkedin.svg'
-import { ReactComponent as FacebookLogo } from '../images/icons/facebook.svg'
+import { logEvent } from "firebase/analytics";
+import { analytics } from "../firebase/firebaseConfig";
 
 
 const Nosotros = () => {
 
-    const photo1 = require('../images/ema1.png')
-    const photo2 = require('../images/lucho1.png')
-    const photo3 = require('../images/nico1.png')
-    const photo4 = require('../images/ger1.png')
+    // const photo1 = require('../images/ema1.png')
+    // const photo2 = require('../images/lucho1.png')
+    // const photo3 = require('../images/nico1.png')
+    // const photo4 = require('../images/ger1.png')
     const unknown = require('../images/profile-anom.png')
+
+    const workersArray = [
+        {
+            id: 1,
+            name: 'Emmanuel Tresguerras',
+            photo: '',
+            social: 'https://www.linkedin.com/in/jesus-emmanuel-tresguerras-47b756103/'
+        },
+        {
+            id: 2,
+            name: 'Luciano De Palo',
+            photo: '',
+            social: 'https://www.linkedin.com/in/luciano-de-palo-836415194/'
+        },
+        {
+            id: 3,
+            name: 'Nicolas Stiehr',
+            photo: '',
+            social: 'https://www.linkedin.com/in/nicolas-ivan-stiehr-086aa0225/'
+        },
+        {
+            id: 4,
+            name: 'German Castro',
+            photo: '',
+            social: 'https://www.linkedin.com/'
+        },
+    ]
 
     return (
 
@@ -46,63 +74,24 @@ const Nosotros = () => {
 
                     <div className="cards-box">
 
-
-
-                        <div className="cards">
+                        {
+                        workersArray.map((worker) => {
+                            return (
+                        <div 
+                        key={worker.id}
+                        className="cards">
                             <img src={unknown} alt="" />
-                            <h3>Emmanuel
-                                <br />
-                                Tresguerras</h3>
-                                <p>Responsable 
-                                    <br />
-                                    de
-                                     Ventas </p>
-                                <a href="https://www.linkedin.com/in/jesus-emmanuel-tresguerras-47b756103/" target="_blank">
+                            <h3>{worker.name}</h3>                                
+                                <a 
+                                onClick={() => logEvent(analytics, "Nosotros | LinkedIn | " + `${worker.name}`)}
+                                href={worker.social} target="_blank" rel="noreferrer">
                                     <LinkedInLogo />
                                 </a>
                         </div>
-                        <div className="cards">
-                            <img src={unknown} alt="" />
-                            <h3>Luciano
-                                <br />
-                                De Palo</h3>
-                                <p>Responsable 
-                                    <br />
-                                    de
-                                     Ventas </p>
 
-                            <a href="https://www.linkedin.com/in/luciano-de-palo-836415194/" target="_blank">
-                                <LinkedInLogo />
-                            </a>
-                        </div>
-                        <div className="cards">
-                            <img src={unknown} alt="" />
-                            <h3>Nicolas
-                                <br />
-                                Stiehr</h3>
-                                <p>Responsable 
-                                    <br />
-                                    de
-                                     Ventas </p>
-
-                            <a href="">
-                                <LinkedInLogo />
-                            </a>
-                        </div>
-                        <div className="cards">
-                            <img src={unknown} alt="" />
-                            <h3>German
-                                <br />
-                                Castro</h3>
-                                <p>Responsable 
-                                    <br />
-                                    de
-                                     Ventas </p>
-
-                            <a href="https://www.linkedin.com/in/nicolas-ivan-stiehr-086aa0225/" target="_blank">
-                                <LinkedInLogo />
-                            </a>
-                        </div>
+                            )
+                        })
+                        }
                     </div>
             </Container>
         </>
@@ -154,6 +143,10 @@ const Container = styled.div`
             margin: 0;
             text-align: center;
 
+            @media (min-width: 2048px) {
+                    font-size: 70px;
+                } 
+
             @media (max-width: 1100px) {
                 font-size: 50px;
             }
@@ -190,6 +183,11 @@ const Container = styled.div`
                 font-size: 22px;
                 color: black;
                 background-color: #ffffffca;
+
+                @media (min-width: 2048px) {
+                    font-size: 30px;
+                    line-height: 70px;
+                } 
                 
                 @media (max-width: 1600px) {
                     width: 70%;
@@ -258,6 +256,10 @@ const Container = styled.div`
             border: 2px solid white;
             border-radius: 10px;
 
+            @media (min-width: 2048px) {
+                    height: 30vh;
+                } 
+
             @media (max-width: 1100px) {
                 flex-direction: column;
                 justify-content: center;
@@ -293,6 +295,10 @@ const Container = styled.div`
                 margin: 0;
                 font-size: 26px;
 
+                @media (min-width: 2048px) {
+                    font-size: 28px;
+                } 
+
                 @media (max-width: 1400px) {
                 font-size: 20px;
                 }
@@ -309,13 +315,14 @@ const Container = styled.div`
                 svg {
                     height: 50px;
                     fill: white;
+                    transition: 300ms ease all;
 
                     @media (max-width: 1100px) {
                         height: 40px;
                     }
 
                     &:hover {
-                        filter: contrast(70%)
+                        filter: contrast(50%)
                     }
                 }
             }

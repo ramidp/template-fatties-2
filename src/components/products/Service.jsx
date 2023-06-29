@@ -3,7 +3,10 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight, faGreaterThan } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { logEvent } from "firebase/analytics";
+import { analytics } from "../../firebase/firebaseConfig";
+
 
 const Service = ({service}) => {
 
@@ -52,7 +55,7 @@ const Service = ({service}) => {
                                 className="read-more"
                                 >
                                     <h3
-                                    onClick={() => {setModal(true); setClosedModal(true)}}
+                                    onClick={() => {setModal(true); setClosedModal(true); logEvent(analytics, 'Service | ' + `${service.name}`)}}
                                     >Leer más
                                     </h3>
                                     <FontAwesomeIcon 
@@ -76,11 +79,15 @@ const Service = ({service}) => {
                             >
                                 
                                 <div>
-                                    <h1>{service.title}</h1>
+                                    <h1
+                                    className={`${service.anchorclass}` }
+                                    >{service.title}</h1>
                                     <h3>{service.subtitle}</h3>
                                 </div>
                                 
-                                <div>
+                                <div
+                                className='modal-texts'
+                                >
                                     <p><strong> {service.text2} </strong></p>
                                     {service.text3 && <p>{service.text3}</p>}
                                     {service.text4 && <p>{service.text4}</p>}
@@ -90,8 +97,12 @@ const Service = ({service}) => {
                                     {service.text8 && <p>{service.text8}</p>}                              
 
                                 </div>
-                                <a href={service.contacttext} target='_blank'>Contacto</a>
-                                <a href="">Link a FAQ</a>
+                                <a 
+                                onClick={() => logEvent(analytics, 'Service | WhatsApp Contacto')}
+                                href={service.contacttext} target='_blank'>Contacto</a>
+                                <a 
+                                onClick={() => logEvent(analytics, 'Service | FAQ')}
+                                href="/">Link a FAQ</a>
                             </div>
                         </div>    
                         }
@@ -189,8 +200,11 @@ const Container = styled.div`
                     cursor: pointer;
                     margin: 0;
 
-
+                    @media (min-width: 2048px) {
+                    font-size: 22px;                     
                     }
+                    }
+
                     
                     .svg-more {
                         font-size: 12px;
@@ -198,6 +212,13 @@ const Container = styled.div`
 
                     &:hover {
                         color: ${props => props.theme.secondary};
+                    }                    
+                    
+
+                    @media (max-width: 764px) {
+                        &:active {
+                            color: ${props => props.theme.secondary};
+                        }
                     }
 
             }
@@ -217,6 +238,10 @@ const Container = styled.div`
                 .mp {
                     height: 170px;
 
+                    @media (min-width: 2048px) {
+                    height: 200px;                 
+                    }
+
                     @media (max-width: 1100px) {
                     height: 150px;
                     }
@@ -228,6 +253,10 @@ const Container = styled.div`
                 }
                 .calim {
                     height: 65px;
+
+                    @media (min-width: 2048px) {
+                    height: 80px;                 
+                    }
 
                     @media (max-width: 1100px) {
                     height: 50px;
@@ -244,6 +273,10 @@ const Container = styled.div`
                 font-size: 18px;
                 margin: 0;
                 color: gray;
+                
+                @media (min-width: 2048px) {
+                font-size: 26px;                 
+                }
 
                 @media (max-width: 1400px) {
                 font-size: 16px; 
@@ -264,6 +297,11 @@ const Container = styled.div`
                 font-weight: 800;
                 margin: 0;
 
+                @media (min-width: 2048px) {
+                font-size: 50px; 
+                width: 90%;
+                }
+
                 @media (max-width: 1400px) {
                 font-size: 36px; 
                 width: 90%;
@@ -275,7 +313,7 @@ const Container = styled.div`
 
                 @media (max-width: 764px) {
                  width: 100%;
-                 font-size: 20px;
+                 font-size: 22px;
                 }
 
             }
@@ -300,6 +338,12 @@ const Container = styled.div`
                 padding: 20px;
                 width: 55px;
                 height: 55px;
+
+                @media (min-width: 2048px) {
+                    width: 65px;
+                    height: 65px;
+                    padding: 20px;              
+                    }
 
                 @media (max-width: 1100px) {
                     width: 45px;

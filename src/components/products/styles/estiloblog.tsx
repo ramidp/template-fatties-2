@@ -24,6 +24,11 @@ const ProductContainer = styled.div`
             color: white;
             font-weight: 900;
             margin-bottom: 20px;
+          
+
+            @media (min-width: 2048px) {
+                    font-size: 70px;
+                    }
 
             @media (max-width: 1100px) {
                     font-size: 50px;
@@ -54,6 +59,10 @@ const ProductContainer = styled.div`
                 text-align: center;
                 padding: 5px 10px;
                 font-weight: 100;
+
+                @media (min-width: 2048px) {
+                    font-size: 32px;
+                }    
 
                 @media (max-width: 1100px) {
                     font-size: 26px;
@@ -241,6 +250,11 @@ const ProductContainer = styled.div`
                 text-align: center;
                 font-size: 14px;
                 font-weight: 300;
+
+                @media (min-width: 2048px) {
+                font-size: 18px;
+                }
+        
         
                 @media (max-width: 1100px)    {
                 font-size: 12px;

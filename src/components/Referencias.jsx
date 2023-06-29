@@ -2,18 +2,18 @@ import styled from "styled-components";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {useState} from "react";
 import 'aos/dist/aos.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight, faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faArrowRight, faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 
 
 const Referencias = () => {
   const [hide, setHide] = useState(true)
 
 
-  const logo = require('../images/Brands-Logos/el-calafate.jpg')
-  const logo2 = require('../images/Brands-Logos/Cafe-Martinez.webp')
-  const logo3 = require('../images/Brands-Logos/coquitos-online.png')
-  const logo4 = require('../images/Brands-Logos/casper-pet.png')
+  // const logo = require('../images/Brands-Logos/el-calafate.jpg')
+  // const logo2 = require('../images/Brands-Logos/Cafe-Martinez.webp')
+  // const logo3 = require('../images/Brands-Logos/coquitos-online.png')
+  // const logo4 = require('../images/Brands-Logos/casper-pet.png')
 
   const referencesArray = [
     {
@@ -54,9 +54,10 @@ const Referencias = () => {
 
     return ( 
       <>
+    
+
       <Container>
-          <div 
-          id='referencias'
+          <div           
           className="references-box">
               <div className="bubble-wall"
                     >
@@ -115,22 +116,11 @@ const Container = styled.div`
     color: white;
     user-select: none;
     background-color: white;
-    background-image: url('https://i.ibb.co/rZVK4z2/Wall-bubbles.png');
+    background-image: url('./images/wall-bubbles.png');
     background-size: contain;
     background-repeat: repeat;
     padding: 50px 0;
     margin-bottom: 100px;
-
-    #referencias {
-            padding-top: 150px;
-            margin-top: -150px;
-
-            @media (max-width: 764px) {
-              padding-top: 0px;
-              margin-top: 0px;
-            }
-
-        }
     
     .title {
       h1 {
@@ -181,10 +171,10 @@ const Container = styled.div`
       align-items: center;
         
         .bubble-wall {
-          background-image: url('https://i.ibb.co/2K9jwdj/burbuja200px.png');
+          background-image: url('./images/burbuja200px.png');
           background-size: 100% 100%;
-          height: 450px;
-          width: 650px;
+          height: 50vh;
+          width: 40vw;
           padding: 50px 0;
           background-repeat: no-repeat;
           background-position: center;
@@ -193,7 +183,7 @@ const Container = styled.div`
           align-items: center;
           animation-name: movimiento;
           animation-duration: 1.3s;
-          animation-iteration-count: infinite;
+          animation-iteration-count: infinite;        
 
           @media (max-width: 1400px) {
             height: 400px;
@@ -265,7 +255,11 @@ const Container = styled.div`
               width: 90%;
               font-size: 22px;
               margin: 0;
+             
 
+              @media (min-width: 2048px) {
+                font-size: 30px;
+              }
               @media (max-width: 1400px) {
                 font-size: 20px;
               }
@@ -287,6 +281,10 @@ const Container = styled.div`
               font-size: 24px;
               font-weight: bold;
               margin: 0;
+
+              @media (min-width: 2048px) {
+                font-size: 32px;
+              }
 
               @media (max-width: 1400px) {
                 font-size: 22px;

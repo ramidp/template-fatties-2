@@ -3,15 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from "react";
 import 'aos/dist/aos.css'
 
-
 // Aca van los logos de las marcas que trabajan, completarlo cuando tenga algunos logos, mi idea es poner un 3 x 3 de logos con sus anchors (links)
 // Y con un interval de un tiempo suficiente para clickear y ver todos, o después podemos ver la transicion bien, por ahora es una beta.
 // Tal vez con 2 Partes sea suficiente.
 
-const Marcas = () => {
-  
-  const [logos, setLogos] = useState([])
-  
+const Marcas = () => {  
+ 
   // useEffect(() => {
   //   setLogos(
   //       [
@@ -223,9 +220,10 @@ const Marcas = () => {
   //   },[])
 
     return ( 
-      <Container
-      >
+      <Container>
+
           <span id="marcas"></span>
+
             <div className="another-section">
               <h1>
               Crecer juntos 
@@ -237,28 +235,15 @@ const Marcas = () => {
               y empresas en el pais, a través de nuestra agencia.
               </h3>
             </div>
-
             <div className="carousel-sect">
-              <div className="marcas-div">
-                {/* {
-                  logos.sort((a, b) => a.brand.name.localeCompare(b.brand.name)).map((logo) => {
-                    return (
-                    <a
-                    key={logo.brand.id}
-                    className="logo-a"
-                    data-aos={animation} 
-                    style={{height: '70px'}}
-                    target="_blank" href={logo.brand.link}>
-                      <img 
-                      src={logo.brand.img} alt="" />
-                    </a>
-                    )
-                  })
-                } */}
-
+              <div className="marcas-div">             
                 <div className="wallimg"></div>
               </div>
             </div>
+
+            <span
+        id='referencias'
+        ></span> 
         </Container>
      );
 }
@@ -277,7 +262,7 @@ const Container = styled.div`
     gap: 30px;
     padding: 100px 0;
 
-    span {
+    #marcas {
             padding-top: 80px;
             margin-top: -80px;
 
@@ -342,7 +327,7 @@ const Container = styled.div`
           background-image: url('https://i.ibb.co/gyQqkJb/banner-2.png');
           background-size: cover;
           width: 100%;
-          height: 350px;
+          height: 35vh;
           background-repeat: repeat-x;
           animation-duration: 2000s;
           animation-timing-function: linear;
@@ -400,6 +385,10 @@ const Container = styled.div`
           font-weight: 900;
           text-align: center;
           padding-bottom: 10px;
+          
+          @media (min-width: 2048px) {
+          font-size: 60px;
+          }
 
           @media (max-width: 1400px) {
           font-size: 40px;
@@ -417,6 +406,10 @@ const Container = styled.div`
         text-align: center;
         font-weight: 400;
         padding: 10px 20px;
+
+        @media (min-width: 2048px) {
+            font-size: 28px;
+          }
 
         @media (max-width: 1100px) {
             font-size: 22px;

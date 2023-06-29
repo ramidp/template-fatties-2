@@ -3,9 +3,6 @@ import styled from 'styled-components';
 import faq from '../../data/faq.json'
 import React, {useState} from 'react'
 
-// Lo que se puede hacer es que estos puntos te manden a los links de MP Ayuda
-// Podemos crearlos de 0, pero bueno, habria que ver bien el texto. (Creo que es lo mejor para que todo se quede DENTRO de la pagina)
-
 const Faq = () => {
 
 

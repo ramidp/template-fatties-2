@@ -23,6 +23,10 @@ const ProductContainer = styled.div`
     .anchor-link {
         width: 85%;
 
+        @media (min-width: 2048px) {
+            font-size: 20px;
+        }    
+
         @media (max-width: 1100px) {
         width: 95%;
         padding-left: 10px;
@@ -69,6 +73,10 @@ const ProductContainer = styled.div`
             z-index: 2;
             font-size: 46px;
             font-weight: 400;
+
+            @media (min-width: 2048px) {
+                font-size: 52px;
+            }  
                
                @media (max-width: 1100px) {
                     text-align: center;
@@ -100,13 +108,17 @@ const ProductContainer = styled.div`
                 font-size: 16px;
                 color: darkgray;
                 text-align: left;
+
+                @media (min-width: 2048px) {
+                    font-size: 20px;
+                }  
             }
 
             .blog-text {
 
                 line-height: 28px;
                 font-size: 16px;
-                background-color: #dfdfdf;
+                background-color: #dfdfdf;              
 
                 
                 @media (max-width: 1100px) {
@@ -125,6 +137,11 @@ const ProductContainer = styled.div`
                         width: auto;
                         font-size: 24px;
                         padding-bottom: 10px;
+
+                        @media (min-width: 2048px) {
+                            font-size: 28px;
+                        }  
+
                         @media (max-width: 764px) {
                             font-size: 20px;
                         }
@@ -136,33 +153,51 @@ const ProductContainer = styled.div`
                         margin: 0;
                         font-size: 18px;
                         padding-bottom: 10px;
+
+                        @media (min-width: 2048px) {
+                            font-size: 20px;
+                        } 
+
                         @media (max-width: 764px) {
                             font-size: 16px;
                         }
                     }
+
+                    a {
+                        font-size: 16px;
+                        text-underline-offset: 4px;                        
+                        color: ${props => props.theme.secondary};
+
+                        @media (min-width: 2048px) {
+                            font-size: 20px;
+                        } 
+
+                        @media (max-width: 764px) {
+                            font-size: 16px;
+                        }
+                        
+                    }
                     
-                    ul {
+                    ul, ol{
                         padding-bottom: 10px;
                         display: flex;
                         text-align: left;
                         flex-direction: column;
                         width: 100%;
+
                         li {
                             padding: 0;
                             padding-bottom: 5px;
                             text-align: left;
                             font-size: 16px;
-                            font-style: italic;
+                            font-style: italic;                            
+
+                            @media (min-width: 2048px) {
+                            font-size: 20px;
+                            } 
                         }
-                        ol {
-                            font-size: 16px;
-                            padding-bottom: 5px;
-                            padding: 0;
-                            text-align: left;
-                            font-style: italic;
-                        }
+                        }                        
                     }
-                }
 
             }
 

@@ -69,5 +69,6 @@
     "@types/webfontloader": "^1.6.35",
     "sass": "^1.60.0",
     "typescript": "^5.0.3"
-  }
+  },
+  "homepage": "https://fatties.com.ar/"
 }

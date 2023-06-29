@@ -11,7 +11,7 @@ const LoadingPage = () => {
     useEffect(() => {
         setTimeout(() => {
             setHideLoading('hidding')
-        }, 2250);
+        }, 2000);
 
     },[])
 
@@ -34,13 +34,14 @@ const LoadingPageContainer = styled.div`
     flex-direction: column;
     margin: 0;
     width: 100%;
-    padding-top: 300px;
+    padding-top: 30vh;
     height: 100%;
     z-index: 1000;
     animation-name: disolve;
     animation-duration: 1s;
     animation-delay: 1.5s;
     left: 0;
+
 
     h1 {
       color: white;
@@ -56,6 +57,11 @@ const LoadingPageContainer = styled.div`
           height: 200px;
           animation-name: lightup;
           animation-duration: 1.5s;
+          animation-delay: 300ms;
+
+          @media (min-width: 2048px) {
+            height: 250px;
+            }
 
           @media (max-width: 764px) {
             height: 150px;

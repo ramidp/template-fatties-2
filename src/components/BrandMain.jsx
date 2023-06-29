@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import Aos from 'aos'
 import 'aos/dist/aos.css'
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import Service from "./products/Service";
 import { faPhoneVolume, faHandshake } from '@fortawesome/free-solid-svg-icons';
-
+import { logEvent } from "firebase/analytics";
+import { analytics } from "../firebase/firebaseConfig";
 
 const BrandMain = () => {
 
@@ -25,6 +26,7 @@ const BrandMain = () => {
     const servicesArray = [
         {
             id: 1,
+            name: 'Mercado Pago',
             title: 'Representante Oficial',
             subtitle: 'Asociación con Mercado Pago',
             text: 'Somos Partner oficial de Mercado Pago, brindamos asistencia y asesoramiento en el uso de la plataforma.',
@@ -39,9 +41,11 @@ const BrandMain = () => {
             logo: logoMp,
             anchorclass: ' mp-div',
             logoclass: 'mp',
+            backgroundColor: 'linear-gradient(50deg,  #100E9F 5%, #009FE3 30%, white 90%)'
         },
         {
             id: 2,
+            name: 'Calim',
             title: 'Partner Oficial',
             subtitle: 'Asociación con Calim',
             text: 'Soluciones contables para Monotributos, Responsables inscriptos y Empresas. Gestioná tus inscripciones, liquidaciones de sueldos y todo tipo de trámites ante AFIP 100% online.',
@@ -57,6 +61,7 @@ const BrandMain = () => {
         },
         {
             id: 3,
+            name: 'Atención Telefónica',
             title: 'Centro de atención telefónica',
             subtitle: 'Servicio exclusivo de Fatties',
             text: 'Nuestro call center es el corazón de nuestro servicio al cliente. Con un equipo de agentes altamente capacitados y comprometidos, nos enfocamos en brindar una experiencia excepcional a cada persona que nos contacta. Nuestro centro de atención telefónica utiliza tecnología de vanguardia y procesos eficientes para garantizar una comunicación fluida y eficaz',
@@ -69,6 +74,7 @@ const BrandMain = () => {
         },
         {
             id: 4,
+            name: 'Cross-Selling',
             title: 'Cross-Selling Estratégico',
             subtitle: 'Servicio exclusivo de Fatties',
             text: 'En Fatties ofrecemos conectar clientes con clientes para todo tipo de servicios. Hacemos de nexo entre gente que busca un servicio y gente que ofrece dicho servicio',
@@ -83,7 +89,6 @@ const BrandMain = () => {
     
     return (
         <BrandMainContainer id="top" className="p-0">
-            {/* <Logo/> */}
             <div className="absolute">
                 <div className="brand-logo"
                             data-aos={animation3}
@@ -91,7 +96,9 @@ const BrandMain = () => {
                 >
                         <div className="brand-title">
                             <div className="brand-title-1">
+                                    <a href="/">
                                     <img className="fatties-logo" src={logo} alt="" />
+                                    </a>
                                  <h1 
                                 >
                                 Soluciones
@@ -111,12 +118,15 @@ const BrandMain = () => {
                         </div>
                         <div className="btns-box">
 
-                            <a href="#servicios"
+                            <a 
+                            onClick={() => logEvent(analytics, 'BrandMain | Servicios')}
+                            href="#servicios"
                             className="contactbtn"
                             >
                                 SERVICIOS
                             </a>
                             <a 
+                            onClick={() => logEvent(analytics, 'BrandMain | Clientes')}
                             className="contactbtn"
                             style={{display: 'flex',
                             flexDirection: 'column',
@@ -125,31 +135,16 @@ const BrandMain = () => {
                             >
                                 CLIENTES
                             </a>
-                            <a href="#referencias"
+                            <a 
+                            onClick={() => logEvent(analytics, 'BrandMain | Referencias')}
+                            href="#referencias"
                             className="contactbtn"
                             >
                                 REFERENCIAS
                             </a>
                             
                         </div>
-                </div>
-
-                {/* <div
-                className='phrase'
-                >
-                
-                <p 
-                data-aos="fade-in"
-                data-aos-delay="100"
-                className="m-0 pt-0">
-                "Contribuimos experiencia y conocimiento 
-                <br />
-                para el crecimiento de su negocio."
-                </p>
-
-
-                </div> */}
-
+                </div>     
                 <div  
                 className="features-box">
                     
@@ -199,10 +194,25 @@ const BrandMainContainer = styled.div`
             align-items: center;
             animation-name: opening;
             animation-duration: 500ms;
+            padding: 30px 0;
+
+            @media (max-width: 764px) {
+                padding: 0;                     
+            }
+
 
             @keyframes opening {
                 0% { filter: opacity(0%)}
                 100% { filter: opacity(100%)}
+            }
+
+            a {
+                text-decoration: none;
+                color: ${props => props.theme.secondary};
+
+                @media (max-width: 764px) {
+                    font-size: 14px;
+                }
             }
 
 
@@ -233,45 +243,132 @@ const BrandMainContainer = styled.div`
                     display: flex;
                     background-color: white;
                     width: 65%;
-                    min-height: 40%;
                     height: auto;
+                    min-height: 50%;
                     flex-direction: column;
                     justify-content: flex-start;
                     align-items: center;
                     gap: 10px 0;
                     padding: 50px;
 
+                    @media (max-width: 1400px) {
+                        width: 80%;
+                        padding: 30px;                        
+                    }
+
+                    @media (max-width: 1100px) {
+                        width: 90%;
+                        padding: 30px;                        
+                    }
+
                     @media (max-width: 764px) {
                         width: 100%;
-                        min-height: 85%;
-                        padding: 10px
+                        padding: 10px;                     
                     }
 
-                    p {
-                        font-size: 18px;
-                        font-weight: 300;
-                        text-align: left;
-                        width: 100%;
-                        margin: 0;
-                        margin-bottom: 5px;
-                    }
-
-                    h1 {
-                        background-color: ${ prop => prop.theme.secondary};
-                        padding: 10px 100px;
-                        text-align: center;
-                        border-radius: 5px;
-                        color: white;
+                    .modal-texts {
+                        
+                        height: auto;
+                        overflow-y: auto;
+                        padding: 10px 20px;
                         display: flex;
-                        font-size: 30px;
-                    }
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: center;
 
-                    h3 {
-                        font-size: 24px;
-                    }
+                          // Scrollbar
 
-                    h1, h3 {
-                        text-align: center;
+                        /* width */
+                        ::-webkit-scrollbar {
+                        width: 5px;
+                        }
+
+                        /* Track */
+                        ::-webkit-scrollbar-track {
+                        box-shadow: none;
+                        }
+                        
+                        /* Handle */
+                        ::-webkit-scrollbar-thumb {
+                        background: rgb(239,73,49); 
+                        }
+
+                        /* Handle on hover */
+                        ::-webkit-scrollbar-thumb:hover {
+                        background: rgb(175, 82, 68); 
+                        }
+
+                        @media (max-width: 764px) {
+                            min-height: 60vh;
+                        }
+ 
+ 
+                        p {
+                            font-size: 18px;
+                            font-weight: 300;
+                            text-align: left;
+                            width: 100%;
+                            margin: 0;
+                            line-height: 35px;
+
+                            span {
+                                text-align: justify;
+                                font-weight: 900;
+                            }
+    
+                            @media (max-width: 764px) {
+                                font-size: 16px;
+                                text-align: justify;
+                                line-height: 25px;
+                            }
+                            @media (max-width: 365px) {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                
+                    div {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        
+                        h1 {                                                      
+                            text-align: center;
+                            border-radius: 5px;
+                            padding: 15px 0;
+                            width: 100%;                            
+                            color: white;
+                            display: flex;
+                            font-size: 30px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-weight: 700;
+    
+                            @media (max-width: 764px) {
+                                font-size: 26px;
+                            }
+                            @media (max-width: 365px) {
+                                font-size: 24px;
+                            }
+                        }
+    
+                        h3 {
+                            font-size: 20px;
+                            font-weight: 700;
+                            margin: 10px 0;
+    
+                            @media (max-width: 764px) {
+                                font-size: 18px;
+                            }
+                            
+                        }
+    
+                        h1, h3 {
+                            text-align: center;
+                        }
                     }
             }
         }
@@ -425,8 +522,17 @@ const BrandMainContainer = styled.div`
                         height: 150px;
                         width: 150px;
                         object-fit: scale-down;
+                        transition: 300ms ease all;
+
+                        &:hover {
+                            filter: contrast(80%)
+                        }
 
                         
+                        @media (min-width: 2048px) {
+                            width: 350px;
+                        }
+
                         @media (max-width: 1100px) {
                             align-self: center;
                             width: 150px;
@@ -462,6 +568,10 @@ const BrandMainContainer = styled.div`
                 color: white;
                 text-shadow: 0px 0px 3px ${props => props.theme.secondary};
 
+                @media (min-width: 2048px)  {
+                font-size: 100px;
+                }
+
                 @media (max-width: 1500px)  {
                 padding: 0;
                 font-size: 60px;
@@ -490,6 +600,10 @@ const BrandMainContainer = styled.div`
                 font-size: 22px;
                 color: white;
                 text-shadow: 0px 0px 3px ${props => props.theme.secondary};
+
+                @media (min-width: 2048px)  {
+                font-size: 36px;
+                }
 
 
                 @media (max-width: 1400px) {
@@ -542,21 +656,39 @@ const BrandMainContainer = styled.div`
                 background: white;
                 transition: 0.5s ease all;
 
-                @media (max-width: 1100px) {
-                    font-size: 14px;
-                }
-                
-                @media (max-width: 764px) {
-                    width: 80%;
+                @media (min-width: 2048px)  {
+                font-size: 26px;
+                padding: 10px 50px;
                 }
 
-                &:hover {
+                @media (max-width: 1100px) {
+                    font-size: 18px;
+                }               
+                
+                @media (max-width: 764px) {
+                    font-size: 16px;
+                    width: 80%;
+
+                    &:active {
                     border: 1px solid white;
                     background-color: ${props => props.theme.secondary};
                     color: white;
                     cursor: pointer;
                     filter: brightness(150%);
                     }
+                }
+
+               @media (min-width: 764px) 
+               { 
+                    &:hover {
+                    border: 1px solid white;
+                    background-color: ${props => props.theme.secondary};
+                    color: white;
+                    cursor: pointer;
+                    filter: brightness(150%);
+                    }
+                }
+            
             }
         }
     }
@@ -573,8 +705,13 @@ const BrandMainContainer = styled.div`
         gap: 50px;
 
         #servicios {
-            padding-top: 15px;
-            margin-top: -15px;
+            padding-top: 5vh;
+            margin-top: -5vh;
+
+            @media (max-width: 1100px) {
+            padding-top: 0;
+            margin-top: 0;
+            }
         }
 
        
@@ -589,7 +726,12 @@ const BrandMainContainer = styled.div`
         text-align: center;
         font-weight: 900;
         font-size: 60px;
+        
 
+        @media (min-width: 2048px) {
+          font-size: 70px;
+        }
+        
         @media (max-width: 1400px) {
           font-size: 50px;
         }

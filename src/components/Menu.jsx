@@ -1,8 +1,10 @@
 import styled from "styled-components";
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import NavBar from "./NavBar";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTabletButton } from '@fortawesome/free-solid-svg-icons';
+import { analytics } from "../firebase/firebaseConfig";
+import { logEvent } from "firebase/analytics";
 
 
 const Menu = () => {
@@ -30,9 +32,9 @@ const Menu = () => {
                 <NavBar/>
                 </div>
 
-                  <FontAwesomeIcon 
+                  <FontAwesomeIcon
                   className="mobile-btn"
-                  onClick={() => setHidden(true)}
+                  onClick={() => {setHidden(true); logEvent(analytics, 'Opening Mobile Menu')}}
                   icon={faTabletButton}/>
                 <div
                 className={hidden ? 'hidden-menu visible' : 'hidden-menu hidden'}
@@ -42,11 +44,11 @@ const Menu = () => {
                   >X</p>
 
                   <div>
-                  <a onClick={() => setHidden(false)} href="/">HOME</a>
-                  <a onClick={() => setHidden(false)} href="/blog">BLOG</a>
+                  <a onClick={() => {setHidden(false); logEvent(analytics, 'Mobile Menu | Home')}} href="/">HOME</a>
+                  <a onClick={() => {setHidden(false); logEvent(analytics, 'Mobile Menu | Blog')}} href="/blog">BLOG</a>
                   {/* <a onClick={() => setHidden(false)} href="/faq">FAQ</a> */}
-                  <a onClick={() => setHidden(false)} href="/nosotros">¿QUIÉNES SOMOS?</a>
-                  <a onClick={() => setHidden(false)} href="#contacto">CONTACTO</a>
+                  <a onClick={() => {setHidden(false); logEvent(analytics, 'Mobile Menu | Nosotros')}} href="/nosotros">¿QUIÉNES SOMOS?</a>
+                  <a onClick={() => {setHidden(false); logEvent(analytics, 'Mobile Menu | Contacto')}} href="#contacto">CONTACTO</a>
                   
                   </div>
                 </div>
@@ -94,7 +96,8 @@ const MenuContainer = styled.div`
         font-size: 30px;
         color: white;
         font-weight: bold;
-        &:hover {
+
+        &:active {
           filter: contrast(30%);
         }
       }
@@ -103,7 +106,8 @@ const MenuContainer = styled.div`
           font-size: 22px;
           text-decoration: none;
           color: white;
-          &:hover { 
+          
+          &:active { 
             filter: contrast(30%)
           }
         }
@@ -131,7 +135,7 @@ const MenuContainer = styled.div`
         border-radius: 10px;
         border: 1px solid white;
 
-        &:hover {
+        &:active {
           filter: contrast(50%);
         }
 
