@@ -47,6 +47,12 @@ const MenuNav = () => {
               gap: '20px'}}
               >
 
+                {
+                  <a 
+                onClick={() => logEvent(analytics, 'Menu | Blog')}
+                href="#top">
+                  <h1>HOME</h1></a>}
+
                 <a 
                 onClick={() => logEvent(analytics, 'Menu | Blog')}
                 href="/blog">
@@ -103,7 +109,7 @@ const MenuNavContainer = styled.div`
     }
 
     @media (max-width: 1400px) {
-      padding: 0 220px;
+      padding: 0 50px;
     }
 
     @media (max-width: 1100px) {
@@ -166,7 +172,7 @@ const MenuNavContainer = styled.div`
      
 
     .active {
-      width: 180px;
+      width: 9vw;
 
     @media (min-width: 2048px) {
             width: 200px;

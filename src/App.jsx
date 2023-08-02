@@ -9,10 +9,11 @@ import Blog1 from './components/products/Blog1';
 import Blog2 from './components/products/Blog2';
 import Blog3 from './components/products/Blog3';
 import Blog4 from './components/products/Blog4';
-import Faq from './components/products/Faq';
-import Faq1 from './components/products/Faq1';
-import Faq2 from './components/products/Faq2';
-import Faq3 from './components/products/Faq3';
+import Blog5 from './components/products/Blog5';
+// import Faq from './components/products/Faq';
+// import Faq1 from './components/products/Faq1';
+// import Faq2 from './components/products/Faq2';
+// import Faq3 from './components/products/Faq3';
 import Main from './components/Main';
 import WebFont from 'webfontloader'
 import React from 'react';
@@ -20,10 +21,12 @@ import WhatsAppBtn from './components/WhatsApp';
 import Nosotros from './components/Nosotros';
 import Error404 from './components/Error404';
 import AstaSign from './components/AstaSign';
+import NewsAlert from './components/NewsAlert';
+
 
 const App = () => {
 
-  
+
 
   WebFont.load ({
     google: {
@@ -60,6 +63,10 @@ const App = () => {
         <WhatsAppBtn/>
         {/* <IconMenu/> */}
 
+
+          <NewsAlert/>
+
+
           <div className="menu">
             <Menu/>
           </div>
@@ -71,13 +78,14 @@ const App = () => {
                     <Route path="/blog" element={<Blog/>}/>
                     {/* Dynamic Router (I used useLocation to compare blog.link against the location of the URL)*/}
                     <Route path={'/blog/mp_1'} element={<Blog1/>}/>
-                    <Route path={'/blog/mp_2' } element={<Blog2/>}/>
+                    <Route path={'/blog/calim_2' } element={<Blog2/>}/>
                     <Route path={'/blog/calim_1' } element={<Blog3/>}/>
-                    <Route path={'/blog/mp_3' } element={<Blog4/>}/>
-                    <Route path={'/faq/fatties_faq' } element={<Faq1/>}/>
+                    <Route path={'/blog/mp_2' } element={<Blog4/>}/>
+                    <Route path={'/blog/mp_3' } element={<Blog5/>}/>
+                    {/* <Route path={'/faq/fatties_faq' } element={<Faq1/>}/>
                     <Route path={'/faq/mercadopago_faq' } element={<Faq2/>}/>
-                    <Route path={'/faq/calim_faq' } element={<Faq3/>}/>
-                    <Route path="/faq" element={<Faq/>}/>
+                    <Route path={'/faq/calim_faq' } element={<Faq3/>}/> 
+                    <Route path="/faq" element={<Faq/>}/>*/}
                     <Route path="/nosotros" element={<Nosotros/>}/>
                   </Routes>
                   <Footer/>
@@ -99,8 +107,18 @@ const AppContainer = styled.div`
     flex-direction: column;
     box-shadow: 0px 0px 10px 10px rgba(124, 124, 124, 0.5);
     background-color: white;
+    margin-bottom: 3vh;
+
+    @media (max-width: 1400px) {
+            width: 95%;
+        }
 
     @media (max-width: 1100px) {
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+    @media (max-width: 764px) {
             width: 100%;
         }
 

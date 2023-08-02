@@ -260,7 +260,7 @@ const Container = styled.div`
     align-items: center;
     background-color: white;
     gap: 30px;
-    padding: 100px 0;
+    padding: 50px 0;
 
     #marcas {
             padding-top: 80px;
@@ -324,10 +324,10 @@ const Container = styled.div`
         }
 
         .wallimg {
-          background-image: url('https://i.ibb.co/gyQqkJb/banner-2.png');
+          background-image: url('bannerentero.jpg');
           background-size: cover;
           width: 100%;
-          height: 35vh;
+          height: 55vh;
           background-repeat: repeat-x;
           animation-duration: 2000s;
           animation-timing-function: linear;
@@ -338,14 +338,15 @@ const Container = styled.div`
           animation-play-state: running;
           animation-name: carousel;
 
+          @media (max-width: 764px) {
+            height: 40vh;
+          }
+
             @keyframes carousel {
               0% {background-position: 0 0}
               100% {background-position: -100000px 0}
           }
 
-            @media (max-width: 764px) {
-              height: 250px;          
-            }
 
         /* @keyframes scroll {
           0% {transform: translateX(0)};

@@ -34,7 +34,9 @@ const Blog2 = () => {
                     <div className="blog-text">
 
                         <div className="wall-img">
-                            <img src={banner} alt="" />
+                            <img 
+                            rel='preload'
+                            src={banner} alt="" />
                         </div>
 
                         <div className="inner-text">
@@ -59,6 +61,7 @@ const Blog2 = () => {
                                 </li>
                             </ul>
                             <p>Es importante tener presente que el saldo a favor es dinero del contribuyente y, por lo tanto, podrá disponer del mismo para cancelar deudas con el fisco, consumirlo, o bien podrá serle devuelto. Para ello, deberá presentar el correspondiente reclamo administrativo ante ARBA, AGIP o la dirección de rentas en las que haya acumulado el saldo.</p>
+                            <br />
                             <h1>Cuándo conviene iniciar el reclamo por saldo a favor</h1>
                             <p>Tal como mencionamos, para que puedas obtener la devolución del saldo a favor deberás hacer un <strong>reclamo administrativo ante el fisco local</strong>, cumpliendo con los requisitos formales del mismo y acompañando pruebas que constaten la existencia del saldo.
                             A partir del momento en el que inicies el reclamo, comenzarán a regir los intereses y se interrumpirá el plazo de prescripción. Por eso, es <strong>importante no demorarse para solicitar la devolución</strong> del saldo, ya que en la medida en que no se efectúe, no correrán los intereses y la deuda a tu favor podrá prescribir.

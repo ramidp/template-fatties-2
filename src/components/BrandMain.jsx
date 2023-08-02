@@ -97,7 +97,9 @@ const BrandMain = () => {
                         <div className="brand-title">
                             <div className="brand-title-1">
                                     <a href="/">
-                                    <img className="fatties-logo" src={logo} alt="" />
+                                    <img 
+                                    rel='preload'
+                                    className="fatties-logo" src={logo} alt="" />
                                     </a>
                                  <h1 
                                 >
@@ -113,7 +115,9 @@ const BrandMain = () => {
 
                             </div>
 
-                            <img className="cellphone-logo" src={wallimg} alt="" />
+                            <img 
+                            rel='preload'
+                            className="cellphone-logo" src={wallimg} alt="" />
 
                         </div>
                         <div className="btns-box">
@@ -184,9 +188,7 @@ const BrandMainContainer = styled.div`
             position: fixed;
             width: 100%;
             top: 0;
-            left: 0;
             height: 100vh;
-            background-color: #a3a3a3a9;
             z-index: 100;
             display: flex;
             justify-content: center;
@@ -194,12 +196,58 @@ const BrandMainContainer = styled.div`
             align-items: center;
             animation-name: opening;
             animation-duration: 500ms;
-            padding: 30px 0;
 
-            @media (max-width: 764px) {
-                padding: 0;                     
+            .closing-div {
+                background-color: #747474ab;
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                z-index: -10;
             }
+   
+            .modal-div {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
 
+                @media (max-width: 764px) {
+                    gap: 0 5px;
+                }
+
+                .movers-svg {
+                    cursor: pointer;
+                    border-radius: 15px ;
+                    border: 2px solid white;
+                    height: 100%;
+                }
+
+                .movers {
+                    width: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    margin: 0;
+                    font-size: 20px;
+                    font-weight: 900;
+                    transition: 300ms ease all;                                    
+
+                    @media (max-width: 1100px) {
+                        font-size: 16px;
+                        width: 70px;
+                    }
+
+                    @media (min-width: 764px) {
+                        
+                        &:hover {
+                            background-color: white;
+                            color: gray;
+                        }                        
+                    }
+                                        
+                }
+            } 
 
             @keyframes opening {
                 0% { filter: opacity(0%)}
@@ -211,29 +259,34 @@ const BrandMainContainer = styled.div`
                 color: ${props => props.theme.secondary};
 
                 @media (max-width: 764px) {
-                    font-size: 14px;
+                    font-size: 18px;
                 }
             }
 
 
             h2 {
-                color: white;
+                color: black;
+                width: 50px;
+                height: 100%;
                 cursor: pointer;
                 font-weight: bold;
-                text-shadow: 0px 0px 10px black;
+                text-shadow: 0px 0px 10px white;
                 transition: 400ms ease all;
-                background-color: gray;
-                border-radius: 50%;
                 display: flex;
+                margin: 0;
                 justify-content: center;
                 align-items: center;
                 font-size: 20px;
-                height: 50px;
-                width: 50px;
+                background-color: transparent;
+                border-radius: 15px ;
+                border: 2px solid white;   
+
+                @media (max-width: 764px) {
+                    font-size: 16px;
+                }
 
                 &:hover {
-                    transform: scale(1.1);
-                    filter: contrast(50%);
+                    background-color: white;
                 }
             }
 
@@ -262,8 +315,9 @@ const BrandMainContainer = styled.div`
                     }
 
                     @media (max-width: 764px) {
-                        width: 100%;
-                        padding: 10px;                     
+                        width: calc(100%);
+                        height: calc(100%);
+                        padding: 10px;  
                     }
 
                     .modal-texts {
@@ -438,20 +492,18 @@ const BrandMainContainer = styled.div`
             background-size: 200vw 200vw;
 
             @media (max-width: 1100px) {
+                gap: 2vh;
                 background: linear-gradient(70deg, ${prop => prop.theme.tertiary}  10% ,${props => props.theme.secondary} 68%);
-                gap: 10vh;
             }
 
             @media (max-width: 764px) {
-                gap: 5vh;
+                gap: 20px;
                 padding: 0 0 50px 0;
             }
 
             @media (max-height: 720px) {
-                gap: 5vh;
                 padding: 0 0 50px 0;
-            }
-
+            }     
 
             @keyframes bgmovement {
                 0% {
@@ -465,29 +517,33 @@ const BrandMainContainer = styled.div`
             .brand-title {
                 width: 100%;
                 padding: 90px 70px 0 70px ;
-                min-height: 60vh;
-                height: auto;
+                min-height: calc(90vh - 90px);
+                height: calc(auto - 90px);
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
-                align-items: center;
+                align-items: flex-start;
                 
                 @media (max-width: 1400px) {
                     padding: 90px 50px 0 50px;
+                    height: calc(90vh - 90px);
+                    min-height: 0;
                 }
 
                 @media (max-width: 1100px) {
+                    padding-bottom: 50px;
                     flex-direction: column;
-                    min-height: 50vh;
+                    height: calc(95vh - 140px);
                 }
 
                 @media (max-width: 764px) {
                     padding: 30px 0;
+                    height: calc(70vh - 60px);
                 }
 
                 .brand-title-1 {
                     width: 50%;
-                    height: 100%;
+                    height: auto;
                     gap: 50px;
                     display: flex;
                     flex-direction: column;
@@ -546,7 +602,7 @@ const BrandMainContainer = styled.div`
                 }
 
                 .cellphone-logo {
-                    width: 60%;
+                    width: 55%;
                     height: 90%;
                     object-fit: contain;
 
@@ -589,7 +645,7 @@ const BrandMainContainer = styled.div`
                 }
 
                 @media (max-width: 764px) {
-                font-size: 40px;
+                font-size: 50px;
                 }
 
             }
@@ -656,17 +712,14 @@ const BrandMainContainer = styled.div`
                 background: white;
                 transition: 0.5s ease all;
 
-                @media (min-width: 2048px)  {
-                font-size: 26px;
-                padding: 10px 50px;
-                }
-
-                @media (max-width: 1100px) {
-                    font-size: 18px;
-                }               
+                    @media (min-width: 2048px)  {
+                    font-size: 22px;
+                    padding: 15px 50px;
+                    }
+            
                 
                 @media (max-width: 764px) {
-                    font-size: 16px;
+                    font-size: 14px;
                     width: 80%;
 
                     &:active {

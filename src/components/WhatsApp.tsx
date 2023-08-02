@@ -47,13 +47,21 @@ const Container = styled.div`
     justify-content: flex-end;
     align-items: flex-end;
     padding: 0 10px 15px 0;
-    bottom: 1%;
-    right: 0%;
+    bottom: 3vh;
+    right: 15vw;
     z-index: 5;
-
     animation-name: bounce-in-bottom;
     animation-duration: 2.5s;
     animation-fill-mode: forwards;
+
+    @media (max-width: 1400px) {
+        right: 2vw;
+    }
+
+    @media (max-width: 1100px) {
+        right: 0;
+        bottom: 0;
+    }
 
         @keyframes bounce-in-bottom {
   0% {
@@ -110,12 +118,11 @@ const Container = styled.div`
 
     img {
         width: 50px;
-        transition: 300ms ease all;
+        transition: 300ms ease all;    
 
         @media (min-width: 2046px) {
             width: 70px;
             }
-
 
 
         @media (min-width: 765px) {
@@ -132,10 +139,11 @@ const Container = styled.div`
                 }
                 }
 
-    @media (max-width: 1100px) {
-            width: 40px;
-            }
+        @media (max-width: 1100px) {
+                width: 40px;
+                }
 
+        
     }
     
 `

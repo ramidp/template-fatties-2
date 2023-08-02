@@ -2,13 +2,13 @@ import styled from "styled-components";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {useState} from "react";
 import 'aos/dist/aos.css'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faArrowRight, faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight, faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 
 
 const Referencias = () => {
-  const [hide, setHide] = useState(true)
 
+  const [hide, setHide] = useState(true)
 
   // const logo = require('../images/Brands-Logos/el-calafate.jpg')
   // const logo2 = require('../images/Brands-Logos/Cafe-Martinez.webp')
@@ -18,25 +18,25 @@ const Referencias = () => {
   const referencesArray = [
     {
       id: 1,
-      reference: '"Gran empresa y aliado con quien trabajar"',
+      reference: '"Siempre nos ayudan, colaboran y responden a tiempo. Hacen su trabajo y eso esta bueno!"',
       image: '',
-      person: 'Ramiro De Palo',
-      charge: 'CEO de Asta'
+      person: 'Tamara Trento',
+      charge: 'Comerciante'
     },
-    // {
-    //   id: 2,
-    //   reference: '"El ideal son 100 caracteres, acorde a las pruebas que fui viendo."',
-    //   image: '',
-    //   person: 'Martin Navarro',
-    //   charge: 'CEO de otro lugar'
-    // },
-    // {
-    //   id: 3,
-    //  reference: '"El ideal son 100 caracteres, acorde a las pruebas que fui viendo."',
-    //  image: '',
-    //  person: 'Rodrigo De Paolo',
-    //  charge: 'CEO de Asta'
-    // },
+    {
+      id: 2,
+      reference: '"Pudimos finalmente solucionar el tema de los colaboradores en MercadoPago (Agregar alias o cbu). Gracias su ayuda!"',
+      image: '',
+      person: 'Emanuel S.',
+      charge: 'Importador en Bs As'
+    },
+    {
+      id: 3,
+     reference: '"Se nota su conocimiento y experiencia. Pudieron ayudar en la optimización de cobranza a nuestros clientes"',
+     image: '',
+     person: 'Bernardo Agustin',
+     charge: 'Dueño de Supermercados'
+    },
     // {
     //   id: 4,
     //  reference: '"El ideal son 100 caracteres, acorde a las pruebas que fui viendo."',
@@ -67,14 +67,14 @@ const Referencias = () => {
                     className="reference-all"
                     id={item.id}
                     key={item.id}>
-                        {/* {
+                        {
                         item.id > 1 ?
                         <FontAwesomeIcon 
                         onClick={() => handleIdReference(item.id - 2)}
                         icon={faArrowLeft}/>
                         :
                         <span></span>
-                      } */}
+                      }
 
                         <div
                         className='reference'
@@ -85,14 +85,14 @@ const Referencias = () => {
                           <h5>{item.charge}</h5>
                         </div>
 
-                      {/* {
-                        item.id < 4 ?
+                      {
+                        item.id < referencesArray.length ?
                         <FontAwesomeIcon 
                         onClick={() => handleIdReference(item.id)}
                         icon={faArrowRight}/>
                         :
                         <span></span>
-                      } */}
+                      }
                     </div>
                   )})}
               </div>
@@ -107,20 +107,28 @@ export default Referencias;
 
 const Container = styled.div`
     width: 100%;
-    min-height: calc(60vh - 100px);
-    height: auto;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
     user-select: none;
-    background-color: white;
-    background-image: url('./images/wall-bubbles.png');
+    background-image: url('iconitos.png');
     background-size: contain;
-    background-repeat: repeat;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
     padding: 50px 0;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+
+    @media (max-width: 1100px) {
+        min-height: auto;
+        background-size: cover;
+      }
+
+      @media (max-width: 764px) {
+        height: 70vh;
+      }
     
     .title {
       h1 {
@@ -165,17 +173,17 @@ const Container = styled.div`
 
     .references-box {
       width: 100%;
-      height: auto;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+  
         
         .bubble-wall {
           background-image: url('./images/burbuja200px.png');
-          background-size: 100% 100%;
-          height: 50vh;
-          width: 40vw;
-          padding: 50px 0;
+          background-size: contain;
+          width: 70%;
+          height: 70%;
           background-repeat: no-repeat;
           background-position: center;
           display: flex;
@@ -183,16 +191,22 @@ const Container = styled.div`
           align-items: center;
           animation-name: movimiento;
           animation-duration: 1.3s;
-          animation-iteration-count: infinite;        
+          animation-iteration-count: infinite;   
+          animation-timing-function: linear;
+
 
           @media (max-width: 1400px) {
-            height: 400px;
-            width: 600px;
+            height: 90%;
+          }
+
+          @media (max-width: 1100px) {
+            width: 70%;
+            height: 100%;
           }
 
           @media (max-width: 764px) {
-            height: 300px;
-            background-size: contain;
+            width: 100%;
+            height: 100%;
           }
             
             @keyframes movimiento {
@@ -212,18 +226,15 @@ const Container = styled.div`
 
           
           .reference-all {
-            width: 100%;
+            width: calc(90%);
+            height: 100%;
+            left: 3%;
             display: flex;
             padding: 0;
             flex-direction: row;
             justify-content: center;
             align-items: center;
             position: relative;
-            left: 3%;
-
-            @media (max-width: 764px) {
-              width: 90%;
-            }
 
             span {
               width: 45px;
@@ -238,10 +249,11 @@ const Container = styled.div`
               height: 100%;
               gap: 20px;
 
-              @media (max-width: 764px) {
+              @media (max-width: 1100px) {
                 gap: 10px;
+                width: 60%;
               }
-        
+                     
             img {
               height: 50px;
         
@@ -264,15 +276,15 @@ const Container = styled.div`
                 font-size: 20px;
               }
               @media (max-width: 1100px) {
-                width: 70%;
-                font-size: 20px;
+                width: 80%;
+                font-size: 18px;
               }
               @media (max-width: 764px) {
                 width: 90%;
-                font-size: 18px;
+                font-size: 16px;
               }
               @media (max-width: 450px) {
-                font-size: 16px;
+                font-size: 14px;
               }
             }
 

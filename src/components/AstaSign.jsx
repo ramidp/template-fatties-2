@@ -11,7 +11,7 @@ const AstaSign = () => {
 
             <a 
             onClick={() => logEvent(analytics, 'AstaSign | Asta eStudio')}
-            href="https://asta-portfolio.web.app/"
+            href="https://www.astaestudio.com/"
             target='_blank'
             >
             <span>アスタ</span> | Asta

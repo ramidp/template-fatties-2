@@ -3,7 +3,7 @@
         "id": 1,
         "title": "Configurar cuotas sin interés con un monto mínimo",
         "link" : "mp_1",
-        "date" : "10 de Agosto, 2023",
+        "date" : "10 de Junio, 2023",
         "img" : "mp_1/mp1.jpg",
         "icon" : "mplogo.png",
         "time": "3" 
@@ -12,30 +12,36 @@
         "id": 2,
         "title": "Transformación digital",
         "link": "calim_1",
-        "date" : "10 de Agosto, 2023",
+        "date" : "12 de Junio, 2023",
         "img": "calim_1/calculadora.webp",
         "icon" : "calim-logo.png",
-        "time": "2" 
-        
+        "time": "2"         
     },
     {   
         "id": 3,
         "title": "Saldo a favor de Ingresos Brutos",
-        "link": "mp_2",
-        "date" : "10 de Agosto, 2023",
-        "img": "mp_2/mp-photo.webp",
+        "link": "calim_2",
+        "date" : "14 de Junio, 2023",
+        "img": "calim_2/calim_2.png",
         "icon" : "calim-logo.png",
-        "time": "3" 
-        
+        "time": "3"         
     },
-    {   
+    {  
         "id": 4,
         "title": "Vinculá tu lector Smart a tu QR impreso",
-        "link": "mp_3",
+        "link": "mp_2",
         "date" : "22 de Junio, 2023",
         "img": "mp_3/mp_3.png",
         "icon" : "mplogo.png",
         "time": "7" 
-
+    },
+    {   
+        "id": 5,
+        "title": "Colaboradores: Una herramienta para organizar a tu equipo de trabajo",
+        "link": "mp_3",
+        "date" : "11 de Julio, 2023",
+        "img": "mp_2/mp.png",
+        "icon" : "mplogo.png",
+        "time": "5" 
     }
 ]

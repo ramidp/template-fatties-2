@@ -146,6 +146,16 @@ const ProductContainer = styled.div`
                             font-size: 20px;
                         }
                     }
+
+                    h4 {
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+
+                    h2 {
+                        font-size: 22px;
+                        font-weight: 600;
+                    }
                     
                     p {
                         text-align: left;
@@ -153,6 +163,10 @@ const ProductContainer = styled.div`
                         margin: 0;
                         font-size: 18px;
                         padding-bottom: 10px;
+
+                        img {
+                            width: 80px;
+                        }
 
                         @media (min-width: 2048px) {
                             font-size: 20px;

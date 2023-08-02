@@ -30,13 +30,15 @@ const Blog3 = () => {
                             <div className="underline"></div>
 
                             
-                            <h3><strong>Tags:</strong> Tag1, Tag2, Tag3</h3>
+                            <h3><strong>Tags:</strong> Digitalización, Adaptabilidad, Transformación</h3>
 
                             <div className="blog-text">
 
                             <div className="wall-img">
 
-                             <img src={banner} alt="" />
+                             <img                 
+                             rel='preload'                             
+                             src={banner} alt="" />
 
                             </div>
 

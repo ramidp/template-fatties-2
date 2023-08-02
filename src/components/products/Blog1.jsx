@@ -28,7 +28,9 @@ const Blog1 = () => {
                         <div className="blog-text">
 
                             <div className="wall-img">
-                                <img src={banner} alt="" />
+                                <img 
+                                rel='preload'
+                                src={banner} alt="" />
                             </div>
 
                             <div className='inner-text'>

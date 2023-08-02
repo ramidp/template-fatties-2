@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductContainer from './styles/estiloblog-item'
 import blogs from '../../data/blogs.json'
 
-const Blog3 = () => {
+const Blog4 = () => {
 
     const banner = require('../../images/Blog/' + `${blogs[3].img}`)
 
@@ -16,7 +16,7 @@ const Blog3 = () => {
                 href="/blog"
                 className="anchor-blog">
                 Blog
-                </a> / {blogs[1].title}</p>
+                </a> / {blogs[3].title}</p>
 
                     <div className="product-types1">
                         <div className="col-12 col-12 d-flex flex-column gap-4">
@@ -31,21 +31,21 @@ const Blog3 = () => {
                             <div className="underline"></div>
 
                             
-                            <h3><strong>Tags:</strong> Tag1, Tag2, Tag3</h3>
+                            <h3><strong>Tags:</strong> QR, Lector, Point</h3>
 
                             <div className="blog-text">
 
                             <div className="wall-img">
 
-                             <img src={banner} alt="" />
+                             <img                 
+                             rel='preload'
+                             src={banner} alt="" />
 
                             </div>
 
                             <div className="inner-text">
                                 <p>
-                                <strong>
                                 <strong>Los comercios que exhiben el QR en el sector de cobro venden 50% más que aquellos comercios que no lo hacen.</strong>  Conocé los beneficios de esta integración que agilizarán tu experiencia de cobro para vos y tus clientes.
-                                </strong>
                                 </p>
                                 <br/>
                                 <h1>¿Cuáles son los beneficios de vincular tu lector Point con tu QR impreso? </h1>
@@ -94,4 +94,4 @@ const Blog3 = () => {
     );
 }
  
-export default Blog3;
+export default Blog4;

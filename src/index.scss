@@ -7,10 +7,11 @@ body {
     display: block;
     scroll-behavior: smooth;
   }
-  
-  #root {
+
+  html, #root {
     background-color: rgb(228, 228, 228);
   }
+
   
   body .offcanvas-backdrop.show {
     opacity: 0.8;
@@ -49,11 +50,7 @@ body {
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
+  background: #f1f1f1;
 }
  
 /* Handle */

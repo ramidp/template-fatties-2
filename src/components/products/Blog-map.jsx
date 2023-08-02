@@ -9,8 +9,9 @@ import { logEvent } from 'firebase/analytics';
 import { analytics } from '../../firebase/firebaseConfig';
 
 
-
 const Blog = () => {
+
+const CalimLogo = require('../../images/calim-logo.png')
     
     useEffect(() => {
         setFilteredData('')
@@ -74,7 +75,7 @@ const Blog = () => {
 
                     <BlogContainer>
                         {
-                            blogs.slice(0, 1).map((blog) => {
+                            blogs.sort((a, b) => b.id - a.id).slice(0, 1).map((blog) => {
                                 return (
                                     <div 
                                     key={blog.id}
@@ -102,21 +103,44 @@ const Blog = () => {
                                                 </div>
 
                                             </div>
-                                            <img src={require('../../images/Blog/' + `${blog.img}`)} alt="" />
+
+                                            <div
+                                            className='article-images'
+                                            >
+                                                <img 
+                                                rel='preload'
+                                                className="banner"
+                                                src={require('../../images/Blog/' + `${blog.img}`)} alt="" />
+                                                <img 
+                                                rel='preload'
+                                                className='icon-fixed'
+                                                src={require('../../images/' + `${blog.icon}`)} alt="" />
+                                            </div>
+
                                      </div>
                                     )
                             })
                         }
 
                         {
-                            blogs.slice(1, 100).map((blog) => {
+                            blogs.slice(1, blogs.length).map((blog) => {
                                 return (
                                     <div 
                                     key={blog.id}
                                     className="article">
+                                        <div
+                                        className='article-images'
+                                        >
                                             <img 
+                                            rel='preload'
                                             className="banner"
                                             src={require('../../images/Blog/' + `${blog.img}`)} alt="" />
+                                            <img 
+                                            rel='preload'
+                                            className='icon-fixed'
+                                            src={require('../../images/' + `${blog.icon}`)} alt="" />
+                                        </div>
+
                                             <h1>{blog.title}</h1>
                                             <p>{blog.date}</p>
 
@@ -171,14 +195,14 @@ const BlogContainer = styled.div`
             justify-content: space-between;
             align-items: flex-start;
             width: calc(33.30% - 13.33px);
-            min-height: 45vh;
+            min-height: 50vh;
             height: auto;
             transition: 0.2s linear;
             border-bottom: 1.5px solid white;
             
     
             @media (max-width: 1400px) {
-                min-height: 55vh;
+                min-height: 60vh;
             }
             
             @media (max-width: 1100px) {
@@ -272,16 +296,35 @@ const BlogContainer = styled.div`
 
             }
 
-            .banner {
+            .article-images {
                 width: 100%;
-                height: 200px;
-                object-fit: cover;
-                object-position: 50% 20%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                background-color: white;
 
-                @media (min-width: 2048px) {
-                    height: 250px;
-                }    
+                .icon-fixed {
+                    height: 4vh;
+                    padding: 5px 0;
+                    align-self: flex-end;
+                    width: auto;
+                    padding-right: 2vw;
+                    object-fit: contain;
+                    filter: contrast(150%);
+                }
+
+                .banner {
+                    width: 100%;
+                    height: calc(22vh - 4vh);
+                    object-fit: cover;
+                    object-position: 50% 20%;
+    
+                    @media (min-width: 2048px) {
+                        height: 25vh;
+                    }    
+                }
             }
+
 
             .icon-div {
                 height: 100px;
@@ -407,11 +450,36 @@ const BlogContainer = styled.div`
                 }
 
                 h1 {
-                    min-height: 10vh;
                     width: 100%;
                     padding: 0;
                     font-size: 36px;
-                    padding: 10px 0;
+                    padding: 10px 0; 
+                    
+                    
+                .article-images {
+                    width: 100%;
+
+                .icon-fixed {
+                    background-color: #ffffff8b;
+                    height: 5vh;
+                    padding: 5px 0;
+                    align-self: flex-end;
+                    width: 100%;
+                    object-fit: contain;
+                    filter: brightness(0) invert(1) contrast(150%);
+                }
+
+                .banner {
+                    width: 100%;
+                    height: 200px;
+                    object-fit: cover;
+                    object-position: 50% 20%;
+    
+                    @media (min-width: 2048px) {
+                        height: 250px;
+                    }    
+                }
+            }
                     font-weight: 600;
                     z-index: 2;
                     text-align: left;
@@ -423,30 +491,50 @@ const BlogContainer = styled.div`
     
                     @media (max-width: 1400px) {
                     font-size: 30px;
-                    min-height: 5vh;
                     }
                     
                     @media (max-width: 1100px) {
                     font-size: 22px;
-                    min-height: 5vh;
                     }
 
-                    @media (max-height: 720px) {
-                    min-height: 15vh;
-                    }
                   
                 }
             }
-   
-            img {
-                width: 60%;
+
+            .article-images {
+                width: 65%;
                 height: 100%;
-                object-fit: cover;
-                object-position: 50% 20%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: flex-start;
+                background-color: white;
 
                 @media (max-width: 1100px) {
                     width: 100%;
-                    height: 200px;
+                }
+
+                .icon-fixed {
+                    height: 4vh;
+                    padding: 5px 0;
+                    width: auto;
+                    padding-right: 2vw;
+                    object-fit: contain;
+                    filter: contrast(150%);
+                }
+
+                .banner {
+                    width: 100%;
+                    height: calc(100% - 4vh);
+                    object-fit: cover;
+                    object-position: 50% 20%;
+    
+                    @media (min-width: 2048px) {
+                        height: calc(30vh - 4vh);
+                    }    
+                    @media (max-width: 1100px) {
+                        height: calc(22vh - 4vh);
+                    }    
                 }
             }
         }

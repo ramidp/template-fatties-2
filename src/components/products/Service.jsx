@@ -6,10 +6,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { logEvent } from "firebase/analytics";
 import { analytics } from "../../firebase/firebaseConfig";
+import ServiceMp from "./ServiceMp";
+import ServiceCalim from "./ServiceCalim";
+import ServiceTel from "./ServiceTel";
+import ServiceCross from "./ServiceCross";
 
 
 const Service = ({service}) => {
-
 
     const logoMp = require('../../images/mplogo.png')
     const logoCalim = require('../../images/calim-logo.png')
@@ -26,10 +29,58 @@ const Service = ({service}) => {
     const [closedModal, setClosedModal] = useState(false)
 
     const delayedClosingModal = () => {
+
         setTimeout(() => {
             setModal(false)
-        },500)
+        },400);
+
+        setTimeout(() => {
+            setShow(true)
+            setShow2(false)
+            setShow3(false)
+            setShow4(false)
+        }, 450)
     }
+
+    const [show, setShow] = useState(true)
+    const [show2, setShow2] = useState(false)
+    const [show3, setShow3] = useState(false)
+    const [show4, setShow4] = useState(false)
+
+    const backwards = () => {
+        if (show2 === true) {
+            setShow(true);
+            setShow2(false);
+        } 
+        if (show3 === true) {
+            setShow2(true);
+            setShow3(false)
+        }
+        if (show4 === true) {
+            setShow3(true);
+            setShow4(false)
+        }
+    }
+
+    const forward = () => {
+        if (show === true) {
+            setShow(false);
+            setShow2(true);
+        } 
+        if (show2 === true) {
+            setShow2(false);
+            setShow3(true)
+        }
+        if (show3 === true) {
+            setShow3(false);
+            setShow4(true)
+        }
+    }
+
+const [serviceValue, setServiceValue] = useState('')
+
+
+
 
     return ( 
         <Container>
@@ -40,6 +91,7 @@ const Service = ({service}) => {
                         <div  className="features">
                             <div className="logos-div">
                                 {service.logo === logoMp || service.logo == logoCalim ? <img 
+                                rel='preload'
                                 className={service.logoclass} src={service.logo} alt="" />
                                 :
                                 <FontAwesomeIcon 
@@ -51,11 +103,12 @@ const Service = ({service}) => {
                                 <div className="underline"></div>
                                 <p>{service.text}</p>
 
+                                
                                 <div
                                 className="read-more"
                                 >
                                     <h3
-                                    onClick={() => {setModal(true); setClosedModal(true); logEvent(analytics, 'Service | ' + `${service.name}`)}}
+                                    onClick={() => {setModal(true); setClosedModal(true); setServiceValue(service.name);logEvent(analytics, 'Service | ' + `${service.name}`)}}
                                     >Leer más
                                     </h3>
                                     <FontAwesomeIcon 
@@ -67,43 +120,100 @@ const Service = ({service}) => {
                     </div>
 
 
-                    {modal && 
+                    {modal &&                         
                         <div
                         className={closedModal ? "modal-service-container" : 'modal-service-container closed'}
                         >
-                            <h2
-                            onClick={() => {delayedClosingModal(); setClosedModal(false)}}
-                            >X</h2>
+                            
                             <div
-                            className='modal-service-box'
+                            onClick={() => {delayedClosingModal(); setClosedModal(false)}}
+                            className='closing-div'
+                            ></div>
+                        
+                            <div
+                            className='modal-div'
                             >
-                                
-                                <div>
-                                    <h1
-                                    className={`${service.anchorclass}` }
-                                    >{service.title}</h1>
-                                    <h3>{service.subtitle}</h3>
-                                </div>
-                                
-                                <div
-                                className='modal-texts'
-                                >
-                                    <p><strong> {service.text2} </strong></p>
-                                    {service.text3 && <p>{service.text3}</p>}
-                                    {service.text4 && <p>{service.text4}</p>}
-                                    {service.text5 && <p>{service.text5}</p>}
-                                    {service.text6 && <p>{service.text6}</p>}
-                                    {service.text7 && <p>{service.text7}</p>}
-                                    {service.text8 && <p>{service.text8}</p>}                              
+                            {/* {show === true ? 
+                            <span
+                            className='movers'
+                            ></span>
+                            :
+                            <p
+                            className='movers'
+                            onClick={backwards}
+                            >
+                               <FontAwesomeIcon icon={faChevronLeft}/>
+                                </p>} */}
 
-                                </div>
-                                <a 
-                                onClick={() => logEvent(analytics, 'Service | WhatsApp Contacto')}
-                                href={service.contacttext} target='_blank'>Contacto</a>
-                                <a 
-                                onClick={() => logEvent(analytics, 'Service | FAQ')}
-                                href="/">Link a FAQ</a>
-                            </div>
+                            {
+                            serviceValue === 'Mercado Pago' &&
+                            <ServiceMp
+                            show={show}
+                            show2={show2}
+                            show3={show3}    
+                            forward={forward}                        
+                            backwards={backwards}
+                            delayedClosingModal={delayedClosingModal}
+                            setClosedModal={setClosedModal}
+                            />
+                            }
+                            
+                            {
+                            serviceValue === 'Calim' &&
+                            <ServiceCalim
+                            show={show}
+                            show2={show2}
+                            show3={show3} 
+                            show4={show4} 
+                            forward={forward}                        
+                            backwards={backwards} 
+                            delayedClosingModal={delayedClosingModal}
+                            setClosedModal={setClosedModal}
+                           />
+                            }
+
+                            {
+                            serviceValue === 'Atención Telefónica' &&
+                            <ServiceTel
+                            show={show}
+                            show2={show2}
+                            show3={show3} 
+                            show4={show4} 
+                            forward={forward}                        
+                            backwards={backwards}   
+                            delayedClosingModal={delayedClosingModal}
+                            setClosedModal={setClosedModal}
+                           />
+                            }
+
+                            {
+                            serviceValue === 'Cross-Selling' &&
+                            <ServiceCross
+                            show={show}
+                            show2={show2}
+                            show3={show3} 
+                            show4={show4} 
+                            forward={forward}                        
+                            backwards={backwards}  
+                            delayedClosingModal={delayedClosingModal}
+                            setClosedModal={setClosedModal}
+                           />
+                            }
+
+                            {/* {
+                             show3 === true ?
+                             <span
+                             className='movers'
+                             ></span> 
+                            :
+                            <p
+                            className='movers'
+                            onClick={forward}
+                            >
+                               <FontAwesomeIcon icon={faChevronRight}/>
+                                </p>} */}
+
+                            </div>  
                         </div>    
                         }
 
@@ -152,6 +262,11 @@ const Container = styled.div`
 
         &:hover {
             transform: scale(1.05)
+        }
+
+        @media (max-width: 1400px) {
+            width: 70vw;
+            min-height: 45vh;
         }
 
         @media (max-width: 1100px) {

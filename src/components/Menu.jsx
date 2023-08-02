@@ -9,7 +9,6 @@ import { logEvent } from "firebase/analytics";
 
 const Menu = () => {
 
-
     const [color, setColor] = useState(false)
     
     const changeColor = () => {
@@ -103,7 +102,7 @@ const MenuContainer = styled.div`
       }
       
       a {
-          font-size: 22px;
+          font-size: 20px;
           text-decoration: none;
           color: white;
           
@@ -162,12 +161,13 @@ const MenuContainer = styled.div`
     .menu-white {
         width: 100%;
         height: 70px;
-        transition: 500ms ease-in;
-        background: linear-gradient(105deg, ${prop => prop.theme.tertiary}  1% ,${props => props.theme.secondary} 47.5%, rgba(255, 255, 255, 1) 47.59%);
+        transition: 300ms ease-in;
+        background: linear-gradient(105deg, ${prop => prop.theme.tertiary}  1% ,${props => props.theme.secondary} 48.5%, rgba(255, 255, 255, 1) 48.59%);
         box-shadow: 0px 0px 5px 5px rgba(124, 124, 124, 0.5);
         z-index: 10;
 
         a {
+          
           img {
             height: 30px;
             transition: 500ms ease-in-out;
@@ -176,11 +176,15 @@ const MenuContainer = styled.div`
           }
         }
 
-        @media (max-width: 764px) {
-          display: none;
+        @media (max-width: 1400px) {
+          background: linear-gradient(105deg, ${prop => prop.theme.tertiary}  1% ,${props => props.theme.secondary} 43.5%, rgba(255, 255, 255, 1) 43.59%);
         }
+
         @media (max-width: 1100px) {
           background: rgba(255,255,255,1);
+        }
+        @media (max-width: 764px) {
+          display: none;
         }
         
     }

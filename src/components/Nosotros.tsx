@@ -3,7 +3,6 @@ import { ReactComponent as LinkedInLogo } from '../images/icons/linkedin.svg'
 import { logEvent } from "firebase/analytics";
 import { analytics } from "../firebase/firebaseConfig";
 
-
 const Nosotros = () => {
 
     // const photo1 = require('../images/ema1.png')
@@ -80,7 +79,8 @@ const Nosotros = () => {
                         <div 
                         key={worker.id}
                         className="cards">
-                            <img src={unknown} alt="" />
+                            <img 
+                            src={unknown} alt="" />
                             <h3>{worker.name}</h3>                                
                                 <a 
                                 onClick={() => logEvent(analytics, "Nosotros | LinkedIn | " + `${worker.name}`)}

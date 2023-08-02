@@ -85,7 +85,7 @@ const Footer = () => {
                                 </div>
                                 <div>
                                 <FontAwesomeIcon icon={faPhone} />
-                                    <p> +54 (011) 5-263-8549 </p>
+                                    <p> +54 (011) 5263-8549 </p>
                                 </div>
                                 <div>
                                 <WhatsAppLogo

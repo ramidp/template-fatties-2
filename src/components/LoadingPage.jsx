@@ -42,7 +42,6 @@ const LoadingPageContainer = styled.div`
     animation-delay: 1.5s;
     left: 0;
 
-
     h1 {
       color: white;
       text-align: center;
