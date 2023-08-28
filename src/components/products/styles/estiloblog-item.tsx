@@ -11,8 +11,6 @@ const ProductContainer = styled.div`
     min-height: ${props => props.theme.mainHeight};
     height: auto;
     padding-top: 100px;
-    padding-bottom: 50px;
-    margin-bottom: 50px;
     background-color: white;
             
     @media (max-width: 1100px) {
@@ -106,7 +104,7 @@ const ProductContainer = styled.div`
                 margin: 0;
                 width: 100%;
                 font-size: 16px;
-                color: darkgray;
+                color: #494949;
                 text-align: left;
 
                 @media (min-width: 2048px) {
@@ -132,6 +130,19 @@ const ProductContainer = styled.div`
                     @media (max-width: 764px) {
                         line-height: 25px;
                     }
+
+                    .short-img {
+                    width: 100%;
+                    object-fit: contain;
+                    }   
+                    .full-screen {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        background-color: #a0a0a0d1;
+                        z-index: 10;
+                    }
                     
                     h1 {
                         width: auto;
@@ -156,6 +167,13 @@ const ProductContainer = styled.div`
                         font-size: 22px;
                         font-weight: 600;
                     }
+
+                    h5 {
+
+                        span {
+                            font-weight: bold;
+                        }
+                    }
                     
                     p {
                         text-align: left;
@@ -175,6 +193,10 @@ const ProductContainer = styled.div`
                         @media (max-width: 764px) {
                             font-size: 16px;
                         }
+                    }
+
+                    .whatsapp {
+                        
                     }
 
                     a {
@@ -209,6 +231,16 @@ const ProductContainer = styled.div`
                             @media (min-width: 2048px) {
                             font-size: 20px;
                             } 
+
+                            span {
+                                font-weight: bold;
+                                color: #51bce6;
+                            }
+
+                            .svg {
+                                color: #51bce6;
+                                font-size: 18px;
+                            }
                         }
                         }                        
                     }
@@ -234,7 +266,7 @@ const ProductContainer = styled.div`
                     background-color: white;
                 }
 
-                img {
+                            img {
                     width: calc(100% - 30px);
                     height: calc(450px - 30px);
                     object-fit: cover;
