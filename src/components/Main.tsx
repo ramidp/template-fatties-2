@@ -3,6 +3,8 @@ import BrandMain from './BrandMain';
 import Marcas from './Marcas';
 import Referencias from './Referencias';
 import React from 'react'
+import Formulario from './tools/Form';
+import Banner from './tools/Banner';
 
 
 
@@ -10,11 +12,13 @@ const Main = () => {
 
   return (
     <AppContainer>
-          <BrandMain/>
-          <Marcas/>
-          <Referencias/>
+      <BrandMain />
+      <Banner />
+      <Marcas />
+      <Referencias />
+      <Formulario />
     </AppContainer>
-);
+  );
 }
 
 export default Main;
@@ -22,5 +26,4 @@ export default Main;
 const AppContainer = styled.div`
   width: 100%;
   height: auto; 
-
 `

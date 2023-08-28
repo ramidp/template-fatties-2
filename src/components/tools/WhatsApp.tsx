@@ -1,44 +1,45 @@
 import styled from "styled-components";
 import React, { useEffect, useState } from 'react'
 import { logEvent } from "firebase/analytics";
-import { analytics } from '../firebase/firebaseConfig'
+import { analytics } from '../../firebase/firebaseConfig'
+import info from '../../data/info.json'
 
 
 const WhatsAppBtn = () => {
 
-    const logowhatsapp = require('../images/icons/whatsapp.png')
+        const logowhatsapp = require('../../images/icons/whatsapp.png')
 
-    let timeHour = new Date().getHours()
+        let timeHour = new Date().getHours()
 
-    let [timeValue, setTimeValue] = useState('')
+        let [timeValue, setTimeValue] = useState('')
 
-    useEffect(() => {
-        if (timeHour > 13 && timeHour < 19)  {
-            setTimeValue('Buenas tardes') 
-        } else if (timeHour >= 6 && timeHour <= 13) {
-            setTimeValue('Buenos días') 
-        } else {
-            setTimeValue('Buenas noches') 
-        }
-    },[timeHour])
+        useEffect(() => {
+                if (timeHour > 13 && timeHour < 19) {
+                        setTimeValue('Buenas tardes')
+                } else if (timeHour >= 6 && timeHour <= 13) {
+                        setTimeValue('Buenos días')
+                } else {
+                        setTimeValue('Buenas noches')
+                }
+        }, [timeHour])
 
-    const mensaje = timeValue + ', me gustaría hacer una consulta.'
+        const mensaje = timeValue + ', me gustaría hacer una consulta.'
 
-    return ( 
-        <Container>
-            <div>
-                <a href={"https://api.whatsapp.com/send?phone=5491123956360&text=" + `${mensaje}`}
-                onClick={() => {
-                        logEvent(analytics, 'Contacto | WhatsAppBtn')
-                }}
-                target="_blank">
-                <img src={logowhatsapp} alt="" />
-                </a>
-            </div>
-        </Container>
-     );
+        return (
+                <Container>
+                        <div>
+                                <a href={"https://api.whatsapp.com/send?phone=" + `${info.whatsapp}` + "&text=" + `${mensaje}`}
+                                        onClick={() => {
+                                                logEvent(analytics, 'Contacto | WhatsAppBtn')
+                                        }}
+                                        target="_blank">
+                                        <img src={logowhatsapp} alt="" />
+                                </a>
+                        </div>
+                </Container>
+        );
 }
- 
+
 export default WhatsAppBtn;
 
 const Container = styled.div`

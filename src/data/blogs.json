@@ -10,21 +10,21 @@
     },
     {   
         "id": 2,
-        "title": "Transformación digital",
-        "link": "calim_1",
-        "date" : "12 de Junio, 2023",
-        "img": "calim_1/calculadora.webp",
-        "icon" : "calim-logo.png",
-        "time": "2"         
-    },
-    {   
-        "id": 3,
         "title": "Saldo a favor de Ingresos Brutos",
         "link": "calim_2",
         "date" : "14 de Junio, 2023",
         "img": "calim_2/calim_2.png",
         "icon" : "calim-logo.png",
         "time": "3"         
+    },
+    {   
+        "id": 3,
+        "title": "Transformación digital",
+        "link": "calim_1",
+        "date" : "12 de Junio, 2023",
+        "img": "calim_1/calculadora.webp",
+        "icon" : "calim-logo.png",
+        "time": "2"         
     },
     {  
         "id": 4,
@@ -42,6 +42,33 @@
         "date" : "11 de Julio, 2023",
         "img": "mp_2/mp.png",
         "icon" : "mplogo.png",
+        "time": "5" 
+    },
+    {   
+        "id": 6,
+        "title": "Servicios Lector de tarjetas Point Smart",
+        "link": "mp_4",
+        "date" : "28 de Agosto, 2023",
+        "img": "mp_4/mp_4.png",
+        "icon" : "mplogo.png",
+        "time": "5" 
+    },
+    {   
+        "id": 7,
+        "title": "Liquidaciones de sueldo",
+        "link": "calim_3",
+        "date" : "28 de Agosto, 2023",
+        "img": "calim_3/calim_3.webp",
+        "icon" : "calim-logo.png",
+        "time": "4" 
+    },
+    {   
+        "id": 8,
+        "title": "Certificación de Ingresos",
+        "link": "calim_4",
+        "date" : "28 de Agosto, 2023",
+        "img": "calim_4/calim_4.webp",
+        "icon" : "calim-logo.png",
         "time": "5" 
     }
 ]

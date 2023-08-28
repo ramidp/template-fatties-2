@@ -196,7 +196,23 @@ const ProductContainer = styled.div`
                     }
 
                     .whatsapp {
+                        background-color: #1c9b4a;
+                        padding: 10px;
+                        color: white;
+                        text-decoration: none;
+                        display: flex;
+                        gap: 10px;
+                        justify-content: center;
+                        align-items: center;
+                        width: 40%;
+                        margin: 10px auto;
+                        border-radius: 10px;
+                        transition: 300ms ease all;
                         
+                        &:hover {
+                            cursor: pointer;
+                            filter: contrast(50%)
+                        }
                     }
 
                     a {
@@ -215,7 +231,7 @@ const ProductContainer = styled.div`
                     }
                     
                     ul, ol{
-                        padding-bottom: 10px;
+                        margin: 0;
                         display: flex;
                         text-align: left;
                         flex-direction: column;

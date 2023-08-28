@@ -228,7 +228,7 @@ const Marcas = () => {
               <h1>
               Crecer juntos 
               <br />
-              es nuestra meta.</h1>
+              es nuestra meta</h1>
               <h3>
               Asesoramos a mas de 5000 emprendedores, comercios 
               <br />
@@ -260,7 +260,7 @@ const Container = styled.div`
     align-items: center;
     background-color: white;
     gap: 30px;
-    padding: 50px 0;
+    padding: 5vh 0;
 
     #marcas {
             padding-top: 80px;
@@ -288,7 +288,7 @@ const Container = styled.div`
      display: flex;
      overflow: hidden;
 
-      &::after{
+      /* &::after{
         top: 0;
         left: -2%;
         content: '';
@@ -308,7 +308,7 @@ const Container = styled.div`
         top: 0;
         background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 60%);
         z-index: 2;
-      }
+      } */
 
       
       .marcas-div {
@@ -325,9 +325,10 @@ const Container = styled.div`
 
         .wallimg {
           background-image: url('bannerentero.jpg');
-          background-size: cover;
+          background-size: contain; 
+          aspect-ratio: 1/1;
           width: 100%;
-          height: 55vh;
+          height: 50vh;
           background-repeat: repeat-x;
           animation-duration: 2000s;
           animation-timing-function: linear;
@@ -337,9 +338,11 @@ const Container = styled.div`
           animation-fill-mode: none;
           animation-play-state: running;
           animation-name: carousel;
+          filter: grayscale(100%) contrast(80%);
 
           @media (max-width: 764px) {
-            height: 40vh;
+            height: 30vh;
+            background-size: cover;
           }
 
             @keyframes carousel {

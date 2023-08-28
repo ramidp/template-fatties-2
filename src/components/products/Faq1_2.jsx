@@ -20,7 +20,7 @@ const Faq1 = () => {
                className="faq-anchor"
                href="/faq">
                 FAQ 
-                </a> / ¿Quiénes es Fatties?</p>
+                </a> / Sobre Seguridad y Transparencia</p>
 
                 <div className="product-types1 mt-3">
                     {/* <h2
@@ -40,36 +40,25 @@ const Faq1 = () => {
                     >
                         <div>
                             
-                        <h1 onClick={() => setShow1(!show1)}>¿Quiénes somos?</h1>
+                        <h1 onClick={() => setShow1(!show1)}>¿Cómo garantizan la seguridad de mis transacciones?</h1>
                         {show1 &&
                         <div className="faq-hidden-text">
-                        <p>Somos una comercializadora ubicada en Haedo, zona oeste de Argentina, con una trayectoria de 5 años en el mercado. Actualmente, representamos a 3000 comercios activos y trabajamos con reconocidas marcas como Mercado Pago y Calim estudio contable digital.
+                        <p>Ofrecemos una propuesta integral. No solo facilitamos soluciones financieras, sino que también brindamos servicios contables de la mano de Calim, y opciones en áreas de seguridad y salud. Estamos comprometidos con satisfacer las diversas necesidades de negocios, comercios y empresas. Si te interesa nos podés contactar a través de nuestra página web o a nuestro numero de contacto.
                         </p>                        
                         </div>
                         }
                         </div>
 
                         <div>
-                            <h1 onClick={() => setShow2(!show2)}>¿Como nació nuestra empresa?</h1>
+                            <h1 onClick={() => setShow2(!show2)}>¿Tienen algún sistema de soporte para dudas o problemas?</h1>
                             {   show2 &&
                         <div className="faq-hidden-text">
-                            <p>Nuestra empresa nació con el propósito de ser el nexo entre comercios y soluciones financieras y contables, buscando siempre ofrecer los mejores servicios y herramientas.
+                            <p>Sí, contamos con un equipo de soporte dedicado para resolver todas tus dudas o consultas. Puedes contactarnos a través de nuestra página web o al número de contacto proporcionado.
                         </p>  
                             </div>
                             }
-                        </div>
-                        
-
-                        <div>
-                        <h1 onClick={() => setShow3(!show3)}>¿Por qué confiar en nosotros?</h1>
-                        {
-                            show3 &&
-                            <div className="faq-hidden-text">
-                            <p>Contamos con una experiencia en el rubro de 5 años, junto con nuestra extensa cartera de comercios activos y alianzas con marcas líderes, avala nuestro compromiso y seriedad en el mercado.
-                                </p>
-                            </div>
-                        }
-                        </div>           
+                        </div>                       
+        
                     </div>
                 </div>
         </ProductContainer>

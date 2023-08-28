@@ -37,11 +37,10 @@ const BrandMain = () => {
             text6: 'Canal de atención telefónica exclusivo de lunes a viernes de 9 a 18 hs.',
             text7: 'Acceso a nuevas funcionalidades y herramientas de la plataforma de la mano de una empresa con 5 años de experiencia en el rubro.',
             text8: 'Si tu comercio todavía no tiene un consultor asignado, no dudes en contactarnos nuestros asesores con gusto les informaran como darse de alta al programa de representación.',
-            contacttext: 'https://api.whatsapp.com/send?phone=5491123956360&text="Buenas, Me gustaría contactarlos para más información sobre sus servicios asociados a Mercado Pago y querría hablar con un representante"',
             logo: logoMp,
             anchorclass: ' mp-div',
-            logoclass: 'mp',
-            backgroundColor: 'linear-gradient(50deg,  #100E9F 5%, #009FE3 30%, white 90%)'
+            logoclass: 'mp',            
+            backgroundColor: ' background: linear-gradient(50deg,  #86b8f1 5%, #90c6f8 30%, #77ccff 90%)'
         },
         {
             id: 2,
@@ -54,7 +53,6 @@ const BrandMain = () => {
             text4: 'Resp Inscriptos: Inscripciones, declaraciones juradas, facturador móvil.',
             text5: 'Empresas: Creación de SA y SRL, Impuestos y balances, facturador móvil, asistencia con contador.',
             text6: 'Para saber más sobre como suscribirse a Calim y tener una reunión con uno de nuestros representantes contactanos.',
-            contacttext: 'https://api.whatsapp.com/send?phone=5491123956360&text="Buenas, Me gustaría contactarlos para más información sobre sus servicios asociados a Calim y querría hablar con un representante"',
             logo: logoCalim,
             anchorclass: ' calim-div',
             logoclass: 'calim',
@@ -64,10 +62,9 @@ const BrandMain = () => {
             name: 'Atención Telefónica',
             title: 'Centro de atención telefónica',
             subtitle: 'Servicio exclusivo de Fatties',
-            text: 'Nuestro call center es el corazón de nuestro servicio al cliente. Con un equipo de agentes altamente capacitados y comprometidos, nos enfocamos en brindar una experiencia excepcional a cada persona que nos contacta. Nuestro centro de atención telefónica utiliza tecnología de vanguardia y procesos eficientes para garantizar una comunicación fluida y eficaz',
+            text: 'Con un equipo de agentes altamente capacitados y comprometidos, nos enfocamos en brindar una experiencia excepcional a cada persona. Nuestro centro de atención telefónica utiliza tecnología de primera calidad, contando con procesos eficientes para garantizar una comunicación fluida y eficaz',
             text2: 'Nuestro centro de atención, se encuentra disponible de Lunes a Viernes de 9 a 18 hs,',
             text3: 'Si estás interesado en sumar el servicio de Atención telefónica para tu marca no dudes en contactarnos',
-            contacttext: 'https://api.whatsapp.com/send?phone=5491123956360&text="Buenas, Me gustaría contactarlos por el servicio de Atención telefónica"',
             logo: faPhoneVolume,
             anchorclass: ' f2',
             logoclass: 'svg-serv svg1',
@@ -80,7 +77,6 @@ const BrandMain = () => {
             text: 'En Fatties ofrecemos conectar clientes con clientes para todo tipo de servicios. Hacemos de nexo entre gente que busca un servicio y gente que ofrece dicho servicio',
             text2: 'Nuestro equipo de expertos en ventas trabaja en estrecha colaboración contigo para desarrollar un programa de cross-selling adaptado a tus necesidades específicas. Comenzamos analizando en detalle tu cartera propia de comercios y evaluando las oportunidades de ventas cruzadas entre ellos. A partir de ahí, diseñamos estrategias y tácticas personalizadas para promover y fomentar la colaboración entre tus comercios, incentivando a tus clientes a realizar compras adicionales.',
             text3: 'Para tener una llamada con uno de nuestros representantes y saber mas sobre nuestras campañas de ventas contactanos.',
-            contacttext: 'https://api.whatsapp.com/send?phone=5491123956360&text="Buenas, Me gustaría contactarlos por servicio de Cross-Selling"',
             logo: faHandshake,
             anchorclass: ' f1',
             logoclass: 'svg-serv svg2',
@@ -92,7 +88,7 @@ const BrandMain = () => {
             <div className="absolute">
                 <div className="brand-logo"
                             data-aos={animation3}
-                            data-aos-delay='2500'
+                            data-aos-delay='500'
                 >
                         <div className="brand-title">
                             <div className="brand-title-1">
@@ -258,7 +254,7 @@ const BrandMainContainer = styled.div`
                 text-decoration: none;
                 color: ${props => props.theme.secondary};
 
-                @media (max-width: 764px) {
+                    @media (max-width: 764px) {
                     font-size: 18px;
                 }
             }
@@ -445,7 +441,7 @@ const BrandMainContainer = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: white;
+        background-color: white;        
 
         .phrase {
             background-color: gray;
@@ -494,20 +490,19 @@ const BrandMainContainer = styled.div`
             @media (max-width: 1100px) {
                 gap: 2vh;
                 background: linear-gradient(70deg, ${prop => prop.theme.tertiary}  10% ,${props => props.theme.secondary} 68%);
+                padding-top: 5vh;
             }
 
             @media (max-width: 764px) {
                 gap: 20px;
-                padding: 0 0 50px 0;
             }
 
             @media (max-height: 720px) {
-                padding: 0 0 50px 0;
             }     
 
             @keyframes bgmovement {
                 0% {
-                    background-position: 80% 80%;
+                    background-position: 40% 70%;
                 }
                 100% {
                     background-position: 30% 50%;

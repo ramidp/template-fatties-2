@@ -1,17 +1,20 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductContainer from './styles/estiloblog-item'
 import blogs from '../../data/blogs.json'
+import Form from '../tools/Form'
 
 const Blog1 = () => {
 
-    const banner = require('../../images/Blog/' + `${blogs[0].img}`)
+    const sortedArray = blogs.sort((a, b) => a.id - b.id)
+
+    const banner = require('../../images/Blog/' + `${sortedArray[0].img}`)
 
     return (
         <>
         <ProductContainer>
                 <p
                 className='anchor-link'
-                > <a href="/blog"className="anchor-blog">Blog </a> / {blogs[0].title}</p>
+                > <a href="/blog"className="anchor-blog">Blog </a> / {sortedArray[0].title}</p>
 
                     <div className="product-types1 col-2">
                         <div className="col-12 d-flex flex-column gap-4">
@@ -57,6 +60,9 @@ const Blog1 = () => {
                             </div>
                         </div>
                     </div>
+
+                    {/* <Form/> */}
+
         </ProductContainer>
         </>
     );

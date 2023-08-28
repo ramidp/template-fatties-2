@@ -80,15 +80,15 @@ const Service = ({service}) => {
 const [serviceValue, setServiceValue] = useState('')
 
 
-
-
     return ( 
         <Container>
                     <div 
                     className={"features-div" + `${service.anchorclass}`}
                     data-aos={animation}
                     >
-                        <div  className="features">
+                        <div 
+                        onClick={() => {setModal(true); setClosedModal(true); setServiceValue(service.name);logEvent(analytics, 'Service | ' + `${service.name}`)}}
+                        className="features">
                             <div className="logos-div">
                                 {service.logo === logoMp || service.logo == logoCalim ? <img 
                                 rel='preload'
@@ -232,12 +232,12 @@ const Container = styled.div`
     gap: 50px;
 
     .mp-div {
-        background: linear-gradient(50deg,  #100E9F 5%, #009FE3 30%, white 90%);
+        background: linear-gradient(50deg,  #86b8f1 5%, #90c6f8 30%, #77ccff 90%);
         /* background: linear-gradient(240deg, orange 10% ,${props => props.theme.secondary} 30%); */
         
     }
     .calim-div {
-        background: linear-gradient(50deg,#C0D749 30%, #2192A5 70%);
+        background: linear-gradient(50deg,#66cb7f 30%, #50a78c 70%, #79cae3 90%);
         /* background: linear-gradient(50deg, #7cdaa3 10%, ${props => props.theme.primary} 40%); */
 
     }
@@ -289,6 +289,12 @@ const Container = styled.div`
             padding: 50px 0;
             gap: 15px;
             background-color: white;
+            cursor: pointer;
+            transition: 300ms ease all;
+
+            &:hover {
+                filter: contrast(150%)
+            }
 
             @media (max-width: 1100px) {
                 padding: 40px 20px;

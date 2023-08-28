@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { useState, useEffect } from 'react'
-import blogs from '../data/blogs.json'
+import blogs from '../../data/blogs.json'
 
-const SearcherBar = () => {
+const SearcherBar = ({active}) => {
 
     useEffect(() => {
         setFilteredData('')
@@ -96,7 +96,7 @@ const Container = styled.div`
                 color: white;
                 border: none;
                 height: 40px;
-                width: 35%;
+                width: 30%;
                 border-top-left-radius: 8px;
                 border-bottom-right-radius: 8px;
                 font-size: 14px;
@@ -112,8 +112,14 @@ const Container = styled.div`
         }
         .relative-pos {
             position: relative;
-            left: -30%;
+            right: 55%;
+            top: 10%;
             width: 300px;
+            display: flex;
+
+            @media (max-width: 1400px) {
+                right: 60%;
+            }
 
             .searched-data {
                 position: absolute;

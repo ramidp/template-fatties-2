@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React, { useState, useEffect } from 'react'
-import blogs from '../data/blogs.json'
+import blogs from '../../data/blogs.json'
 import { useLocation } from 'react-router-dom';
 
 const NewsAlert = () => {
@@ -32,7 +32,7 @@ useEffect(() => {
             >X</h2>
             <h2>Noticias</h2>
 
-            {blogs.slice(0,3).map((blog) =>{
+            {blogs.sort((a,b) => b.id - a.id).slice(0,3).map((blog) =>{
                 return (
                     <div
                     key={blog.id}

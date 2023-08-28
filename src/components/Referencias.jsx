@@ -8,13 +8,6 @@ import { faArrowRight, faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 
 const Referencias = () => {
 
-  const [hide, setHide] = useState(true)
-
-  // const logo = require('../images/Brands-Logos/el-calafate.jpg')
-  // const logo2 = require('../images/Brands-Logos/Cafe-Martinez.webp')
-  // const logo3 = require('../images/Brands-Logos/coquitos-online.png')
-  // const logo4 = require('../images/Brands-Logos/casper-pet.png')
-
   const referencesArray = [
     {
       id: 1,
@@ -37,13 +30,20 @@ const Referencias = () => {
      person: 'Bernardo Agustin',
      charge: 'Dueño de Supermercados'
     },
-    // {
-    //   id: 4,
-    //  reference: '"El ideal son 100 caracteres, acorde a las pruebas que fui viendo."',
-    //  image: '',
-    //  person: 'Paolo Rodriguez',
-    //  charge: 'CEO de Asta'
-    // },
+    {
+      id: 4,
+     reference: '"Fueron un pilar en la digitalización de mi tienda, y el soporte que dan es de primera."',
+     image: '',
+     person: 'Rosa Valdez',
+     charge: 'Dueña de Rosa Moda'
+    },
+    {
+      id: 5,
+     reference: '"Nos sumamos a Mercado Pago e fácil y rápido gracias a la ayuda de la agencia. encuentran la vuelta para adaptarse a lo que necesitamos"',
+     image: '',
+     person: 'Martín Gonzalez',
+     charge: 'Fundador de ArteDeco'
+    },
   ]
 
   const [idReference, setIdReference] = useState(1)
@@ -55,7 +55,6 @@ const Referencias = () => {
     return ( 
       <>
     
-
       <Container>
           <div           
           className="references-box">
@@ -116,7 +115,7 @@ const Container = styled.div`
     user-select: none;
     background-image: url('iconitos.png');
     background-size: contain;
-    background-position: 50% 50%;
+    background-position: 0% 0%;
     background-repeat: no-repeat;
     padding: 50px 0;
     margin-bottom: 50px;

@@ -1,17 +1,19 @@
 import styled from "styled-components";
 import React, { useState } from 'react'
-import {ReactComponent as FacebookLogo} from '../images/icons/facebook.svg'
-import {ReactComponent as InstagramLogo} from '../images/icons/instagram.svg'
-import {ReactComponent as LinkedInLogo} from '../images/icons/linkedin.svg'
-import {ReactComponent as WhatsAppLogo} from '../images/icons/whatsapp.svg'
+import { ReactComponent as FacebookLogo } from '../images/icons/facebook.svg'
+import { ReactComponent as InstagramLogo } from '../images/icons/instagram.svg'
+import { ReactComponent as LinkedInLogo } from '../images/icons/linkedin.svg'
+import { ReactComponent as WhatsAppLogo } from '../images/icons/whatsapp.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faPhone, faAt } from '@fortawesome/free-solid-svg-icons';
-import Alerta from '../components/Alerta'
 import { logEvent } from "firebase/analytics";
 import { analytics } from "../firebase/firebaseConfig";
+import info from '../data/info.json'
 
 
 const Footer = () => {
+
+    const qrAFIP = require('../images/dataweb-qr.jpg')
 
     const [name, setName] = useState<string>('')
     // const [email, setEmail] = useState<string>('')
@@ -25,110 +27,119 @@ const Footer = () => {
     // handleSubmit para enviar formulario
     // Le falta agregarle los caracteres para cada input, ya que no son iguales, nombre, tel, correo y msg
 
-    const handleSubmit = (e : React.FormEvent) => {
-        e.preventDefault()
+    // const handleSubmit = (e: React.FormEvent) => {
+    //     e.preventDefault()
 
-        if (name !== "" && telephone !== "" && message !== "") {
+    //     if (name !== "" && telephone !== "" && message !== "") {
 
-            cambiarEstadoAlerta(true);
-            cambiarAlerta({
-             tipo: "exito",
-             mensaje: "Su mensaje ha sido enviado"});
-    
-        } else {
-            cambiarEstadoAlerta(true);
-            cambiarAlerta({
-             tipo: "exito",
-             mensaje: "Favor de completar todos los campos"});
+    //         cambiarEstadoAlerta(true);
+    //         cambiarAlerta({
+    //             tipo: "exito",
+    //             mensaje: "Su mensaje ha sido enviado"
+    //         });
 
-        }
-        setName('')
-        // setEmail('')
-        setTelephone('')
-        setMessage('')
-    }
+    //     } else {
+    //         cambiarEstadoAlerta(true);
+    //         cambiarAlerta({
+    //             tipo: "exito",
+    //             mensaje: "Favor de completar todos los campos"
+    //         });
 
-    return ( 
+    //     }
+    //     setName('')
+    //     // setEmail('')
+    //     setTelephone('')
+    //     setMessage('')
+    // }
+
+    return (
         <>
-        <span id="contacto"></span>
+            <span id="contacto"></span>
             <FooterContainer>
-                        <div className="first-part">
-                            <p>
-                                <span>
-                                Atención comercial: 
-                                </span>
-                                <br />
-                                Lunes a viernes de 9 a 18hs.
-                                <br />
-                                <br />
-                                Somos una empresa de servicios y consultoría, que brinda soluciones digitales.  
-                                <br />
-                                Su información es totalmente confidencial.
-                                <br />
-                                <br />
-                                <span>
-                                Todos los derechos reservados.
-                                </span>
-                               </p>
-                        </div>
-                        <div>
+                <div className="first-part">
+                    <p>
+                        <span>
+                            Atención comercial:
+                        </span>
+                        <br />
+                        {info.attention}
+                        <br />
+                        <br />
+                        Somos una empresa de servicios y consultoría, que brinda soluciones digitales.
+                        <br />
+                        Su información es totalmente confidencial.
+                        <br />
+                        <br />
+                        <span>
+                            Todos los derechos reservados.
+                        </span>
+                    </p>
+                </div>
+                <div>
 
-                        <div className="second-part">
-                            <div className="brand-info">
-                                <div>
+                    <div className="second-part">
+                        <div className="brand-info">
+                            <div>
                                 <FontAwesomeIcon icon={faLocationDot} />
-                                <p>Igualdad 1449, 3° A, Haedo, Buenos Aires</p>
-                                </div>
-                                <div>
+                                <p>{info.address}</p>
+                            </div>
+                            <div>
                                 <FontAwesomeIcon icon={faAt} />
-                                    <p>mercadopago@fatties.com.ar</p>
-                                </div>
-                                <div>
+                                <a
+                                    target='_blank'
+                                    href={"mailto:" + `${info.email}`}>
+                                    <p>{info.email}</p>
+                                </a>
+                            </div>
+                            <div>
                                 <FontAwesomeIcon icon={faPhone} />
-                                    <p> +54 (011) 5263-8549 </p>
-                                </div>
-                                <div>
+                                <p> {info.tel1}</p>
+                            </div>
+                            <div>
                                 <WhatsAppLogo
                                 />
-                                    <p> +54 (011) 2395-6360 </p>
-                                </div>
-                            </div>
-                            <div className="copyright">
-                                {/* <FontAwesomeIcon icon={faRegistered} /> */}
-                                <div>
-                                    <a 
-                                    onClick={() => logEvent(analytics, 'Footer | LinkedIn')}
-                                    href="https://www.linkedin.com/company/fatties/" target="_blank"><LinkedInLogo/> </a>
-                                    <a 
-                                    onClick={() => logEvent(analytics, 'Footer | Facebook')}
-                                    href="https://www.facebook.com/mp.vendedores/" target="_blank" ><FacebookLogo/> </a>
-                                    <a 
-                                    onClick={() => logEvent(analytics, 'Footer | Instagram')}
-                                    href="https://www.instagram.com/fatties.ac" target="_blank"><InstagramLogo/> </a>
-                                </div>
-                                <p>©  2023 Fatties</p> 
+                                <p> {info.tel2}</p>
                             </div>
                         </div>
-                        <div className="third-part">
-                            <p>
-                                <strong>
-                                El uso del sitio web fatties.com.ar está sujeto a los Términos de uso de Fatties y la Política de privacidad
-                                </strong>
-                                </p>
-                        </div>
-                        </div>
+                        <div className="copyright">
+                            {/* <FontAwesomeIcon icon={faRegistered} /> */}
+                            <div>
 
-                    <Alerta
-                    tipo={alerta.tipo}
-                    mensaje={alerta.mensaje}
-                    estadoAlerta={estadoAlerta}
-                    cambiarEstadoAlerta={cambiarEstadoAlerta}/>
+                                <a
+                                    onClick={() => logEvent(analytics, 'Footer | LinkedIn')}
+                                    href={"https://www.linkedin.com/company/" + `${info.linkedin}`} target="_blank"><LinkedInLogo /> </a>
+                                <a
+                                    onClick={() => logEvent(analytics, 'Footer | Facebook')}
+                                    href={"https://www.facebook.com/" + `${info.facebook}`} target="_blank" ><FacebookLogo /> </a>
+                                <a
+                                    onClick={() => logEvent(analytics, 'Footer | Instagram')}
+                                    href={"https://www.instagram.com/" + `${info.instagram}`} target="_blank"><InstagramLogo /> </a>
+                            </div>
+                            <p>©  2023 Fatties</p>
+                        </div>
+                    </div>
+                    <div className="third-part">
+
+                        <p>
+                            <strong>
+                                El uso del sitio web fatties.com.ar está sujeto a los Términos de uso de Fatties y la Política de privacidad
+                            </strong>
+                        </p>
+
+                        <a
+                            onClick={() => logEvent(analytics, 'Footer | QR AFIP')}
+                            href='/' target="_blank">
+                            <img src={qrAFIP} alt="" />
+                        </a>
+
+                    </div>
+                </div>
 
             </FooterContainer>
         </>
-     );
+    );
 }
- 
+
 export default Footer;
 
 const FooterContainer = styled.div`
@@ -136,7 +147,7 @@ const FooterContainer = styled.div`
     min-height: 55vh;
     height: auto;
     flex-direction: column;
-    background-color: white;
+    background-color: #696969;
     justify-content: space-between;
 
 
@@ -151,6 +162,7 @@ const FooterContainer = styled.div`
         padding: 20px;
         width: 100%;
        
+        
         p {
             text-align: center;
             color: white;
@@ -183,7 +195,6 @@ const FooterContainer = styled.div`
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        background-color: #696969;
         padding: 0 100px;
 
         @media (max-width: 1400px) {
@@ -243,8 +254,18 @@ const FooterContainer = styled.div`
                 }
                 }
 
+                a {
+                    color: white;
+                    text-decoration: none;
+                    transition: 300ms ease all;
+
+                    &:hover {
+                        color: gray;
+                    }
+                }
+
                 p { 
-                    text-align: center;
+                    text-align: left;
                     margin: 0;
                     font-size: 14px;
 
@@ -281,42 +302,81 @@ const FooterContainer = styled.div`
                     font-size: 20px;
                 }
             }
-            a { 
-                text-decoration: none;
-                svg {
-                    margin: 0 5px;
-                    width: 40px;
-                    fill: white;
-                    transition: 500ms ease all;
 
-                    @media (min-width: 2048px) {
-                       width: 50px;
-                    }
+            div {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 5px;
 
-                    @media (min-width: 765px) {
-                        &:hover {
-                            transform: scale(1.05);
-                            filter: contrast(50%);                       
+                a { 
+                    text-decoration: none;                    
+     
+                    svg {
+                        margin: 0 5px;
+                        width: 40px;
+                        fill: white;
+                        transition: 500ms ease all;
+    
+                        @media (min-width: 2048px) {
+                           width: 50px;
+                        }
+    
+                        @media (min-width: 765px) {
+                            &:hover {
+                                transform: scale(1.05);
+                                filter: contrast(50%);                       
+                            }
+                        }
+    
+                        @media (max-width: 764px) {
+                            &:active {
+                                transform: scale(1.05);
+                                filter: contrast(50%); 
+                            }
                         }
                     }
-
-                    @media (max-width: 764px) {
-                        &:active {
-                            transform: scale(1.05);
-                            filter: contrast(50%); 
-                        }
-                    }
-                }
-            } 
+                } 
+            }
             
         }
     }
     .third-part {
-        background-color: #696969;
-        padding-bottom: 30px;
+        padding: 20px 0;
+        min-height: 15vh;
         height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
 
+        @media (max-width: 764px) {
+                padding: 15px 0;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+
+            @media (max-width: 764px) {
+                width: 40px;
+            }
+            
+            img {
+                width: 100%;
+                height: 100%;
+
+        }
+    }
         p {
+            height: 100%;
+            width: calc(100% - 25% - 60px);
             margin: 0;
             color: white;
             text-align: center;
@@ -327,8 +387,12 @@ const FooterContainer = styled.div`
                 }
 
             @media (max-width: 1100px) {
-                    padding: 0 50px;
                     font-size: 14px;
+                }
+
+            @media (max-width: 764px) {
+                padding: 0 10px;
+                width: calc(100% - 40px)
                 }
 
         }

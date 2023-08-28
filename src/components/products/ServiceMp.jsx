@@ -7,6 +7,7 @@ import { logEvent } from "firebase/analytics";
 import { analytics } from "../../firebase/firebaseConfig";
 import {ReactComponent as WhatsAppLogo} from '../../images/icons/whatsapp.svg'
 import Container from './styles/estilomodalshared'
+import info from '../../data/info.json'
 
 
 const ServiceMp = ({show, show2, show3, forward, backwards, delayedClosingModal, setClosedModal}) => {
@@ -20,8 +21,20 @@ const ServiceMp = ({show, show2, show3, forward, backwards, delayedClosingModal,
     useEffect(() => {
         if (window.innerWidth < 765) {
             setIsMobile(true)
-        }
+        };
+        document.removeEventListener('keydown', closeOnEscape);
     }, [])
+
+    const closeOnEscape = (event) => {
+        if (event.key === 'Escape') {
+          setClosedModal(false)
+          delayedClosingModal()
+        }
+      };
+
+      
+      // Attach the event listener on component mount
+      document.addEventListener('keydown', closeOnEscape);
 
     return ( 
         <Container>
@@ -182,7 +195,7 @@ const ServiceMp = ({show, show2, show3, forward, backwards, delayedClosingModal,
 
                 <a 
                 onClick={logEvent(analytics, 'Service Info | Mercado Pago')}
-                href="https://api.whatsapp.com/send?phone=5491123956360&text=Hola, Me gustaría hacerles una consulta con respecto a la asignación de un consultor para el programa de representación de Mercado Pago."
+                href={"https://api.whatsapp.com/send?phone=" + `${info.whatsapp}` + "&text=Hola, Me gustaría hacerles una consulta con respecto a la asignación de un consultor para el programa de representación de Mercado Pago."}
                 target='_blank'
                 >Comunicate con nosotros
                 <WhatsAppLogo/>
@@ -200,7 +213,7 @@ const ServiceMp = ({show, show2, show3, forward, backwards, delayedClosingModal,
             </section>   
 
             <div
-            className='sect-nav'
+            className='sect-nav h1-mp'
             >
             {show === true ? 
             <span

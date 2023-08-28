@@ -27,8 +27,8 @@ const slideDown = keyframes`
 const ContenedorAlerta = styled.div`
     z-index: 1000;
     width: 100%;
-    left: 5%;
-    top: 0;
+    left: 0%;
+    top: 10%;
     position: fixed;
     display: flex;
     justify-content: center;
@@ -37,7 +37,7 @@ const ContenedorAlerta = styled.div`
      
     p {
  
-        background: ${props => props.theme.secondary};
+        background: ${props => props.theme.primary};
         color: #fff;
         padding: 0.5rem 1.5rem; /* 20px 40px */
         border-radius: 0.31rem; /* 5px */

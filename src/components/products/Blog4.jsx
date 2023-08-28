@@ -1,10 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductContainer from './styles/estiloblog-item'
 import blogs from '../../data/blogs.json'
+import Form from '../tools/Form'
+
 
 const Blog4 = () => {
 
-    const banner = require('../../images/Blog/' + `${blogs[3].img}`)
+    const sortedArray = blogs.sort((a, b) => a.id - b.id)
+
+    const banner = require('../../images/Blog/' + `${sortedArray[3].img}`)
 
     return (
         <>
@@ -16,7 +20,7 @@ const Blog4 = () => {
                 href="/blog"
                 className="anchor-blog">
                 Blog
-                </a> / {blogs[3].title}</p>
+                </a> / {sortedArray[3].title}</p>
 
                     <div className="product-types1">
                         <div className="col-12 col-12 d-flex flex-column gap-4">
@@ -78,8 +82,7 @@ const Blog4 = () => {
                                     <li>Una vez que tu cliente confirme el pago, podrás imprimir y entregar el comprobante de compra desde tu Point y la transacción quedará en las actividades del lector.</li>
                                 </ol>
 
-                                <p><strong>Conocé más sobre las ventajas que el QR de Mercado Pago tiene para tu local</strong></p
-                                >
+                                <p><strong>Conocé más sobre las ventajas que el QR de Mercado Pago tiene para tu local</strong></p>
                                 <a 
                                 target='_blank'
                                 href="https://vendedores.mercadolibre.com.ar/nota/buenas-practicas-para-vender-con-codigo-qr-en-tu-local">Buenas prácticas para vender con código QR en tu local</a>
@@ -89,6 +92,9 @@ const Blog4 = () => {
                         </div>
 
                     </div>
+
+                    {/* <Form/> */}
+
         </ProductContainer>
         </>
     );

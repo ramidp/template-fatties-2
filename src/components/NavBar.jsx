@@ -5,7 +5,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useLocation } from 'react-router-dom';
 import { logEvent } from 'firebase/analytics';
 import { analytics } from '../firebase/firebaseConfig';
-import SearcherBar from './SearcherBar';
+import SearcherBar from '../components/tools/SearcherBar';
 
 
 const MenuNav = () => {
@@ -25,6 +25,21 @@ const MenuNav = () => {
 
   },[])
 
+  const [top, setTop] = useState(true)
+
+  const windowHeight = window.innerHeight
+    
+  const changeTop = () => {
+    if (window.scrollY >=  windowHeight * 0.5) {
+      setTop(false)
+    } else {
+      setTop(true)
+    }
+  }
+  
+  window.addEventListener('scroll', changeTop)
+
+
   return (
     <MenuNavContainer
     style={{ justifyContent: location === '/' ? 'flex-end' : 'space-between'}}
@@ -33,12 +48,22 @@ const MenuNav = () => {
 
               {
               location !== '/' &&
-
-              <a 
-              onClick={() => logEvent(analytics, 'Menu | Home')}
-              href="/">
+              <>
+              { top ?
+                
+                <a 
+                onClick={() => logEvent(analytics, 'Menu | Home')}
+                href="/">
                 <img src={logo} alt="" />
-              </a>
+                </a>
+                :
+                <a 
+                onClick={() => logEvent(analytics, 'Menu | Home')}
+                href="#top">
+                <img src={logo} alt="" />
+                </a>
+                }
+              </>
               }
 
 
@@ -46,22 +71,30 @@ const MenuNav = () => {
               style={{ display: 'flex',
               gap: '20px'}}
               >
-
+                
                 {
+                  top ?
+                  <a 
+                onClick={() => logEvent(analytics, 'Menu | Blog')}
+                href="/">
+                  <h1>HOME</h1></a>
+                  :
                   <a 
                 onClick={() => logEvent(analytics, 'Menu | Blog')}
                 href="#top">
-                  <h1>HOME</h1></a>}
+                  <h1>HOME</h1></a>
+                  }
 
                 <a 
                 onClick={() => logEvent(analytics, 'Menu | Blog')}
                 href="/blog">
                   <h1>BLOG</h1></a>
-
-                {/* <a href="/faq">
-                  <h1>FAQ</h1></a> */}
-
                 <a 
+                onClick={() => logEvent(analytics, 'Menu | Blog')}
+                href="/faq">
+                  <h1>FAQ</h1></a>
+
+                        <a 
                 onClick={() => logEvent(analytics, 'Menu | Nosotros')}
                 href="/nosotros">
                   <h1>¿QUIÉNES SOMOS?</h1></a>
@@ -172,7 +205,7 @@ const MenuNavContainer = styled.div`
      
 
     .active {
-      width: 9vw;
+      width: 150px;
 
     @media (min-width: 2048px) {
             width: 200px;

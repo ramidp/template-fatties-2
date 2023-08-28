@@ -7,6 +7,7 @@ import { analytics } from "../../firebase/firebaseConfig";
 import FattiesLogo from '../../images/fattiescolores200.png'
 import {ReactComponent as WhatsAppLogo} from '../../images/icons/whatsapp.svg'
 import Container from './styles/estilomodalshared'
+import info from '../../data/info.json'
 
 const ServiceTel = ({show, show2, show3, forward, backwards, delayedClosingModal, setClosedModal}) => {
 
@@ -16,10 +17,23 @@ const ServiceTel = ({show, show2, show3, forward, backwards, delayedClosingModal
     const [isMobile, setIsMobile] = useState(false)
 
     useEffect(() => {
+         // Clean up event listener when component is unmounted
+         document.removeEventListener('keydown', closeOnEscape);
         if (window.innerWidth < 765) {
             setIsMobile(true)
         }
     }, [])
+
+    const closeOnEscape = (event) => {
+        if (event.key === 'Escape') {
+          setClosedModal(false)
+          delayedClosingModal()
+        }
+      };
+      
+      // Attach the event listener on component mount
+      document.addEventListener('keydown', closeOnEscape);
+      
 
     return ( 
         <Container>
@@ -129,7 +143,7 @@ const ServiceTel = ({show, show2, show3, forward, backwards, delayedClosingModal
 
                 <a 
                 onClick={logEvent(analytics, 'Service Info | Telphone Service')}
-                href="https://api.whatsapp.com/send?phone=5491123956360&text=Hola, Me gustaría hacerles una consulta con respecto al servicio de Atención Telefónica."
+                href={"https://api.whatsapp.com/send?phone=" + `${info.whatsapp}` +"&text=Hola, Me gustaría hacerles una consulta con respecto al servicio de Atención Telefónica."}
                 target='_blank'
                 >Comunicate con nosotros
                <WhatsAppLogo/>
@@ -148,7 +162,7 @@ const ServiceTel = ({show, show2, show3, forward, backwards, delayedClosingModal
             </section>  
 
             <div
-            className='sect-nav'
+            className='sect-nav h1-tel'
             >
             {show === true ? 
             <span

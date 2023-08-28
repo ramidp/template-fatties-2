@@ -10,9 +10,11 @@ import { logEvent } from "firebase/analytics";
 const Menu = () => {
 
     const [color, setColor] = useState(false)
+
+      const windowHeight = window.innerHeight
     
     const changeColor = () => {
-      if (window.scrollY >=  70) {
+      if (window.scrollY >=  windowHeight * 0.1) {
         setColor(true)
       } else {
         setColor(false)

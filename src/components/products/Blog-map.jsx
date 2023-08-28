@@ -11,7 +11,7 @@ import { analytics } from '../../firebase/firebaseConfig';
 
 const Blog = () => {
 
-const CalimLogo = require('../../images/calim-logo.png')
+const arrows = '>>'
     
     useEffect(() => {
         setFilteredData('')
@@ -77,13 +77,21 @@ const CalimLogo = require('../../images/calim-logo.png')
                         {
                             blogs.sort((a, b) => b.id - a.id).slice(0, 1).map((blog) => {
                                 return (
+                                                       
                                     <div 
                                     key={blog.id}
                                     className="article-0">
                                             <div className="article-0-text">
 
                                                 <div>
-                                                    <h1>{blog.title}</h1>
+
+                                                    <a
+                                                    onClick={() => logEvent(analytics, 'Blog | ' + `${blog.title}`)}
+                                                    className="nav-btn"
+                                                    href={'/blog/' + blog.link}>
+                                                     <h1>{blog.title}</h1>
+                                                    </a>
+
                                                     <p>{blog.date}</p>
                                                 </div>
 
@@ -92,7 +100,7 @@ const CalimLogo = require('../../images/calim-logo.png')
                                                     onClick={() => logEvent(analytics, 'Blog | ' + `${blog.title}`)}
                                                     className="nav-btn"
                                                     href={'/blog/' + blog.link}>
-                                                        Leer mas
+                                                        Leer mas { arrows }
                                                     </a>
                                                     <p
                                                     className="reading-time"
@@ -104,18 +112,24 @@ const CalimLogo = require('../../images/calim-logo.png')
 
                                             </div>
 
+                                            <a
+                                            onClick={() => logEvent(analytics, 'Blog | ' + `${blog.title}`)}                                           
+                                            href={'/blog/' + blog.link}>
+                                                
                                             <div
                                             className='article-images'
-                                            >
+                                            >   
                                                 <img 
                                                 rel='preload'
-                                                className="banner"
+                                                className="banner-article-0"
                                                 src={require('../../images/Blog/' + `${blog.img}`)} alt="" />
                                                 <img 
                                                 rel='preload'
                                                 className='icon-fixed'
                                                 src={require('../../images/' + `${blog.icon}`)} alt="" />
                                             </div>
+
+                                            </a>
 
                                      </div>
                                     )
@@ -128,6 +142,10 @@ const CalimLogo = require('../../images/calim-logo.png')
                                     <div 
                                     key={blog.id}
                                     className="article">
+
+                                    <a
+                                        onClick={() => logEvent(analytics, 'Blog | ' + `${blog.title}`)}                                           
+                                        href={'/blog/' + blog.link}>
                                         <div
                                         className='article-images'
                                         >
@@ -141,7 +159,15 @@ const CalimLogo = require('../../images/calim-logo.png')
                                             src={require('../../images/' + `${blog.icon}`)} alt="" />
                                         </div>
 
+                                     </a>
+
+                                        <a
+                                        onClick={() => logEvent(analytics, 'Blog | ' + `${blog.title}`)}
+                                        className="nav-btn"
+                                        href={'/blog/' + blog.link}>
                                             <h1>{blog.title}</h1>
+                                        </a>
+                                        
                                             <p>{blog.date}</p>
 
                                         <div>
@@ -149,7 +175,7 @@ const CalimLogo = require('../../images/calim-logo.png')
                                             onClick={() => logEvent(analytics, 'Blog | ' + `${blog.title}`)}
                                             className="nav-btn"
                                             href={'/blog/' + blog.link}>
-                                                Leer mas
+                                                Leer mas { arrows }
                                             </a>
                                             <p
                                             className="reading-time"
@@ -218,18 +244,15 @@ const BlogContainer = styled.div`
                 cursor: pointer;
                 width: fit-content;
                 padding-bottom: 5px;
+                transition: 300ms ease all;
 
                 @media (min-width: 2048px) {
                     font-size: 18px;
                 }              
 
-
-                &::after {
-                    content: ' >>'
-                }
-
                 &:hover {
                     font-weight: bold;
+                    filter: contrast(60%);
                 }
             }
 
@@ -295,33 +318,59 @@ const BlogContainer = styled.div`
                 }
 
             }
-
-            .article-images {
+            a {
                 width: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
-                background-color: white;
+                transition: 300ms ease all;
+                margin: 0;
 
-                .icon-fixed {
-                    height: 4vh;
-                    padding: 5px 0;
-                    align-self: flex-end;
-                    width: auto;
-                    padding-right: 2vw;
-                    object-fit: contain;
-                    filter: contrast(150%);
+                &:hover {
+                    filter: contrast(70%)
                 }
-
-                .banner {
+                
+                .article-images {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
                     width: 100%;
-                    height: calc(22vh - 4vh);
-                    object-fit: cover;
-                    object-position: 50% 20%;
+                    background-color: white;
     
-                    @media (min-width: 2048px) {
-                        height: 25vh;
-                    }    
+                    .icon-fixed {
+                        height: 4vh;
+                        padding: 5px 0;
+                        align-self: flex-end;
+                        width: auto;
+                        padding-right: 2vw;
+                        object-fit: contain;
+                        filter: contrast(150%);
+    
+                        @media (max-width: 1100px) {
+                            height: 7vh;
+                        }
+    
+                        @media (max-width: 764px) {
+                            height: 5vh;
+                        }
+                    }
+    
+                    .banner {
+                        width: 100%;
+                        height: calc(22vh - 4vh);
+                        object-fit: cover;
+                        object-position: 50% 20%;    
+                      
+                        @media (min-width: 2048px) {
+                            height: 25vh;
+                        } 
+                        
+                        @media (max-width: 1100px) {
+                            height: calc(45vh - 4vh);
+                            object-position: 50% 50%;    
+                        }    
+    
+                        @media (max-width: 764px) {
+                            height: calc(25vh - 4vh)
+                        }
+                    }
                 }
             }
 
@@ -426,6 +475,7 @@ const BlogContainer = styled.div`
                     width: fit-content;
                     padding-bottom: 5px;
                     font-size: 14px;
+                    transition: 300ms ease all;
 
                     @media (min-width: 2048px) {
                     font-size: 20px;
@@ -440,12 +490,10 @@ const BlogContainer = styled.div`
                     padding-top: 15px;
                 }
 
-                &::after {
-                    content: ' >>'
-                }
 
                 &:hover {
                     font-weight: bold;
+                    filter: contrast(60%)
                 }
                 }
 
@@ -471,13 +519,22 @@ const BlogContainer = styled.div`
 
                 .banner {
                     width: 100%;
-                    height: 200px;
+                    height: 22vh;
                     object-fit: cover;
                     object-position: 50% 20%;
-    
+            
                     @media (min-width: 2048px) {
-                        height: 250px;
+                        height: 25vh;
+                    } 
+                    
+                    @media (max-width: 1100px) {
+                        height: calc(45vh - 4vh);
+                        object-position: 50% 50%;    
                     }    
+
+                    @media (max-width: 764px) {
+                        height: calc(25vh - 4vh)
+                    }
                 }
             }
                     font-weight: 600;
@@ -500,41 +557,66 @@ const BlogContainer = styled.div`
                   
                 }
             }
-
-            .article-images {
+            a {
                 width: 65%;
                 height: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-end;
-                justify-content: flex-start;
-                background-color: white;
+                transition: 300ms ease all;
+
+                &:hover {
+                    filter: contrast(70%)
+                }
 
                 @media (max-width: 1100px) {
                     width: 100%;
                 }
-
-                .icon-fixed {
-                    height: 4vh;
-                    padding: 5px 0;
-                    width: auto;
-                    padding-right: 2vw;
-                    object-fit: contain;
-                    filter: contrast(150%);
-                }
-
-                .banner {
+                
+                .article-images {
                     width: 100%;
-                    height: calc(100% - 4vh);
-                    object-fit: cover;
-                    object-position: 50% 20%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: flex-end;
+                    background-color: white;
     
-                    @media (min-width: 2048px) {
-                        height: calc(30vh - 4vh);
-                    }    
-                    @media (max-width: 1100px) {
-                        height: calc(22vh - 4vh);
-                    }    
+    
+                    .icon-fixed {
+                        height: 4vh;
+                        padding: 5px 0;
+                        align-self: flex-end;
+                        width: auto;
+                        padding-right: 2vw;
+                        object-fit: contain;
+                        filter: contrast(150%);
+    
+                        @media (max-width: 1100px) {
+                            height: 7vh;
+                        }
+    
+                        @media (max-width: 764px) {
+                            height: 5vh;
+                        }
+                    }
+    
+                    .banner-article-0 {
+                        width: 100%;
+                        height: calc(100% - 4vh);
+                        object-fit: cover;
+                        object-position: 50% 80%;
+        
+                        @media (min-width: 2048px) {
+                            height: calc(30vh - 4vh);
+                        }    
+    
+                        @media (max-width: 1100px) {
+                            height: calc(45vh - 4vh);
+                            object-position: 50% 50%;    
+                        }    
+    
+                        @media (max-width: 764px) {
+                            height: calc(25vh - 4vh)
+                        }
+                    }
                 }
             }
         }

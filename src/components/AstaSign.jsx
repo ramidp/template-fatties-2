@@ -5,8 +5,7 @@ import { analytics } from '../firebase/firebaseConfig';
 const AstaSign = () => {
     return ( 
 
-        <Container>
-
+        <ContainerAsta>
             <p>Hecho por:</p>
 
             <a 
@@ -17,13 +16,13 @@ const AstaSign = () => {
             <span>アスタ</span> | Asta
             </a>
 
-        </Container>
+        </ContainerAsta>
      );
 }
  
 export default AstaSign;
 
-const Container = styled.div`
+const ContainerAsta = styled.div`
 
 background-color: #c0c0c0;
 display: flex;

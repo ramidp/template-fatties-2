@@ -7,6 +7,7 @@ import { analytics } from "../../firebase/firebaseConfig";
 import FattiesLogo from '../../images/fattiescolores200.png'
 import {ReactComponent as WhatsAppLogo} from '../../images/icons/whatsapp.svg'
 import Container from './styles/estilomodalshared'
+import info from '../../data/info.json'
 
 const ServiceCross = ({show, show2, show3, forward, backwards, delayedClosingModal, setClosedModal}) => {
 
@@ -16,9 +17,21 @@ const ServiceCross = ({show, show2, show3, forward, backwards, delayedClosingMod
 
     useEffect(() => {
         if (window.innerWidth < 765) {
-            setIsMobile(true)
-        }
+            setIsMobile(true);        }
+        document.removeEventListener('keydown', closeOnEscape);
     }, [])
+
+    const closeOnEscape = (event) => {
+        if (event.key === 'Escape') {
+          setClosedModal(false)
+          delayedClosingModal()
+        }
+      };
+      
+      
+      // Attach the event listener on component mount
+      document.addEventListener('keydown', closeOnEscape);
+      
 
     return ( 
         <Container>
@@ -88,7 +101,7 @@ const ServiceCross = ({show, show2, show3, forward, backwards, delayedClosingMod
 
                 <a 
                 onClick={logEvent(analytics, 'Service Info | Cross-Selling')}
-                href="https://api.whatsapp.com/send?phone=5491123956360&text=Hola, Me gustaría hacerles una consulta con respecto al servicio de Cross-Selling Estratégico."
+                href={"https://api.whatsapp.com/send?phone=" + `${info.whatsapp}` + "&text=Hola, Me gustaría hacerles una consulta con respecto al servicio de Cross-Selling Estratégico."}
                 target='_blank'
                 >Comunicate con nosotros
                 <WhatsAppLogo/>
@@ -106,7 +119,7 @@ const ServiceCross = ({show, show2, show3, forward, backwards, delayedClosingMod
             </section>   
 
             <div
-            className='sect-nav'
+            className='sect-nav h1-cross'
             >
             {show === true ? 
             <span

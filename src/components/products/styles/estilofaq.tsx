@@ -248,7 +248,7 @@ const ProductContainer = styled.div`
 
         h1 {
             text-align: left;
-            font-size: 22px;
+            font-size: 26px;
             font-weight: bold;
             width: 100%;
             border-top-left-radius: 10px;
@@ -281,7 +281,7 @@ const ProductContainer = styled.div`
             p {
                 width: 100%;
                 text-align: left;
-                font-size: 16px;
+                font-size: 18px;
                 @media (max-width: 1100px) {
                     font-size: 14px;
                 }

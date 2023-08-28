@@ -1,6 +1,19 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+
+        .h1-calim {
+            background: linear-gradient(50deg,#66cb7f 30%, #50a78c 70%, #79cae3 90%);
+        }
+        .h1-mp {
+            background: linear-gradient(50deg,  #86b8f1 5%, #90c6f8 30%, #77ccff 90%);
+        }
+        .h1-tel {
+            background: linear-gradient(240deg, ${props => props.theme.tertiary} 10% ,${props => props.theme.secondary} 30%);
+        }
+        .h1-cross {
+            background: linear-gradient(50deg, ${props => props.theme.primaryOpact} 10%, ${props => props.theme.primary} 40%);
+        }
  
     display: flex;
     background-color: white;
@@ -19,7 +32,6 @@ const Container = styled.div`
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
-        background: #c7c7c7;
         width: 100%;
         padding: 5px 0;
         height: 5vh;
@@ -84,19 +96,6 @@ const Container = styled.div`
         }
         .logo-fatties {
             height: 15vh;
-        }
-
-        .h1-calim {
-        background: linear-gradient(50deg,#C0D749 30%, #2192A5 70%);
-        }
-        .h1-mp {
-            background: linear-gradient(50deg,  #86b8f1 5%, #90c6f8 30%, #77ccff 90%);
-        }
-        .h1-tel {
-            background: linear-gradient(240deg, ${props => props.theme.tertiary} 10% ,${props => props.theme.secondary} 30%);
-        }
-        .h1-cross {
-            background: linear-gradient(50deg, ${props => props.theme.primaryOpact} 10%, ${props => props.theme.primary} 40%);
         }
 
         h1 {
@@ -227,7 +226,6 @@ const Container = styled.div`
                 border-radius: 5%;
                 height: 100%;
                 width: 40%;
-                background: linear-gradient(50deg,#C0D749 30%, #2192A5 70%);
                 padding: 5px 0;
 
                 @media (max-width: 764px) {

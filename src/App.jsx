@@ -3,25 +3,31 @@ import styled, { ThemeProvider } from 'styled-components';
 import './App.css';
 import Footer from './components/Footer';
 import Menu from './components/Menu';
-import LoadingPage from './components/LoadingPage';
+import LoadingPage from './components/tools/LoadingPage';
 import Blog from './components/products/Blog-map';
 import Blog1 from './components/products/Blog1';
 import Blog2 from './components/products/Blog2';
 import Blog3 from './components/products/Blog3';
 import Blog4 from './components/products/Blog4';
 import Blog5 from './components/products/Blog5';
-// import Faq from './components/products/Faq';
-// import Faq1 from './components/products/Faq1';
+import Blog6 from './components/products/Blog6';
+import Blog8 from './components/products/Blog8';
+import Blog7 from './components/products/Blog7';
+import Faq from './components/products/Faq';
+import Faq1 from './components/products/Faq1';
+import Faq1_1 from './components/products/Faq1_1';
+import Faq1_2 from './components/products/Faq1_2';
+import Faq1_3 from './components/products/Faq1_3';
 // import Faq2 from './components/products/Faq2';
 // import Faq3 from './components/products/Faq3';
 import Main from './components/Main';
 import WebFont from 'webfontloader'
 import React from 'react';
-import WhatsAppBtn from './components/WhatsApp';
+import WhatsAppBtn from './components/tools/WhatsApp';
 import Nosotros from './components/Nosotros';
 import Error404 from './components/Error404';
 import AstaSign from './components/AstaSign';
-import NewsAlert from './components/NewsAlert';
+import NewsAlert from './components/tools/NewsAlert';
 
 
 const App = () => {
@@ -82,10 +88,16 @@ const App = () => {
                     <Route path={'/blog/calim_1' } element={<Blog3/>}/>
                     <Route path={'/blog/mp_2' } element={<Blog4/>}/>
                     <Route path={'/blog/mp_3' } element={<Blog5/>}/>
-                    {/* <Route path={'/faq/fatties_faq' } element={<Faq1/>}/>
-                    <Route path={'/faq/mercadopago_faq' } element={<Faq2/>}/>
-                    <Route path={'/faq/calim_faq' } element={<Faq3/>}/> 
-                    <Route path="/faq" element={<Faq/>}/>*/}
+                    <Route path={'/blog/mp_4' } element={<Blog6/>}/>
+                    <Route path={'/blog/calim_3' } element={<Blog7/>}/>
+                    <Route path={'/blog/calim_4' } element={<Blog8/>}/>
+                    <Route path="/faq" element={<Faq/>}/>
+                    <Route path={'/faq/fatties_faq_1' } element={<Faq1/>}/>
+                    <Route path={'/faq/fatties_faq_2' } element={<Faq1_1/>}/>
+                    <Route path={'/faq/fatties_faq_3' } element={<Faq1_2/>}/>
+                    <Route path={'/faq/fatties_faq_4' } element={<Faq1_3/>}/>
+                    {/* <Route path={'/faq/mercadopago_faq' } element={<Faq2/>}/>
+                    <Route path={'/faq/calim_faq' } element={<Faq3/>}/>  */}
                     <Route path="/nosotros" element={<Nosotros/>}/>
                   </Routes>
                   <Footer/>

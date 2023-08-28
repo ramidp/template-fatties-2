@@ -1,10 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductContainer from './styles/estiloblog-item'
 import blogs from '../../data/blogs.json'
+import Form from '../tools/Form'
+
 
 const Blog5 = () => {
 
-    const banner = require('../../images/Blog/' + `${blogs[4].img}`)
+    const sortedArray = blogs.sort((a, b) => a.id - b.id)
+
+    const banner = require('../../images/Blog/' + `${sortedArray[4].img}`)
     const step1 = require('../../images/Blog/mp_2/image3.png')
     const step2 = require('../../images/Blog/mp_2/image2.png')
     const step3 = require('../../images/Blog/mp_2/image7.png')
@@ -21,7 +25,7 @@ const Blog5 = () => {
                 href="/blog"
                 className="anchor-blog">
                 Blog
-                </a> / {blogs[4].title}</p>
+                </a> / {sortedArray[4].title}</p>
 
                     <div className="product-types1">
                         <div className="col-12 col-12 d-flex flex-column gap-4">
@@ -35,7 +39,7 @@ const Blog5 = () => {
                             <div className="underline"></div>
 
                             
-                            <h3><strong>Tags:</strong> Colaboradores, Trabajo en Equipo, MP</h3>
+                            <h3><strong>Tags:</strong> Colaboradores, Trabajo en Equipo, Mercado Pago</h3>
 
                             <div className="blog-text">
 
@@ -94,6 +98,9 @@ const Blog5 = () => {
                         </div>
 
                     </div>
+
+                    {/* <Form/> */}
+
         </ProductContainer>
         </>
     );

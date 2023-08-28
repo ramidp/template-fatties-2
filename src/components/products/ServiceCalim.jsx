@@ -8,6 +8,7 @@ import { analytics } from "../../firebase/firebaseConfig";
 import { useState, useEffect } from 'react'
 import {ReactComponent as WhatsAppLogo} from '../../images/icons/whatsapp.svg'
 import Container from './styles/estilomodalshared'
+import info from '../../data/info.json'
 
 
 const ServiceCalim = ({show, show2, show3, show4, forward, backwards, delayedClosingModal, setClosedModal}) => {
@@ -22,8 +23,21 @@ const ServiceCalim = ({show, show2, show3, show4, forward, backwards, delayedClo
     useEffect(() => {
         if (window.innerWidth < 765) {
             setIsMobile(true)
-        }
+        };
+        document.removeEventListener('keydown', closeOnEscape);
     }, [])
+
+    const closeOnEscape = (event) => {
+        if (event.key === 'Escape') {
+          setClosedModal(false)
+          delayedClosingModal()
+        }
+      };
+
+      
+      // Attach the event listener on component mount
+      document.addEventListener('keydown', closeOnEscape);
+      
 
     return ( 
         <Container>
@@ -63,6 +77,7 @@ const ServiceCalim = ({show, show2, show3, show4, forward, backwards, delayedClo
             >
                 <div>
                     <img 
+                    className='h1-calim'
                      rel='preload'
                     src={calim1} alt="" />
                     <div>
@@ -130,6 +145,7 @@ const ServiceCalim = ({show, show2, show3, show4, forward, backwards, delayedClo
 
                                 </div>
                                 <img 
+                                 className='h1-calim'
                                  rel='preload'
                                 src={calim2} alt="" />
                             </div>   }   
@@ -137,7 +153,8 @@ const ServiceCalim = ({show, show2, show3, show4, forward, backwards, delayedClo
                 {
                 isMobile && 
                         <div>
-                            <img 
+                            <img
+                           className='h1-calim' 
                             rel='preload'
                             src={calim2} alt="" />
                                 <div>
@@ -189,7 +206,9 @@ const ServiceCalim = ({show, show2, show3, show4, forward, backwards, delayedClo
             style={{ display: show3 ? 'flex' : 'none' }}
             >                
                 <div>
-                <img src={calim3} 
+                <img 
+                className='h1-calim'
+                src={calim3} 
                 rel='preload'
                 alt="" />
                     <div>
@@ -256,6 +275,7 @@ const ServiceCalim = ({show, show2, show3, show4, forward, backwards, delayedClo
 
                     </div>
                     <img 
+                   className='h1-calim'
                    rel='preload'
                     src={calim4} alt="" />
                 </div>  }
@@ -310,9 +330,9 @@ const ServiceCalim = ({show, show2, show3, show4, forward, backwards, delayedClo
 {/* 
                 <p>Si tu comercio todavía no tiene un <span>consultor asignado</span>, no dude en contactarse para dar de alta el <span>programa de representación</span> de la mano de una empresa con 5 años de experiencia en el rubro</p> */}
 
-<a 
+                <a 
                 onClick={logEvent(analytics, 'Service Info | Calim')}
-                href="https://api.whatsapp.com/send?phone=5491123956360&text=Hola, Me gustaría hacerles una consulta con respecto al servicio que brindan en colaboración con Calim."
+                href={"https://api.whatsapp.com/send?phone=" + `${info.whatsapp}` + "&text=Hola, Me gustaría hacerles una consulta con respecto al servicio que brindan en colaboración con Calim."}
                 target='_blank'
                 >Comunicate con nosotros
                 <WhatsAppLogo/>
@@ -331,7 +351,7 @@ const ServiceCalim = ({show, show2, show3, show4, forward, backwards, delayedClo
 
             
             <div
-            className='sect-nav'
+            className='sect-nav h1-calim'
             >
             {show === true ? 
             <span
